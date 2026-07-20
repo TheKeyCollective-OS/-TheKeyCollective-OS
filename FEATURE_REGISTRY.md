@@ -68,3 +68,19 @@ Every release must preserve these features unless the owner explicitly approves 
 - 25 annual goals, milestones/progress
 - Premium gradient cards/charts
 - Recent wins and connected summaries
+
+
+## Milestone 2 — Executive Dashboard
+- Morning briefing founder card
+- Premium module tiles with subtitles
+- Four-city live clocks and weather
+- Available cash, upcoming bills, and projected balance
+- Seven-day agenda
+- Lani snapshot
+- Top Three premium checklist
+- Wellness, goals, journal, Career HQ, Progress Hub, and Business Pulse summaries
+- Every summary links to its full module
+- Responsive overflow patch
+- Founder image path standardized to profile.jpg
+
+**Permanent: do not remove in future releases.**
