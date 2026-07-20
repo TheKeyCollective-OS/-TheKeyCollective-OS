@@ -1,0 +1,2 @@
+:root{--ivory:#fbf6ed;--cream:#f1e7d8;--paper:#fffdf8;--paper2:#fff8eb;--ink:#1d1914;--muted:#72695f;--gold:#b89242;--gold2:#efd98d;--gold3:#76571d;--sage:#70836d;--rose:#f2c7d8;--rose2:#d77aa0;--line:#dfd0b8;--shadow:0 18px 46px rgba(76,48,9,.14);--radius:24px}
+:root[data-theme="night"]{--ivory:#15120f;--cream:#1d1813;--paper:#251f19;--paper2:#2d251d;--ink:#f4eadb;--muted:#c3b5a4;--line:#554839;--gold:#d2ae5b;--gold2:#f2d98b;--gold3:#b28b37;--shadow:0 20px 52px rgba(0,0,0,.38)}
