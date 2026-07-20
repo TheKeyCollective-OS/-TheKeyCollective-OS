@@ -93,3 +93,14 @@ Every release must preserve these features unless the owner explicitly approves 
 - Editable fun facts, gift guide, and private care details
 - Screenshot/print-friendly favorites snapshot excluding medications and allergies
 - Memory timeline, swim checklist, and weekly prep checklist
+
+## Milestone 4 — Money Studio (Permanent)
+- Cash position: checking, savings, other assets, debts, and monthly income
+- Available cash, upcoming bills, projected balance, monthly surplus, and net worth
+- Bill manager with add, edit, delete, categories, frequencies, due dates, and paid status
+- Monthly cash-flow chart and automatic financial insights
+- Savings goals with target dates, contributions, progress animation, and completion wins
+- Sinking funds with contributions and progress
+- Dashboard financial data remains synchronized through shared store
+- All money data persists locally and is included in Data Vault exports
+- NEVER REMOVE without explicit founder approval

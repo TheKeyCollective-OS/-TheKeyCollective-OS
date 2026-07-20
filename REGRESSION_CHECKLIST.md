@@ -25,3 +25,15 @@ Before every GitHub-ready release:
 - Editable fun facts, gift guide, and private care details
 - Screenshot/print-friendly favorites snapshot excluding medications and allergies
 - Memory timeline, swim checklist, and weekly prep checklist
+
+## Milestone 4 Money Tests
+- [ ] Account balances save and remain after refresh
+- [ ] Available cash, bills, projected balance, surplus, and net worth calculate correctly
+- [ ] Bill add, edit, paid status, and delete work
+- [ ] Bill list sorts by due date
+- [ ] Savings goals accept contributions and stop at target
+- [ ] Completed savings goals add a recent win
+- [ ] Sinking funds accept contributions and persist
+- [ ] Cash-flow chart renders in Royal Ivory and Onyx Night
+- [ ] Dashboard cash values reflect Money Studio changes
+- [ ] Data Vault export contains all Money Studio data
