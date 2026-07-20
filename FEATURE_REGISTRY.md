@@ -104,3 +104,15 @@ Every release must preserve these features unless the owner explicitly approves 
 - Dashboard financial data remains synchronized through shared store
 - All money data persists locally and is included in Data Vault exports
 - NEVER REMOVE without explicit founder approval
+
+
+## Milestones 5–7 — Permanent
+- Daily Brief generated from locally stored OS data
+- Weekly Review archive
+- Global search across calendar, journal, bills, goals, Lani memories, and career notes
+- Cross-module smart signals
+- Verified backup envelope with schema metadata
+- Pre-save recovery copy and restore control
+- Data structural validation and downloadable diagnostic
+- Offline status and service-worker caching
+- Reduced-motion accessibility support

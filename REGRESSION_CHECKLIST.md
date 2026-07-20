@@ -37,3 +37,15 @@ Before every GitHub-ready release:
 - [ ] Cash-flow chart renders in Royal Ivory and Onyx Night
 - [ ] Dashboard cash values reflect Money Studio changes
 - [ ] Data Vault export contains all Money Studio data
+
+
+## Milestones 5–7
+- [ ] Daily Brief opens and renders Top Three, calendar, and smart signals
+- [ ] Weekly Review saves and persists after refresh
+- [ ] Global search finds information from each supported module
+- [ ] Exported backup can be imported
+- [ ] Restore Previous Save recovers the prior state
+- [ ] Data Health reports Healthy for valid data
+- [ ] Offline banner appears when network is disabled
+- [ ] Core pages remain available after a cached reload
+- [ ] Reduced motion is respected when enabled at OS level
