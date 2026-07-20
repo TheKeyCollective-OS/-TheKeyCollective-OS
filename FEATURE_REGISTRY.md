@@ -84,3 +84,12 @@ Every release must preserve these features unless the owner explicitly approves 
 - Founder image path standardized to profile.jpg
 
 **Permanent: do not remove in future releases.**
+
+
+## Milestone 3 — Lani’s Corner
+- Dedicated readable pink/lavender visual world in both themes
+- Auto-rotating living photo collage with manual controls and thumbnails
+- On-device photo resizing and 18-photo browser limit
+- Editable fun facts, gift guide, and private care details
+- Screenshot/print-friendly favorites snapshot excluding medications and allergies
+- Memory timeline, swim checklist, and weekly prep checklist

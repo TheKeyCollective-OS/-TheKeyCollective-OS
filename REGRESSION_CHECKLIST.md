@@ -16,3 +16,12 @@ Before every GitHub-ready release:
 12. Confirm v4 storage migration does not erase data.
 13. Confirm no JavaScript syntax errors and no uncaught console errors.
 14. Confirm external services never display fake live data.
+
+
+## Milestone 3 — Lani’s Corner
+- Dedicated readable pink/lavender visual world in both themes
+- Auto-rotating living photo collage with manual controls and thumbnails
+- On-device photo resizing and 18-photo browser limit
+- Editable fun facts, gift guide, and private care details
+- Screenshot/print-friendly favorites snapshot excluding medications and allergies
+- Memory timeline, swim checklist, and weekly prep checklist
