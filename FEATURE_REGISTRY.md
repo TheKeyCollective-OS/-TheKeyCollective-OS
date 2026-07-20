@@ -116,3 +116,9 @@ Every release must preserve these features unless the owner explicitly approves 
 - Data structural validation and downloadable diagnostic
 - Offline status and service-worker caching
 - Reduced-motion accessibility support
+
+
+## Milestone 8.1 — Premium Brand Language (PERMANENT)
+- Premium navigation names across sidebar, dashboard, breadcrumbs, and page headings.
+- Functional route IDs remain unchanged to preserve saved links and app behavior.
+- No feature may be removed during future naming or design passes.
