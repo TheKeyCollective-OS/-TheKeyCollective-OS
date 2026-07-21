@@ -1,10 +1,10 @@
-const CACHE='key-collective-sprint-6b1-home-v18';
+const CACHE='key-collective-sprint-6b1-interaction-v19';
 const APP_SHELL=[
   './',
   './index.html',
-  './tokens.css?v=16.1',
-  './app.css?v=16.1',
-  './app.js?v=16.1',
+  './tokens.css?v=16.2',
+  './app.css?v=16.2',
+  './app.js?v=16.2',
   './config.js',
   './router.js',
   './store.js',
@@ -19,6 +19,7 @@ const APP_SHELL=[
   './sprint6b.js',
   './sprint6b1.js',
   './sprint6b1final.js',
+  './sprint6b2.js',
   './memo-db.js',
   './photo-db.js',
   './logo.png',
