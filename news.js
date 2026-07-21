@@ -1,49 +1,18 @@
 import {config} from './config.js';
 
-const topics={
-  Business:'(business OR economy OR markets)',
-  Payments:'(payments OR Visa OR Mastercard OR Stripe OR banking)',
-  Fintech:'(fintech OR digital banking OR payment technology)',
-  AI:'("artificial intelligence" OR OpenAI OR generative AI)',
-  Arizona:'(Arizona OR Phoenix OR Scottsdale business)',
-  'U.S.':'(United States economy OR US business)',
-  World:'(world economy OR global business)'
+export const PULSE_TOPICS={
+  'U.S. News':'(United States OR Congress OR White House OR Supreme Court) sourcelang:english sourcecountry:US',
+  'Arizona + Phoenix':'(Arizona OR Phoenix OR Scottsdale OR Maricopa) sourcelang:english sourcecountry:US',
+  'Payments + Fintech':'(payments OR Visa OR Mastercard OR Stripe OR PayPal OR fintech OR digital wallet) sourcelang:english sourcecountry:US',
+  'AI + Technology':'("artificial intelligence" OR OpenAI OR Anthropic OR Microsoft OR Apple OR Nvidia) sourcelang:english sourcecountry:US',
+  'Markets + Economy':'(S&P 500 OR Nasdaq OR Federal Reserve OR inflation OR mortgage rates OR US economy) sourcelang:english sourcecountry:US',
+  'Business':'(US business OR earnings OR companies OR economy) sourcelang:english sourcecountry:US'
 };
 const clean=v=>String(v||'').replace(/<[^>]*>/g,'').replace(/\s+/g,' ').trim();
-const normalize=(a,topic)=>({
-  id:a.id||a.url||`${topic}-${a.title}`,
-  topic,
-  title:clean(a.title),
-  url:a.url||a.link||'#',
-  source:clean(a.source?.name||a.source||a.domain||'News source'),
-  publishedAt:a.publishedAt||a.seendate||a.date||'',
-  image:a.image||a.socialimage||'',
-  description:clean(a.description||a.summary||a.snippet||'')
-});
-async function endpointFeed(){
-  const r=await fetch(config.newsEndpoint,{headers:{Accept:'application/json'}});
-  if(!r.ok)throw new Error(`News endpoint returned ${r.status}`);
-  const data=await r.json();
-  const groups=data.categories||data.topics||data;
-  return Object.fromEntries(Object.entries(groups).map(([topic,items])=>[topic,(items||[]).map(a=>normalize(a,topic))]));
-}
-async function gdeltTopic(topic){
-  const q=encodeURIComponent(topics[topic]||topic);
-  const url=`https://api.gdeltproject.org/api/v2/doc/doc?query=${q}&mode=artlist&maxrecords=8&format=json&sort=HybridRel`;
-  const r=await fetch(url,{headers:{Accept:'application/json'}});
-  if(!r.ok)throw new Error(`Public news feed returned ${r.status}`);
-  const data=await r.json();
-  return (data.articles||[]).map(a=>normalize(a,topic)).filter(a=>a.title&&a.url);
-}
-export async function loadNews(){
-  const source=config.newsEndpoint?'secure-endpoint':'gdelt-public';
-  const entries=await Promise.allSettled(Object.keys(topics).map(async topic=>[topic,config.newsEndpoint?null:await gdeltTopic(topic)]));
-  if(config.newsEndpoint){return {source,categories:await endpointFeed(),updatedAt:new Date().toISOString()}}
-  const categories={};entries.forEach((r,i)=>{categories[Object.keys(topics)[i]]=r.status==='fulfilled'?r.value[1]:[]});
-  if(!Object.values(categories).some(x=>x.length))throw new Error('No live headlines were available.');
-  return {source,categories,updatedAt:new Date().toISOString()};
-}
-export function buildExecutiveSummary(categories){
-  const picks=Object.entries(categories).flatMap(([topic,items])=>(items||[]).slice(0,1).map(x=>({...x,topic}))).slice(0,5);
-  return picks.map(x=>({topic:x.topic,title:x.title,why:`Worth watching in ${x.topic.toLowerCase()}: this may shape decisions, conversations, or opportunities in the near term.`,url:x.url,source:x.source}));
-}
+const mostlyEnglish=text=>{const s=clean(text);if(!s)return false;const latin=(s.match(/[A-Za-z]/g)||[]).length, letters=(s.match(/\p{L}/gu)||[]).length;return letters===0||latin/letters>.78};
+const normalize=(a,topic)=>({id:a.id||a.url||`${topic}-${a.title}`,topic,title:clean(a.title),url:a.url||a.link||'#',source:clean(a.source?.name||a.source||a.domain||'U.S. news source'),publishedAt:a.publishedAt||a.seendate||a.date||'',image:a.image||a.socialimage||'',description:clean(a.description||a.summary||a.snippet||'')});
+async function endpointFeed(){const r=await fetch(config.newsEndpoint,{headers:{Accept:'application/json'}});if(!r.ok)throw new Error(`News endpoint returned ${r.status}`);const data=await r.json();const groups=data.categories||data.topics||data;return Object.fromEntries(Object.entries(groups).map(([topic,items])=>[topic,(items||[]).map(a=>normalize(a,topic)).filter(a=>mostlyEnglish(a.title))]));}
+async function gdeltTopic(topic){const q=encodeURIComponent(PULSE_TOPICS[topic]||topic);const url=`https://api.gdeltproject.org/api/v2/doc/doc?query=${q}&mode=artlist&maxrecords=12&format=json&sort=HybridRel`;const r=await fetch(url,{headers:{Accept:'application/json'}});if(!r.ok)throw new Error(`Public news feed returned ${r.status}`);const data=await r.json();const seen=new Set();return (data.articles||[]).map(a=>normalize(a,topic)).filter(a=>a.title&&a.url&&mostlyEnglish(a.title)&&!seen.has(a.title.toLowerCase())&&seen.add(a.title.toLowerCase())).slice(0,8);}
+export async function loadNews(){const source=config.newsEndpoint?'secure-endpoint':'gdelt-us-english';if(config.newsEndpoint)return {source,categories:await endpointFeed(),updatedAt:new Date().toISOString(),locale:'en-US'};const names=Object.keys(PULSE_TOPICS),entries=await Promise.allSettled(names.map(async topic=>[topic,await gdeltTopic(topic)]));const categories={};entries.forEach((r,i)=>categories[names[i]]=r.status==='fulfilled'?r.value[1]:[]);if(!Object.values(categories).some(x=>x.length))throw new Error('No live U.S. English headlines were available.');return {source,categories,updatedAt:new Date().toISOString(),locale:'en-US'};}
+export function buildExecutiveSummary(categories){const picks=Object.entries(categories).flatMap(([topic,items])=>(items||[]).slice(0,1).map(x=>({...x,topic}))).slice(0,6);return picks.map(x=>({topic:x.topic,title:x.title,why:({
+'U.S. News':'A major American headline worth knowing today.','Arizona + Phoenix':'A local development that may affect life or business in Arizona.','Payments + Fintech':'Relevant to payments, banking, risk, fraud, or financial technology.','AI + Technology':'A technology shift that may shape work, tools, or opportunity.','Markets + Economy':'A signal affecting household finances, rates, markets, or the U.S. economy.','Business':'A business development worth carrying into the day.'}[x.topic]||'Worth watching today.'),url:x.url,source:x.source}));}

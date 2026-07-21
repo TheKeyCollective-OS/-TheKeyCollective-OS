@@ -122,3 +122,12 @@ Every release must preserve these features unless the owner explicitly approves 
 - Premium navigation names across sidebar, dashboard, breadcrumbs, and page headings.
 - Functional route IDs remain unchanged to preserve saved links and app behavior.
 - No feature may be removed during future naming or design passes.
+
+
+## Sprint 2
+- U.S. English Pulse 2.0
+- Pulse topic preferences
+- Founder Identity Suite
+- XP, levels, streaks, achievements, celebration timeline
+- Sanctuary ritual center
+- Schema v9 persistence
