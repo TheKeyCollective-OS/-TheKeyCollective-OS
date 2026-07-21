@@ -84,10 +84,15 @@ export function progress(){
 }
 
 export function premium(){
-  $('#lightTheme').onclick=()=>{store.set({theme:'light'});document.documentElement.dataset.theme='light'};
-  $('#nightTheme').onclick=()=>{store.set({theme:'night'});document.documentElement.dataset.theme='night'};
+  all('[data-theme-choice]').forEach(btn=>btn.onclick=()=>{store.set({theme:btn.dataset.themeChoice});toast(`${btn.querySelector('strong').textContent} applied.`)});
+  const saveDesign=()=>store.set({design:{motion:$('#motionSelect').value,cards:$('#cardSelect').value,radius:$('#radiusSelect').value,texture:$('#textureSelect').value,type:$('#typeSelect').value}});
+  ['motionSelect','cardSelect','radiusSelect','textureSelect','typeSelect'].forEach(id=>$('#'+id).onchange=saveDesign);
   $('#exportData').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([store.export()],{type:'application/json'}));a.download=`key-collective-backup-${new Date().toISOString().slice(0,10)}.json`;a.click();toast('Verified backup created.')};
   $('#importData').onchange=e=>{const file=e.target.files[0];if(!file)return;const r=new FileReader();r.onload=()=>{try{store.import(r.result);toast('Backup imported. Reloading…');setTimeout(()=>location.reload(),500)}catch(err){toast(err.message||'Invalid backup file.')}};r.readAsText(file)};
   $('#recoverData').onclick=()=>{try{if(store.recover()){toast('Previous save restored. Reloading…');setTimeout(()=>location.reload(),500)}else toast('No recovery copy is available yet.')}catch{toast('Recovery could not be completed.')}};
-  $('#downloadDiagnostic').onclick=()=>{const report={generatedAt:new Date().toISOString(),online:navigator.onLine,userAgent:navigator.userAgent,storageKey:store.key,validation:store.validate(),counts:{bills:store.get().bills.length,calendarDays:Object.keys(store.get().calendar).length,journalEntries:store.get().journalEntries.length,goals:store.get().goals.length,laniPhotos:store.get().laniPhotos.length}};const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(report,null,2)],{type:'application/json'}));a.download='key-collective-diagnostic.json';a.click()};
+  $('#downloadDiagnostic').onclick=()=>{const report={generatedAt:new Date().toISOString(),online:navigator.onLine,userAgent:navigator.userAgent,storageKey:store.key,validation:store.validate(),theme:store.get().theme,design:store.get().design,counts:{bills:store.get().bills.length,calendarDays:Object.keys(store.get().calendar).length,journalEntries:store.get().journalEntries.length,goals:store.get().goals.length,laniPhotos:store.get().laniPhotos.length}};const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(report,null,2)],{type:'application/json'}));a.download='key-collective-diagnostic.json';a.click()};
+}
+export function profile(){
+  const save=(valuesOnly=false)=>{const current=store.get().profile||{};const values=$('#profileValues').value.split(',').map(v=>v.trim()).filter(Boolean).slice(0,10);store.set({profile:valuesOnly?{...current,values}:{...current,name:$('#profileName').value.trim()||'Alexis',title:$('#profileTitle').value.trim(),mission:$('#profileMission').value.trim(),vision:$('#profileVision').value.trim(),annualTheme:$('#profileAnnualTheme').value.trim(),fiveYearVision:$('#profileFiveYear').value.trim(),legacy:$('#profileLegacy').value.trim(),values}});toast(valuesOnly?'Core values updated.':'Your blueprint is saved.')};
+  $('#saveProfile').onclick=()=>save(false);$('#saveValues').onclick=()=>save(true);
 }
