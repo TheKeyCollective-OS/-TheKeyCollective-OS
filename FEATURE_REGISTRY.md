@@ -131,3 +131,15 @@ Every release must preserve these features unless the owner explicitly approves 
 - XP, levels, streaks, achievements, celebration timeline
 - Sanctuary ritual center
 - Schema v9 persistence
+
+## Sprint 5 — Living Intelligence
+- Executive Intelligence second brain
+- Voice memo inbox (IndexedDB)
+- Dated reminders and On This Day
+- Guided Reflection Garden prompt library
+- Editable Sanctuary rituals
+- Stable Payments Academy knowledge checks
+- Twelve-color theme collection
+- Seven typography/experience packs
+- Live theme preview and celebration system
+- Continuous local draft protection
