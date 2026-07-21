@@ -1,0 +1,13 @@
+# Sprint 4 Regression Checklist
+- [ ] Existing Sprint 3 data migrates to schema 11.
+- [ ] Keyona appears on Profile and new-user defaults.
+- [ ] Profile Design + Data buttons open correctly.
+- [ ] Multiple Lani photos persist after navigation and browser restart.
+- [ ] Lani dashboard caption appears beneath the latest photo.
+- [ ] Bill CSV import connects to Dashboard, Morning Brief, and Agenda.
+- [ ] Agenda shows colored dots and selected-day details.
+- [ ] ICS import/export works with Apple/Google calendar files.
+- [ ] Reflection categories cycle prompts and filter the archive.
+- [ ] 25 Hard cards remain compact on iPhone widths.
+- [ ] Growth Studio chart is not cropped.
+- [ ] Export/import and service worker still function.
