@@ -1,15 +1,17 @@
 {
-  "name": "The Key Collective OS \u2014 Sprint 5",
-  "short_name": "Key OS",
-  "start_url": "./",
+  "id": "./",
+  "name": "The Key Collective OS",
+  "short_name": "Key Collective",
+  "description": "Keyona's luxury personal operating system.",
+  "start_url": "./index.html#dashboard",
+  "scope": "./",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#fbf6ed",
-  "theme_color": "#162845",
+  "theme_color": "#b89242",
   "icons": [
-    {
-      "src": "logo.png",
-      "sizes": "1024x1024",
-      "type": "image/png"
-    }
+    {"src":"icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
+    {"src":"icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"},
+    {"src":"icons/apple-touch-icon.png","sizes":"180x180","type":"image/png","purpose":"any"}
   ]
 }
