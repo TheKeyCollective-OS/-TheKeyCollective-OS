@@ -1,5 +1,87 @@
-const CACHE='key-collective-core-v16-0-sprint6b1-verified';
-const ASSETS=['./','./index.html','./tokens.css?v=16.0','./app.css?v=16.0','./app.js?v=16.0','./config.js','./router.js','./store.js','./weather.js','./controllers.js','./pages.js','./news.js','./sprint3.js','./sprint4.js','./sprint5.js','./sprint6a.js','./sprint6b.js','./sprint6b1.js','./memo-db.js','./photo-db.js','./logo.png','./profile.jpg','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png','./icons/apple-touch-icon.png'];
-self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting())));
-self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
-self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;const u=new URL(e.request.url);if(e.request.mode==='navigate'){e.respondWith(fetch('./index.html').then(r=>{const c=r.clone();caches.open(CACHE).then(x=>x.put('./index.html',c));return r}).catch(()=>caches.match('./index.html')));return}e.respondWith(caches.match(e.request).then(cached=>cached||fetch(e.request).then(r=>{if(u.origin===location.origin){const copy=r.clone();caches.open(CACHE).then(c=>c.put(e.request,copy))}return r}))) });
+const CACHE='key-collective-sprint-6b1-home-v18';
+const APP_SHELL=[
+  './',
+  './index.html',
+  './tokens.css?v=16.1',
+  './app.css?v=16.1',
+  './app.js?v=16.1',
+  './config.js',
+  './router.js',
+  './store.js',
+  './weather.js',
+  './controllers.js',
+  './pages.js',
+  './news.js',
+  './sprint3.js',
+  './sprint4.js',
+  './sprint5.js',
+  './sprint6a.js',
+  './sprint6b.js',
+  './sprint6b1.js',
+  './sprint6b1final.js',
+  './memo-db.js',
+  './photo-db.js',
+  './logo.png',
+  './profile.jpg',
+  './manifest.webmanifest',
+  './icons/icon-192.png',
+  './icons/icon-512.png',
+  './icons/apple-touch-icon.png'
+];
+
+self.addEventListener('install',event=>{
+  event.waitUntil(
+    caches.open(CACHE)
+      .then(cache=>cache.addAll(APP_SHELL))
+      .then(()=>self.skipWaiting())
+  );
+});
+
+self.addEventListener('activate',event=>{
+  event.waitUntil(
+    caches.keys()
+      .then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key))))
+      .then(()=>self.clients.claim())
+  );
+});
+
+self.addEventListener('message',event=>{
+  if(event.data?.type==='SKIP_WAITING') self.skipWaiting();
+});
+
+self.addEventListener('fetch',event=>{
+  const request=event.request;
+  if(request.method!=='GET') return;
+
+  const url=new URL(request.url);
+
+  // Never intercept Google authorization, APIs, news, weather, or other external services.
+  if(url.origin!==self.location.origin) return;
+
+  if(request.mode==='navigate'){
+    event.respondWith(
+      fetch(request)
+        .then(response=>{
+          const copy=response.clone();
+          caches.open(CACHE).then(cache=>cache.put('./index.html',copy));
+          return response;
+        })
+        .catch(()=>caches.match('./index.html'))
+    );
+    return;
+  }
+
+  // Local app assets: use cached copy immediately, while refreshing it in the background.
+  event.respondWith(
+    caches.match(request).then(cached=>{
+      const network=fetch(request).then(response=>{
+        if(response && response.ok){
+          const copy=response.clone();
+          caches.open(CACHE).then(cache=>cache.put(request,copy));
+        }
+        return response;
+      }).catch(()=>cached);
+      return cached || network;
+    })
+  );
+});
