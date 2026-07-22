@@ -17,7 +17,7 @@ function releaseDashboardPhotos(){
 function applyCanonicalTheme(){
   const state=store.get();
   const theme=state.theme||'champagne';
-  const dark=new Set(['noir','sapphire','emerald','midnight']);
+  const dark=new Set(['sapphire','emerald','midnight']);
   const root=document.documentElement;
   root.dataset.theme=theme;
   root.dataset.cards=state.design?.cards||'glass';

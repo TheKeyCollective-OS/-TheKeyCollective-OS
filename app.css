@@ -660,3 +660,104 @@ html[data-theme="sapphire"] .design-data-6b6{
   -webkit-text-fill-color:#17140e !important;
 }
 
+
+
+/* Sprint 6B.7 — interaction and contrast closure */
+
+/* Noir Gala is retired. A legacy noir attribute receives Midnight Noir tokens
+   only long enough for state migration to complete. */
+html[data-theme="noir"]{
+  --paper:#111722;
+  --paper2:#182236;
+  --surface:#1d2940;
+  --ink:#fff8e8;
+  --muted:#d4ccbe;
+  --line:rgba(255,244,216,.22);
+  --gold:#d8b34f;
+}
+
+/* Agenda's final capture-owned dialog. */
+.agenda-day-6b7::backdrop{
+  background:rgba(5,8,14,.56);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+}
+.agenda-day-6b7 .agenda-modal{
+  background:color-mix(in srgb,var(--paper) 88%,transparent);
+  border:1px solid color-mix(in srgb,var(--gold) 32%,var(--line));
+  box-shadow:0 30px 100px rgba(0,0,0,.38);
+  backdrop-filter:blur(26px) saturate(140%);
+  -webkit-backdrop-filter:blur(26px) saturate(140%);
+}
+.agenda-day-6b7 .agenda-quick-item{
+  min-height:62px;
+}
+
+/* Theme cards must remain readable even before the contrast observer's
+   second render pass completes. */
+.theme-card-6b7{
+  color:#171714 !important;
+  -webkit-text-fill-color:#171714;
+}
+.theme-card-6b7 .theme-copy,
+.theme-card-6b7 .theme-copy strong{
+  color:#171714 !important;
+  -webkit-text-fill-color:#171714;
+}
+.theme-card-6b7 .theme-copy small{
+  color:#5d584f !important;
+  -webkit-text-fill-color:#5d584f;
+  opacity:1 !important;
+}
+.theme-card-6b7 .theme-preview,
+.theme-card-6b7 .theme-preview *{
+  -webkit-text-fill-color:initial;
+}
+
+/* Component contrast still wins when a card truly renders as dark. */
+.theme-card-6b7[data-surface-tone="dark"],
+.theme-card-6b7[data-surface-tone="dark"] .theme-copy,
+.theme-card-6b7[data-surface-tone="dark"] .theme-copy strong{
+  color:#fff8e8 !important;
+  -webkit-text-fill-color:#fff8e8;
+}
+.theme-card-6b7[data-surface-tone="dark"] .theme-copy small{
+  color:#d7d0c2 !important;
+  -webkit-text-fill-color:#d7d0c2;
+}
+
+/* Transparent and gradient panels receive explicit tone inheritance once
+   their effective blended surface has been measured. */
+[data-surface-tone="light"]{
+  --kc-component-fg:#171714;
+  --kc-component-muted:#5d584f;
+}
+[data-surface-tone="dark"]{
+  --kc-component-fg:#fff8e8;
+  --kc-component-muted:#d7d0c2;
+}
+[data-surface-tone] > :where(h1,h2,h3,h4,h5,h6,p,label,legend,strong,b,em,li){
+  color:inherit !important;
+}
+[data-surface-tone="light"] :where(.eyebrow,.section-title,.theme-copy,.autosave-indicator){
+  color:#171714;
+}
+[data-surface-tone="dark"] :where(.eyebrow,.section-title,.theme-copy,.autosave-indicator){
+  color:#fff8e8;
+}
+
+/* 25 Hard release-state styling. */
+#hardBoard[data-verification="create-persist-complete-gold"] .hard-tile.complete,
+#hardBoard[data-verification="create-persist-complete-gold"] .hard-tile.gold-flipped{
+  background:linear-gradient(145deg,#f5dd8b,#b8882f) !important;
+  border-color:#dfbd5d !important;
+  color:#17140e !important;
+}
+#hardBoard[data-verification="create-persist-complete-gold"] .hard-tile.complete *,
+#hardBoard[data-verification="create-persist-complete-gold"] .hard-tile.gold-flipped *{
+  color:#17140e !important;
+  -webkit-text-fill-color:#17140e !important;
+}
+
+/* Wellness is approved and intentionally untouched by 6B.7. */
+

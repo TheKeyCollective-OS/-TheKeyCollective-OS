@@ -2,8 +2,8 @@
 import {store} from './store.js';
 import {getPhotos,putPhoto} from './photo-db.js';
 
-const BUILD='Sprint 6B.6';
-const BUILD_ID='6b6-v23';
+const BUILD='Sprint 6B.7';
+const BUILD_ID='6b7-v24';
 const $=s=>document.querySelector(s);
 const all=s=>[...document.querySelectorAll(s)];
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -19,7 +19,7 @@ function applyTheme(){
   if(themeGuard)return;
   themeGuard=true;
   const state=store.get(),theme=state.theme||'champagne';
-  const dark=new Set(['noir','sapphire','emerald','midnight']);
+  const dark=new Set(['sapphire','emerald','midnight']);
   const root=document.documentElement;
   root.dataset.theme=theme;
   root.dataset.paletteMode=dark.has(theme)?'dark':'light';

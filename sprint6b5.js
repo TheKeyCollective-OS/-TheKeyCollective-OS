@@ -240,7 +240,7 @@ function renderDashboardLocalAgenda(){
 
 function enforceAdaptiveText(){
   const theme=document.documentElement.dataset.theme||'champagne';
-  const dark=['noir','sapphire','emerald','midnight'].includes(theme);
+  const dark=['sapphire','emerald','midnight'].includes(theme);
   document.documentElement.dataset.foregroundMode=dark?'light-on-dark':'dark-on-light';
 }
 

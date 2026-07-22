@@ -237,7 +237,7 @@ function moneyEnhance(){
 function contrastEnhance(){
   document.documentElement.classList.add('sprint-6b1-final');
   const theme=document.documentElement.dataset.theme;
-  if(theme==='noir'||theme==='sapphire'||theme==='emerald')document.documentElement.dataset.contrast='dark';
+  if(theme===theme==='sapphire'||theme==='emerald')document.documentElement.dataset.contrast='dark';
   else document.documentElement.dataset.contrast='light';
 }
 

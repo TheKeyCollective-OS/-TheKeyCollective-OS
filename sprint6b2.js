@@ -230,7 +230,7 @@ async function reinforceLaniDashboard(router){
 
 function themeContrast(){
   const theme=document.documentElement.dataset.theme||'champagne';
-  document.documentElement.dataset.interactionContrast=['noir','sapphire','emerald'].includes(theme)?'dark':'light';
+  document.documentElement.dataset.interactionContrast=['sapphire','emerald'].includes(theme)?'dark':'light';
 }
 
 export async function enhanceSprint6B2(id,router){
