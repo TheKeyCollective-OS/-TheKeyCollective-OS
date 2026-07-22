@@ -13,6 +13,7 @@ import {patchPagesSprint6B2,enhanceSprint6B2} from './sprint6b2.js';
 import {enhanceSprint6B3} from './sprint6b3.js';
 import {enhanceSprint6B4} from './sprint6b4.js';
 import {patchPagesSprint6B5,enhanceSprint6B5} from './sprint6b5.js';
+import {enhanceSprint6B6} from './sprint6b6.js';
 
 patchPages(pages);
 patchPagesSprint5(pages);
@@ -77,6 +78,7 @@ router=createRouter({
     await enhanceSprint6B3(id,router);
     await enhanceSprint6B4(id,router);
     await enhanceSprint6B5(id,router);
+    await enhanceSprint6B6(id,router);
   }
 });
 

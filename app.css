@@ -449,3 +449,214 @@ html[data-foreground-mode] .agenda-choice{
   .agenda-choice{min-height:112px}
 }
 
+
+
+/* Sprint 6B.6 — component-surface contrast engine */
+:root{
+  --kc-on-light:#171714;
+  --kc-on-light-muted:#5d584f;
+  --kc-on-dark:#fff8e8;
+  --kc-on-dark-muted:#d7d0c2;
+}
+[data-surface-tone="light"]{
+  --kc-component-fg:var(--kc-on-light);
+  --kc-component-muted:var(--kc-on-light-muted);
+  color:var(--kc-component-fg) !important;
+}
+[data-surface-tone="dark"]{
+  --kc-component-fg:var(--kc-on-dark);
+  --kc-component-muted:var(--kc-on-dark-muted);
+  color:var(--kc-component-fg) !important;
+}
+[data-surface-tone] h1,
+[data-surface-tone] h2,
+[data-surface-tone] h3,
+[data-surface-tone] h4,
+[data-surface-tone] h5,
+[data-surface-tone] h6,
+[data-surface-tone] p,
+[data-surface-tone] label,
+[data-surface-tone] legend,
+[data-surface-tone] li,
+[data-surface-tone] td,
+[data-surface-tone] th,
+[data-surface-tone] strong,
+[data-surface-tone] b,
+[data-surface-tone] em,
+[data-surface-tone] span:not(.dot):not(.agenda-dot):not(.notice-mark):not(.kc-build-dot){
+  color:inherit !important;
+  -webkit-text-fill-color:currentColor;
+}
+[data-surface-tone] small,
+[data-surface-tone] .muted,
+[data-surface-tone] .sub,
+[data-surface-tone] .mini,
+[data-surface-tone] .autosave-indicator{
+  color:var(--kc-component-muted) !important;
+  -webkit-text-fill-color:var(--kc-component-muted);
+}
+[data-surface-tone="light"] input,
+[data-surface-tone="light"] textarea,
+[data-surface-tone="light"] select{
+  color:var(--kc-on-light) !important;
+  -webkit-text-fill-color:var(--kc-on-light);
+  background:#fffdf7 !important;
+  border-color:rgba(31,29,24,.26) !important;
+}
+[data-surface-tone="dark"] input,
+[data-surface-tone="dark"] textarea,
+[data-surface-tone="dark"] select{
+  color:var(--kc-on-dark) !important;
+  -webkit-text-fill-color:var(--kc-on-dark);
+  background:rgba(6,10,17,.78) !important;
+  border-color:rgba(255,246,220,.28) !important;
+}
+[data-surface-tone="light"] input::placeholder,
+[data-surface-tone="light"] textarea::placeholder{
+  color:#716b61 !important;
+  -webkit-text-fill-color:#716b61;
+  opacity:1;
+}
+[data-surface-tone="dark"] input::placeholder,
+[data-surface-tone="dark"] textarea::placeholder{
+  color:#c7c0b3 !important;
+  -webkit-text-fill-color:#c7c0b3;
+  opacity:1;
+}
+
+/* Buttons use their own actual surface rather than inheriting the page. */
+.btn[data-surface-tone="light"],
+button[data-surface-tone="light"],
+.theme-card[data-surface-tone="light"],
+.design-pack[data-surface-tone="light"],
+.calendar-day[data-surface-tone="light"],
+.agenda-choice[data-surface-tone="light"]{
+  color:var(--kc-on-light) !important;
+}
+.btn[data-surface-tone="dark"],
+button[data-surface-tone="dark"],
+.theme-card[data-surface-tone="dark"],
+.design-pack[data-surface-tone="dark"],
+.calendar-day[data-surface-tone="dark"],
+.agenda-choice[data-surface-tone="dark"]{
+  color:var(--kc-on-dark) !important;
+}
+.btn:not(.ghost):not(.secondary){
+  color:#17140e !important;
+  -webkit-text-fill-color:#17140e;
+}
+.btn.ghost[data-surface-tone="dark"],
+.btn.secondary[data-surface-tone="dark"]{
+  color:var(--kc-on-dark) !important;
+}
+.btn.ghost[data-surface-tone="light"],
+.btn.secondary[data-surface-tone="light"]{
+  color:var(--kc-on-light) !important;
+}
+
+/* Design + Data dedicated repair */
+.design-data-6b6 .design-head,
+.design-data-6b6 .design-hero,
+.design-data-6b6 .studio-section,
+.design-data-6b6 .studio-grid>.card,
+.design-data-6b6 .readability-card,
+.design-data-6b6 .contrast-demo{
+  isolation:isolate;
+}
+.design-data-6b6 .design-head[data-surface-tone="light"] h1,
+.design-data-6b6 .design-head[data-surface-tone="light"] .eyebrow,
+.design-data-6b6 .design-head[data-surface-tone="light"] .sub{
+  color:var(--kc-on-light) !important;
+}
+.design-data-6b6 .design-head[data-surface-tone="dark"] h1,
+.design-data-6b6 .design-head[data-surface-tone="dark"] .eyebrow,
+.design-data-6b6 .design-head[data-surface-tone="dark"] .sub{
+  color:var(--kc-on-dark) !important;
+}
+.design-data-6b6 .theme-card{
+  min-height:176px;
+}
+.design-data-6b6 .theme-copy{
+  position:relative;
+  z-index:2;
+}
+.design-data-6b6 .theme-copy strong{
+  display:block;
+  font-weight:800;
+  line-height:1.15;
+}
+.design-data-6b6 .theme-copy small{
+  display:block;
+  margin-top:4px;
+  line-height:1.35;
+}
+.design-data-6b6 .theme-preview,
+.design-data-6b6 .theme-preview *{
+  -webkit-text-fill-color:initial;
+}
+.design-data-6b6 .design-pack{
+  min-height:74px;
+}
+.design-data-6b6 .design-pack strong{
+  font-weight:800;
+}
+.design-data-6b6 .design-control-label{
+  display:grid;
+  gap:7px;
+  font-weight:700;
+}
+.design-data-6b6 .design-control-label select{
+  width:100%;
+}
+.design-data-6b6 .quality-list li{
+  color:inherit !important;
+}
+.design-data-6b6 .readability-card .contrast-demo{
+  border:1px solid color-mix(in srgb,currentColor 18%,transparent);
+}
+.design-data-6b6 .autosave-indicator,
+.design-data-6b6 .status,
+.design-data-6b6 .prompt{
+  opacity:1 !important;
+}
+
+/* Explicit fallback before JS classification completes. */
+html[data-theme="champagne"] .design-data-6b6,
+html[data-theme="ivory"] .design-data-6b6,
+html[data-theme="sage"] .design-data-6b6,
+html[data-theme="rose"] .design-data-6b6,
+html[data-theme="ocean"] .design-data-6b6,
+html[data-theme="lavender"] .design-data-6b6,
+html[data-theme="autumn"] .design-data-6b6,
+html[data-theme="desert"] .design-data-6b6{
+  --kc-fallback-fg:var(--kc-on-light);
+  color:var(--kc-fallback-fg);
+}
+html[data-theme="midnight"] .design-data-6b6,
+html[data-theme="espresso"] .design-data-6b6,
+html[data-theme="obsidian"] .design-data-6b6,
+html[data-theme="sapphire"] .design-data-6b6{
+  --kc-fallback-fg:var(--kc-on-dark);
+  color:var(--kc-fallback-fg);
+}
+
+/* Visible focus and disabled states in either tone. */
+[data-surface-tone] :focus-visible{
+  outline:3px solid #e4bc51 !important;
+  outline-offset:3px;
+}
+[data-surface-tone] :disabled,
+[data-surface-tone] [aria-disabled="true"]{
+  opacity:.58;
+  color:var(--kc-component-muted) !important;
+}
+
+/* Gold completion remains intentionally dark on a light gold surface. */
+.hard-tile.complete,
+.hard-tile.gold-flipped,
+.hard-tile.complete *,
+.hard-tile.gold-flipped *{
+  color:#17140e !important;
+  -webkit-text-fill-color:#17140e !important;
+}
+
