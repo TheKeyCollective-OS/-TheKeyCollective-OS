@@ -11,6 +11,7 @@ import {enhanceSprint6B1} from './sprint6b1.js';
 import {enhanceSprint6B1Final} from './sprint6b1final.js';
 import {patchPagesSprint6B2,enhanceSprint6B2} from './sprint6b2.js';
 import {enhanceSprint6B3} from './sprint6b3.js';
+import {enhanceSprint6B4} from './sprint6b4.js';
 
 patchPages(pages);
 patchPagesSprint5(pages);
@@ -71,6 +72,7 @@ router=createRouter({
       if(id==='calendar'||id==='goals'||id==='intelligence')await enhanceSprint6B2(id,router);
     }
     await enhanceSprint6B3(id,router);
+    await enhanceSprint6B4(id,router);
   }
 });
 

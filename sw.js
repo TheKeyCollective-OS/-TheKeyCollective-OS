@@ -1,5 +1,5 @@
-const CACHE='key-collective-canonical-6b3-v20';
-const APP_SHELL=['./','./index.html','./tokens.css?v=16.3','./app.css?v=16.3','./app.js?v=16.3','./config.js','./router.js','./store.js','./weather.js','./controllers.js','./pages.js','./news.js','./sprint3.js','./sprint4.js','./sprint5.js','./sprint6a.js','./sprint6b.js','./sprint6b1.js','./sprint6b1final.js','./sprint6b2.js','./sprint6b3.js','./memo-db.js','./photo-db.js','./logo.png','./profile.jpg','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png','./icons/apple-touch-icon.png'];
+const CACHE='key-collective-canonical-6b4-v21';
+const APP_SHELL=['./','./index.html','./tokens.css?v=16.4','./app.css?v=16.4','./app.js?v=16.4','./config.js','./router.js','./store.js','./weather.js','./controllers.js','./pages.js','./news.js','./sprint3.js','./sprint4.js','./sprint5.js','./sprint6a.js','./sprint6b.js','./sprint6b1.js','./sprint6b1final.js','./sprint6b2.js','./sprint6b3.js','./sprint6b4.js','./memo-db.js','./photo-db.js','./logo.png','./profile.jpg','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png','./icons/apple-touch-icon.png'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(APP_SHELL)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
 self.addEventListener('message',event=>{if(event.data?.type==='SKIP_WAITING')self.skipWaiting()});
