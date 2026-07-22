@@ -1,88 +1,25 @@
-const CACHE='key-collective-sprint-6b1-interaction-v19';
-const APP_SHELL=[
-  './',
-  './index.html',
-  './tokens.css?v=16.2',
-  './app.css?v=16.2',
-  './app.js?v=16.2',
-  './config.js',
-  './router.js',
-  './store.js',
-  './weather.js',
-  './controllers.js',
-  './pages.js',
-  './news.js',
-  './sprint3.js',
-  './sprint4.js',
-  './sprint5.js',
-  './sprint6a.js',
-  './sprint6b.js',
-  './sprint6b1.js',
-  './sprint6b1final.js',
-  './sprint6b2.js',
-  './memo-db.js',
-  './photo-db.js',
-  './logo.png',
-  './profile.jpg',
-  './manifest.webmanifest',
-  './icons/icon-192.png',
-  './icons/icon-512.png',
-  './icons/apple-touch-icon.png'
-];
-
-self.addEventListener('install',event=>{
-  event.waitUntil(
-    caches.open(CACHE)
-      .then(cache=>cache.addAll(APP_SHELL))
-      .then(()=>self.skipWaiting())
-  );
-});
-
-self.addEventListener('activate',event=>{
-  event.waitUntil(
-    caches.keys()
-      .then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key))))
-      .then(()=>self.clients.claim())
-  );
-});
-
-self.addEventListener('message',event=>{
-  if(event.data?.type==='SKIP_WAITING') self.skipWaiting();
-});
-
+const CACHE='key-collective-canonical-6b3-v20';
+const APP_SHELL=['./','./index.html','./tokens.css?v=16.3','./app.css?v=16.3','./app.js?v=16.3','./config.js','./router.js','./store.js','./weather.js','./controllers.js','./pages.js','./news.js','./sprint3.js','./sprint4.js','./sprint5.js','./sprint6a.js','./sprint6b.js','./sprint6b1.js','./sprint6b1final.js','./sprint6b2.js','./sprint6b3.js','./memo-db.js','./photo-db.js','./logo.png','./profile.jpg','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png','./icons/apple-touch-icon.png'];
+self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(APP_SHELL)).then(()=>self.skipWaiting())));
+self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim())));
+self.addEventListener('message',event=>{if(event.data?.type==='SKIP_WAITING')self.skipWaiting()});
 self.addEventListener('fetch',event=>{
   const request=event.request;
-  if(request.method!=='GET') return;
-
+  if(request.method!=='GET')return;
   const url=new URL(request.url);
-
-  // Never intercept Google authorization, APIs, news, weather, or other external services.
-  if(url.origin!==self.location.origin) return;
-
+  if(url.origin!==self.location.origin)return;
   if(request.mode==='navigate'){
-    event.respondWith(
-      fetch(request)
-        .then(response=>{
-          const copy=response.clone();
-          caches.open(CACHE).then(cache=>cache.put('./index.html',copy));
-          return response;
-        })
-        .catch(()=>caches.match('./index.html'))
-    );
+    event.respondWith(fetch(request,{cache:'no-store'}).then(response=>{
+      if(response.ok)caches.open(CACHE).then(cache=>cache.put('./index.html',response.clone()));
+      return response;
+    }).catch(()=>caches.match('./index.html')));
     return;
   }
-
-  // Local app assets: use cached copy immediately, while refreshing it in the background.
-  event.respondWith(
-    caches.match(request).then(cached=>{
-      const network=fetch(request).then(response=>{
-        if(response && response.ok){
-          const copy=response.clone();
-          caches.open(CACHE).then(cache=>cache.put(request,copy));
-        }
-        return response;
-      }).catch(()=>cached);
-      return cached || network;
-    })
-  );
+  event.respondWith(caches.match(request).then(cached=>{
+    const refresh=fetch(request,{cache:'no-store'}).then(response=>{
+      if(response.ok)caches.open(CACHE).then(cache=>cache.put(request,response.clone()));
+      return response;
+    }).catch(()=>cached);
+    return cached||refresh;
+  }));
 });
