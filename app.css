@@ -314,3 +314,138 @@ html[data-palette-mode="light"] .page label{color:var(--ink)}
 .kc-install-guidance div{display:grid;gap:3px}.kc-install-guidance small{color:#d7d0c3}.kc-install-guidance button{border:0;background:transparent;color:#fff;font-size:24px}
 @media(max-width:640px){.diagnostic-grid{grid-template-columns:1fr}.kc-build-status{margin:10px;width:calc(100% - 20px)}}
 
+
+
+/* Sprint 6B.5 stabilization */
+html[data-foreground-mode="light-on-dark"]{
+  --kc-surface-text:#fff8e8;
+  --kc-muted-text:#d8d0c3;
+  --kc-input-bg:rgba(8,12,18,.72);
+  --kc-input-border:rgba(255,244,215,.28);
+}
+html[data-foreground-mode="dark-on-light"]{
+  --kc-surface-text:#191816;
+  --kc-muted-text:#5f5a52;
+  --kc-input-bg:rgba(255,255,255,.82);
+  --kc-input-border:rgba(40,36,30,.22);
+}
+html[data-foreground-mode] body,
+html[data-foreground-mode] .page,
+html[data-foreground-mode] .sidebar,
+html[data-foreground-mode] .topbar,
+html[data-foreground-mode] .card,
+html[data-foreground-mode] dialog,
+html[data-foreground-mode] .module,
+html[data-foreground-mode] .entry,
+html[data-foreground-mode] .status,
+html[data-foreground-mode] .prompt{
+  color:var(--kc-surface-text) !important;
+}
+html[data-foreground-mode] h1,
+html[data-foreground-mode] h2,
+html[data-foreground-mode] h3,
+html[data-foreground-mode] h4,
+html[data-foreground-mode] h5,
+html[data-foreground-mode] h6,
+html[data-foreground-mode] p,
+html[data-foreground-mode] span,
+html[data-foreground-mode] b,
+html[data-foreground-mode] strong,
+html[data-foreground-mode] label,
+html[data-foreground-mode] li,
+html[data-foreground-mode] td,
+html[data-foreground-mode] th,
+html[data-foreground-mode] legend{
+  color:inherit;
+}
+html[data-foreground-mode] small,
+html[data-foreground-mode] .muted,
+html[data-foreground-mode] .sub,
+html[data-foreground-mode] .mini{
+  color:var(--kc-muted-text) !important;
+}
+html[data-foreground-mode] input,
+html[data-foreground-mode] textarea,
+html[data-foreground-mode] select{
+  color:var(--kc-surface-text) !important;
+  background:var(--kc-input-bg) !important;
+  border-color:var(--kc-input-border) !important;
+  -webkit-text-fill-color:var(--kc-surface-text);
+}
+html[data-foreground-mode] input::placeholder,
+html[data-foreground-mode] textarea::placeholder{
+  color:var(--kc-muted-text) !important;
+  opacity:1;
+}
+html[data-foreground-mode] .btn,
+html[data-foreground-mode] button,
+html[data-foreground-mode] a{
+  text-decoration-color:currentColor;
+}
+html[data-foreground-mode="light-on-dark"] .btn:not(.ghost):not(.secondary){
+  color:#17140e !important;
+}
+html[data-foreground-mode="dark-on-light"] .btn:not(.ghost):not(.secondary){
+  color:#17140e !important;
+}
+html[data-foreground-mode] .btn.ghost,
+html[data-foreground-mode] .btn.secondary,
+html[data-foreground-mode] .icon-button,
+html[data-foreground-mode] .calendar-day,
+html[data-foreground-mode] .agenda-choice{
+  color:var(--kc-surface-text) !important;
+}
+.frosted-day-dialog::backdrop,
+#agendaImport6B5::backdrop,
+#agendaExport6B5::backdrop{
+  background:rgba(5,8,13,.52);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+}
+.frosted-day-dialog .agenda-modal,
+#agendaImport6B5 .agenda-modal,
+#agendaExport6B5 .agenda-modal{
+  background:color-mix(in srgb,var(--paper) 86%,transparent);
+  border:1px solid color-mix(in srgb,var(--gold) 30%,var(--line));
+  box-shadow:0 28px 90px rgba(0,0,0,.32);
+  backdrop-filter:blur(24px) saturate(135%);
+  -webkit-backdrop-filter:blur(24px) saturate(135%);
+}
+.agenda-choice-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+  margin-top:16px;
+}
+.agenda-choice{
+  min-height:150px;
+  display:grid;
+  align-content:center;
+  justify-items:start;
+  gap:7px;
+  padding:18px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:var(--paper2);
+  text-align:left;
+}
+.agenda-choice>span{font-size:28px}
+.agenda-choice small{line-height:1.45}
+.wellness-essential-grid{align-items:stretch}
+.wellness-water-card .metric{margin:8px 0 10px}
+.wellness-water-bar{margin-bottom:16px}
+.calendar-day{touch-action:manipulation;cursor:pointer}
+.calendar-day:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.hard-tile.complete,
+.hard-tile.gold-flipped{
+  border-color:#d8b85b !important;
+  background:linear-gradient(145deg,#f4dc8c,#9d7526) !important;
+  color:#17140e !important;
+}
+.hard-tile.complete *,
+.hard-tile.gold-flipped *{color:#17140e !important}
+@media(max-width:720px){
+  .agenda-choice-grid{grid-template-columns:1fr}
+  .agenda-choice{min-height:112px}
+}
+

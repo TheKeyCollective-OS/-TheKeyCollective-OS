@@ -12,14 +12,16 @@ import {enhanceSprint6B1Final} from './sprint6b1final.js';
 import {patchPagesSprint6B2,enhanceSprint6B2} from './sprint6b2.js';
 import {enhanceSprint6B3} from './sprint6b3.js';
 import {enhanceSprint6B4} from './sprint6b4.js';
+import {patchPagesSprint6B5,enhanceSprint6B5} from './sprint6b5.js';
 
 patchPages(pages);
 patchPagesSprint5(pages);
 patchPagesSprint6A(pages);
 patchPagesSprint6B(pages);
 patchPagesSprint6B2(pages);
+patchPagesSprint6B5(pages);
 
-const repairedRoutes=new Set(['dashboard','calendar','goals','intelligence']);
+const repairedRoutes=new Set(['dashboard','calendar','goals','intelligence','wellness']);
 
 function applyDesign(){
   const state=store.get();
@@ -70,9 +72,11 @@ router=createRouter({
       if(id==='dashboard'&&ctl.dashboard)await ctl.dashboard(router);
       if(id==='intelligence'&&ctl.intelligence)ctl.intelligence(router);
       if(id==='calendar'||id==='goals'||id==='intelligence')await enhanceSprint6B2(id,router);
+      if(id==='wellness'){}
     }
     await enhanceSprint6B3(id,router);
     await enhanceSprint6B4(id,router);
+    await enhanceSprint6B5(id,router);
   }
 });
 
