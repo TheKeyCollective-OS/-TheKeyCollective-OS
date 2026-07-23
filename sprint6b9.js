@@ -54,7 +54,7 @@ function renderDeck(){
 }
 function weeklyResults(){
   const now=new Date(),start=new Date(now);start.setDate(now.getDate()-6);const from=localKey(start),to=localKey(now);
-  return academyState().results.filter(x=>String(x.date).slice(0,10)>=from&&String(x.date).slice(0,10)<=to);
+  return academyState().results.filter(x=>{const key=localKey(new Date(x.date));return key>=from&&key<=to});
 }
 function progressStats(){
   const week=weeklyResults(),latest=academyState().results[0],avg=week.length?Math.round(week.reduce((n,x)=>n+Number(x.score||0),0)/week.length):0;

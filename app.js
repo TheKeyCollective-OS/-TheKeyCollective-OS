@@ -17,6 +17,7 @@ import {enhanceSprint6B6} from './sprint6b6.js';
 import {enhanceSprint6B7} from './sprint6b7.js';
 import {patchPagesSprint6B8,enhanceSprint6B8} from './sprint6b8.js';
 import {patchPagesSprint6B9,enhanceSprint6B9} from './sprint6b9.js';
+import {patchPagesSprint6B10,enhanceSprint6B10} from './sprint6b10.js';
 
 patchPages(pages);
 patchPagesSprint5(pages);
@@ -26,6 +27,7 @@ patchPagesSprint6B2(pages);
 patchPagesSprint6B5(pages);
 patchPagesSprint6B8(pages);
 patchPagesSprint6B9(pages);
+patchPagesSprint6B10(pages);
 
 const repairedRoutes=new Set(['dashboard','calendar','goals','intelligence','wellness','career']);
 
@@ -87,6 +89,7 @@ router=createRouter({
     await enhanceSprint6B7(id,router);
     await enhanceSprint6B8(id,router);
     await enhanceSprint6B9(id,router);
+    await enhanceSprint6B10(id,router);
   }
 });
 
