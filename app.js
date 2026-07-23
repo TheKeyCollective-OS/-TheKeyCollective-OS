@@ -14,6 +14,8 @@ import {enhanceSprint6B3} from './sprint6b3.js';
 import {enhanceSprint6B4} from './sprint6b4.js';
 import {patchPagesSprint6B5,enhanceSprint6B5} from './sprint6b5.js';
 import {enhanceSprint6B6} from './sprint6b6.js';
+import {enhanceSprint6B7} from './sprint6b7.js';
+import {patchPagesSprint6B8,enhanceSprint6B8} from './sprint6b8.js';
 
 patchPages(pages);
 patchPagesSprint5(pages);
@@ -21,6 +23,7 @@ patchPagesSprint6A(pages);
 patchPagesSprint6B(pages);
 patchPagesSprint6B2(pages);
 patchPagesSprint6B5(pages);
+patchPagesSprint6B8(pages);
 
 const repairedRoutes=new Set(['dashboard','calendar','goals','intelligence','wellness']);
 
@@ -79,6 +82,8 @@ router=createRouter({
     await enhanceSprint6B4(id,router);
     await enhanceSprint6B5(id,router);
     await enhanceSprint6B6(id,router);
+    await enhanceSprint6B7(id,router);
+    await enhanceSprint6B8(id,router);
   }
 });
 
@@ -112,7 +117,7 @@ if('serviceWorker' in navigator){
     reloading=true;
     location.reload();
   });
-  navigator.serviceWorker.register('./sw.js',{updateViaCache:'none'}).then(registration=>{
+  navigator.serviceWorker.register('./sw.js',{scope:'./',updateViaCache:'none'}).then(registration=>{
     const activateWaiting=()=>{if(registration.waiting)registration.waiting.postMessage({type:'SKIP_WAITING'})};
     activateWaiting();
     registration.addEventListener('updatefound',()=>{

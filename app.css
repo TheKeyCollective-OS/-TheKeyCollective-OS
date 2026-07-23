@@ -761,3 +761,50 @@ html[data-theme="noir"]{
 
 /* Wellness is approved and intentionally untouched by 6B.7. */
 
+
+
+/* Sprint 6B.8 — final 6B closure */
+.frosted-day-dialog::backdrop{
+  background:rgba(5,8,14,.58);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+}
+.frosted-day-dialog .agenda-modal{
+  background:color-mix(in srgb,var(--paper) 88%,transparent);
+  border:1px solid color-mix(in srgb,var(--gold) 34%,var(--line));
+  box-shadow:0 30px 100px rgba(0,0,0,.38);
+  backdrop-filter:blur(26px) saturate(140%);
+  -webkit-backdrop-filter:blur(26px) saturate(140%);
+}
+.bill-tracking-toolbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin:16px 0;
+  padding:12px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:var(--paper2);
+}
+.bill-tracking-toolbar>div:first-child{display:grid;gap:3px}
+.bill-paid-check{
+  min-width:92px;
+  display:grid;
+  justify-items:center;
+  gap:5px;
+  padding:10px;
+  border-radius:14px;
+  background:var(--paper2);
+}
+.bill-paid-check input{width:22px;height:22px}
+.bill-row.paid{opacity:.78}
+.bill-row.paid .bill-info strong{text-decoration:line-through}
+#personalHighlights6B8,#dashboardInsights6B8{display:grid;gap:9px}
+#dashboardInsights6B8 .brief-line{padding:8px 0}
+@media(max-width:640px){
+  .bill-tracking-toolbar{align-items:stretch;flex-direction:column}
+  .bill-tracking-toolbar .segmented{width:100%}
+  .bill-tracking-toolbar .segmented button{flex:1}
+}
+
