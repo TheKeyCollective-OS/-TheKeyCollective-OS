@@ -16,6 +16,7 @@ import {patchPagesSprint6B5,enhanceSprint6B5} from './sprint6b5.js';
 import {enhanceSprint6B6} from './sprint6b6.js';
 import {enhanceSprint6B7} from './sprint6b7.js';
 import {patchPagesSprint6B8,enhanceSprint6B8} from './sprint6b8.js';
+import {patchPagesSprint6B9,enhanceSprint6B9} from './sprint6b9.js';
 
 patchPages(pages);
 patchPagesSprint5(pages);
@@ -24,8 +25,9 @@ patchPagesSprint6B(pages);
 patchPagesSprint6B2(pages);
 patchPagesSprint6B5(pages);
 patchPagesSprint6B8(pages);
+patchPagesSprint6B9(pages);
 
-const repairedRoutes=new Set(['dashboard','calendar','goals','intelligence','wellness']);
+const repairedRoutes=new Set(['dashboard','calendar','goals','intelligence','wellness','career']);
 
 function applyDesign(){
   const state=store.get();
@@ -84,6 +86,7 @@ router=createRouter({
     await enhanceSprint6B6(id,router);
     await enhanceSprint6B7(id,router);
     await enhanceSprint6B8(id,router);
+    await enhanceSprint6B9(id,router);
   }
 });
 

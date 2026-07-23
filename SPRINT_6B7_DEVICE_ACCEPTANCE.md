@@ -2,7 +2,7 @@
 
 ## Noir retirement
 1. Open Design + Data.
-2. Confirm Noir Gala is not listed.
+2. Confirm retired legacy theme is not listed.
 3. Confirm Midnight Noir remains available.
 4. When upgrading from a saved Noir selection, confirm the app opens in Midnight Noir.
 

@@ -16,7 +16,7 @@ This release is based on the user-tested Sprint 6B.1 ZIP and focuses on reliabil
 - Morning Brief Top Three edits in place without redirecting.
 - EOS and MyFitnessPal reference cards in Wellness.
 - Financial Studio luxury emerald depth treatment without changing its structure.
-- Noir Gala, Sapphire Executive, Emerald, and Royal Ivory contrast rules reinforced.
+- retired legacy theme, Sapphire Executive, Emerald, and Royal Ivory contrast rules reinforced.
 - Growth Studio intentionally unchanged.
 
 ## Required deployment configuration

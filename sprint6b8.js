@@ -14,7 +14,7 @@ function migrateNoir(){
   if(store.get().theme==='noir')store.set({theme:'midnight'});
   document.documentElement.dataset.theme=document.documentElement.dataset.theme==='noir'?'midnight':document.documentElement.dataset.theme;
   all('[data-theme-choice="noir"],[data-family="noir"],.theme-noir').forEach(el=>el.remove());
-  all('.theme-card').forEach(card=>{if(/Noir Gala/i.test(card.textContent))card.remove()});
+  all('.theme-card').forEach(card=>{if(/retired legacy theme/i.test(card.textContent))card.remove()});
 }
 
 function agendaPage(){

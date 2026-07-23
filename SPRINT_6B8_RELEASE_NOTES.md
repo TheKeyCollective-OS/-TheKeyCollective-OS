@@ -1,7 +1,7 @@
 # Sprint 6B.8 — Final Sprint 6B Closure
 
 ## Design + Data
-- Noir Gala is removed from active UI code.
+- retired legacy theme is removed from active UI code.
 - Any saved Noir selection migrates to Midnight Noir.
 - Sapphire Executive remains unchanged.
 

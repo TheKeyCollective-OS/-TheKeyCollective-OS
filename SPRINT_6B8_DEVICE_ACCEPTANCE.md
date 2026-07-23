@@ -23,7 +23,7 @@
 5. Confirm Financial Watch, Smart Signals, and Global Search still work.
 
 ## Themes
-1. Confirm Noir Gala is absent.
+1. Confirm retired legacy theme is absent.
 2. Confirm saved Noir state opens as Midnight Noir.
 3. Confirm Sapphire Executive remains unchanged.
 

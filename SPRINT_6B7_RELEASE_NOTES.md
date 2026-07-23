@@ -1,7 +1,7 @@
 # Sprint 6B.7 — Interaction and Contrast Closure
 
 ## Theme retirement
-- Noir Gala has been removed from the Design + Data gallery.
+- retired legacy theme has been removed from the Design + Data gallery.
 - Existing `noir` state is migrated automatically to Midnight Noir.
 - Midnight Noir is the official dark replacement.
 - Legacy Noir styling is inert and exists only as a brief migration fallback.

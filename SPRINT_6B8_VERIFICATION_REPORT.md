@@ -7,7 +7,7 @@
 
 ### Pass 2 — Scope and regression contracts
 27 checks passed, covering:
-- Noir Gala removal and migration to Midnight Noir
+- retired legacy theme removal and migration to Midnight Noir
 - self-contained Agenda interactions
 - Agenda save, edit, clear, day details, and persistence
 - Financial Studio paid tracking, paid date, filters, and paid summary

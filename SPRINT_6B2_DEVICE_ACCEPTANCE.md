@@ -32,4 +32,4 @@ Deploy this candidate to GitHub Pages. Remove the previous home-screen icon, the
 - Choose Stay here and confirm the OS remains open.
 
 ## Themes
-Test Noir Gala, Sapphire Executive, Royal Ivory, and Sanctuary. Confirm headings, body text, labels, buttons, inputs, and placeholders remain readable.
+Test retired legacy theme, Sapphire Executive, Royal Ivory, and Sanctuary. Confirm headings, body text, labels, buttons, inputs, and placeholders remain readable.

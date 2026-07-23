@@ -2,8 +2,8 @@
 import {store} from './store.js';
 import {getPhotos,putPhoto} from './photo-db.js';
 
-const BUILD='Sprint 6B.7';
-const BUILD_ID='6b7-v24';
+const BUILD='Sprint 6B.9';
+const BUILD_ID='6b9-v26';
 const $=s=>document.querySelector(s);
 const all=s=>[...document.querySelectorAll(s)];
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));

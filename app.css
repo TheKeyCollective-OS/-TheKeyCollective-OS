@@ -664,7 +664,7 @@ html[data-theme="sapphire"] .design-data-6b6{
 
 /* Sprint 6B.7 — interaction and contrast closure */
 
-/* Noir Gala is retired. A legacy noir attribute receives Midnight Noir tokens
+/* retired legacy theme is retired. A legacy noir attribute receives Midnight Noir tokens
    only long enough for state migration to complete. */
 html[data-theme="noir"]{
   --paper:#111722;
@@ -806,5 +806,106 @@ html[data-theme="noir"]{
   .bill-tracking-toolbar{align-items:stretch;flex-direction:column}
   .bill-tracking-toolbar .segmented{width:100%}
   .bill-tracking-toolbar .segmented button{flex:1}
+}
+
+
+
+/* Sprint 6B.9 — Payments Academy and command-center refinement */
+.academy-luxe{display:grid;gap:18px}
+.academy-head{align-items:flex-end}
+.academy-hero{
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:24px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 88% 12%,color-mix(in srgb,var(--gold) 26%,transparent),transparent 34%),
+    linear-gradient(145deg,color-mix(in srgb,var(--paper) 92%,transparent),var(--paper2));
+}
+.academy-orb,.academy-result-orb{
+  width:132px;height:132px;border-radius:50%;
+  display:grid;place-content:center;text-align:center;
+  border:1px solid color-mix(in srgb,var(--gold) 44%,var(--line));
+  background:radial-gradient(circle at 35% 25%,color-mix(in srgb,var(--gold) 34%,white),color-mix(in srgb,var(--paper2) 88%,transparent));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.32),0 20px 50px rgba(0,0,0,.14);
+}
+.academy-orb strong,.academy-result-orb{font-size:34px;font-family:var(--serif)}
+.academy-orb span{font-size:12px;max-width:82px}
+.academy-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(280px,.75fr);gap:18px}
+.academy-search-row{display:grid;grid-template-columns:1fr 220px;gap:10px;margin-bottom:14px}
+.academy-deck{min-height:365px;outline:none;touch-action:pan-y}
+.glossary-card{
+  position:relative;min-height:365px;padding:34px;border-radius:28px;overflow:hidden;
+  display:grid;align-content:center;gap:16px;
+  border:1px solid color-mix(in srgb,var(--gold) 36%,var(--line));
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.09),transparent 42%),
+    radial-gradient(circle at 88% 10%,color-mix(in srgb,var(--gold) 24%,transparent),transparent 30%),
+    var(--paper2);
+  box-shadow:0 24px 70px color-mix(in srgb,var(--ink) 14%,transparent);
+}
+.glossary-card h2{font-size:clamp(32px,5vw,54px);line-height:1.02;margin:0}
+.glossary-card p{font-size:18px;line-height:1.65;max-width:760px;margin:0}
+.glossary-shine{position:absolute;inset:-40% 58% auto -18%;height:220%;transform:rotate(18deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);pointer-events:none}
+.glossary-footer{display:flex;justify-content:space-between;gap:16px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:12px}
+.academy-controls{display:flex;justify-content:space-between;gap:10px;margin-top:14px}
+.academy-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+.academy-stat-grid>div,.paid-metric-grid>div,.academy-summary-lines>div{
+  padding:14px;border-radius:16px;border:1px solid var(--line);background:var(--paper2);display:grid;gap:5px
+}
+.academy-stat-grid span,.paid-metric-grid span,.academy-summary-lines span{font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+.academy-stat-grid strong,.paid-metric-grid b,.academy-summary-lines b{font-size:22px}
+.academy-signal{padding:14px 0;border-top:1px solid var(--line)}
+.academy-signal p{margin:5px 0 0}
+.glossary-category{padding:16px 0;border-top:1px solid var(--line)}
+.glossary-category:first-child{border-top:0}
+.glossary-category h4{margin:0 0 10px}
+.glossary-row{width:100%;text-align:left;padding:14px 0;border:0;border-top:1px solid color-mix(in srgb,var(--line) 70%,transparent);background:transparent;display:grid;gap:4px}
+.glossary-row span{font-weight:800}
+.glossary-row small{line-height:1.45}
+.academy-dialog::backdrop{background:rgba(5,8,14,.62);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.academy-quiz-modal{width:min(720px,calc(100vw - 28px));max-height:88vh;overflow:auto}
+.quiz-prompt{font-size:20px;line-height:1.55;padding:18px;border-radius:18px;background:var(--paper2);border:1px solid var(--line);margin:14px 0}
+.quiz-options{display:grid;gap:10px}
+.quiz-option{text-align:left;padding:15px;border-radius:16px;border:1px solid var(--line);background:var(--paper2)}
+.quiz-option.correct{border-color:#4b9c6a;background:color-mix(in srgb,#4b9c6a 18%,var(--paper2))}
+.quiz-option.incorrect{border-color:#b45b5b;background:color-mix(in srgb,#b45b5b 16%,var(--paper2))}
+.quiz-feedback{margin-top:16px;padding:16px;border-radius:18px;border:1px solid var(--line)}
+.academy-result-orb{margin:18px auto}
+.academy-summary-lines{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}
+.paid-command{margin:16px 0}
+.paid-metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}
+.paid-bill-row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;padding:13px 0;border-top:1px solid var(--line)}
+.paid-bill-row input{width:24px;height:24px}
+.paid-bill-row div{display:grid;gap:3px}
+.agenda-final-dialog::backdrop{background:rgba(5,8,14,.6);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.saved-confirmation{border-color:color-mix(in srgb,#4b9c6a 44%,var(--line));background:color-mix(in srgb,#4b9c6a 13%,var(--paper2))}
+html[data-theme="sapphire"] .sapphire-readable-6b9,
+html[data-theme="sapphire"] .sapphire-readable-6b9 .card,
+html[data-theme="sapphire"] .sapphire-readable-6b9 .status,
+html[data-theme="sapphire"] .sapphire-readable-6b9 .prompt{
+  color:#fff8e8 !important;
+}
+html[data-theme="sapphire"] .sapphire-readable-6b9 .muted,
+html[data-theme="sapphire"] .sapphire-readable-6b9 .sub,
+html[data-theme="sapphire"] .sapphire-readable-6b9 small{
+  color:#ded6c8 !important;
+  -webkit-text-fill-color:#ded6c8 !important;
+}
+html[data-theme="sapphire"] .sapphire-readable-6b9 input,
+html[data-theme="sapphire"] .sapphire-readable-6b9 textarea,
+html[data-theme="sapphire"] .sapphire-readable-6b9 select{
+  color:#fff8e8 !important;
+  -webkit-text-fill-color:#fff8e8 !important;
+}
+@media(max-width:760px){
+  .academy-hero,.academy-grid{grid-template-columns:1fr}
+  .academy-orb{width:108px;height:108px}
+  .academy-search-row{grid-template-columns:1fr}
+  .academy-controls{display:grid;grid-template-columns:1fr 1fr}
+  .academy-controls .btn:last-child{grid-column:1/-1}
+  .academy-summary-lines,.paid-metric-grid{grid-template-columns:1fr 1fr}
+  .glossary-card{min-height:390px;padding:26px}
 }
 

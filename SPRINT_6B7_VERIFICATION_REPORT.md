@@ -7,7 +7,7 @@
 
 ### Pass 2 — Interaction, migration, contrast, and regression contracts
 28 checks passed, covering:
-- Noir Gala removal
+- retired legacy theme removal
 - Noir-to-Midnight migration
 - capture-owned Agenda date details
 - bill and event detail rendering

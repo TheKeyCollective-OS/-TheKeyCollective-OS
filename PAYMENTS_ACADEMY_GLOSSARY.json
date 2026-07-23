@@ -1,0 +1,467 @@
+[
+  {
+    "term": "Acquiring bank",
+    "category": "Participants",
+    "definition": "The financial institution that enables a merchant to accept card payments and receives transaction information for settlement."
+  },
+  {
+    "term": "Issuing bank",
+    "category": "Participants",
+    "definition": "The cardholder’s bank or financial institution that issues the payment card and approves or declines transactions."
+  },
+  {
+    "term": "Merchant",
+    "category": "Participants",
+    "definition": "A business or organization that accepts payment in exchange for goods or services."
+  },
+  {
+    "term": "Cardholder",
+    "category": "Participants",
+    "definition": "The person or organization authorized to use a payment card or account."
+  },
+  {
+    "term": "Payment processor",
+    "category": "Participants",
+    "definition": "A provider that transmits transaction data among the merchant, acquirer, networks, and issuer."
+  },
+  {
+    "term": "Payment gateway",
+    "category": "Participants",
+    "definition": "Technology that securely captures and transmits payment information from a checkout to the processor."
+  },
+  {
+    "term": "Merchant acquirer",
+    "category": "Participants",
+    "definition": "An acquiring institution or provider responsible for merchant acceptance, settlement, and related risk."
+  },
+  {
+    "term": "Card network",
+    "category": "Participants",
+    "definition": "A network such as Visa or Mastercard that establishes operating rules and routes card transactions."
+  },
+  {
+    "term": "Authorization",
+    "category": "Transaction Lifecycle",
+    "definition": "The issuer’s decision to approve or decline a transaction and reserve available funds or credit."
+  },
+  {
+    "term": "Authentication",
+    "category": "Transaction Lifecycle",
+    "definition": "The process of confirming that a person, device, or credential is legitimate."
+  },
+  {
+    "term": "Clearing",
+    "category": "Transaction Lifecycle",
+    "definition": "The exchange and calculation of finalized transaction data before settlement."
+  },
+  {
+    "term": "Settlement",
+    "category": "Transaction Lifecycle",
+    "definition": "The transfer of funds among participating institutions after clearing."
+  },
+  {
+    "term": "Capture",
+    "category": "Transaction Lifecycle",
+    "definition": "The merchant’s instruction to finalize an authorized payment for clearing and settlement."
+  },
+  {
+    "term": "Void",
+    "category": "Transaction Lifecycle",
+    "definition": "A cancellation performed before a transaction completes settlement."
+  },
+  {
+    "term": "Refund",
+    "category": "Transaction Lifecycle",
+    "definition": "A merchant-initiated return of funds after a transaction has been completed."
+  },
+  {
+    "term": "Reversal",
+    "category": "Transaction Lifecycle",
+    "definition": "A message that releases or cancels an authorization, often after an error or abandoned transaction."
+  },
+  {
+    "term": "Chargeback",
+    "category": "Disputes & Risk",
+    "definition": "A transaction reversal initiated through the issuer after a cardholder dispute."
+  },
+  {
+    "term": "Representment",
+    "category": "Disputes & Risk",
+    "definition": "The merchant or acquirer’s response contesting a chargeback with supporting evidence."
+  },
+  {
+    "term": "Retrieval request",
+    "category": "Disputes & Risk",
+    "definition": "A request for transaction documentation or information, sometimes preceding a chargeback."
+  },
+  {
+    "term": "Interchange",
+    "category": "Pricing",
+    "definition": "A fee generally paid by the acquirer to the issuer for a card transaction."
+  },
+  {
+    "term": "Assessment fee",
+    "category": "Pricing",
+    "definition": "A fee charged by a card network for processing transactions on its network."
+  },
+  {
+    "term": "Merchant discount rate",
+    "category": "Pricing",
+    "definition": "The total percentage or amount deducted from merchant sales for payment acceptance services."
+  },
+  {
+    "term": "Basis points",
+    "category": "Pricing",
+    "definition": "A pricing unit equal to one one-hundredth of one percentage point; 100 basis points equals 1%."
+  },
+  {
+    "term": "Authorization rate",
+    "category": "Performance",
+    "definition": "The percentage of attempted authorizations that receive approval."
+  },
+  {
+    "term": "Approval rate",
+    "category": "Performance",
+    "definition": "The percentage of submitted transactions approved, often used interchangeably with authorization rate depending on context."
+  },
+  {
+    "term": "Decline code",
+    "category": "Performance",
+    "definition": "A response value explaining why an issuer or processor declined a transaction."
+  },
+  {
+    "term": "Soft decline",
+    "category": "Performance",
+    "definition": "A decline that may succeed after another attempt or additional authentication."
+  },
+  {
+    "term": "Hard decline",
+    "category": "Performance",
+    "definition": "A decline unlikely to succeed through retry, such as an invalid or closed account."
+  },
+  {
+    "term": "Fraud",
+    "category": "Disputes & Risk",
+    "definition": "Intentional deception designed to obtain money, goods, services, or account access."
+  },
+  {
+    "term": "Friendly fraud",
+    "category": "Disputes & Risk",
+    "definition": "A dispute involving a legitimate cardholder transaction that is later challenged as unauthorized or unsatisfactory."
+  },
+  {
+    "term": "Card-present",
+    "category": "Acceptance",
+    "definition": "A transaction where the card or payment device is physically used at the point of sale."
+  },
+  {
+    "term": "Card-not-present",
+    "category": "Acceptance",
+    "definition": "A transaction completed without the physical card being presented, such as online or phone payments."
+  },
+  {
+    "term": "Tokenization",
+    "category": "Security",
+    "definition": "Replacing sensitive payment data with a non-sensitive token that has limited usefulness if exposed."
+  },
+  {
+    "term": "Network token",
+    "category": "Security",
+    "definition": "A token provisioned and maintained through a card network, often with lifecycle updates and domain controls."
+  },
+  {
+    "term": "PAN",
+    "category": "Security",
+    "definition": "Primary Account Number—the identifying number associated with a card account."
+  },
+  {
+    "term": "BIN or IIN",
+    "category": "Security",
+    "definition": "The leading digits of a card number that identify the issuing institution and card program."
+  },
+  {
+    "term": "CVV",
+    "category": "Security",
+    "definition": "A card verification value used to help confirm possession of card details."
+  },
+  {
+    "term": "AVS",
+    "category": "Security",
+    "definition": "Address Verification Service, which compares billing-address information with issuer records."
+  },
+  {
+    "term": "3-D Secure",
+    "category": "Security",
+    "definition": "An authentication framework that allows issuers to verify cardholders during online purchases."
+  },
+  {
+    "term": "Recurring payment",
+    "category": "Recurring Commerce",
+    "definition": "A payment scheduled to occur repeatedly under an agreement."
+  },
+  {
+    "term": "Subscription billing",
+    "category": "Recurring Commerce",
+    "definition": "A model that charges customers on a repeating schedule for continued access to a product or service."
+  },
+  {
+    "term": "Credential-on-file",
+    "category": "Recurring Commerce",
+    "definition": "A payment credential stored with permission for future transactions."
+  },
+  {
+    "term": "Merchant-initiated transaction",
+    "category": "Recurring Commerce",
+    "definition": "A payment initiated by a merchant under a prior agreement without the cardholder actively participating at that moment."
+  },
+  {
+    "term": "Cardholder-initiated transaction",
+    "category": "Recurring Commerce",
+    "definition": "A payment initiated while the cardholder actively participates in the transaction."
+  },
+  {
+    "term": "Pass-through pricing",
+    "category": "Pricing",
+    "definition": "A model that passes underlying network and interchange costs through to the merchant with separate provider markup."
+  },
+  {
+    "term": "Merchant pass-through",
+    "category": "Pricing",
+    "definition": "A cost or fee charged through to the merchant rather than absorbed by the provider."
+  },
+  {
+    "term": "Absorb",
+    "category": "Pricing",
+    "definition": "To cover a fee or cost internally instead of passing it to the merchant or customer."
+  },
+  {
+    "term": "Blended pricing",
+    "category": "Pricing",
+    "definition": "A combined rate that bundles multiple payment costs into one price."
+  },
+  {
+    "term": "Interchange-plus",
+    "category": "Pricing",
+    "definition": "Pricing that charges actual interchange and network costs plus a separate processor markup."
+  },
+  {
+    "term": "Flat-rate pricing",
+    "category": "Pricing",
+    "definition": "A single consistent rate applied to eligible transactions regardless of the underlying interchange category."
+  },
+  {
+    "term": "ISO",
+    "category": "Participants",
+    "definition": "Independent Sales Organization—a company that markets payment services, often under sponsorship from an acquiring bank."
+  },
+  {
+    "term": "Independent sales organization",
+    "category": "Participants",
+    "definition": "A registered organization that sells or supports merchant acquiring services on behalf of payment partners."
+  },
+  {
+    "term": "Payment facilitator",
+    "category": "Participants",
+    "definition": "A provider that onboards sub-merchants under its master merchant relationship."
+  },
+  {
+    "term": "Sub-merchant",
+    "category": "Participants",
+    "definition": "A seller boarded under a payment facilitator rather than holding a direct traditional merchant account."
+  },
+  {
+    "term": "Sponsor bank",
+    "category": "Participants",
+    "definition": "A regulated bank that sponsors payment providers or programs into networks and provides oversight."
+  },
+  {
+    "term": "Reserve",
+    "category": "Risk & Funding",
+    "definition": "Funds held to cover potential losses, disputes, refunds, or other financial exposure."
+  },
+  {
+    "term": "Rolling reserve",
+    "category": "Risk & Funding",
+    "definition": "A percentage of merchant funds withheld for a defined period on an ongoing basis."
+  },
+  {
+    "term": "Funding delay",
+    "category": "Risk & Funding",
+    "definition": "The elapsed time between transaction processing and merchant receipt of settled funds."
+  },
+  {
+    "term": "Batch",
+    "category": "Operations",
+    "definition": "A group of transactions submitted together for processing, clearing, or settlement."
+  },
+  {
+    "term": "Reconciliation",
+    "category": "Operations",
+    "definition": "Matching transaction, fee, settlement, and bank records to identify and resolve differences."
+  },
+  {
+    "term": "Dispute",
+    "category": "Disputes & Risk",
+    "definition": "A cardholder or account-holder challenge to a transaction."
+  },
+  {
+    "term": "Compliance",
+    "category": "Compliance",
+    "definition": "Adherence to laws, regulations, network rules, contracts, and internal controls."
+  },
+  {
+    "term": "PCI DSS",
+    "category": "Compliance",
+    "definition": "Payment Card Industry Data Security Standard—requirements for protecting cardholder data."
+  },
+  {
+    "term": "KYC",
+    "category": "Compliance",
+    "definition": "Know Your Customer—processes used to verify and assess individual customers."
+  },
+  {
+    "term": "KYB",
+    "category": "Compliance",
+    "definition": "Know Your Business—processes used to verify and assess business entities and owners."
+  },
+  {
+    "term": "AML",
+    "category": "Compliance",
+    "definition": "Anti-Money Laundering controls intended to detect and prevent illicit financial activity."
+  },
+  {
+    "term": "ACH",
+    "category": "Payment Rails",
+    "definition": "Automated Clearing House—a U.S. network for batch electronic bank transfers."
+  },
+  {
+    "term": "RTP",
+    "category": "Payment Rails",
+    "definition": "Real-Time Payments, commonly referring to The Clearing House’s instant-payment network in the United States."
+  },
+  {
+    "term": "FedNow",
+    "category": "Payment Rails",
+    "definition": "The Federal Reserve’s instant-payment service for participating U.S. financial institutions."
+  },
+  {
+    "term": "Wire transfer",
+    "category": "Payment Rails",
+    "definition": "A bank-to-bank funds transfer generally designed for direct, final movement of money."
+  },
+  {
+    "term": "Push payment",
+    "category": "Payment Rails",
+    "definition": "A payment where the sender instructs funds to move to a recipient."
+  },
+  {
+    "term": "Pull payment",
+    "category": "Payment Rails",
+    "definition": "A payment where the recipient or merchant initiates collection from the payer’s account with authorization."
+  },
+  {
+    "term": "Debit",
+    "category": "Products",
+    "definition": "A payment product that generally draws from funds in a deposit account."
+  },
+  {
+    "term": "Credit",
+    "category": "Products",
+    "definition": "A payment product that uses a line of credit extended by an issuer."
+  },
+  {
+    "term": "Prepaid",
+    "category": "Products",
+    "definition": "A payment product funded in advance rather than linked directly to deposit funds or revolving credit."
+  },
+  {
+    "term": "Digital wallet",
+    "category": "Acceptance",
+    "definition": "A digital service that stores or represents payment credentials for convenient use."
+  },
+  {
+    "term": "Contactless",
+    "category": "Acceptance",
+    "definition": "A payment interaction completed by tapping or bringing a credential near a compatible reader."
+  },
+  {
+    "term": "NFC",
+    "category": "Acceptance",
+    "definition": "Near Field Communication—the short-range technology commonly used for contactless payments."
+  },
+  {
+    "term": "EMV",
+    "category": "Acceptance",
+    "definition": "Global chip-card specifications that support secure in-person payment transactions."
+  },
+  {
+    "term": "Fallback transaction",
+    "category": "Acceptance",
+    "definition": "A transaction processed using a less-preferred method because the primary chip method could not be completed."
+  },
+  {
+    "term": "Stand-in processing",
+    "category": "Operations",
+    "definition": "A network or processor making an authorization decision when the issuer is unavailable, using predefined rules."
+  },
+  {
+    "term": "Partial authorization",
+    "category": "Authorization",
+    "definition": "An approval for less than the full requested amount, often allowing another tender to cover the remainder."
+  },
+  {
+    "term": "Incremental authorization",
+    "category": "Authorization",
+    "definition": "An additional authorization used when the final amount increases after an initial approval."
+  },
+  {
+    "term": "Split tender",
+    "category": "Acceptance",
+    "definition": "Using more than one payment method to complete a purchase."
+  },
+  {
+    "term": "Account updater",
+    "category": "Recurring Commerce",
+    "definition": "A service that refreshes stored card credentials when accounts are reissued or changed."
+  },
+  {
+    "term": "Dunning",
+    "category": "Recurring Commerce",
+    "definition": "The communications and recovery process used after recurring payments fail."
+  },
+  {
+    "term": "Retry logic",
+    "category": "Recurring Commerce",
+    "definition": "Rules governing when and how failed payment attempts are submitted again."
+  },
+  {
+    "term": "Payment orchestration",
+    "category": "Technology",
+    "definition": "A layer that coordinates multiple processors, payment methods, routing rules, and related services."
+  },
+  {
+    "term": "Routing",
+    "category": "Technology",
+    "definition": "Directing a payment transaction to a selected processor, acquirer, network, or pathway."
+  },
+  {
+    "term": "Smart routing",
+    "category": "Technology",
+    "definition": "Using rules or data to dynamically choose a transaction path intended to improve cost, performance, or resilience."
+  },
+  {
+    "term": "Cross-border transaction",
+    "category": "International",
+    "definition": "A transaction where the merchant and payment account are associated with different countries or regions."
+  },
+  {
+    "term": "Dynamic currency conversion",
+    "category": "International",
+    "definition": "Offering a cardholder the choice to pay in their home currency at the point of sale."
+  },
+  {
+    "term": "Foreign-exchange markup",
+    "category": "International",
+    "definition": "An added cost or margin applied when converting one currency to another."
+  }
+]

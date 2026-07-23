@@ -12,5 +12,5 @@ Upload this build to the root of the corrective branch.
    - In the version containing the desired data, download a continuity backup.
    - Open the other version, tap Sprint 6B.4, and restore that backup.
 8. Confirm Lani photos appear on Dashboard and Lani’s Corner.
-9. Test Noir Gala, Sapphire Executive, Royal Ivory, and Sanctuary on multiple pages.
+9. Test retired legacy theme, Sapphire Executive, Royal Ivory, and Sanctuary on multiple pages.
 10. Tap Refresh current build only when the displayed build is stale. It clears service-worker caches but does not erase OS data.
