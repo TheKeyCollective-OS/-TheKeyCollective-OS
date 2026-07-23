@@ -20,6 +20,8 @@ import {patchPagesSprint6B9,enhanceSprint6B9} from './sprint6b9.js';
 import {patchPagesSprint6B10,enhanceSprint6B10} from './sprint6b10.js';
 import {patchPagesSprint6B11,enhanceSprint6B11} from './sprint6b11.js';
 import {enhanceSprint6B12} from './sprint6b12.js';
+import {patchPagesSprint6B13,enhanceSprint6B13} from './sprint6b13.js';
+import {patchPagesSprint6B13 as patchPagesSprint6B13R2,enhanceSprint6B13 as enhanceSprint6B13R2} from './sprint6b13r2.js';
 
 patchPages(pages);
 patchPagesSprint5(pages);
@@ -31,8 +33,10 @@ patchPagesSprint6B8(pages);
 patchPagesSprint6B9(pages);
 patchPagesSprint6B10(pages);
 patchPagesSprint6B11(pages);
+patchPagesSprint6B13(pages);
+patchPagesSprint6B13R2(pages);
 
-const repairedRoutes=new Set(['dashboard','calendar','goals','intelligence','wellness','career']);
+const repairedRoutes=new Set(['dashboard','calendar','goals','intelligence','wellness','career','money']);
 
 function applyDesign(){
   const state=store.get();
@@ -69,6 +73,15 @@ let router;
 router=createRouter({
   routes,
   onRender:async id=>{
+    if(id==='calendar'){
+      await enhanceSprint6B13R2(id,router);
+      return;
+    }
+    if(id==='money'){
+      if(ctl.money)await ctl.money(router);
+      await enhanceSprint6B13R2(id,router);
+      return;
+    }
     if(!repairedRoutes.has(id)){
       if(sprint3Routes.has(id))enhance(id,router);
       else if(!controllerExcluded.has(id)&&ctl[id])await ctl[id](router);
@@ -95,6 +108,8 @@ router=createRouter({
     await enhanceSprint6B10(id,router);
     await enhanceSprint6B11(id,router);
     await enhanceSprint6B12(id,router);
+    await enhanceSprint6B13(id,router);
+    await enhanceSprint6B13R2(id,router);
   }
 });
 
