@@ -1116,3 +1116,46 @@ html[data-theme="sun"] .sidebar .nav-button{
   .canonical-bill-row-6b13>strong{grid-column:2}
 }
 
+
+
+/* Sprint 6B.14 corrective */
+.agenda-month-picker-6b14{
+  appearance:none;border:1px solid var(--line);cursor:pointer;font:inherit;
+}
+.agenda-month-native-6b14{
+  position:fixed;width:1px;height:1px;opacity:.01;pointer-events:none;left:50%;top:80px;
+}
+.bill-import-preview-6b14{display:grid;gap:10px;max-height:520px;overflow:auto;margin:14px 0;padding-right:4px}
+.bill-import-row-6b14{display:grid;grid-template-columns:32px minmax(180px,2fr) minmax(100px,.7fr) minmax(145px,1fr) minmax(130px,1fr) minmax(115px,.8fr);gap:8px;align-items:center}
+.bill-import-row-6b14 input,.bill-import-row-6b14 select{min-width:0;width:100%;padding:10px;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink)}
+.bill-import-index{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--paper2);font-size:11px;font-weight:800}
+.academy-summary-6b14{grid-template-columns:repeat(4,minmax(0,1fr))}
+:root[data-theme="sapphire"] .agenda-final-6b13 .agenda-calendar-card-6b13,
+:root[data-theme="sapphire"] .agenda-final-6b13 .calendar-day-6b13,
+:root[data-theme="sapphire"] .agenda-final-6b13 .agenda-editor-card-6b13,
+:root[data-theme="sapphire"] .agenda-dialog-6b13 .agenda-modal{
+  background:#f4f7fc !important;color:#172235 !important;
+}
+:root[data-theme="sapphire"] .agenda-final-6b13 .calendar-day-6b13 *,
+:root[data-theme="sapphire"] .agenda-final-6b13 .agenda-calendar-card-6b13 *,
+:root[data-theme="sapphire"] .agenda-final-6b13 .agenda-editor-card-6b13 *,
+:root[data-theme="sapphire"] .agenda-dialog-6b13 .agenda-modal *{
+  color:#172235;
+}
+:root[data-theme="sapphire"] .agenda-final-6b13 input,
+:root[data-theme="sapphire"] .agenda-final-6b13 textarea,
+:root[data-theme="sapphire"] .agenda-dialog-6b13 input,
+:root[data-theme="sapphire"] .agenda-dialog-6b13 textarea{
+  background:#fff !important;color:#172235 !important;border-color:#a9b7ca !important;
+}
+:root[data-theme="sapphire"] .agenda-final-6b13 input::placeholder,
+:root[data-theme="sapphire"] .agenda-final-6b13 textarea::placeholder,
+:root[data-theme="sapphire"] .agenda-dialog-6b13 input::placeholder,
+:root[data-theme="sapphire"] .agenda-dialog-6b13 textarea::placeholder{color:#637087 !important}
+@media(max-width:760px){
+  .bill-import-row-6b14{grid-template-columns:28px 1fr 96px}
+  .bill-import-row-6b14 [data-bill-field="due"],
+  .bill-import-row-6b14 [data-bill-field="category"],
+  .bill-import-row-6b14 [data-bill-field="frequency"]{grid-column:2/-1}
+  .academy-summary-6b14{grid-template-columns:repeat(2,minmax(0,1fr))}
+}

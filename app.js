@@ -22,6 +22,7 @@ import {patchPagesSprint6B11,enhanceSprint6B11} from './sprint6b11.js';
 import {enhanceSprint6B12} from './sprint6b12.js';
 import {patchPagesSprint6B13,enhanceSprint6B13} from './sprint6b13.js';
 import {patchPagesSprint6B13 as patchPagesSprint6B13R2,enhanceSprint6B13 as enhanceSprint6B13R2} from './sprint6b13r2.js';
+import {patchPagesSprint6B13 as patchPagesSprint6B14,enhanceSprint6B13 as enhanceSprint6B14} from './sprint6b14.js';
 
 patchPages(pages);
 patchPagesSprint5(pages);
@@ -35,6 +36,7 @@ patchPagesSprint6B10(pages);
 patchPagesSprint6B11(pages);
 patchPagesSprint6B13(pages);
 patchPagesSprint6B13R2(pages);
+patchPagesSprint6B14(pages);
 
 const repairedRoutes=new Set(['dashboard','calendar','goals','intelligence','wellness','career','money']);
 
@@ -74,12 +76,12 @@ router=createRouter({
   routes,
   onRender:async id=>{
     if(id==='calendar'){
-      await enhanceSprint6B13R2(id,router);
+      await enhanceSprint6B14(id,router);
       return;
     }
     if(id==='money'){
       if(ctl.money)await ctl.money(router);
-      await enhanceSprint6B13R2(id,router);
+      await enhanceSprint6B14(id,router);
       return;
     }
     if(!repairedRoutes.has(id)){
@@ -110,6 +112,7 @@ router=createRouter({
     await enhanceSprint6B12(id,router);
     await enhanceSprint6B13(id,router);
     await enhanceSprint6B13R2(id,router);
+    await enhanceSprint6B14(id,router);
   }
 });
 
