@@ -945,3 +945,89 @@ html[data-theme="sapphire"] .sapphire-readable-6b9 select{
 .academy-review-panel-6b11{margin:18px 0}
 .review-chip-grid{display:flex;flex-wrap:wrap;gap:8px}
 
+
+
+/* Sprint 6B.12 — Financial interaction, shared routine progress, and approved theme refinements */
+.bill-list-6b12{display:grid;margin-top:14px}
+.bill-row-6b12{
+  appearance:none;width:100%;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;
+  text-align:left;padding:15px 0;border:0;border-top:1px solid var(--line);background:transparent;color:var(--ink);
+  cursor:pointer;touch-action:manipulation
+}
+.bill-row-6b12:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.bill-checkbox-6b12{
+  width:28px;height:28px;border-radius:8px;border:2px solid color-mix(in srgb,var(--accent) 72%,var(--line));
+  display:grid;place-items:center;font-weight:900;background:var(--surface);color:white
+}
+.bill-row-6b12.is-paid .bill-checkbox-6b12{background:var(--accent)}
+.bill-row-6b12.is-paid{opacity:.82}
+.bill-row-6b12.is-paid .bill-copy-6b12>b{text-decoration:line-through}
+.bill-copy-6b12{display:grid;gap:4px}
+.bill-row-6b12>strong{white-space:nowrap}
+.sanctuary-progress-6b12{display:grid;gap:12px}
+.routine-summary-number{font-family:var(--serif);font-size:36px;margin:8px 0}
+.sanctuary-summary-6b12 .bar,.sanctuary-progress-6b12 .bar{height:10px;border-radius:99px;overflow:hidden;background:color-mix(in srgb,var(--accent) 14%,var(--surface))}
+.sanctuary-summary-6b12 .bar span,.sanctuary-progress-6b12 .bar span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+
+/* Coral Society — coral-orange with refined teal accents */
+html[data-theme="coral"]{
+  --bg:#fff4ee;
+  --surface:rgba(255,255,255,.9);
+  --ink:#35211d;
+  --muted:#745f59;
+  --accent:#e45f3f;
+  --accent-2:#2b9b93;
+  --line:rgba(53,33,29,.15);
+  --sidebar:#b8422f;
+  --sidebar-ink:#fffaf6;
+}
+html[data-theme="coral"] .bar span,
+html[data-theme="coral"] .segmented button.active,
+html[data-theme="coral"] .theme-card.selected{
+  background-color:var(--accent-2);
+}
+
+/* Amber Studio — brighter luxury orange */
+html[data-theme="amber"]{
+  --bg:#fff6e8;
+  --surface:rgba(255,255,255,.9);
+  --ink:#312119;
+  --muted:#725b4e;
+  --accent:#f27622;
+  --accent-2:#ffb24d;
+  --line:rgba(49,33,25,.15);
+  --sidebar:#a84712;
+  --sidebar-ink:#fffaf2;
+}
+
+/* Sunlit Citron — deep golden yellow, never brown */
+html[data-theme="sun"]{
+  --bg:#fff9cf;
+  --surface:rgba(255,255,248,.92);
+  --ink:#211f17;
+  --muted:#5f5a45;
+  --accent:#e4b400;
+  --accent-2:#ffd84d;
+  --line:rgba(33,31,23,.18);
+  --sidebar:#d5a600;
+  --sidebar-ink:#1f1c12;
+}
+html[data-theme="sun"] body,
+html[data-theme="sun"] .page,
+html[data-theme="sun"] .card,
+html[data-theme="sun"] input,
+html[data-theme="sun"] textarea,
+html[data-theme="sun"] select,
+html[data-theme="sun"] button{
+  color:#211f17;
+}
+html[data-theme="sun"] .sidebar,
+html[data-theme="sun"] .sidebar button,
+html[data-theme="sun"] .sidebar .nav-button{
+  color:#1f1c12;
+}
+@media(max-width:680px){
+  .bill-row-6b12{grid-template-columns:auto 1fr}
+  .bill-row-6b12>strong{grid-column:2}
+}
+
