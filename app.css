@@ -938,3 +938,10 @@ html[data-theme="sapphire"] .sapphire-readable-6b9 select{
   .bill-check-row-6b10>span{grid-column:2}
 }
 
+
+
+/* Sprint 6B.11 — Stability and Navigation Closure */
+.agenda-6b11{display:grid;gap:14px}
+.academy-review-panel-6b11{margin:18px 0}
+.review-chip-grid{display:flex;flex-wrap:wrap;gap:8px}
+

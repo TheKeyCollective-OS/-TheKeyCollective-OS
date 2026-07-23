@@ -18,6 +18,7 @@ import {enhanceSprint6B7} from './sprint6b7.js';
 import {patchPagesSprint6B8,enhanceSprint6B8} from './sprint6b8.js';
 import {patchPagesSprint6B9,enhanceSprint6B9} from './sprint6b9.js';
 import {patchPagesSprint6B10,enhanceSprint6B10} from './sprint6b10.js';
+import {patchPagesSprint6B11,enhanceSprint6B11} from './sprint6b11.js';
 
 patchPages(pages);
 patchPagesSprint5(pages);
@@ -28,6 +29,7 @@ patchPagesSprint6B5(pages);
 patchPagesSprint6B8(pages);
 patchPagesSprint6B9(pages);
 patchPagesSprint6B10(pages);
+patchPagesSprint6B11(pages);
 
 const repairedRoutes=new Set(['dashboard','calendar','goals','intelligence','wellness','career']);
 
@@ -90,6 +92,7 @@ router=createRouter({
     await enhanceSprint6B8(id,router);
     await enhanceSprint6B9(id,router);
     await enhanceSprint6B10(id,router);
+    await enhanceSprint6B11(id,router);
   }
 });
 
@@ -109,7 +112,7 @@ window.addEventListener('kc:state',()=>{
   applyDesign();
   window.dispatchEvent(new CustomEvent('kc:ui-refresh',{detail:{route:router.current()}}));
 });
-router.go('dashboard',false);
+router.go(router.initial,false,{replace:true});
 
 const updateOnline=()=>document.body.classList.toggle('offline',!navigator.onLine);
 addEventListener('online',updateOnline);
