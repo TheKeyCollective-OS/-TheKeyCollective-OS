@@ -23,6 +23,7 @@ import {enhanceSprint6B12} from './sprint6b12.js';
 import {patchPagesSprint6B13,enhanceSprint6B13} from './sprint6b13.js';
 import {patchPagesSprint6B13 as patchPagesSprint6B13R2,enhanceSprint6B13 as enhanceSprint6B13R2} from './sprint6b13r2.js';
 import {patchPagesSprint6B13 as patchPagesSprint6B14,enhanceSprint6B13 as enhanceSprint6B14} from './sprint6b14.js';
+import {enhanceSprint6B15} from './sprint6b15.js';
 
 patchPages(pages);
 patchPagesSprint5(pages);
@@ -82,6 +83,7 @@ router=createRouter({
     if(id==='money'){
       if(ctl.money)await ctl.money(router);
       await enhanceSprint6B14(id,router);
+      await enhanceSprint6B15(id,router);
       return;
     }
     if(!repairedRoutes.has(id)){
@@ -113,8 +115,8 @@ router=createRouter({
     await enhanceSprint6B13(id,router);
     await enhanceSprint6B13R2(id,router);
     await enhanceSprint6B14(id,router);
-  }
-});
+    await enhanceSprint6B15(id,router);
+  }});
 
 const shell=document.querySelector('#appShell');
 document.querySelector('#menuButton').onclick=()=>shell.classList.add('menu-open');

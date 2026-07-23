@@ -1159,3 +1159,35 @@ html[data-theme="sun"] .sidebar .nav-button{
   .bill-import-row-6b14 [data-bill-field="frequency"]{grid-column:2/-1}
   .academy-summary-6b14{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+
+
+/* Sprint 6B.15 — final Sapphire Lani contrast and shared-data corrections */
+:root[data-theme="sapphire"] .lani-page .card,
+:root[data-theme="sapphire"] .lani-page .lani-hero,
+:root[data-theme="sapphire"] .lani-page .lani-collage-card,
+:root[data-theme="sapphire"] .lani-page .lani-main-grid .card,
+:root[data-theme="sapphire"] .lani-page .lani-memory-card,
+:root[data-theme="sapphire"] .lani-page .lani-facts-card{
+  color:#172235 !important;
+}
+:root[data-theme="sapphire"] .lani-page .card *,
+:root[data-theme="sapphire"] .lani-page .lani-hero *,
+:root[data-theme="sapphire"] .lani-page .lani-main-grid .card *{
+  color:#172235;
+}
+:root[data-theme="sapphire"] .lani-page input,
+:root[data-theme="sapphire"] .lani-page textarea,
+:root[data-theme="sapphire"] .lani-page select{
+  background:#fff !important;
+  color:#172235 !important;
+  border-color:#a9b7ca !important;
+}
+:root[data-theme="sapphire"] .lani-page input::placeholder,
+:root[data-theme="sapphire"] .lani-page textarea::placeholder{
+  color:#637087 !important;
+}
+:root[data-theme="sapphire"] .lani-page .btn,
+:root[data-theme="sapphire"] .lani-page .pill{
+  color:#172235;
+}
+
