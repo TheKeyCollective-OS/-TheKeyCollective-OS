@@ -1228,3 +1228,33 @@ html[data-theme="sun"] .sidebar .nav-button{
   -webkit-text-fill-color:#172235 !important;
 }
 
+
+
+/* Sprint 6B.17 — final Financial Studio tracker and Dashboard Academy card */
+.bill-checklist-final-6b17{
+  margin-top:24px;
+}
+.bill-checklist-final-6b17 .canonical-bill-list-6b13{
+  display:grid;
+  gap:10px;
+}
+.bill-checklist-final-6b17 .canonical-bill-row-6b13{
+  width:100%;
+  text-align:left;
+}
+.bill-checklist-final-6b17 .bill-checkbox-6b12{
+  flex:0 0 auto;
+}
+.academy-dashboard-final-6b17 .academy-summary-lines{
+  margin:14px 0;
+}
+@media(max-width:640px){
+  .bill-checklist-final-6b17 .canonical-bill-row-6b13{
+    grid-template-columns:auto minmax(0,1fr);
+  }
+  .bill-checklist-final-6b17 .canonical-bill-row-6b13 strong{
+    grid-column:2;
+    justify-self:start;
+  }
+}
+

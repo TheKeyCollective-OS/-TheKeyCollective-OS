@@ -25,6 +25,7 @@ import {patchPagesSprint6B13 as patchPagesSprint6B13R2,enhanceSprint6B13 as enha
 import {patchPagesSprint6B13 as patchPagesSprint6B14,enhanceSprint6B13 as enhanceSprint6B14} from './sprint6b14.js';
 import {enhanceSprint6B15} from './sprint6b15.js';
 import {enhanceSprint6B16} from './sprint6b16.js';
+import {enhanceSprint6B17} from './sprint6b17.js';
 
 patchPages(pages);
 patchPagesSprint5(pages);
@@ -87,6 +88,7 @@ router=createRouter({
       await enhanceSprint6B14(id,router);
       await enhanceSprint6B15(id,router);
       await enhanceSprint6B16(id,router);
+      await enhanceSprint6B17(id,router);
       return;
     }
     if(!repairedRoutes.has(id)){
@@ -120,6 +122,7 @@ router=createRouter({
     await enhanceSprint6B14(id,router);
     await enhanceSprint6B15(id,router);
     await enhanceSprint6B16(id,router);
+    await enhanceSprint6B17(id,router);
   }});
 
 const shell=document.querySelector('#appShell');
