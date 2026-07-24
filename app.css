@@ -1419,3 +1419,22 @@ html[data-theme="emerald"][data-interaction-contrast="dark"] .module strong,
 html[data-theme="emerald"][data-interaction-contrast="dark"] .module small,
 html[data-theme="emerald"][data-contrast="dark"] .module strong,
 html[data-theme="emerald"][data-contrast="dark"] .module small{color:#17352b!important;opacity:1!important}
+
+/* Sprint 6B.25: stable Morning Brief controls, Sanctuary history, Emerald icon contrast */
+.stable-control-6b25{min-width:0;overflow:hidden;contain:layout paint}
+.stable-control-6b25 .bar,.sanctuary-stat-6b25 .bar{display:block;width:100%;max-width:100%;overflow:hidden;box-sizing:border-box}
+.stable-control-6b25 .bar>span,.sanctuary-stat-6b25 .bar>span{display:block;max-width:100%;min-width:0}
+.stable-control-6b25 input{width:100%;max-width:100%;box-sizing:border-box}
+.savings-progress-625{margin:.2rem 0 .45rem}
+.sanctuary-history-6b25{margin:18px 0 24px}
+.sanctuary-stats-grid-6b25{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:16px}
+.sanctuary-stat-6b25{min-width:0;padding:15px;border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--surface) 78%,transparent);display:grid;gap:8px}
+.sanctuary-stat-6b25 strong{font-size:1.3rem}
+.sanctuary-rule-6b25{margin:14px 0 0}
+html[data-theme="emerald"] .module .icon,
+html[data-theme="emerald"] .topbar .icon-button,
+html[data-theme="emerald"] .dashboard-shortcuts .icon,
+html[data-theme="emerald"] .quick-nav .icon{color:#17352b!important;-webkit-text-fill-color:#17352b!important;opacity:1!important;visibility:visible!important;filter:none!important;text-shadow:none!important}
+html[data-theme="emerald"] .module .icon *{color:#17352b!important;fill:#17352b!important;stroke:#17352b!important}
+@media(max-width:760px){.sanctuary-stats-grid-6b25{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:420px){.sanctuary-stats-grid-6b25{grid-template-columns:1fr}}

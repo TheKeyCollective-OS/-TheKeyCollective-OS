@@ -30,6 +30,7 @@ import {enhanceSprint6B18} from './sprint6b18.js';
 import {patchPagesSprint6B22,enhanceSprint6B22} from './sprint6b22.js';
 import {patchPagesSprint6B23,enhanceSprint6B23} from './sprint6b23.js';
 import {patchPagesSprint6B24,enhanceSprint6B24} from './sprint6b24.js';
+import {patchPagesSprint6B25,enhanceSprint6B25} from './sprint6b25.js';
 
 patchPages(pages);
 patchPagesSprint5(pages);
@@ -47,6 +48,7 @@ patchPagesSprint6B14(pages);
 patchPagesSprint6B22(pages);
 patchPagesSprint6B23(pages);
 patchPagesSprint6B24(pages);
+patchPagesSprint6B25(pages);
 
 const repairedRoutes=new Set(['dashboard','calendar','goals','intelligence','wellness','career','money']);
 
@@ -94,6 +96,7 @@ router=createRouter({
       await enhanceSprint6B22(id,router);
       await enhanceSprint6B23(id,router);
       await enhanceSprint6B24(id,router);
+      await enhanceSprint6B25(id,router);
       return;
     }
     if(!repairedRoutes.has(id)){
@@ -132,6 +135,7 @@ router=createRouter({
     if(id==='dashboard')await enhanceSprint6B22(id,router);
     if(['dashboard','intelligence'].includes(id))await enhanceSprint6B23(id,router);
     if(['dashboard','intelligence','money'].includes(id))await enhanceSprint6B24(id,router);
+    await enhanceSprint6B25(id,router);
   }});
 
 const shell=document.querySelector('#appShell');
