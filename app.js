@@ -27,6 +27,7 @@ import {enhanceSprint6B15} from './sprint6b15.js';
 import {enhanceSprint6B16} from './sprint6b16.js';
 import {enhanceSprint6B17} from './sprint6b17.js';
 import {enhanceSprint6B18} from './sprint6b18.js';
+import {enhanceSprint6B19} from './sprint6b19.js';
 
 patchPages(pages);
 patchPagesSprint5(pages);
@@ -91,6 +92,7 @@ router=createRouter({
       await enhanceSprint6B16(id,router);
       await enhanceSprint6B17(id,router);
       await enhanceSprint6B18(id,router);
+      await enhanceSprint6B19(id,router);
       return;
     }
     if(!repairedRoutes.has(id)){

@@ -1352,3 +1352,18 @@ html[data-theme="sun"] .sidebar .nav-button{
   }
 }
 
+
+/* Sprint 6B.19 — Financial Studio bill list only */
+.bill-control-mount-6b19{margin-top:18px}
+.full-bill-manager-6b19{margin-top:0}
+.bill-add-6b19,.bill-row-6b19{border:1px solid var(--line);border-radius:18px;padding:16px;margin-top:14px;background:color-mix(in srgb,var(--paper2) 88%,transparent)}
+.bill-list-final-6b19{display:grid;gap:12px;margin-top:16px}
+.bill-row-6b19.is-paid{opacity:.78}
+.bill-row-top-6b19,.bill-row-footer-6b19{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.bill-row-footer-6b19{margin-top:12px}
+.bill-status-6b19{display:flex;align-items:center;gap:8px;font-weight:800}
+.bill-fields-6b19{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin:12px 0}
+.bill-fields-6b19 label{display:grid;gap:6px;font-size:12px;font-weight:750}
+.bill-fields-6b19 input,.bill-fields-6b19 select{width:100%}
+@media(max-width:900px){.bill-fields-6b19{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.bill-fields-6b19{grid-template-columns:1fr}.bill-row-top-6b19,.bill-row-footer-6b19{align-items:flex-start;flex-direction:column}.bill-row-top-6b19 .btn,.bill-row-footer-6b19 .btn{width:100%}}
