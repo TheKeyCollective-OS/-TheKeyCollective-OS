@@ -1399,3 +1399,23 @@ html[data-theme="emerald"] .card .muted,html[data-theme="emerald"] .card small{c
 html[data-theme="emerald"] input,html[data-theme="emerald"] textarea,html[data-theme="emerald"] select{background:#fffdf8!important;color:#17352b!important;border-color:rgba(23,53,43,.30)!important}
 html[data-theme="emerald"] input::placeholder,html[data-theme="emerald"] textarea::placeholder{color:#71827b!important;opacity:1!important}
 html[data-theme="emerald"] .btn:not(.secondary):not(.ghost){color:#fffaf0!important}
+
+/* Sprint 6B.24: durable connected controls + Emerald Estate refresh safety */
+.editable-movement-6b24,.editable-savings-6b24{display:grid;gap:10px;align-content:start}
+.movement-edit-6b24,.savings-goal-edit-6b24{display:grid;gap:6px}
+.movement-edit-6b24 input,.savings-goal-edit-6b24 input{font-size:1.25rem;font-weight:800;min-height:48px}
+.editable-movement-6b24 .btn,.editable-savings-6b24 .btn{width:100%}
+.morning-routine-card .routine-summary-number,[data-morning-routine24] .routine-summary-number{font-size:2rem;font-weight:850;margin:7px 0}
+html[data-theme="emerald"] .module,html[data-theme="emerald"] .dashboard-panel,html[data-theme="emerald"] .metric-card,html[data-theme="emerald"] .brief-metric-grid>.card{background:rgba(255,255,255,.94)!important;border-color:rgba(23,53,43,.20)!important;color:#17352b!important}
+html[data-theme="emerald"] .module .icon{color:#1f7a58!important;opacity:1!important;visibility:visible!important;filter:none!important}
+html[data-theme="emerald"] .module strong,html[data-theme="emerald"] .module small,html[data-theme="emerald"] .dashboard-panel h3,html[data-theme="emerald"] .dashboard-panel .mini,html[data-theme="emerald"] .dashboard-panel p,html[data-theme="emerald"] .metric-card .mini,html[data-theme="emerald"] .metric-card .metric{color:#17352b!important;opacity:1!important;visibility:visible!important}
+html[data-theme="emerald"] .module small,html[data-theme="emerald"] .dashboard-panel p,html[data-theme="emerald"] .muted{color:#53665e!important}
+html[data-theme="emerald"] .entry,html[data-theme="emerald"] .brief-line,html[data-theme="emerald"] .insight,html[data-theme="emerald"] .status,html[data-theme="emerald"] .pill{color:#17352b!important}
+html[data-theme="emerald"] .topbar,html[data-theme="emerald"] #breadcrumb{color:#17352b!important}
+html[data-theme="emerald"] .btn.ghost,html[data-theme="emerald"] .btn.secondary{color:#17352b!important;border-color:rgba(23,53,43,.28)!important;background:rgba(255,255,255,.66)!important}
+html[data-theme="emerald"] [data-interaction-contrast="dark"] .module strong,html[data-theme="emerald"] [data-interaction-contrast="dark"] .module small{color:#17352b!important}
+@media(max-width:560px){.editable-movement-6b24,.editable-savings-6b24{min-width:0}}
+html[data-theme="emerald"][data-interaction-contrast="dark"] .module strong,
+html[data-theme="emerald"][data-interaction-contrast="dark"] .module small,
+html[data-theme="emerald"][data-contrast="dark"] .module strong,
+html[data-theme="emerald"][data-contrast="dark"] .module small{color:#17352b!important;opacity:1!important}
