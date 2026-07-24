@@ -1386,3 +1386,16 @@ html[data-theme="sun"] .sidebar .nav-button{
 .btn.danger{border-color:color-mix(in srgb,#a63d3d 48%,var(--line))}
 @media(max-width:900px){.balance-grid-6b20{grid-template-columns:repeat(2,minmax(0,1fr))}.balance-total-6b20{grid-column:1/-1}.bill-fields-6b20{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.balance-grid-6b20,.bill-fields-6b20{grid-template-columns:1fr}.bill-row-top-6b20,.bill-row-footer-6b20{align-items:flex-start;flex-direction:column}.bill-row-footer-6b20 .btn{width:100%}}
+
+/* Sprint 6B.23: Emerald Estate readability + targeted controls */
+.editable-movement-6b23{display:grid;gap:10px}
+.movement-edit-6b23{display:grid;gap:6px}
+.movement-edit-6b23 input{font-size:1.35rem;font-weight:700}
+html[data-theme="emerald"]{--ink:#17352b!important;--muted:#53665e!important}
+html[data-theme="emerald"] body,html[data-theme="emerald"] .pagehead,html[data-theme="emerald"] .pagehead h1,html[data-theme="emerald"] .pagehead h2,html[data-theme="emerald"] .pagehead h3,html[data-theme="emerald"] .pagehead p,html[data-theme="emerald"] .pagehead .sub,html[data-theme="emerald"] .eyebrow,html[data-theme="emerald"] .mini{color:#17352b!important}
+html[data-theme="emerald"] .card{--ink:#17352b!important;--muted:#53665e!important;color:#17352b!important;background:rgba(255,255,255,.90)!important}
+html[data-theme="emerald"] .card h1,html[data-theme="emerald"] .card h2,html[data-theme="emerald"] .card h3,html[data-theme="emerald"] .card h4,html[data-theme="emerald"] .card b,html[data-theme="emerald"] .card strong,html[data-theme="emerald"] .card label,html[data-theme="emerald"] .card p,html[data-theme="emerald"] .card small,html[data-theme="emerald"] .card span{color:#17352b!important}
+html[data-theme="emerald"] .card .muted,html[data-theme="emerald"] .card small{color:#53665e!important}
+html[data-theme="emerald"] input,html[data-theme="emerald"] textarea,html[data-theme="emerald"] select{background:#fffdf8!important;color:#17352b!important;border-color:rgba(23,53,43,.30)!important}
+html[data-theme="emerald"] input::placeholder,html[data-theme="emerald"] textarea::placeholder{color:#71827b!important;opacity:1!important}
+html[data-theme="emerald"] .btn:not(.secondary):not(.ghost){color:#fffaf0!important}
