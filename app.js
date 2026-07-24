@@ -26,6 +26,7 @@ import {patchPagesSprint6B13 as patchPagesSprint6B14,enhanceSprint6B13 as enhanc
 import {enhanceSprint6B15} from './sprint6b15.js';
 import {enhanceSprint6B16} from './sprint6b16.js';
 import {enhanceSprint6B17} from './sprint6b17.js';
+import {enhanceSprint6B18} from './sprint6b18.js';
 
 patchPages(pages);
 patchPagesSprint5(pages);
@@ -89,6 +90,7 @@ router=createRouter({
       await enhanceSprint6B15(id,router);
       await enhanceSprint6B16(id,router);
       await enhanceSprint6B17(id,router);
+      await enhanceSprint6B18(id,router);
       return;
     }
     if(!repairedRoutes.has(id)){
@@ -123,6 +125,7 @@ router=createRouter({
     await enhanceSprint6B15(id,router);
     await enhanceSprint6B16(id,router);
     await enhanceSprint6B17(id,router);
+    if(['dashboard','intelligence','wellness'].includes(id))await enhanceSprint6B18(id,router);
   }});
 
 const shell=document.querySelector('#appShell');

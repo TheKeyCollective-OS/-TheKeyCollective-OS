@@ -1258,3 +1258,97 @@ html[data-theme="sun"] .sidebar .nav-button{
   }
 }
 
+
+
+/* Sprint 6B.18 — open-page corrections only */
+.academy-dashboard-final-6b18 .academy-summary-lines{
+  margin:14px 0;
+}
+.global-result-6b18{
+  width:100%;
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  gap:12px;
+  text-align:left;
+  border:0;
+  background:transparent;
+  color:inherit;
+  padding:12px;
+  border-radius:14px;
+}
+.global-result-6b18:hover,
+.global-result-6b18:focus-visible{
+  background:color-mix(in srgb,var(--paper2) 82%,transparent);
+}
+.global-result-6b18 small{
+  display:block;
+  margin-top:2px;
+}
+.bill-manager-final-6b18{
+  margin-top:24px;
+}
+.bill-add-card-6b18,
+.bill-manager-row-6b18{
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:16px;
+  margin-top:14px;
+  background:color-mix(in srgb,var(--paper2) 88%,transparent);
+}
+.bill-manager-list-6b18{
+  display:grid;
+  gap:12px;
+  margin-top:16px;
+}
+.bill-manager-head-6b18{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:12px;
+}
+.bill-manager-fields-6b18{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:10px;
+}
+.bill-manager-fields-6b18 label{
+  display:grid;
+  gap:6px;
+  font-weight:750;
+  font-size:12px;
+}
+.bill-manager-fields-6b18 input,
+.bill-manager-fields-6b18 select{
+  width:100%;
+}
+.bill-paid-toggle-6b18{
+  display:flex !important;
+  align-items:center;
+  gap:8px;
+  font-weight:800;
+}
+.sobriety-streak-6b18{
+  text-align:center;
+  padding:18px;
+}
+.sobriety-streak-6b18 .metric{
+  font-size:clamp(54px,12vw,86px);
+}
+.btn.danger{
+  border-color:color-mix(in srgb,#a83b3b 45%,var(--line));
+}
+@media(max-width:900px){
+  .bill-manager-fields-6b18{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+@media(max-width:560px){
+  .bill-manager-fields-6b18{
+    grid-template-columns:1fr;
+  }
+  .bill-manager-head-6b18{
+    align-items:flex-start;
+  }
+}
+
