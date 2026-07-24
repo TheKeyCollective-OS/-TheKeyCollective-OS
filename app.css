@@ -1191,3 +1191,40 @@ html[data-theme="sun"] .sidebar .nav-button{
   color:#172235;
 }
 
+
+
+/* Sprint 6B.16 — native month picker overlay and final Lani contrast */
+.agenda-nav-6b13{position:relative}
+.agenda-month-native-6b14{
+  opacity:.01 !important;
+  pointer-events:auto !important;
+  cursor:pointer;
+  color:transparent !important;
+  background:transparent !important;
+  -webkit-appearance:none;
+  appearance:none;
+}
+:root[data-theme="sapphire"] .lani-page,
+:root[data-theme="sapphire"] .lani-page .pagehead,
+:root[data-theme="sapphire"] .lani-page .pagehead *,
+:root[data-theme="sapphire"] .lani-page .lani-head,
+:root[data-theme="sapphire"] .lani-page .lani-head *,
+:root[data-theme="sapphire"] .lani-page h1,
+:root[data-theme="sapphire"] .lani-page h2,
+:root[data-theme="sapphire"] .lani-page h3,
+:root[data-theme="sapphire"] .lani-page h4,
+:root[data-theme="sapphire"] .lani-page p,
+:root[data-theme="sapphire"] .lani-page label,
+:root[data-theme="sapphire"] .lani-page small,
+:root[data-theme="sapphire"] .lani-page .mini,
+:root[data-theme="sapphire"] .lani-page .eyebrow,
+:root[data-theme="sapphire"] .lani-page .muted{
+  color:#172235 !important;
+}
+:root[data-theme="sapphire"] .lani-page input,
+:root[data-theme="sapphire"] .lani-page textarea,
+:root[data-theme="sapphire"] .lani-page select{
+  color:#172235 !important;
+  -webkit-text-fill-color:#172235 !important;
+}
+
