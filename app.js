@@ -36,6 +36,7 @@ import {enhanceSprint6B27} from './sprint6b27.js';
 import {enhanceSprint6B28} from './sprint6b28.js';
 import {enhanceSprint6B29} from './sprint6b29.js';
 import {enhanceSprint6B30} from './sprint6b30.js';
+import {enhanceSprint6B31} from './sprint6b31.js';
 
 patchPages(pages);
 patchPagesSprint5(pages);
@@ -144,9 +145,9 @@ router=createRouter({
     await enhanceSprint6B25(id,router);
     await enhanceSprint6B26(id,router);
     await enhanceSprint6B27(id,router);
-    await enhanceSprint6B28(id,router);
-    await enhanceSprint6B29(id,router);
-    await enhanceSprint6B30(id,router);
+    if(id==='dashboard')await enhanceSprint6B29(id,router);
+    if(id==='dashboard')await enhanceSprint6B30(id,router);
+    await enhanceSprint6B31(id,router);
   }});
 
 const shell=document.querySelector('#appShell');

@@ -1534,3 +1534,11 @@ html[data-theme="silver"]{--accent-2:#8b97a3}
 .wellness-gym-goal-row-6b29 input{width:100%;padding:11px 12px;border-radius:14px;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
 .dashboard-grid .card.luxe.no-vine-6b29:before{display:none!important;content:none!important}
 @media(max-width:620px){.wellness-gym-actions-6b29{grid-template-columns:repeat(2,minmax(0,1fr))}.wellness-gym-goal-row-6b29{grid-template-columns:1fr}.brief-water-actions-6b29 .btn{min-height:45px}}
+
+/* Sprint 6B.31 — active Morning Brief + Wellness consolidation */
+.wellness-gym-card-6b31 .wellness-gym-number-6b31{font-size:clamp(2.3rem,8vw,4rem);font-weight:800;line-height:1;margin:.3rem 0}
+.wellness-gym-actions-6b31{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem;margin:1rem 0}
+.wellness-gym-goal-row-6b31{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.6rem;align-items:center;margin-top:.4rem}
+.brief-water-actions-6b31{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:.55rem;margin:.8rem 0}
+.brief-gym-6b31 strong,.brief-gym-6b31 small{display:block;margin-top:.45rem}
+@media(max-width:520px){.wellness-gym-actions-6b31{grid-template-columns:1fr 1fr}.wellness-gym-goal-row-6b31{grid-template-columns:1fr}.brief-water-actions-6b31{grid-template-columns:1fr 1fr}}
