@@ -1521,3 +1521,16 @@ html[data-theme="silver"]{--accent-2:#8b97a3}
  .wellness-gym-actions-6b28{grid-template-columns:1fr 1fr}
  .wellness-gym-goal-row-6b28{grid-template-columns:1fr}
 }
+
+/* Sprint 6B.29 — active Morning Brief + Wellness corrections only */
+.brief-water-actions-6b29,.wellness-gym-actions-6b29{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}
+.brief-open-wellness-6b29{width:100%;margin-top:8px}
+.brief-gym-6b29 .btn,.morning-routine-6b29 .btn{margin-top:12px;width:100%}
+.wellness-gym-card-6b29{margin-bottom:14px}
+.wellness-gym-number-6b29{font:54px Georgia,serif;margin:8px 0 0}
+.wellness-gym-actions-6b29{margin:15px 0}
+.wellness-gym-goal-6b29{display:grid;gap:7px;font-weight:800}
+.wellness-gym-goal-row-6b29{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}
+.wellness-gym-goal-row-6b29 input{width:100%;padding:11px 12px;border-radius:14px;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+.dashboard-grid .card.luxe.no-vine-6b29:before{display:none!important;content:none!important}
+@media(max-width:620px){.wellness-gym-actions-6b29{grid-template-columns:repeat(2,minmax(0,1fr))}.wellness-gym-goal-row-6b29{grid-template-columns:1fr}.brief-water-actions-6b29 .btn{min-height:45px}}
