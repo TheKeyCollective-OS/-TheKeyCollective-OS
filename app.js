@@ -32,6 +32,7 @@ import {patchPagesSprint6B23,enhanceSprint6B23} from './sprint6b23.js';
 import {patchPagesSprint6B24,enhanceSprint6B24} from './sprint6b24.js';
 import {patchPagesSprint6B25,enhanceSprint6B25} from './sprint6b25.js';
 import {patchPagesSprint6B26,enhanceSprint6B26} from './sprint6b26.js';
+import {enhanceSprint6B27} from './sprint6b27.js';
 
 patchPages(pages);
 patchPagesSprint5(pages);
@@ -139,6 +140,7 @@ router=createRouter({
     if(['dashboard','intelligence','money'].includes(id))await enhanceSprint6B24(id,router);
     await enhanceSprint6B25(id,router);
     await enhanceSprint6B26(id,router);
+    await enhanceSprint6B27(id,router);
   }});
 
 const shell=document.querySelector('#appShell');

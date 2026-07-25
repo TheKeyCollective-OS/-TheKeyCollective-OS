@@ -1495,3 +1495,10 @@ html[data-theme="teal"]{--accent-2:#496f91}
 html[data-theme="silver"]{--accent-2:#8b97a3}
 
 @media(max-width:700px){.brief-hard-6b26{grid-column:auto}.closest-goal-6b26{grid-template-columns:28px minmax(0,1fr) auto}.closest-goal-6b26 strong{font-size:17px}}
+
+/* Sprint 6B.27 — functional synchronization only; Design + Data remains frozen */
+.brief-water-controls-6b27{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.brief-water-controls-6b27 .btn{width:100%;min-width:0;padding:10px 12px;font-size:20px;line-height:1}
+.brief-water-6b27 small{display:block;margin-top:9px}
+.morning-routine-6b27 .bar{overflow:hidden;max-width:100%}
+.morning-routine-6b27 .bar>span{max-width:100%}
