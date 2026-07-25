@@ -1438,3 +1438,60 @@ html[data-theme="emerald"] .quick-nav .icon{color:#17352b!important;-webkit-text
 html[data-theme="emerald"] .module .icon *{color:#17352b!important;fill:#17352b!important;stroke:#17352b!important}
 @media(max-width:760px){.sanctuary-stats-grid-6b25{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:420px){.sanctuary-stats-grid-6b25{grid-template-columns:1fr}}
+
+/* Sprint 6B.26 · Executive polish + synchronization */
+.closest-goals-6b26{display:grid;gap:10px;margin-top:10px}
+.closest-goal-6b26{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:14px;background:color-mix(in srgb,var(--paper) 88%,var(--accent-2,var(--gold2)))}
+.closest-goal-6b26>div{min-width:0;display:grid;gap:7px}.closest-goal-6b26 b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.closest-goal-6b26 strong{font:20px Georgia,serif}.goal-rank-6b26{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--accent,var(--gold));color:#fff!important;font-weight:900}
+.brief-hard-6b26{grid-column:span 2}.brief-water-actions-6b26{margin-top:12px}.brief-water-actions-6b26 .btn{min-width:48px}
+
+/* Emerald Estate: every known light surface uses dark text; known dark surfaces use light text. */
+html[data-theme="emerald"]{--emerald-dark:#17352b;--emerald-muted:#53665e;--emerald-light:#fffdf8;--emerald-on-dark:#f8fff9}
+html[data-theme="emerald"] .emerald-light-surface-6b26,
+html[data-theme="emerald"] .emerald-light-surface-6b26 *,
+html[data-theme="emerald"] #page .card,
+html[data-theme="emerald"] #page .card *,
+html[data-theme="emerald"] #page .ritual-checks label,
+html[data-theme="emerald"] #page .ritual-checks label *{color:var(--emerald-dark)!important;-webkit-text-fill-color:var(--emerald-dark)!important}
+html[data-theme="emerald"] #page .card .muted,
+html[data-theme="emerald"] #page .card small,
+html[data-theme="emerald"] #page .sub{color:var(--emerald-muted)!important;-webkit-text-fill-color:var(--emerald-muted)!important}
+html[data-theme="emerald"] #page input,
+html[data-theme="emerald"] #page textarea,
+html[data-theme="emerald"] #page select{background:var(--emerald-light)!important;color:var(--emerald-dark)!important;-webkit-text-fill-color:var(--emerald-dark)!important}
+html[data-theme="emerald"] #page input::placeholder,
+html[data-theme="emerald"] #page textarea::placeholder{color:#71827b!important;-webkit-text-fill-color:#71827b!important;opacity:1!important}
+html[data-theme="emerald"] .emerald-dark-surface-6b26,
+html[data-theme="emerald"] .emerald-dark-surface-6b26 *,
+html[data-theme="emerald"] #page .btn:not(.ghost):not(.secondary),
+html[data-theme="emerald"] #page .btn:not(.ghost):not(.secondary) *{color:var(--emerald-on-dark)!important;-webkit-text-fill-color:var(--emerald-on-dark)!important}
+html[data-theme="emerald"] #page .btn.ghost,
+html[data-theme="emerald"] #page .btn.secondary,
+html[data-theme="emerald"] #page .btn.danger{color:var(--emerald-dark)!important;-webkit-text-fill-color:var(--emerald-dark)!important;background:#fff!important;border-color:rgba(23,53,43,.32)!important}
+html[data-theme="emerald"] #page [data-delete-ritual],
+html[data-theme="emerald"] #page [data-remove-ritual],
+html[data-theme="emerald"] #page .danger-text,
+html[data-theme="emerald"] #page .btn.danger{font-weight:1000!important;opacity:1!important;visibility:visible!important}
+html[data-theme="emerald"] .topbar .icon-button,
+html[data-theme="emerald"] .module .icon{color:var(--emerald-dark)!important;-webkit-text-fill-color:var(--emerald-dark)!important;opacity:1!important;visibility:visible!important}
+
+/* Theme accent choreography. Sapphire Executive intentionally remains unchanged. */
+html:not([data-theme="sapphire"]):not([data-theme="noir"]) .module:nth-child(3n+1),
+html:not([data-theme="sapphire"]):not([data-theme="noir"]) .dashboard-panel:nth-child(3n+1),
+html:not([data-theme="sapphire"]):not([data-theme="noir"]) .brief-metric-grid>.card:nth-child(3n+1){border-top:3px solid var(--accent,var(--gold))}
+html:not([data-theme="sapphire"]):not([data-theme="noir"]) .module:nth-child(3n+2),
+html:not([data-theme="sapphire"]):not([data-theme="noir"]) .dashboard-panel:nth-child(3n+2),
+html:not([data-theme="sapphire"]):not([data-theme="noir"]) .brief-metric-grid>.card:nth-child(3n+2){border-top:3px solid var(--accent-2,var(--sage))}
+html:not([data-theme="sapphire"]):not([data-theme="noir"]) .pill{box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent-2,var(--gold2)) 32%,transparent)}
+html[data-theme="crimson"]{--accent-2:#8b4052}
+html[data-theme="coral"]{--accent-2:#2f8f8c}
+html[data-theme="emerald"]{--accent-2:#c3a75d}
+html[data-theme="royal"]{--accent-2:#7c987f}
+html[data-theme="amber"]{--accent-2:#8a704e}
+html[data-theme="sun"]{--accent-2:#748796}
+html[data-theme="amethyst"]{--accent-2:#b48cae}
+html[data-theme="rose"]{--accent-2:#a47188}
+html[data-theme="teal"]{--accent-2:#496f91}
+html[data-theme="silver"]{--accent-2:#8b97a3}
+
+@media(max-width:700px){.brief-hard-6b26{grid-column:auto}.closest-goal-6b26{grid-template-columns:28px minmax(0,1fr) auto}.closest-goal-6b26 strong{font-size:17px}}
