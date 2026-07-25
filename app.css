@@ -1557,3 +1557,8 @@ html[data-theme="silver"]{--accent-2:#8b97a3}
 .goal-row-634{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center}
 .wide-634{width:100%;margin-top:8px}
 @media(max-width:520px){.gym-controls-634{grid-template-columns:repeat(2,minmax(0,1fr))}.goal-row-634{grid-template-columns:1fr}.goal-row-634 .btn{width:100%}}
+
+/* Sprint 6B.35 — keep live Morning Brief values visible after legacy rerenders */
+.brief-live-value-635{display:block!important;visibility:visible!important;opacity:1!important;color:var(--ink)!important;min-height:1.25em;margin:.3rem 0!important}
+.brief-live-copy-635{display:block!important;visibility:visible!important;opacity:1!important;color:var(--ink)!important;margin:.25rem 0!important}
+.controls-635{display:grid;grid-template-columns:1fr 1fr;gap:.45rem;margin:.55rem 0}.wide-635{width:100%;margin-top:.45rem}.goal-row-635{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.5rem;align-items:center}.gym-controls-635{grid-template-columns:repeat(4,minmax(0,1fr))}@media(max-width:560px){.gym-controls-635{grid-template-columns:1fr 1fr}}
