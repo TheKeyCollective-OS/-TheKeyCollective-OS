@@ -1547,3 +1547,13 @@ html[data-theme="silver"]{--accent-2:#8b97a3}
 .brief-controls-632,.gym-controls-632{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem;margin:.8rem 0}
 .wide-632{width:100%;margin-top:.65rem}.gym-number-632{font-size:clamp(3rem,10vw,5rem);font-weight:800;line-height:1;text-align:center;margin:.8rem 0}.gym-goal-row-632{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.6rem;margin-top:.45rem}.wellness-gym-632{margin-block:1rem}.brief-gym-632 strong,.brief-gym-632 small{display:block;margin-top:.45rem}.brief-gym-632 .bar,.brief-water-632 .bar,[data-morning-reset-632] .bar{overflow:hidden}.brief-gym-632 .bar span,.brief-water-632 .bar span,[data-morning-reset-632] .bar span{max-width:100%}
 @media(max-width:520px){.gym-goal-row-632{grid-template-columns:1fr}.brief-controls-632,.gym-controls-632{grid-template-columns:1fr 1fr}}
+
+/* Sprint 6B.34 — keep decorative card layers from swallowing taps. */
+[data-interactive634="true"],#wellnessGym634{position:relative;isolation:isolate}
+[data-interactive634="true"]::before,[data-interactive634="true"]::after,#wellnessGym634::before,#wellnessGym634::after{pointer-events:none!important}
+[data-interactive634="true"] button,#wellnessGym634 button,#wellnessGym634 input{position:relative;z-index:5;pointer-events:auto!important;touch-action:manipulation}
+.controls-634{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:8px}
+.gym-controls-634{grid-template-columns:repeat(4,minmax(0,1fr))}
+.goal-row-634{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center}
+.wide-634{width:100%;margin-top:8px}
+@media(max-width:520px){.gym-controls-634{grid-template-columns:repeat(2,minmax(0,1fr))}.goal-row-634{grid-template-columns:1fr}.goal-row-634 .btn{width:100%}}
