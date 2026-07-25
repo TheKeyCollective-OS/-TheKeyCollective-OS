@@ -1502,3 +1502,22 @@ html[data-theme="silver"]{--accent-2:#8b97a3}
 .brief-water-6b27 small{display:block;margin-top:9px}
 .morning-routine-6b27 .bar{overflow:hidden;max-width:100%}
 .morning-routine-6b27 .bar>span{max-width:100%}
+
+/* Sprint 6B.28 — Morning Brief + Wellness only */
+.brief-stepper-6b28{display:grid;grid-template-columns:1fr 1fr;gap:.45rem;margin-top:.7rem}
+.brief-stepper-6b28 .btn{min-width:0;padding:.65rem .35rem;font-size:1.25rem}
+.brief-water-6b28 small,.brief-gym-6b28 small{display:block;margin-top:.65rem;line-height:1.35}
+.brief-gym-6b28 strong{display:block;margin-top:.6rem;font-size:.88rem}
+.wellness-gym-card-6b28{margin-bottom:1.2rem}
+.wellness-gym-number-6b28{font-size:4rem;line-height:1;margin-top:1rem;text-align:center}
+.wellness-gym-label-6b28{text-align:center;font-weight:700}
+.wellness-gym-actions-6b28{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin:1rem 0}
+.wellness-gym-actions-6b28 .btn{min-width:0}
+.wellness-gym-goal-6b28{display:block;font-weight:700;margin-top:1rem}
+.wellness-gym-goal-row-6b28{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.65rem;margin-top:.45rem}
+.wellness-gym-goal-row-6b28 input{min-width:0}
+.morning-routine-6b28 .routine-summary-number{font-size:1.65rem;font-weight:800;margin:.35rem 0}
+@media (max-width:430px){
+ .wellness-gym-actions-6b28{grid-template-columns:1fr 1fr}
+ .wellness-gym-goal-row-6b28{grid-template-columns:1fr}
+}
