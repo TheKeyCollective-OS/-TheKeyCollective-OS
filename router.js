@@ -24,7 +24,9 @@ export function createRouter({routes,onRender}){
     if(push&&stack.at(-1)!==route.id)stack.push(route.id);
     if(options.remember!==false)remember(route.id,options.replace===true);
     page.innerHTML=route.render();
-    Promise.resolve(onRender?.(route.id)).catch(error=>console.error('Route enhancement failed',route.id,error));
+    Promise.resolve(onRender?.(route.id))
+      .catch(error=>console.error('Route enhancement failed',route.id,error))
+      .finally(()=>window.dispatchEvent(new CustomEvent('kc:route-rendered',{detail:{route:route.id}})));
     document.querySelector('#appShell').classList.remove('menu-open');
     page.focus();
     scrollTo(0,0);

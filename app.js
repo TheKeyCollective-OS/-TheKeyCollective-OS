@@ -150,6 +150,7 @@ router=createRouter({
     await enhanceSprint6B31(id,router);
   }});
 
+window.__keyCollectiveRouter=router;
 const shell=document.querySelector('#appShell');
 document.querySelector('#menuButton').onclick=()=>shell.classList.add('menu-open');
 document.querySelector('#menuScrim').onclick=()=>shell.classList.remove('menu-open');
