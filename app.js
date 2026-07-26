@@ -38,6 +38,7 @@ import {enhanceSprint6B29} from './sprint6b29.js';
 import {enhanceSprint6B30} from './sprint6b30.js';
 import {enhanceSprint6B31} from './sprint6b31.js';
 import {enhanceSprint6B39} from './sprint6b39.js';
+import {enhanceSprint6B40} from './sprint6b40.js';
 
 patchPages(pages);
 patchPagesSprint5(pages);
@@ -150,6 +151,7 @@ router=createRouter({
     if(id==='dashboard')await enhanceSprint6B30(id,router);
     await enhanceSprint6B31(id,router);
     await enhanceSprint6B39(id,router);
+    await enhanceSprint6B40(id,router);
   }});
 
 window.__keyCollectiveRouter=router;
