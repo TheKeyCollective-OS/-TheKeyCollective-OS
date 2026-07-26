@@ -37,10 +37,6 @@ import {enhanceSprint6B28} from './sprint6b28.js';
 import {enhanceSprint6B29} from './sprint6b29.js';
 import {enhanceSprint6B30} from './sprint6b30.js';
 import {enhanceSprint6B31} from './sprint6b31.js';
-import {enhanceSprint6B39} from './sprint6b39.js';
-import {enhanceSprint6B40} from './sprint6b40.js';
-import {enhanceSprint6B41} from './sprint6b41.js';
-import {enhanceSprint6B42} from './sprint6b42.js';
 
 patchPages(pages);
 patchPagesSprint5(pages);
@@ -152,13 +148,8 @@ router=createRouter({
     if(id==='dashboard')await enhanceSprint6B29(id,router);
     if(id==='dashboard')await enhanceSprint6B30(id,router);
     await enhanceSprint6B31(id,router);
-    await enhanceSprint6B39(id,router);
-    await enhanceSprint6B40(id,router);
-    await enhanceSprint6B41(id,router);
-    await enhanceSprint6B42(id,router);
   }});
 
-window.__keyCollectiveRouter=router;
 const shell=document.querySelector('#appShell');
 document.querySelector('#menuButton').onclick=()=>shell.classList.add('menu-open');
 document.querySelector('#menuScrim').onclick=()=>shell.classList.remove('menu-open');
