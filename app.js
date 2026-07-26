@@ -40,6 +40,7 @@ import {enhanceSprint6B31} from './sprint6b31.js';
 import {enhanceSprint6B39} from './sprint6b39.js';
 import {enhanceSprint6B40} from './sprint6b40.js';
 import {enhanceSprint6B41} from './sprint6b41.js';
+import {enhanceSprint6B42} from './sprint6b42.js';
 
 patchPages(pages);
 patchPagesSprint5(pages);
@@ -154,6 +155,7 @@ router=createRouter({
     await enhanceSprint6B39(id,router);
     await enhanceSprint6B40(id,router);
     await enhanceSprint6B41(id,router);
+    await enhanceSprint6B42(id,router);
   }});
 
 window.__keyCollectiveRouter=router;

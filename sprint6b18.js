@@ -11,7 +11,7 @@ const esc=value=>String(value??'').replace(/[&<>"']/g,char=>({
 const money=value=>new Intl.NumberFormat('en-US',{
   style:'currency',currency:'USD'
 }).format(Number(value)||0);
-const localDate=()=>new Date().toISOString().slice(0,10);
+const localDate=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
 const ROUTE_LABELS={
   dashboard:'Executive Dashboard',
   intelligence:'Morning Brief',
