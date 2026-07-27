@@ -32,7 +32,7 @@ import {patchPagesSprint6B23,enhanceSprint6B23} from './sprint6b23.js';
 import {patchPagesSprint6B24,enhanceSprint6B24} from './sprint6b24.js';
 import {patchPagesSprint6B25,enhanceSprint6B25} from './sprint6b25.js';
 import {patchPagesSprint6B26,enhanceSprint6B26} from './sprint6b26.js?v=16.43.7';
-import {enhanceSprint6B43} from './sprint6b43.js?v=16.43.7';
+import {enhanceSprint6B43} from './sprint6b43.js?v=16.44.7';
 import {enhanceSprint6B44} from './sprint6b44.js?v=16.44.6';
 
 patchPages(pages);

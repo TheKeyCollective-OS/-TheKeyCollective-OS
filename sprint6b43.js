@@ -31,7 +31,10 @@ function morningData(state=store.get()){
     return {done,total:editable.length,pct:editable.length?Math.round(done/editable.length*100):0};
   }
   const doneFlags=Array.isArray(state.sanctuary?.completed?.morning)?state.sanctuary.completed.morning:[];
-  const total=Math.max(doneFlags.length,4);
+  // Match Sanctuary's visible six-item default when no customized checklist
+  // has been saved yet. Once the user edits Sanctuary, its saved items remain
+  // the only source of truth.
+  const total=Math.max(doneFlags.length,6);
   const done=doneFlags.slice(0,total).filter(Boolean).length;
   return {done,total,pct:total?Math.round(done/total*100):0};
 }
