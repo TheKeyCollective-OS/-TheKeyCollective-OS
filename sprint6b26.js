@@ -15,16 +15,15 @@ function morningProgress(state=store.get()){
 }
 
 function localDate(){
-  const d=new Date();
-  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+  const p=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Phoenix',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date()),v=Object.fromEntries(p.map(x=>[x.type,x.value]));
+  return `${v.year}-${v.month}-${v.day}`;
 }
 
 function soberDays(state=store.get()){
-  const reset=state.sobriety?.lastReset;
+  const reset=state.sobriety?.startDate||state.sobriety?.lastReset;
   if(!reset)return 0;
-  const a=new Date(`${reset}T00:00:00`),b=new Date(`${localDate()}T00:00:00`);
-  if(Number.isNaN(a.getTime())||Number.isNaN(b.getTime()))return 0;
-  return Math.max(0,Math.floor((b-a)/86400000));
+  const [ay,am,ad]=reset.split('-').map(Number),[by,bm,bd]=localDate().split('-').map(Number);
+  return Math.max(1,Math.floor((Date.UTC(by,bm-1,bd)-Date.UTC(ay,am-1,ad))/86400000)+1);
 }
 
 function closestGoals(state=store.get()){

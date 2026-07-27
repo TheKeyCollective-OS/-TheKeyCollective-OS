@@ -4,7 +4,7 @@ const BUILD='Sprint 6B.22 Clean Financial Rebuild';
 const $=s=>document.querySelector(s);
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const money=v=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(Number(v)||0);
-const today=()=>new Date(Date.now()-new Date().getTimezoneOffset()*60000).toISOString().slice(0,10);
+const today=()=>{const p=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Phoenix',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date()),v=Object.fromEntries(p.map(x=>[x.type,x.value]));return `${v.year}-${v.month}-${v.day}`};
 const uid=()=>crypto.randomUUID?.()||`bill-${Date.now()}-${Math.random().toString(36).slice(2)}`;
 const norm=v=>String(v||'').trim().toLowerCase().replace(/[–—]/g,'-').replace(/\s+/g,' ');
 const identity=b=>`${norm(b.name)}|${Number(b.amount||0).toFixed(2)}|${String(b.due||'')}`;
@@ -24,7 +24,7 @@ function migrateBills(){
   if(changed)store.mutate(s=>{s.bills=next});
 }
 function bills(){return [...(store.get().bills||[])].sort((a,b)=>String(a.due||'').localeCompare(String(b.due||''))||String(a.name||'').localeCompare(String(b.name||'')));}
-function soberDays(){const r=store.get().sobriety?.lastReset;if(!r)return 0;const a=new Date(`${r}T00:00:00`),b=new Date(`${today()}T00:00:00`);return Number.isNaN(a)||Number.isNaN(b)?0:Math.max(0,Math.floor((b-a)/86400000));}
+function soberDays(){const s=store.get(),r=s.sobriety?.startDate||s.sobriety?.lastReset;if(!/^\d{4}-\d{2}-\d{2}$/.test(r||''))return 0;const [ay,am,ad]=r.split('-').map(Number),[by,bm,bd]=today().split('-').map(Number);return Math.max(1,Math.floor((Date.UTC(by,bm-1,bd)-Date.UTC(ay,am-1,ad))/86400000)+1);}
 
 function row(b){return `<article class="bill-row-6b20 ${b.paid?'is-paid':''}" data-bill-id="${esc(b.id)}">
   <div class="bill-row-top-6b20"><label class="bill-status-6b20"><input type="checkbox" data-act="paid" ${b.paid?'checked':''}><span>${b.paid?'Paid':'Still Due'}</span></label><button type="button" class="btn ghost danger" data-act="remove">Remove</button></div>
@@ -58,6 +58,6 @@ function bind(){migrateBills();
     if(btn.dataset.act==='remove'){const bill=bills().find(x=>String(x.id)===id);if(!bill||!confirm(`Remove ${bill.name}? This cannot be undone.`))return;store.mutate(s=>{s.bills=(s.bills||[]).filter(x=>String(x.id)!==id)});refresh();setStatus('Bill removed and totals updated.');}
     if(btn.dataset.act==='save'){const vals={};card.querySelectorAll('[data-field]').forEach(i=>vals[i.dataset.field]=i.value);const proposal={name:String(vals.name||'').trim(),amount:Math.max(0,Number(vals.amount||0)),due:String(vals.due||'')};if(!proposal.name||!proposal.due){setStatus('Bill name and due date are required.');return}if(bills().some(x=>String(x.id)!==id&&identity(x)===identity(proposal))){setStatus('That exact bill already exists.');return}store.mutate(s=>{const b=(s.bills||[]).find(x=>String(x.id)===id);if(!b)return;Object.assign(b,proposal,{category:String(vals.category||'').trim()||'Other',frequency:vals.frequency||'Monthly'})});refresh();setStatus('Bill changes saved and totals updated.');}
   });
-  $('#billList22')?.addEventListener('change',e=>{const box=e.target.closest('[data-act="paid"]');if(!box)return;const card=box.closest('[data-bill-id]'),id=card?.dataset.billId;store.mutate(s=>{const b=(s.bills||[]).find(x=>String(x.id)===id);if(!b)return;b.paid=box.checked;b.paidDate=box.checked?today():''});refresh();setStatus(box.checked?'Bill marked paid.':'Bill marked still due.');});
+  $('#billList22')?.addEventListener('change',e=>{const box=e.target.closest('[data-act="paid"]');if(!box)return;const card=box.closest('[data-bill-id]'),id=card?.dataset.billId;store.mutate(s=>{const b=(s.bills||[]).find(x=>String(x.id)===id);if(!b)return;b.paid=box.checked;b.paidDate=box.checked?today():'';b.paidAt=box.checked?new Date().toISOString():null});refresh();setStatus(box.checked?'Bill marked paid. It will return to Still Due in 15 days.':'Bill marked still due.');});
 }
 export async function enhanceSprint6B22(id){const badge=$('#kcBuildStatus b');if(badge)badge.textContent=BUILD;if(id==='money')bind();}
