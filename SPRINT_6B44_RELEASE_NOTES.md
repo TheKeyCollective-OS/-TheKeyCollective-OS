@@ -30,6 +30,12 @@
 
 - Verified Water, Gym Time, gym-goal saving, Morning Brief synchronization, paycheck forecasting, bill filtering, Agenda mobile fit, and premium module navigation on the deployed site.
 - Corrected Reflection Garden prompt shuffling so every tap produces a visibly different prompt, even after delayed page redraws.
+
+## 6B.44.2 Release Hardening
+
+- Aligned the service-worker app shell with the exact deployed 6B.44.2 CSS, application, and feature-runtime versions.
+- Advanced the cache generation so Safari and the installed Home Screen app discard obsolete mixed-build files.
+- Preserved all approved 6B.44.1 features, layouts, saved data, and interaction behavior without redesigning locked modules.
 # Sprint 6B.44 — Intelligence, Reflection, and Global Search
 
 - Added Morning Brief global search across every rendered page and locally saved app value, including agenda items, bills, goals, reflections, and voice-memo titles. Search results navigate directly to their source module.

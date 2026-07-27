@@ -2,7 +2,7 @@ import {store} from './store.js';
 import {pages} from './pages.js';
 import {getMemos} from './memo-db.js';
 
-const BUILD='Sprint 6B.44.1 Post-Launch Quality Pass';
+const BUILD='Sprint 6B.44.2 Release Hardening';
 const $=(s,r=document)=>r.querySelector(s),all=(s,r=document)=>[...r.querySelectorAll(s)];
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const today=()=>{const p=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Phoenix',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date()),v=Object.fromEntries(p.map(x=>[x.type,x.value]));return `${v.year}-${v.month}-${v.day}`};
