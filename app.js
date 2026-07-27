@@ -33,7 +33,7 @@ import {patchPagesSprint6B24,enhanceSprint6B24} from './sprint6b24.js';
 import {patchPagesSprint6B25,enhanceSprint6B25} from './sprint6b25.js';
 import {patchPagesSprint6B26,enhanceSprint6B26} from './sprint6b26.js?v=16.43.7';
 import {enhanceSprint6B43} from './sprint6b43.js?v=16.44.7';
-import {enhanceSprint6B44} from './sprint6b44.js?v=16.44.6';
+import {enhanceSprint6B44} from './sprint6b44.js?v=16.44.9';
 
 patchPages(pages);
 patchPagesSprint5(pages);
@@ -152,6 +152,14 @@ document.querySelector('#menuButton').onclick=()=>shell.classList.add('menu-open
 document.querySelector('#menuScrim').onclick=()=>shell.classList.remove('menu-open');
 document.addEventListener('keydown',event=>{if(event.key==='Escape')shell.classList.remove('menu-open')});
 document.querySelector('#themeButton').onclick=()=>router.go('premium');
+document.querySelector('#refreshButton').onclick=async()=>{
+  const button=document.querySelector('#refreshButton');
+  if(!navigator.onLine){const toast=document.querySelector('#toast');toast.textContent='You are offline. Saved information is still available.';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2600);return}
+  button.disabled=true;button.setAttribute('aria-busy','true');
+  sessionStorage.setItem('keyCollectiveOS.justRefreshed','1');
+  try{const registration=await navigator.serviceWorker?.getRegistration('./');await registration?.update()}catch(error){console.warn('Refresh update check failed',error)}
+  location.reload();
+};
 document.querySelector('.avatar').onclick=()=>router.go('profile');
 document.querySelector('.avatar').setAttribute('role','button');
 document.querySelector('.avatar').setAttribute('tabindex','0');
@@ -164,6 +172,7 @@ window.addEventListener('kc:state',()=>{
   window.dispatchEvent(new CustomEvent('kc:ui-refresh',{detail:{route:router.current()}}));
 });
 router.go(router.initial,false,{replace:true});
+if(sessionStorage.getItem('keyCollectiveOS.justRefreshed')){sessionStorage.removeItem('keyCollectiveOS.justRefreshed');setTimeout(()=>{const toast=document.querySelector('#toast');toast.textContent='Page refreshed with the newest available information.';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2600)},500)}
 
 const updateOnline=()=>document.body.classList.toggle('offline',!navigator.onLine);
 addEventListener('online',updateOnline);

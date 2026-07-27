@@ -37,6 +37,12 @@
 - Advanced the cache generation so Safari and the installed Home Screen app discard obsolete mixed-build files.
 - Preserved all approved 6B.44.1 features, layouts, saved data, and interaction behavior without redesigning locked modules.
 - Corrected the unsaved-default Morning Reset summary so Morning Brief matches Sanctuary's visible six-item checklist before any customization is saved.
+- Kept Smart Paycheck Forecast as the single paycheck-planning tool and removed the older duplicate Today's Money Command card from Financial Studio.
+- Consolidated duplicate Morning Brief Payments Academy summaries into one complete, current card.
+- Added persistent page-history navigation so Back returns through the actual pages visited while Home remains a direct Dashboard shortcut.
+- Added an in-app Refresh control that checks for newly deployed files without changing the current route or deleting saved data.
+- Expanded Agenda with a seven-day intelligence briefing, workload signal, bill exposure, appointment preparation, addresses, directions, parking, contacts, confirmations, leave-by details, and Apple Calendar event export.
+- Added Google Calendar setup status and an official OAuth configuration handoff; live Google synchronization remains disabled until an authorized client ID is supplied.
 # Sprint 6B.44 — Intelligence, Reflection, and Global Search
 
 - Added Morning Brief global search across every rendered page and locally saved app value, including agenda items, bills, goals, reflections, and voice-memo titles. Search results navigate directly to their source module.
