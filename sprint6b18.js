@@ -555,7 +555,7 @@ function bindStateRefresh(router){
   window.addEventListener('kc:state',()=>{
     const route=location.hash.replace(/^#\/?/,'')||'dashboard';
     if(route==='money'&&billMutationInProgress)return;
-    if(['dashboard','intelligence','money','wellness'].includes(route)){
+    if(['dashboard','money'].includes(route)){
       refreshCurrentRoute(route,router);
     }
   });

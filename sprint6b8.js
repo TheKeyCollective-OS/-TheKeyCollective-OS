@@ -94,7 +94,9 @@ function paidThisWeek(){
   return (store.get().bills||[]).filter(x=>x.paid&&(x.paidDate||x.due)>=a&&(x.paidDate||x.due)<=b);
 }
 function personalHighlights(){
-  const st=store.get(),today=localKey(),end=new Date();end.setDate(end.getDate()+7),to=localKey(end);
+  const st=store.get(),today=localKey(),end=new Date();
+  end.setDate(end.getDate()+7);
+  const to=localKey(end);
   const paid=paidThisWeek();
   const due=(st.bills||[]).filter(x=>!x.paid&&x.due>=today&&x.due<=to).sort((a,b)=>a.due.localeCompare(b.due));
   const wins=(st.wins||[]).slice(0,3);
