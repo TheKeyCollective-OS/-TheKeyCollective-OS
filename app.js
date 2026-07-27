@@ -15,7 +15,7 @@ import {enhanceSprint6B4} from './sprint6b4.js';
 import {patchPagesSprint6B5,enhanceSprint6B5} from './sprint6b5.js';
 import {enhanceSprint6B6} from './sprint6b6.js';
 import {enhanceSprint6B7} from './sprint6b7.js';
-import {patchPagesSprint6B8,enhanceSprint6B8} from './sprint6b8.js?v=16.43.6';
+import {patchPagesSprint6B8,enhanceSprint6B8} from './sprint6b8.js?v=16.43.7';
 import {patchPagesSprint6B9,enhanceSprint6B9} from './sprint6b9.js';
 import {patchPagesSprint6B10,enhanceSprint6B10} from './sprint6b10.js';
 import {patchPagesSprint6B11,enhanceSprint6B11} from './sprint6b11.js';
@@ -26,13 +26,13 @@ import {patchPagesSprint6B13 as patchPagesSprint6B14,enhanceSprint6B13 as enhanc
 import {enhanceSprint6B15} from './sprint6b15.js';
 import {enhanceSprint6B16} from './sprint6b16.js';
 import {enhanceSprint6B17} from './sprint6b17.js';
-import {enhanceSprint6B18} from './sprint6b18.js';
-import {patchPagesSprint6B22,enhanceSprint6B22} from './sprint6b22.js?v=16.43.6';
+import {enhanceSprint6B18} from './sprint6b18.js?v=16.43.7';
+import {patchPagesSprint6B22,enhanceSprint6B22} from './sprint6b22.js?v=16.43.7';
 import {patchPagesSprint6B23,enhanceSprint6B23} from './sprint6b23.js';
 import {patchPagesSprint6B24,enhanceSprint6B24} from './sprint6b24.js';
 import {patchPagesSprint6B25,enhanceSprint6B25} from './sprint6b25.js';
-import {patchPagesSprint6B26,enhanceSprint6B26} from './sprint6b26.js?v=16.43.6';
-import {enhanceSprint6B43} from './sprint6b43.js?v=16.43.6';
+import {patchPagesSprint6B26,enhanceSprint6B26} from './sprint6b26.js?v=16.43.7';
+import {enhanceSprint6B43} from './sprint6b43.js?v=16.43.7';
 
 patchPages(pages);
 patchPagesSprint5(pages);
