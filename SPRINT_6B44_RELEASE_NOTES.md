@@ -25,6 +25,11 @@
 ## Preserved
 
 - Sprint 6B.43 Morning Brief, Wellness, bill-reset, sobriety, Agenda, and voice-memo synchronization.
+
+## 6B.44.1 Quality Pass
+
+- Verified Water, Gym Time, gym-goal saving, Morning Brief synchronization, paycheck forecasting, bill filtering, Agenda mobile fit, and premium module navigation on the deployed site.
+- Corrected Reflection Garden prompt shuffling so every tap produces a visibly different prompt, even after delayed page redraws.
 # Sprint 6B.44 — Intelligence, Reflection, and Global Search
 
 - Added Morning Brief global search across every rendered page and locally saved app value, including agenda items, bills, goals, reflections, and voice-memo titles. Search results navigate directly to their source module.
