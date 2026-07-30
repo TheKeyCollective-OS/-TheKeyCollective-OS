@@ -20,6 +20,7 @@ function replaceAcademyLanguage(root){
 }
 
 export async function enhanceSprint6B48(){
+  document.documentElement.dataset.kcBuild='6b48';
   replaceAcademyLanguage(document.querySelector('#nav'));
   replaceAcademyLanguage(document.querySelector('#page'));
   replaceAcademyLanguage(document.querySelector('#breadcrumb'));
