@@ -20,10 +20,12 @@ function replaceAcademyLanguage(root){
 }
 
 export async function enhanceSprint6B48(){
+  document.documentElement.dataset.kcBuild='6b48';
   replaceAcademyLanguage(document.querySelector('#nav'));
   replaceAcademyLanguage(document.querySelector('#page'));
   replaceAcademyLanguage(document.querySelector('#breadcrumb'));
   const updateBadge=()=>{const badge=document.querySelector('#kcBuildStatus b');if(badge)badge.textContent=BUILD};
   updateBadge();
   setTimeout(updateBadge,150);
+  setTimeout(updateBadge,1700);
 }

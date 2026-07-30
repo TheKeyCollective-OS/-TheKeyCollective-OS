@@ -55,6 +55,7 @@ function refineInstallGuidance(){
 }
 
 function updateBuildIdentity(){
+  if(document.documentElement.dataset.kcBuild==='6b48')return;
   const badge=$('#kcBuildStatus b');
   if(badge)badge.textContent=BUILD;
   const diagnostics=$('#buildDiagnostics h2');
