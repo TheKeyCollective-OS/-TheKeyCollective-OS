@@ -18,7 +18,9 @@ const luluLines={
   journal:['Hey, Shug. You can tell the page the truth.','Baby girl, you don’t have to make your feelings sound pretty.','Love, I’ll sit right here while you write.'],
   default:['Hey, Shug. We can take today one gentle step at a time.','Sweetheart, you do not have to carry everything at once.','Hey, baby girl. I’m right here with you.','Love, let’s choose the kindest next step.','Beautiful, you are allowed to move gently today.']
 };
-let route='dashboard',bubbleTimer,idleTimer,moveTimer,lastLine='';
+const actionLines={water:{kiki:['Okay hydration queen! I saw that.','Bestie, the water bottle is finally doing its job.'],lulu:['That was kind to your body, Shug.','Baby girl, thank you for taking care of you.']},journal:{kiki:['Oop—feelings documented. Very emotionally responsible.','Girl, look at you telling the truth on paper.'],lulu:['Love, thank you for making room for your feelings.','Sweetheart, I’m proud of you for checking in with yourself.']},money:{kiki:['Period. Future You just smiled.','Okay money queen, handling business!'],lulu:['One financial step at a time, love.','Shug, clarity is a form of care too.']},complete:{kiki:['Okayyyyy queen! Another one handled.','Bestie, that little checkmark looks good on you.'],lulu:['Beautiful, that quiet win still counts.','Baby girl, I’m proud of you for showing up.']},lani:{kiki:['Awww, look at my girls making memories.'],lulu:['Love, this one deserves a special place.','Shug, future you is going to treasure this moment.']}};
+const surprises={kiki:[['✨','surprise-moonwalk','Sunglasses on. Tiny victory lap activated.'],['🔑','surprise-drag','Girl, I found this giant key and obviously brought it to you.'],['🌸','surprise-present','Emergency flower delivery! No occasion needed.'],['💃','surprise-dance','Bestie, new dance unlocked. Please remain impressed.']],lulu:[['🌷','surprise-present','Hey, Shug. I brought you something soft and pretty.'],['🫖','surprise-sway','Love, tiny tea break?'],['🩷','surprise-hug','Baby girl, this is your reminder that you are deeply loved.'],['🦋','surprise-sway','Sweetheart, a little beauty found you today.']]};
+let route='dashboard',bubbleTimer,idleTimer,moveTimer,surpriseTimer,moveClassTimer,lastLine='',lastReactionAt=0;
 const companionConfig=()=>({...{enabled:true,speech:true,frequency:'balanced',surprises:true,reducedMotion:false,mode:'auto'},...(store.get().companion||{})});
 const activeMode=()=>{const chosen=companionConfig().mode;if(route==='lani')return'lulu';return chosen==='auto'?'kiki':chosen};
 const pick=list=>{const pool=list.filter(line=>line!==lastLine),next=pool[Math.floor(Math.random()*pool.length)]||list[0];lastLine=next;return next};
@@ -31,8 +33,13 @@ function say(message){
 }
 function scheduleIdle(){
   clearTimeout(idleTimer);const cfg=companionConfig();if(!cfg.enabled||cfg.frequency==='quiet')return;
-  idleTimer=setTimeout(()=>{if(!document.hidden)say(pick(idleLines));scheduleIdle()},(cfg.frequency==='lively'?24000:50000)+Math.random()*14000);
+  idleTimer=setTimeout(()=>{if(!document.hidden){say(pick(activeMode()==='lulu'?(luluLines[route]||luluLines.default):idleLines));performMove(activeMode()==='lulu'?'idle-sway':'idle-peek')}scheduleIdle()},(cfg.frequency==='lively'?22000:48000)+Math.random()*14000);
 }
+function performMove(name,duration=1800){const character=document.querySelector('.kiki-character'),cfg=companionConfig();if(!character||cfg.reducedMotion)return;clearTimeout(moveClassTimer);[...character.classList].filter(c=>c.startsWith('move-')||c.startsWith('idle-')||c.startsWith('surprise-')||c.startsWith('hover-')).forEach(c=>character.classList.remove(c));character.classList.add(name);moveClassTimer=setTimeout(()=>character.classList.remove(name),duration)}
+function triggerSurprise(){const cfg=companionConfig();if(!cfg.enabled||!cfg.surprises)return;const list=surprises[activeMode()],item=list[Math.floor(Math.random()*list.length)],prop=document.querySelector('#kikiProp');prop.textContent=item[0];prop.hidden=false;performMove(item[1],3200);say(item[2]);setTimeout(()=>prop.hidden=true,3400)}
+function scheduleSurprise(){clearTimeout(surpriseTimer);const cfg=companionConfig();if(!cfg.enabled||!cfg.surprises)return;const base=cfg.frequency==='lively'?70000:cfg.frequency==='quiet'?180000:110000;surpriseTimer=setTimeout(()=>{if(!document.hidden)triggerSurprise();scheduleSurprise()},base+Math.random()*45000)}
+function reactToAction(kind){const now=Date.now(),cfg=companionConfig();if(!cfg.enabled||now-lastReactionAt<5000)return;lastReactionAt=now;const library=actionLines[kind]?.[activeMode()];if(library){say(pick(library));performMove(activeMode()==='lulu'?'move-soft-bounce':'move-celebrate')}}
+function bindActionReactions(){if(document.documentElement.dataset.companionReactions)return;document.documentElement.dataset.companionReactions='1';document.addEventListener('click',event=>{const t=event.target.closest('button,input');if(!t)return;const id=t.id||'',data=t.dataset||{},action=Object.values(data).join(' ');if(id==='waterPlus'||/water/i.test(action))reactToAction('water');else if(/journal|reflection/i.test(id+' '+action)||data.memoryAction)reactToAction('journal');else if(/bill|saving|fund/i.test(id+' '+action))reactToAction('money');else if(data.top3!==undefined||t.type==='checkbox')reactToAction(route==='lani'?'lani':'complete');else if(route==='lani'&&/memory|photo|win/i.test(id+' '+action))reactToAction('lani')},true)}
 function moveCompanion(immediate=false){
   const host=document.querySelector('#kikiCompanion'),cfg=companionConfig();if(!host)return;
   const width=host.getBoundingClientRect().width||140,min=window.innerWidth>760?280:10,max=Math.max(min,window.innerWidth-width-18);
@@ -45,29 +52,31 @@ function applySettings(){
   const host=document.querySelector('#kikiCompanion'),cfg=companionConfig();if(!host)return;
   const mode=activeMode(),image=host.querySelector('img'),restore=document.querySelector('#kikiRestore'),bubble=document.querySelector('#kikiBubble');host.hidden=!cfg.enabled;if(restore)restore.hidden=cfg.enabled;if(!cfg.enabled&&bubble)bubble.hidden=true;host.dataset.mode=mode;
   image.src=mode==='lulu'?'assets/companion/lulu.png':'assets/companion/kiki.png';image.alt=mode==='lulu'?'Lulu, your gentle dinosaur companion':'Kiki, your tiny dinosaur companion';
-  document.documentElement.dataset.companionMotion=cfg.reducedMotion?'reduced':'standard';scheduleIdle();
+  document.documentElement.dataset.companionMotion=cfg.reducedMotion?'reduced':'standard';scheduleIdle();scheduleSurprise();
 }
 function renderSettings(){
   const cfg=companionConfig(),panel=document.querySelector('#kikiSettings');
   panel.innerHTML=`<div class="kiki-settings-head"><div><span>Kiki + Lulu</span><b>Your companion, your choice</b></div><button type="button" data-kiki-close aria-label="Close companion settings">×</button></div><p class="kiki-mode-note">Lulu always visits Lani’s Corner. Your selected companion returns when you leave.</p><label><span>Companion mode</span><select data-kiki-setting="mode"><option value="auto" ${cfg.mode==='auto'?'selected':''}>Automatic</option><option value="kiki" ${cfg.mode==='kiki'?'selected':''}>Kiki</option><option value="lulu" ${cfg.mode==='lulu'?'selected':''}>Lulu</option></select></label><label><span>Show companion</span><input type="checkbox" data-kiki-setting="enabled" ${cfg.enabled?'checked':''}></label><label><span>Speech bubbles</span><input type="checkbox" data-kiki-setting="speech" ${cfg.speech?'checked':''}></label><label><span>Rare surprises</span><input type="checkbox" data-kiki-setting="surprises" ${cfg.surprises?'checked':''}></label><label><span>Activity</span><select data-kiki-setting="frequency"><option value="quiet" ${cfg.frequency==='quiet'?'selected':''}>Quiet</option><option value="balanced" ${cfg.frequency==='balanced'?'selected':''}>Balanced</option><option value="lively" ${cfg.frequency==='lively'?'selected':''}>Lively</option></select></label><label><span>Reduced motion</span><input type="checkbox" data-kiki-setting="reducedMotion" ${cfg.reducedMotion?'checked':''}></label>`;
   const name=activeMode()==='lulu'?'Lulu':'Kiki';
   panel.querySelector('.kiki-settings-head').insertAdjacentHTML('afterend',`<button type="button" class="kiki-talk-button" data-kiki-talk>Hear from ${name}</button>`);
+  if(cfg.surprises)panel.querySelector('[data-kiki-talk]').insertAdjacentHTML('afterend','<button type="button" class="kiki-talk-button kiki-surprise-preview" data-kiki-surprise>Preview a surprise</button>');
   panel.querySelector('[data-kiki-close]').onclick=()=>panel.hidePopover();
   panel.querySelector('[data-kiki-talk]').onclick=()=>{panel.hidePopover();say(pick(activeMode()==='lulu'?(luluLines[route]||luluLines.default):(pageLines[route]||idleLines)))};
+  panel.querySelector('[data-kiki-surprise]')?.addEventListener('click',()=>{panel.hidePopover();triggerSurprise()});
   panel.querySelectorAll('[data-kiki-setting]').forEach(control=>control.onchange=()=>{saveSetting({[control.dataset.kikiSetting]:control.type==='checkbox'?control.checked:control.value});applySettings();renderSettings()});
 }
 function mount(){
   if(document.querySelector('#kikiCompanion'))return;
-  document.body.insertAdjacentHTML('beforeend',`<div id="kikiBubble" class="kiki-bubble" role="status" aria-live="polite" hidden></div><aside id="kikiCompanion" class="kiki-companion" aria-label="Kiki companion"><button type="button" class="kiki-character" aria-label="Talk to Kiki"><img src="assets/companion/kiki.png" alt="Kiki, your tiny dinosaur companion"></button></aside><button type="button" id="kikiRestore" class="kiki-restore" hidden>Bring Kiki back</button><section id="kikiSettings" class="kiki-settings" aria-label="Kiki and Lulu settings" popover></section>`);
+  document.body.insertAdjacentHTML('beforeend',`<div id="kikiBubble" class="kiki-bubble" role="status" aria-live="polite" hidden></div><aside id="kikiCompanion" class="kiki-companion" aria-label="Kiki companion"><span id="kikiProp" class="kiki-prop" aria-hidden="true" hidden></span><button type="button" class="kiki-character" aria-label="Talk to Kiki"><img src="assets/companion/kiki.png" alt="Kiki, your tiny dinosaur companion"></button></aside><button type="button" id="kikiRestore" class="kiki-restore" hidden>Bring Kiki back</button><section id="kikiSettings" class="kiki-settings" aria-label="Kiki and Lulu settings" popover></section>`);
   const character=document.querySelector('.kiki-character');
   character.setAttribute('aria-label','Open Kiki and Lulu options');
   character.setAttribute('popovertarget','kikiSettings');
-  character.onmouseenter=()=>{if(character.dataset.moving)return;const moves=['hover-twirl','hover-shimmy','hover-hop','hover-sass'],move=moves[Math.floor(Math.random()*moves.length)];character.dataset.moving='1';character.classList.add(move);setTimeout(()=>{character.classList.remove(move);delete character.dataset.moving},1300)};
+  character.onmouseenter=()=>{if(character.dataset.moving)return;const moves=activeMode()==='lulu'?['hover-hop','idle-sway','move-soft-bounce']:['hover-twirl','hover-shimmy','hover-hop','hover-sass'],move=moves[Math.floor(Math.random()*moves.length)];character.dataset.moving='1';performMove(move,1400);setTimeout(()=>delete character.dataset.moving,1450)};
   document.querySelector('#kikiRestore').onclick=()=>{saveSetting({enabled:true});applySettings();renderSettings()};
-  renderSettings();applySettings();moveCompanion(true);
+  bindActionReactions();renderSettings();applySettings();moveCompanion(true);
 }
 export function enhanceSprint6C1(id){
   mount();route=id||'dashboard';const host=document.querySelector('#kikiCompanion');host.dataset.route=route;applySettings();moveCompanion();
   clearTimeout(host._greeting);host._greeting=setTimeout(()=>say(pick(activeMode()==='lulu'?(luluLines[route]||luluLines.default):(pageLines[route]||idleLines))),700);
-  const badge=document.querySelector('#kcBuildStatus b');if(badge)badge.textContent='Sprint 6C.1 · Kiki Foundation';
+  const badge=document.querySelector('#kcBuildStatus b');if(badge)badge.textContent='Sprint 6C.2 · Companion Autonomy';
 }
