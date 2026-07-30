@@ -57,10 +57,10 @@ html[data-companion-motion="reduced"] .kiki-companion *{animation:none!important
 @media(max-width:720px){.kiki-companion{width:106px;right:8px;bottom:max(8px,env(safe-area-inset-bottom))}.kiki-bubble{right:60%;bottom:78%;font-size:13px;width:min(230px,70vw)}.kiki-settings{bottom:125px}}
 
 /* Keep companion messages visible while Kiki and Lulu wander. */
-.kiki-bubble{position:fixed;left:clamp(16px,var(--companion-x,50vw),calc(100vw - 292px));right:auto;bottom:190px;width:min(260px,calc(100vw - 32px))}
+.kiki-bubble{position:fixed;left:16px;right:auto;bottom:190px;z-index:79;width:min(260px,calc(100vw - 32px));transition:left 4s cubic-bezier(.35,.05,.2,1)}
 .kiki-talk-button{width:100%;margin:2px 0 12px;padding:11px 14px;border:1px solid color-mix(in srgb,var(--gold) 55%,var(--line));border-radius:12px;background:color-mix(in srgb,var(--paper) 92%,var(--gold));color:var(--ink);font:700 13px/1.2 Inter,sans-serif;cursor:pointer}
 .kiki-talk-button:hover,.kiki-talk-button:focus-visible{filter:brightness(1.04);outline:2px solid color-mix(in srgb,var(--gold) 60%,transparent);outline-offset:2px}
-@media(max-width:720px){.kiki-bubble{left:clamp(12px,var(--companion-x,45vw),calc(100vw - 246px));right:auto;bottom:142px;width:min(230px,calc(100vw - 24px))}}
+@media(max-width:720px){.kiki-bubble{left:12px;right:auto;bottom:142px;width:min(230px,calc(100vw - 24px))}}
 .kiki-settings:popover-open{inset:auto clamp(16px,3vw,42px) clamp(150px,22vh,235px) auto;margin:0}
 
 /* Milestone 8 — Pulse + connected intelligence */

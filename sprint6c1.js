@@ -20,7 +20,7 @@ const pick=list=>{const pool=list.filter(line=>line!==lastLine),next=pool[Math.f
 function say(message){
   const host=document.querySelector('#kikiCompanion'),cfg=companionConfig();
   if(!host||!cfg.enabled||!cfg.speech)return;
-  const bubble=host.querySelector('.kiki-bubble');bubble.textContent=message;bubble.hidden=false;host.classList.add('is-talking');
+  const bubble=document.querySelector('#kikiBubble');bubble.textContent=message;bubble.hidden=false;host.classList.add('is-talking');
   clearTimeout(bubbleTimer);bubbleTimer=setTimeout(()=>{bubble.hidden=true;host.classList.remove('is-talking')},5200);
 }
 function scheduleIdle(){
@@ -30,7 +30,8 @@ function scheduleIdle(){
 function moveCompanion(immediate=false){
   const host=document.querySelector('#kikiCompanion'),cfg=companionConfig();if(!host)return;
   const width=host.getBoundingClientRect().width||140,min=window.innerWidth>760?280:10,max=Math.max(min,window.innerWidth-width-18);
-  host.style.setProperty('--companion-x',`${Math.round(min+Math.random()*(max-min))}px`);host.classList.toggle('is-walking',!immediate&&!cfg.reducedMotion);
+  const x=Math.round(min+Math.random()*(max-min)),bubble=document.querySelector('#kikiBubble'),bubbleWidth=window.innerWidth<=720?230:260;
+  host.style.setProperty('--companion-x',`${x}px`);if(bubble)bubble.style.left=`${Math.max(12,Math.min(window.innerWidth-bubbleWidth-12,x-55))}px`;host.classList.toggle('is-walking',!immediate&&!cfg.reducedMotion);
   clearTimeout(moveTimer);moveTimer=setTimeout(()=>{host.classList.remove('is-walking');moveCompanion()},cfg.frequency==='lively'?15000:26000);
 }
 function saveSetting(patch){store.mutate(d=>{d.companion={...companionConfig(),...patch}})}
@@ -51,7 +52,7 @@ function renderSettings(){
 }
 function mount(){
   if(document.querySelector('#kikiCompanion'))return;
-  document.body.insertAdjacentHTML('beforeend',`<aside id="kikiCompanion" class="kiki-companion" aria-label="Kiki companion"><div class="kiki-bubble" role="status" aria-live="polite" hidden></div><button type="button" class="kiki-character" aria-label="Talk to Kiki"><img src="assets/companion/kiki.png" alt="Kiki, your tiny dinosaur companion"></button></aside><button type="button" class="kiki-settings-button" aria-label="Kiki and Lulu settings" popovertarget="kikiSettings">•••</button><section id="kikiSettings" class="kiki-settings" aria-label="Kiki and Lulu settings" popover></section>`);
+  document.body.insertAdjacentHTML('beforeend',`<div id="kikiBubble" class="kiki-bubble" role="status" aria-live="polite" hidden></div><aside id="kikiCompanion" class="kiki-companion" aria-label="Kiki companion"><button type="button" class="kiki-character" aria-label="Talk to Kiki"><img src="assets/companion/kiki.png" alt="Kiki, your tiny dinosaur companion"></button></aside><button type="button" class="kiki-settings-button" aria-label="Kiki and Lulu settings" popovertarget="kikiSettings">•••</button><section id="kikiSettings" class="kiki-settings" aria-label="Kiki and Lulu settings" popover></section>`);
   const character=document.querySelector('.kiki-character');
   character.setAttribute('aria-label','Open Kiki and Lulu options');
   character.setAttribute('popovertarget','kikiSettings');
