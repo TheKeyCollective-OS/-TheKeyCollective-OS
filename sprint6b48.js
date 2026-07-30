@@ -26,4 +26,5 @@ export async function enhanceSprint6B48(){
   const updateBadge=()=>{const badge=document.querySelector('#kcBuildStatus b');if(badge)badge.textContent=BUILD};
   updateBadge();
   setTimeout(updateBadge,150);
+  setTimeout(updateBadge,1700);
 }

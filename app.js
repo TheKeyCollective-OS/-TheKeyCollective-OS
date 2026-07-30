@@ -37,7 +37,7 @@ import {enhanceSprint6B44} from './sprint6b44.js?v=16.44.9';
 import {enhanceSprint6B45} from './sprint6b45.js?v=16.45.1';
 import {enhanceSprint6B46} from './sprint6b46.js?v=16.46.1';
 import {enhanceSprint6B47} from './sprint6b47.js?v=16.47.0';
-import {enhanceSprint6B48} from './sprint6b48.js?v=16.48.0';
+import {enhanceSprint6B48} from './sprint6b48.js?v=16.48.1';
 
 patchPages(pages);
 patchPagesSprint5(pages);
