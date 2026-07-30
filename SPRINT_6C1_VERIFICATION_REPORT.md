@@ -10,5 +10,7 @@
 - Manual Kiki selection overrode the automatic Lulu transformation.
 - Returning to Automatic restored Lulu and the selection persisted through shared state.
 - Companion position changed within safe viewport boundaries.
+- The stationary companion settings button opened independently of character movement.
+- Character hover triggers one of four movement-only surprises without opening a message.
 - No browser console errors were detected.
 - The Sprint 6B.49 layouts and stored-data workflows remain unchanged.

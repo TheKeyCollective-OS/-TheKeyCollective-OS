@@ -48,8 +48,10 @@ function renderSettings(){
 }
 function mount(){
   if(document.querySelector('#kikiCompanion'))return;
-  document.body.insertAdjacentHTML('beforeend',`<aside id="kikiCompanion" class="kiki-companion" aria-label="Kiki companion"><div class="kiki-bubble" role="status" aria-live="polite" hidden></div><button type="button" class="kiki-character" aria-label="Talk to Kiki"><img src="assets/companion/kiki.png" alt="Kiki, your tiny dinosaur companion"></button><button type="button" class="kiki-settings-button" aria-label="Kiki settings" popovertarget="kikiSettings">•••</button></aside><section id="kikiSettings" class="kiki-settings" aria-label="Kiki settings" popover></section>`);
-  document.querySelector('.kiki-character').onclick=()=>say(pick(activeMode()==='lulu'?(luluLines[route]||luluLines.default):(pageLines[route]||idleLines)));renderSettings();applySettings();moveCompanion(true);
+  document.body.insertAdjacentHTML('beforeend',`<aside id="kikiCompanion" class="kiki-companion" aria-label="Kiki companion"><div class="kiki-bubble" role="status" aria-live="polite" hidden></div><button type="button" class="kiki-character" aria-label="Talk to Kiki"><img src="assets/companion/kiki.png" alt="Kiki, your tiny dinosaur companion"></button></aside><button type="button" class="kiki-settings-button" aria-label="Kiki and Lulu settings" popovertarget="kikiSettings">•••</button><section id="kikiSettings" class="kiki-settings" aria-label="Kiki and Lulu settings" popover></section>`);
+  const character=document.querySelector('.kiki-character'),speak=()=>say(pick(activeMode()==='lulu'?(luluLines[route]||luluLines.default):(pageLines[route]||idleLines)));
+  character.onclick=speak;character.onmouseenter=()=>{if(character.dataset.moving)return;const moves=['hover-twirl','hover-shimmy','hover-hop','hover-sass'],move=moves[Math.floor(Math.random()*moves.length)];character.dataset.moving='1';character.classList.add(move);setTimeout(()=>{character.classList.remove(move);delete character.dataset.moving},1300)};
+  renderSettings();applySettings();moveCompanion(true);
 }
 export function enhanceSprint6C1(id){
   mount();route=id||'dashboard';const host=document.querySelector('#kikiCompanion');host.dataset.route=route;applySettings();moveCompanion();
