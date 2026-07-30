@@ -1,17 +1,23 @@
 import {store} from './store.js';
 
 const pageLines={
-  dashboard:['Okay queen, what are we handling first?','Girl… this dashboard is looking very CEO.'],
-  intelligence:['Bestie, what is the morning tea?'],calendar:['Girl, where are we going? I need details.'],
-  lani:['Awww, Lani’s Corner! Let me put on my gentle voice.'],career:['Okay career queen! Teach me something expensive.'],
-  business:['Girl… are we building an empire again?'],money:['Queen, I opened the money page. Should I be nervous?'],
-  wellness:['Water check! I am watching respectfully. 👀'],sanctuary:['Beautiful, take the breath before the next thing.'],
-  journal:['Sooo… are we gonna talk about it orrrr? 👀'],goals:['Okay muscles! Tiny progress still counts.'],
-  progress:['Look at those wins! I knew you were that girl.'],premium:['Ooh, we are redecorating? I have opinions.'],
-  profile:['That is my gorgeous bestie right there.']
+  dashboard:['Okay queen, what are we handling first?','Girl… this dashboard is looking very CEO.','Hey baby girl, what’s the move today?','Bestie, I’m here. Who are we impressing first?'],
+  intelligence:['Bestie, what is the morning tea?','Girl, let me peek at the briefing too.','Okay queen, give me the important details.'],calendar:['Girl, where are we going? I need details.','Okay, whose business are we adding to this calendar?','Baby girl, let’s make room for something fun too.'],
+  lani:['Awww, Lani’s Corner! Let me put on my gentle voice.','Hey baby girl, let’s see what our favorite little lady is up to.','This page is too cute. I’m staying.'],career:['Okay career queen! Teach me something expensive.','Bestie, professional and fabulous is a powerful combination.','Girl, look at you building that expertise.'],
+  business:['Girl… are we building an empire again?','Okay boss, I brought ideas and absolutely no chill.','Bestie, this is giving future CEO.'],money:['Queen, I opened the money page. Should I be nervous?','Girl, I’m just here to mind the budget respectfully.','Okay baby girl, let’s make the numbers behave.'],
+  wellness:['Water check! I am watching respectfully. 👀','Hey gorgeous, have we stretched those shoulders today?','Baby girl, tiny care still counts.','Bestie, that water bottle is not decorative.'],sanctuary:['Beautiful, take the breath before the next thing.','Hey baby girl, let’s soften the room for a minute.','Queen, you are allowed to pause.'],
+  journal:['Sooo… are we gonna talk about it orrrr? 👀','Girl, I brought my listening ears and zero judgment.','Bestie, write the messy version. We can make sense of it later.'],goals:['Okay muscles! Tiny progress still counts.','Queen, one little step still moved us forward.','Baby girl, consistency can be cute and imperfect.'],
+  progress:['Look at those wins! I knew you were that girl.','Bestie, I see the quiet wins too.','Okay queen, the progress is progressing.'],premium:['Ooh, we are redecorating? I have opinions.','Girl, luxury is in the details. Let me look.','Bestie, this is getting very polished.'],
+  profile:['That is my gorgeous bestie right there.','Hey queen, looking good in your own little corner.','Baby girl, this profile is very much giving main character.']
 };
-const idleLines=['Girl… what are we doing over here? 👀','Bestie, I was just checking on you.','Queen, drink a little water with me?','Gorgeous, I am minding your business lovingly.'];
-const luluLines={lani:['Hi, baby girl. Let’s see what made Lani smile today.','Love, these little moments are worth keeping.'],default:['Hi, Shug. We can take today one gentle step at a time.','Sweetheart, you do not have to carry everything at once.']};
+const idleLines=['Girl… what are we doing over here? 👀','Bestie, I was just checking on you.','Queen, drink a little water with me?','Gorgeous, I am minding your business lovingly.','Hey baby girl, I came to see what you’re working on.','Bestie… I have questions, but I’ll behave.','Girl, don’t mind me. I’m just supervising.','Queen, should we celebrate something small real quick?'];
+const luluLines={
+  lani:['Hey, baby girl. Let’s see what made Lani smile today.','Love, these little moments are worth keeping.','Shug, you’re building her childhood with so much love.','Sweetheart, let’s save one beautiful little moment today.'],
+  wellness:['Hey, Shug. Want to share a glass of water with me?','Baby girl, one small act of care is enough to begin.','Love, your body deserves tenderness today.','Sweetheart, we can take care of you without rushing.'],
+  sanctuary:['Hey, baby girl. Come breathe with me for a moment.','Shug, you don’t have to solve everything right now.','Love, rest is allowed here.','Sweetheart, let’s make this moment a little softer.'],
+  journal:['Hey, Shug. You can tell the page the truth.','Baby girl, you don’t have to make your feelings sound pretty.','Love, I’ll sit right here while you write.'],
+  default:['Hey, Shug. We can take today one gentle step at a time.','Sweetheart, you do not have to carry everything at once.','Hey, baby girl. I’m right here with you.','Love, let’s choose the kindest next step.','Beautiful, you are allowed to move gently today.']
+};
 let route='dashboard',bubbleTimer,idleTimer,moveTimer,lastLine='';
 const companionConfig=()=>({...{enabled:true,speech:true,frequency:'balanced',surprises:true,reducedMotion:false,mode:'auto'},...(store.get().companion||{})});
 const activeMode=()=>{const chosen=companionConfig().mode;return chosen==='auto'?(route==='lani'?'lulu':'kiki'):chosen};
