@@ -141,7 +141,7 @@ function bindAgendaActions(){
     const button=event.target.closest('[data-kc44-action]');if(!button)return;
     const action=button.dataset.kc44Action,prefix=button.dataset.prefix||'page';
     if(action==='save-agenda-extras'){event.preventDefault();saveAgendaExtras(prefix)}
-    if(action==='open-google-directions'){event.preventDefault();const destination=destinationFor(prefix);if(destination)window.open(/^https?:/i.test(destination)?destination:`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(destination)}`,'_blank','noopener')}
+    if(action==='open-google-directions'){event.preventDefault();const destination=destinationFor(prefix),status=button.closest('[data-kc44-agenda-fields]')?.querySelector('[data-kc44-agenda-status]');if(!destination){if(status)status.textContent='Add a location or saved Google Maps link first, then open directions.';return}window.open(/^https?:/i.test(destination)?destination:`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(destination)}`,'_blank','noopener');if(status)status.textContent='Google Maps opened in a new tab.'}
     if(action==='open-apple-directions'){event.preventDefault();const destination=destinationFor(prefix);if(destination)window.open(`https://maps.apple.com/?daddr=${encodeURIComponent(destination)}`,'_blank','noopener')}
     if(action==='export-apple-day'){event.preventDefault();downloadAppleDay(prefix)}
     if(action==='google-calendar-setup'){event.preventDefault();window.open('https://console.cloud.google.com/apis/library/calendar-json.googleapis.com','_blank','noopener')}
