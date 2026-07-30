@@ -58,7 +58,7 @@ function renderSettings(){
 }
 function mount(){
   if(document.querySelector('#kikiCompanion'))return;
-  document.body.insertAdjacentHTML('beforeend',`<div id="kikiBubble" class="kiki-bubble" role="status" aria-live="polite" hidden></div><aside id="kikiCompanion" class="kiki-companion" aria-label="Kiki companion"><button type="button" class="kiki-character" aria-label="Talk to Kiki"><img src="assets/companion/kiki.png" alt="Kiki, your tiny dinosaur companion"></button></aside><button type="button" class="kiki-settings-button" aria-label="Kiki and Lulu settings" popovertarget="kikiSettings">•••</button><section id="kikiSettings" class="kiki-settings" aria-label="Kiki and Lulu settings" popover></section>`);
+  document.body.insertAdjacentHTML('beforeend',`<div id="kikiBubble" class="kiki-bubble" role="status" aria-live="polite" hidden></div><aside id="kikiCompanion" class="kiki-companion" aria-label="Kiki companion"><button type="button" class="kiki-character" aria-label="Talk to Kiki"><img src="assets/companion/kiki.png" alt="Kiki, your tiny dinosaur companion"></button></aside><section id="kikiSettings" class="kiki-settings" aria-label="Kiki and Lulu settings" popover></section>`);
   const character=document.querySelector('.kiki-character');
   character.setAttribute('aria-label','Open Kiki and Lulu options');
   character.setAttribute('popovertarget','kikiSettings');
