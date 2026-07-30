@@ -37,6 +37,7 @@
 
 /* Sprint 6C.1 — Kiki companion foundation */
 .kiki-companion{position:fixed;left:var(--companion-x,calc(100vw - 190px));bottom:max(12px,env(safe-area-inset-bottom));z-index:78;width:clamp(116px,12vw,172px);display:grid;justify-items:center;filter:drop-shadow(0 16px 22px rgba(53,29,42,.2));pointer-events:none;transition:left 4s cubic-bezier(.35,.05,.2,1)}
+.kiki-companion[hidden]{display:none!important}
 .kiki-character,.kiki-settings-button{pointer-events:auto;border:0;background:transparent;color:var(--ink)}
 .kiki-character{padding:0;width:100%;transition:transform .3s ease}.kiki-character:hover{transform:translateY(-5px) rotate(-1deg)}
 .kiki-character img{display:block;width:100%;height:auto;max-height:190px;object-fit:contain}
@@ -61,6 +62,8 @@ html[data-companion-motion="reduced"] .kiki-companion *{animation:none!important
 .kiki-talk-button{width:100%;margin:2px 0 12px;padding:11px 14px;border:1px solid color-mix(in srgb,var(--gold) 55%,var(--line));border-radius:12px;background:color-mix(in srgb,var(--paper) 92%,var(--gold));color:var(--ink);font:700 13px/1.2 Inter,sans-serif;cursor:pointer}
 .kiki-talk-button:hover,.kiki-talk-button:focus-visible{filter:brightness(1.04);outline:2px solid color-mix(in srgb,var(--gold) 60%,transparent);outline-offset:2px}
 .kiki-mode-note{margin:0 0 12px;color:var(--muted);font:600 12px/1.45 Inter,sans-serif}
+.kiki-restore{position:fixed;right:18px;bottom:max(18px,env(safe-area-inset-bottom));z-index:78;padding:9px 13px;border:1px solid color-mix(in srgb,var(--gold) 55%,var(--line));border-radius:999px;background:color-mix(in srgb,var(--paper) 94%,transparent);color:var(--ink);box-shadow:0 10px 28px rgba(53,29,42,.14);font:700 12px/1 Inter,sans-serif;cursor:pointer}
+.kiki-restore[hidden]{display:none!important}
 @media(max-width:720px){.kiki-bubble{left:12px;right:auto;bottom:142px;width:min(230px,calc(100vw - 24px))}}
 .kiki-settings:popover-open{inset:auto clamp(16px,3vw,42px) clamp(150px,22vh,235px) auto;margin:0}
 

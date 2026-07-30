@@ -43,7 +43,7 @@ function moveCompanion(immediate=false){
 function saveSetting(patch){store.mutate(d=>{d.companion={...companionConfig(),...patch}})}
 function applySettings(){
   const host=document.querySelector('#kikiCompanion'),cfg=companionConfig();if(!host)return;
-  const mode=activeMode(),image=host.querySelector('img');host.hidden=!cfg.enabled;host.dataset.mode=mode;
+  const mode=activeMode(),image=host.querySelector('img'),restore=document.querySelector('#kikiRestore'),bubble=document.querySelector('#kikiBubble');host.hidden=!cfg.enabled;if(restore)restore.hidden=cfg.enabled;if(!cfg.enabled&&bubble)bubble.hidden=true;host.dataset.mode=mode;
   image.src=mode==='lulu'?'assets/companion/lulu.png':'assets/companion/kiki.png';image.alt=mode==='lulu'?'Lulu, your gentle dinosaur companion':'Kiki, your tiny dinosaur companion';
   document.documentElement.dataset.companionMotion=cfg.reducedMotion?'reduced':'standard';scheduleIdle();
 }
@@ -58,11 +58,12 @@ function renderSettings(){
 }
 function mount(){
   if(document.querySelector('#kikiCompanion'))return;
-  document.body.insertAdjacentHTML('beforeend',`<div id="kikiBubble" class="kiki-bubble" role="status" aria-live="polite" hidden></div><aside id="kikiCompanion" class="kiki-companion" aria-label="Kiki companion"><button type="button" class="kiki-character" aria-label="Talk to Kiki"><img src="assets/companion/kiki.png" alt="Kiki, your tiny dinosaur companion"></button></aside><section id="kikiSettings" class="kiki-settings" aria-label="Kiki and Lulu settings" popover></section>`);
+  document.body.insertAdjacentHTML('beforeend',`<div id="kikiBubble" class="kiki-bubble" role="status" aria-live="polite" hidden></div><aside id="kikiCompanion" class="kiki-companion" aria-label="Kiki companion"><button type="button" class="kiki-character" aria-label="Talk to Kiki"><img src="assets/companion/kiki.png" alt="Kiki, your tiny dinosaur companion"></button></aside><button type="button" id="kikiRestore" class="kiki-restore" hidden>Bring Kiki back</button><section id="kikiSettings" class="kiki-settings" aria-label="Kiki and Lulu settings" popover></section>`);
   const character=document.querySelector('.kiki-character');
   character.setAttribute('aria-label','Open Kiki and Lulu options');
   character.setAttribute('popovertarget','kikiSettings');
   character.onmouseenter=()=>{if(character.dataset.moving)return;const moves=['hover-twirl','hover-shimmy','hover-hop','hover-sass'],move=moves[Math.floor(Math.random()*moves.length)];character.dataset.moving='1';character.classList.add(move);setTimeout(()=>{character.classList.remove(move);delete character.dataset.moving},1300)};
+  document.querySelector('#kikiRestore').onclick=()=>{saveSetting({enabled:true});applySettings();renderSettings()};
   renderSettings();applySettings();moveCompanion(true);
 }
 export function enhanceSprint6C1(id){
