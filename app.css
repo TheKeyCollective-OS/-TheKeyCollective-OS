@@ -60,6 +60,7 @@ html[data-companion-motion="reduced"] .kiki-companion *{animation:none!important
 .kiki-bubble{position:fixed;left:16px;right:auto;bottom:190px;z-index:79;width:min(260px,calc(100vw - 32px));transition:left 4s cubic-bezier(.35,.05,.2,1)}
 .kiki-talk-button{width:100%;margin:2px 0 12px;padding:11px 14px;border:1px solid color-mix(in srgb,var(--gold) 55%,var(--line));border-radius:12px;background:color-mix(in srgb,var(--paper) 92%,var(--gold));color:var(--ink);font:700 13px/1.2 Inter,sans-serif;cursor:pointer}
 .kiki-talk-button:hover,.kiki-talk-button:focus-visible{filter:brightness(1.04);outline:2px solid color-mix(in srgb,var(--gold) 60%,transparent);outline-offset:2px}
+.kiki-mode-note{margin:0 0 12px;color:var(--muted);font:600 12px/1.45 Inter,sans-serif}
 @media(max-width:720px){.kiki-bubble{left:12px;right:auto;bottom:142px;width:min(230px,calc(100vw - 24px))}}
 .kiki-settings:popover-open{inset:auto clamp(16px,3vw,42px) clamp(150px,22vh,235px) auto;margin:0}
 
