@@ -43,14 +43,19 @@ function applySettings(){
 function renderSettings(){
   const cfg=companionConfig(),panel=document.querySelector('#kikiSettings');
   panel.innerHTML=`<div class="kiki-settings-head"><div><span>Kiki + Lulu</span><b>Your companion, your choice</b></div><button type="button" data-kiki-close aria-label="Close companion settings">×</button></div><label><span>Companion mode</span><select data-kiki-setting="mode"><option value="auto" ${cfg.mode==='auto'?'selected':''}>Automatic</option><option value="kiki" ${cfg.mode==='kiki'?'selected':''}>Kiki</option><option value="lulu" ${cfg.mode==='lulu'?'selected':''}>Lulu</option></select></label><label><span>Show companion</span><input type="checkbox" data-kiki-setting="enabled" ${cfg.enabled?'checked':''}></label><label><span>Speech bubbles</span><input type="checkbox" data-kiki-setting="speech" ${cfg.speech?'checked':''}></label><label><span>Rare surprises</span><input type="checkbox" data-kiki-setting="surprises" ${cfg.surprises?'checked':''}></label><label><span>Activity</span><select data-kiki-setting="frequency"><option value="quiet" ${cfg.frequency==='quiet'?'selected':''}>Quiet</option><option value="balanced" ${cfg.frequency==='balanced'?'selected':''}>Balanced</option><option value="lively" ${cfg.frequency==='lively'?'selected':''}>Lively</option></select></label><label><span>Reduced motion</span><input type="checkbox" data-kiki-setting="reducedMotion" ${cfg.reducedMotion?'checked':''}></label>`;
+  const name=activeMode()==='lulu'?'Lulu':'Kiki';
+  panel.querySelector('.kiki-settings-head').insertAdjacentHTML('afterend',`<button type="button" class="kiki-talk-button" data-kiki-talk>Hear from ${name}</button>`);
   panel.querySelector('[data-kiki-close]').onclick=()=>panel.hidePopover();
+  panel.querySelector('[data-kiki-talk]').onclick=()=>{panel.hidePopover();say(pick(activeMode()==='lulu'?(luluLines[route]||luluLines.default):(pageLines[route]||idleLines)))};
   panel.querySelectorAll('[data-kiki-setting]').forEach(control=>control.onchange=()=>{saveSetting({[control.dataset.kikiSetting]:control.type==='checkbox'?control.checked:control.value});applySettings();renderSettings()});
 }
 function mount(){
   if(document.querySelector('#kikiCompanion'))return;
   document.body.insertAdjacentHTML('beforeend',`<aside id="kikiCompanion" class="kiki-companion" aria-label="Kiki companion"><div class="kiki-bubble" role="status" aria-live="polite" hidden></div><button type="button" class="kiki-character" aria-label="Talk to Kiki"><img src="assets/companion/kiki.png" alt="Kiki, your tiny dinosaur companion"></button></aside><button type="button" class="kiki-settings-button" aria-label="Kiki and Lulu settings" popovertarget="kikiSettings">•••</button><section id="kikiSettings" class="kiki-settings" aria-label="Kiki and Lulu settings" popover></section>`);
-  const character=document.querySelector('.kiki-character'),speak=()=>say(pick(activeMode()==='lulu'?(luluLines[route]||luluLines.default):(pageLines[route]||idleLines)));
-  character.onclick=speak;character.onmouseenter=()=>{if(character.dataset.moving)return;const moves=['hover-twirl','hover-shimmy','hover-hop','hover-sass'],move=moves[Math.floor(Math.random()*moves.length)];character.dataset.moving='1';character.classList.add(move);setTimeout(()=>{character.classList.remove(move);delete character.dataset.moving},1300)};
+  const character=document.querySelector('.kiki-character');
+  character.setAttribute('aria-label','Open Kiki and Lulu options');
+  character.setAttribute('popovertarget','kikiSettings');
+  character.onmouseenter=()=>{if(character.dataset.moving)return;const moves=['hover-twirl','hover-shimmy','hover-hop','hover-sass'],move=moves[Math.floor(Math.random()*moves.length)];character.dataset.moving='1';character.classList.add(move);setTimeout(()=>{character.classList.remove(move);delete character.dataset.moving},1300)};
   renderSettings();applySettings();moveCompanion(true);
 }
 export function enhanceSprint6C1(id){
