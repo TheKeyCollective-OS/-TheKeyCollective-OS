@@ -36,7 +36,7 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.page>*,.module,.card,.btn{animation:none!important;transition:none!important}}
 
 /* Sprint 6C.1 — Kiki companion foundation */
-.kiki-companion{position:fixed;right:clamp(10px,2.4vw,34px);bottom:max(12px,env(safe-area-inset-bottom));z-index:78;width:clamp(116px,12vw,172px);display:grid;justify-items:center;filter:drop-shadow(0 16px 22px rgba(53,29,42,.2));pointer-events:none}
+.kiki-companion{position:fixed;left:var(--companion-x,calc(100vw - 190px));bottom:max(12px,env(safe-area-inset-bottom));z-index:78;width:clamp(116px,12vw,172px);display:grid;justify-items:center;filter:drop-shadow(0 16px 22px rgba(53,29,42,.2));pointer-events:none;transition:left 4s cubic-bezier(.35,.05,.2,1)}
 .kiki-character,.kiki-settings-button{pointer-events:auto;border:0;background:transparent;color:var(--ink)}
 .kiki-character{padding:0;width:100%;transition:transform .3s ease}.kiki-character:hover{transform:translateY(-5px) rotate(-1deg)}
 .kiki-character img{display:block;width:100%;height:auto;max-height:190px;object-fit:contain}
@@ -44,10 +44,12 @@
 .kiki-bubble{position:absolute;right:68%;bottom:74%;width:min(260px,65vw);padding:13px 15px;border:1px solid color-mix(in srgb,var(--gold) 52%,var(--line));border-radius:18px 18px 4px 18px;background:color-mix(in srgb,var(--paper) 96%,transparent);color:var(--ink);box-shadow:0 14px 40px rgba(53,29,42,.18);font:700 14px/1.4 Inter,sans-serif;backdrop-filter:blur(15px);pointer-events:none}
 .kiki-companion[data-activity="arrive"] .kiki-character{animation:kikiArrive .7s cubic-bezier(.2,.8,.2,1)}
 .kiki-companion.is-talking .kiki-character{animation:kikiTalk .75s ease-in-out infinite alternate}
+.kiki-companion.is-walking .kiki-character{animation:kikiWalk .55s ease-in-out infinite alternate}.kiki-companion[data-mode="lulu"]{filter:drop-shadow(0 16px 24px rgba(206,93,142,.24))}
 .kiki-settings{position:fixed;right:clamp(16px,3vw,42px);bottom:clamp(150px,22vh,235px);z-index:79;width:min(330px,calc(100vw - 32px));padding:17px;border:1px solid var(--line);border-radius:22px;background:color-mix(in srgb,var(--paper) 96%,transparent);box-shadow:0 25px 70px rgba(31,18,26,.28);backdrop-filter:blur(20px)}
 .kiki-settings-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:11px}.kiki-settings-head span{display:block;font:22px Georgia,serif}.kiki-settings-head b{display:block;color:var(--muted);font-size:12px;margin-top:2px}.kiki-settings-head button{border:0;background:transparent;color:var(--ink);font-size:24px}.kiki-settings label{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:10px 2px;border-top:1px solid var(--line);font-weight:750}.kiki-settings select{width:auto;min-width:112px;padding:7px 9px;border-radius:12px}.kiki-settings input[type="checkbox"]{width:20px;height:20px;accent-color:var(--gold3)}
 @keyframes kikiArrive{0%{opacity:0;transform:translateX(45px) rotate(5deg)}70%{opacity:1;transform:translateX(-4px) rotate(-2deg)}100%{transform:none}}
 @keyframes kikiTalk{to{transform:translateY(-4px) rotate(1.5deg)}}
+@keyframes kikiWalk{to{transform:translateY(-7px) rotate(-2deg)}}
 html[data-companion-motion="reduced"] .kiki-companion *{animation:none!important;transition:none!important}
 @media(prefers-reduced-motion:reduce){.kiki-companion *{animation:none!important;transition:none!important}}
 @media(max-width:720px){.kiki-companion{width:106px;right:8px;bottom:max(8px,env(safe-area-inset-bottom))}.kiki-bubble{right:60%;bottom:78%;font-size:13px;width:min(230px,70vw)}.kiki-settings{bottom:125px}}
