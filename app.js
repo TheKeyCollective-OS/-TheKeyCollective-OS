@@ -38,6 +38,7 @@ import {enhanceSprint6B45} from './sprint6b45.js?v=16.45.1';
 import {enhanceSprint6B46} from './sprint6b46.js?v=16.46.1';
 import {enhanceSprint6B47} from './sprint6b47.js?v=16.48.2';
 import {enhanceSprint6B48} from './sprint6b48.js?v=16.48.2';
+import {enhanceSprint6B49} from './sprint6b49.js?v=16.49.0';
 
 patchPages(pages);
 patchPagesSprint5(pages);
@@ -103,6 +104,7 @@ router=createRouter({
       await enhanceSprint6B46(id,router);
       await enhanceSprint6B47(id,router);
       await enhanceSprint6B48(id,router);
+      await enhanceSprint6B49(id,router);
       return;
     }
     if(id==='money'){
@@ -115,6 +117,7 @@ router=createRouter({
       await enhanceSprint6B46(id,router);
       await enhanceSprint6B47(id,router);
       await enhanceSprint6B48(id,router);
+      await enhanceSprint6B49(id,router);
       return;
     }
     if(!repairedRoutes.has(id)){
@@ -161,6 +164,7 @@ router=createRouter({
     await enhanceSprint6B46(id,router);
     await enhanceSprint6B47(id,router);
     await enhanceSprint6B48(id,router);
+    await enhanceSprint6B49(id,router);
   }});
 
 const shell=document.querySelector('#appShell');
