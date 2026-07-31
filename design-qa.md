@@ -1,60 +1,56 @@
-# Design QA — Emerald Crocodile + Blackberry Deco
+# Design QA — Rose Couture Tweed + Teal Murano
 
 **Source visual truth**
-- Emerald: `C:\Users\keyct\.codex\generated_images\019fb102-8dc9-7942-bf20-4741c25f10c5\exec-084c6145-babd-4e40-845e-a30f0210eada.png` (1254 × 1254).
-- Blackberry: `C:\Users\keyct\.codex\generated_images\019fb102-8dc9-7942-bf20-4741c25f10c5\exec-d156775b-3556-4f31-a110-9bb0beba73cb.png` (1254 × 1254).
+- Rose: `C:\Users\keyct\.codex\generated_images\019fb102-8dc9-7942-bf20-4741c25f10c5\exec-0355e64a-d888-42db-82f4-43d7a2dff5ce.png` (1254 × 1254).
+- Teal: `C:\Users\keyct\.codex\generated_images\019fb102-8dc9-7942-bf20-4741c25f10c5\exec-0e7e19e2-3f62-41f3-8908-b21cbe6dd2a2.png` (1254 × 1254).
 
 **Rendered implementation**
-- URL: `http://127.0.0.1:8766/?review=6c3-emerald-blackberry#premium`
-- Screenshots: `emerald-crocodile-implementation.png`, `blackberry-deco-implementation.png` (1264 × 711 each).
-- Combined comparison: `emerald-blackberry-comparison.png` (1280 × 1320).
+- URL: `http://127.0.0.1:8766/?review=6c3-rose-teal#premium`
+- Screenshots: `rose-tweed-implementation.png`, `teal-murano-implementation.png` (1264 × 711 each).
 - Browser viewport: 1264 × 711 CSS px at device scale factor 1.
-- State: Color Collection expanded; each new theme selected independently.
+- State: Color Collection expanded; Rose and Teal selected separately after final contrast correction.
 
 **Full-view comparison evidence**
-- Both selected source assets are used directly as global repeating backgrounds and theme-card previews.
-- Emerald preserves glossy crocodile scale, deep jewel green, and champagne glints; Blackberry preserves the exact plum fan geometry and antique-gold embroidery.
-- Pearl cards and navigation remain visually separated from both high-detail surfaces.
+- Both selected raster assets are used directly as global repeating backgrounds and theme-card previews.
+- Rose retains its woven ribbon, bouclé, and metallic-thread texture; Teal retains its molten glass folds, internal bubbles, and champagne reflections.
+- Pearl surfaces remain distinct against both detailed backgrounds.
 
 **Focused region comparison evidence**
-- Theme previews use the source assets rather than CSS approximations.
-- Selected outlines, page controls, sidebar text, card titles, body copy, buttons, and companion bubble remain readable.
-- Slow alternate background drift adds dimensional movement without altering the selected material direction.
+- Theme previews match the selected source assets rather than CSS approximations.
+- First pass exposed light gallery copy on light cards; final pass explicitly restores dark title/body text and muted descriptions for both themes.
+- Sidebar, topbar, buttons, theme cards, selected outlines, and companion speech remain readable.
 
 **Required fidelity surfaces**
-- Fonts and typography: existing OS hierarchy, weights, line heights, and wrapping preserved.
-- Spacing and layout rhythm: no structural changes; gallery and cards retain established responsive spacing.
-- Colors and visual tokens: Blackberry uses plum/gold accents; Emerald uses green/champagne accents; light/dark semantic contrast remains intact.
-- Image quality and asset fidelity: full-resolution raster sources used directly, with no placeholders or code-drawn substitutes.
-- Copy and content: “Blackberry Deco” and “Emerald Crocodile” names and descriptions accurately reflect the approved visuals.
+- Fonts and typography: established type families, sizes, weights, wrapping, and hierarchy preserved.
+- Spacing and layout rhythm: existing gallery grid and card geometry unchanged.
+- Colors and visual tokens: Rose uses berry/champagne accents; Teal uses teal/champagne accents with dark/light semantic contrast.
+- Image quality and asset fidelity: full-resolution source assets used directly; no placeholders or code-drawn substitutes.
+- Copy and content: “Rose Couture Tweed” and “Teal Murano” accurately describe the selected materials.
 
 **Findings**
-- No actionable P0, P1, or P2 differences.
-
-**Open Questions**
-- None.
+- No remaining P0, P1, or P2 findings.
 
 **Primary interactions tested**
 - Open Color Collection.
-- Apply Blackberry Deco and verify selected state and success message.
-- Apply Emerald Crocodile and verify selected state and success message.
-- Confirm global theme change, preview imagery, companion visibility, and readable controls.
-
-**Console errors checked**
-- No visible runtime failure or broken interaction occurred during either tested flow.
+- Apply Rose Couture Tweed.
+- Apply Teal Murano.
+- Confirm selected states, success messages, global background changes, preview fidelity, and companion visibility.
 
 **Comparison history**
-- Pass 1: no P0/P1/P2 issues; no correction loop required.
+- Pass 1: [P1] Gallery text became too light against light collection cards in both themes.
+- Fix: added explicit dark gallery-title/body roles and muted-description roles for Rose and Teal.
+- Pass 2: browser screenshots confirm all gallery copy is readable; no P0/P1/P2 findings remain.
+
+**Console errors checked**
+- No visible runtime failure or broken interaction occurred during either flow.
 
 **Implementation Checklist**
 - [x] Install both selected assets.
-- [x] Update global backgrounds and preview tiles.
-- [x] Add distinct restrained material movement.
-- [x] Update theme names and descriptions.
-- [x] Update offline asset shell and cache version.
-- [x] Verify both themes in browser.
+- [x] Update global backgrounds, previews, names, copy, motion, and offline cache.
+- [x] Correct gallery contrast regression.
+- [x] Re-verify both themes in browser.
 
 **Follow-up Polish**
-- None required for these two themes.
+- None required.
 
 final result: passed
