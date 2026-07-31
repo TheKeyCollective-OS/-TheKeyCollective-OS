@@ -39,8 +39,8 @@ import {enhanceSprint6B46} from './sprint6b46.js?v=16.46.1';
 import {enhanceSprint6B47} from './sprint6b47.js?v=16.48.2';
 import {enhanceSprint6B48} from './sprint6b48.js?v=16.48.2';
 import {enhanceSprint6B49} from './sprint6b49.js?v=16.49.0';
-import {enhanceSprint6C1} from './sprint6c1.js?v=16.52.4';
-import {enhanceSprint6C3} from './sprint6c3.js?v=16.53.4';
+import {enhanceSprint6C1} from './sprint6c1.js?v=16.53.5';
+import {enhanceSprint6C3} from './sprint6c3.js?v=16.53.5';
 
 patchPages(pages);
 patchPagesSprint5(pages);
