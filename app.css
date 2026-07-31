@@ -1734,3 +1734,22 @@ html:is([data-theme="pearl"],[data-theme="blackberry"],[data-theme="ruby"],[data
 html:is([data-theme="pearl"],[data-theme="rose"],[data-theme="silver"]) .pagehead{color:var(--ink)!important;text-shadow:none}
 html:is([data-theme="pearl"],[data-theme="rose"],[data-theme="silver"]) .pagehead :is(h1,.sub,.eyebrow){color:var(--ink)!important;-webkit-text-fill-color:var(--ink)!important}
 html:is([data-theme="blackberry"],[data-theme="ruby"],[data-theme="amethyst"],[data-theme="sapphire"],[data-theme="emerald"],[data-theme="teal"],[data-theme="copper"],[data-theme="espresso"],[data-theme="onyx"]) .pagehead :is(h1,.sub,.eyebrow){color:#fff8fc!important;-webkit-text-fill-color:#fff8fc!important}
+
+/* Lani's Corner keeps its joyful identity while carrying the selected theme with richer depth. */
+html:is([data-theme="pearl"],[data-theme="blackberry"],[data-theme="ruby"],[data-theme="rose"],[data-theme="amethyst"],[data-theme="sapphire"],[data-theme="emerald"],[data-theme="teal"],[data-theme="copper"],[data-theme="espresso"],[data-theme="onyx"],[data-theme="silver"]) .lani-page{
+  background:
+    radial-gradient(circle at 88% 8%,color-mix(in srgb,#f7b7d2 68%,var(--accent) 32%),transparent 34%),
+    radial-gradient(circle at 8% 86%,color-mix(in srgb,#c8a7eb 66%,var(--accent-2) 34%),transparent 38%),
+    linear-gradient(145deg,color-mix(in srgb,#f2a9c8 66%,var(--accent) 34%),color-mix(in srgb,#d4b2eb 70%,var(--accent-2) 30%))!important;
+  border-color:color-mix(in srgb,#8e3f69 52%,var(--accent) 48%)!important;
+  box-shadow:0 28px 72px rgba(83,35,67,.24)!important;
+}
+html:is([data-theme="pearl"],[data-theme="blackberry"],[data-theme="ruby"],[data-theme="rose"],[data-theme="amethyst"],[data-theme="sapphire"],[data-theme="emerald"],[data-theme="teal"],[data-theme="copper"],[data-theme="espresso"],[data-theme="onyx"],[data-theme="silver"]) .lani-page :is(.card,.luxury-disclosure-6b49,.lani-idea,.cute-check,.sensitive-details){
+  background:linear-gradient(145deg,rgba(255,250,253,.94),rgba(247,219,237,.91))!important;
+  border-color:rgba(126,57,91,.3)!important;
+  box-shadow:0 16px 36px rgba(82,35,66,.16)!important;
+}
+html:is([data-theme="pearl"],[data-theme="blackberry"],[data-theme="ruby"],[data-theme="rose"],[data-theme="amethyst"],[data-theme="sapphire"],[data-theme="emerald"],[data-theme="teal"],[data-theme="copper"],[data-theme="espresso"],[data-theme="onyx"],[data-theme="silver"]) .lani-page :is(.pagehead,h1,h2,h3,h4,p,label,strong,.sub,.muted,.eyebrow){
+  color:#3e2031!important;
+  -webkit-text-fill-color:#3e2031!important;
+}
