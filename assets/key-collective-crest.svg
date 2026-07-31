@@ -17,6 +17,4 @@
   <path d="M139 420h234" fill="none" stroke="url(#gold)" stroke-width="7" stroke-linecap="round" opacity=".78"/>
   <circle cx="256" cy="244" r="49" fill="none" stroke="url(#gold)" stroke-width="12"/>
   <path d="M237 282h38l24 92h-86z" fill="url(#gold)"/>
-  <path d="M372 108v30M357 123h30" stroke="#f6df9a" stroke-width="7" stroke-linecap="round"/>
-  <circle cx="154" cy="151" r="5" fill="#f6df9a" opacity=".85"/>
 </svg>
