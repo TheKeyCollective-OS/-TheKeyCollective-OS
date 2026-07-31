@@ -53,6 +53,38 @@ final result: passed
 
 ---
 
+## Option 1 companion art alignment (Sprint 6C)
+
+**Source visual truth**
+
+- User-selected option 1 direction: `C:\Users\keyct\.codex\generated_images\019fb102-8dc9-7942-bf20-4741c25f10c5\exec-8defa412-64de-4098-ab0a-32a39cefc6fb.png`.
+- The source direction is the warmer pearl/cream collectible-figurine treatment: berry-plum characters, gold accessories, Kiki's teal business-lady vest, and Lulu's blush quilted mommy cardigan.
+
+**Rendered evidence**
+
+- Local URL: `http://127.0.0.1:8767/?review=6c3-option1#dashboard`
+- Implementation screenshot: `companion-option1-implementation.png` (872 Ã— 698 CSS px; device scale factor 1).
+- Combined comparison: `companion-option1-comparison.png` (source board and live dashboard placed side by side for visual review).
+- Assets: `assets/companion/kiki-option1.png` and `assets/companion/lulu-option1.png`.
+- State: Kiki asset verified on Dashboard; Lulu asset and automatic Lulu mode verified on Lani's Corner.
+
+**Findings and fixes**
+
+- [Fixed] The live companion had been routed to the darker Soft Sculpture Couture option 3 artwork instead of the user's selected option 1 direction.
+- [Fixed] Generated standalone option 1 Kiki and Lulu assets with clean chroma-key removal and routed both base states and autonomous surprise art to the new assets.
+- [Fixed] Updated cache-busting versions and service-worker precache entries so the new art is served after reload.
+
+**Verification**
+
+- Dashboard: option 1 Kiki asset loaded and visible with a teal business-lady vest and gold bow.
+- Lani's Corner: option 1 Lulu asset loaded with blush cardigan, flowers, and warm bottle; mode reported as `lulu`.
+- Companion remains visible in the existing bottom-layer placement and does not displace dashboard controls.
+- Console errors and warnings checked: none.
+
+final result: passed
+
+---
+
 ## Continuous background + Typography & Experience correction (Sprint 6C)
 
 **Source visual truth**
