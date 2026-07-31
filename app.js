@@ -4,7 +4,7 @@ import {pages} from './pages.js';
 import * as ctl from './controllers.js';
 import {enhance} from './sprint3.js';
 import {patchPages,enhanceSprint4} from './sprint4.js';
-import {patchPagesSprint5,enhanceSprint5} from './sprint5.js?v=16.55.5';
+import {patchPagesSprint5,enhanceSprint5} from './sprint5.js?v=16.55.7';
 import {patchPagesSprint6A,enhanceSprint6A} from './sprint6a.js';
 import {patchPagesSprint6B,enhanceSprint6B} from './sprint6b.js';
 import {enhanceSprint6B1} from './sprint6b1.js';
