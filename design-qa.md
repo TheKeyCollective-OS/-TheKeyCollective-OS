@@ -10,6 +10,7 @@
 - Copper screenshot: `copper-chainmail-implementation.png`
 - Full-view comparisons: `pearl-comparison-final.png`, `copper-comparison-final.png`
 - Silver screenshot and comparison: `platinum-deco-implementation.png`, `platinum-deco-comparison.png`
+- Copper card correction: `copper-card-preview-fix-visible.png`, `copper-card-preview-comparison.png`
 - Viewport: current Codex in-app browser desktop viewport; device scale factor 1.
 - State: Design + Data page, color collection expanded, each selected theme active.
 - Source textures are 1728 × 1152; implementation screenshots are 1397 × 772. Sources were proportionally reduced in the comparison boards without stretching.
@@ -17,6 +18,7 @@
 **Findings**
 
 - No actionable P0/P1/P2 differences. All three chosen textures remain recognizable at full-screen scale, crop cleanly behind the interface, and preserve the intended couture/statement-material character.
+- Copper thumbnail regression: an older duplicate CSS rule displayed the retired micro-check texture after the new Chainmail rule. The stale override was removed; the corrected card now uses `theme-copper-chainmail.png`, matching the active page background.
 - Typography: display and body hierarchy remains readable; no wrapping or truncation regressions observed.
 - Spacing and layout rhythm: theme gallery, navigation, cards, and companion retain their existing dimensions and alignment.
 - Colors and visual tokens: Pearl uses dark brown foregrounds on pale cards; Copper uses the same high-contrast pale-card treatment over the dark material background.
@@ -37,6 +39,7 @@
 - [x] Preserve readable foreground and card contrast.
 - [x] Verify theme switching and browser console.
 - [x] Replace Liquid Silver with Platinum Deco Brocade and verify its selection state.
+- [x] Remove the stale Copper preview override and scan all 12 cards for asset consistency.
 
 **Follow-up Polish**
 

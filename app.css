@@ -141,7 +141,6 @@ html:is([data-theme="pearl"],[data-theme="blackberry"],[data-theme="ruby"],[data
 .theme-preview.theme-copper{background:#4b281b url('assets/theme-copper-chainmail.png') center/cover}
 .theme-preview.theme-silver{background:#d8d9df url('assets/theme-platinum-deco-brocade.png') center/cover}
 .theme-preview.theme-onyx{background:linear-gradient(135deg,rgba(255,255,255,.03),rgba(0,0,0,.16)),url('assets/theme-onyx-bandana.png') center/cover}
-.theme-preview.theme-copper{background:#8f4f31 url('assets/theme-copper-microcheck.png') center/cover}
 .theme-preview.theme-sapphire{background:#071828 url('assets/theme-sapphire-stardust.png') center/cover}
 .theme-preview.theme-blackberry{background:#281225 url('assets/theme-blackberry-deco.png') center/cover}
 .theme-preview.theme-emerald{background:#0c2b22 url('assets/theme-emerald-crocodile.png') center/cover}
