@@ -4,7 +4,7 @@ import {pages} from './pages.js';
 import * as ctl from './controllers.js';
 import {enhance} from './sprint3.js';
 import {patchPages,enhanceSprint4} from './sprint4.js';
-import {patchPagesSprint5,enhanceSprint5} from './sprint5.js?v=16.55.26';
+import {patchPagesSprint5,enhanceSprint5} from './sprint5.js?v=16.55.27';
 import {patchPagesSprint6A,enhanceSprint6A} from './sprint6a.js';
 import {patchPagesSprint6B,enhanceSprint6B} from './sprint6b.js';
 import {enhanceSprint6B1} from './sprint6b1.js';
@@ -195,6 +195,7 @@ document.querySelector('.avatar').onkeydown=event=>{
 
 window.addEventListener('kc:state',()=>{
   applyDesign();
+  document.querySelectorAll('[data-design-pack]').forEach(button=>button.classList.toggle('selected',button.dataset.designPack===store.get().design?.pack));
   window.dispatchEvent(new CustomEvent('kc:ui-refresh',{detail:{route:router.current()}}));
 });
 router.go(router.initial,false,{replace:true});

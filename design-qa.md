@@ -53,6 +53,36 @@ final result: passed
 
 ---
 
+## Continuous background + Typography & Experience correction (Sprint 6C)
+
+**Source visual truth**
+
+- The selected Soft Sculpture Couture direction remains the visual source for the live companion treatment: `C:\Users\keyct\.codex\generated_images\019fb102-8dc9-7942-bf20-4741c25f10c5\exec-1f779411-4379-47da-93ce-d88fab9a09c1.png`.
+
+**Rendered evidence**
+
+- Local URL: `http://127.0.0.1:8767/?review=6c3-soft-sculpture#premium`
+- Final browser screenshot: `theme-typography-continuous-preview.png`.
+- Viewport: 872 × 698 CSS px, device scale factor 1.
+- Final user state: Teal theme with the previously selected Executive experience pack restored.
+
+**Findings and fixes**
+
+- [Fixed] Theme materials were declared with `repeat`, which made the background visibly tile. The final theme authority now forces one continuous `no-repeat` surface with `cover` sizing while preserving the theme motion animation.
+- [Fixed] Typography packs only had partial CSS coverage. Executive, Classic, Minimal, Soft Feminine, and Urban now each define display/body families plus heading weight, tracking, and label rhythm; Editorial and Modern retain their dedicated treatments.
+- [Fixed] Pack selection now updates the active `data-type` and selected card immediately through the shared state event, and the choice persists after reload.
+
+**Verification**
+
+- Computed background: `background-repeat: no-repeat`; `background-size: cover`.
+- Editorial pack test: `data-type=editorial`, selected card updated, Times New Roman display family applied.
+- Reload persistence: restored Executive state persisted with Georgia display family.
+- Console errors checked: none.
+
+final result: passed
+
+---
+
 ## Soft Sculpture Couture companion QA (Sprint 6C)
 
 **Source visual truth**
