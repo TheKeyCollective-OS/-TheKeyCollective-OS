@@ -1,56 +1,42 @@
-# Design QA — Rose Couture Tweed + Teal Murano
+**Source Visual Truth**
 
-**Source visual truth**
-- Rose: `C:\Users\keyct\.codex\generated_images\019fb102-8dc9-7942-bf20-4741c25f10c5\exec-0355e64a-d888-42db-82f4-43d7a2dff5ce.png` (1254 × 1254).
-- Teal: `C:\Users\keyct\.codex\generated_images\019fb102-8dc9-7942-bf20-4741c25f10c5\exec-0e7e19e2-3f62-41f3-8908-b21cbe6dd2a2.png` (1254 × 1254).
+- Pearl: `C:\Users\keyct\.codex\generated_images\019fb102-8dc9-7942-bf20-4741c25f10c5\exec-764ea869-db04-4615-b518-2ce6ca7324fe.png`
+- Copper: `C:\Users\keyct\.codex\generated_images\019fb102-8dc9-7942-bf20-4741c25f10c5\exec-c618afeb-fb39-4223-ae03-35cd31f00e3c.png`
 
-**Rendered implementation**
-- URL: `http://127.0.0.1:8766/?review=6c3-rose-teal#premium`
-- Screenshots: `rose-tweed-implementation.png`, `teal-murano-implementation.png` (1264 × 711 each).
-- Browser viewport: 1264 × 711 CSS px at device scale factor 1.
-- State: Color Collection expanded; Rose and Teal selected separately after final contrast correction.
+**Implementation Evidence**
 
-**Full-view comparison evidence**
-- Both selected raster assets are used directly as global repeating backgrounds and theme-card previews.
-- Rose retains its woven ribbon, bouclé, and metallic-thread texture; Teal retains its molten glass folds, internal bubbles, and champagne reflections.
-- Pearl surfaces remain distinct against both detailed backgrounds.
-
-**Focused region comparison evidence**
-- Theme previews match the selected source assets rather than CSS approximations.
-- First pass exposed light gallery copy on light cards; final pass explicitly restores dark title/body text and muted descriptions for both themes.
-- Sidebar, topbar, buttons, theme cards, selected outlines, and companion speech remain readable.
-
-**Required fidelity surfaces**
-- Fonts and typography: established type families, sizes, weights, wrapping, and hierarchy preserved.
-- Spacing and layout rhythm: existing gallery grid and card geometry unchanged.
-- Colors and visual tokens: Rose uses berry/champagne accents; Teal uses teal/champagne accents with dark/light semantic contrast.
-- Image quality and asset fidelity: full-resolution source assets used directly; no placeholders or code-drawn substitutes.
-- Copy and content: “Rose Couture Tweed” and “Teal Murano” accurately describe the selected materials.
+- Pearl screenshot: `pearl-couture-implementation.png`
+- Copper screenshot: `copper-chainmail-implementation.png`
+- Full-view comparisons: `pearl-comparison-final.png`, `copper-comparison-final.png`
+- Viewport: current Codex in-app browser desktop viewport; device scale factor 1.
+- State: Design + Data page, color collection expanded, each selected theme active.
+- Source textures are 1728 × 1152; implementation screenshots are 1397 × 772. Sources were proportionally reduced in the comparison boards without stretching.
 
 **Findings**
-- No remaining P0, P1, or P2 findings.
 
-**Primary interactions tested**
-- Open Color Collection.
-- Apply Rose Couture Tweed.
-- Apply Teal Murano.
-- Confirm selected states, success messages, global background changes, preview fidelity, and companion visibility.
+- No actionable P0/P1/P2 differences. Both chosen textures remain recognizable at full-screen scale, crop cleanly behind the interface, and preserve the intended couture/statement-material character.
+- Typography: display and body hierarchy remains readable; no wrapping or truncation regressions observed.
+- Spacing and layout rhythm: theme gallery, navigation, cards, and companion retain their existing dimensions and alignment.
+- Colors and visual tokens: Pearl uses dark brown foregrounds on pale cards; Copper uses the same high-contrast pale-card treatment over the dark material background.
+- Image quality: both generated raster assets are sharp, correctly scaled, and used directly rather than approximated with CSS art.
+- Copy: theme names and descriptions now match the selected materials.
+- Primary interactions tested: Color collection open/close, Pearl selection, Copper selection, persisted theme state, and Kiki/Lulu visibility.
+- Console errors checked: none.
 
-**Comparison history**
-- Pass 1: [P1] Gallery text became too light against light collection cards in both themes.
-- Fix: added explicit dark gallery-title/body roles and muted-description roles for Rose and Teal.
-- Pass 2: browser screenshots confirm all gallery copy is readable; no P0/P1/P2 findings remain.
+**Open Questions**
 
-**Console errors checked**
-- No visible runtime failure or broken interaction occurred during either flow.
+- None.
 
 **Implementation Checklist**
-- [x] Install both selected assets.
-- [x] Update global backgrounds, previews, names, copy, motion, and offline cache.
-- [x] Correct gallery contrast regression.
-- [x] Re-verify both themes in browser.
+
+- [x] Install the full-resolution Pearl Champagne Couture texture.
+- [x] Install the full-resolution Copper Chainmail texture.
+- [x] Update gallery previews and theme descriptions.
+- [x] Preserve readable foreground and card contrast.
+- [x] Verify theme switching and browser console.
 
 **Follow-up Polish**
-- None required.
+
+- None required for acceptance.
 
 final result: passed
