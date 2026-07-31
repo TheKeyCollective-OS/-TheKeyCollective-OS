@@ -15,6 +15,9 @@
   <rect width="512" height="512" rx="112" fill="url(#bg)"/>
   <path d="M112 420V240C112 139 176 76 256 76s144 63 144 164v180" fill="none" stroke="url(#gold)" stroke-width="11" stroke-linecap="round"/>
   <path d="M139 420h234" fill="none" stroke="url(#gold)" stroke-width="7" stroke-linecap="round" opacity=".78"/>
-  <circle cx="256" cy="244" r="49" fill="none" stroke="url(#gold)" stroke-width="12"/>
-  <path d="M237 282h38l24 92h-86z" fill="url(#gold)"/>
+  <path d="M160 168h192M256 168v66" fill="none" stroke="url(#gold)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M168 254v116M168 312l48-58M168 312l52 58" fill="none" stroke="url(#gold)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="270" cy="278" r="25" fill="none" stroke="url(#gold)" stroke-width="11"/>
+  <path d="M260 298h20l14 58h-48z" fill="url(#gold)"/>
+  <path d="M390 265c-52-29-67 20-67 50s15 79 67 50" fill="none" stroke="url(#gold)" stroke-width="12" stroke-linecap="round"/>
 </svg>
