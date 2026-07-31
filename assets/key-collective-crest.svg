@@ -15,9 +15,9 @@
   <rect width="512" height="512" rx="112" fill="url(#bg)"/>
   <path d="M112 420V240C112 139 176 76 256 76s144 63 144 164v180" fill="none" stroke="url(#gold)" stroke-width="11" stroke-linecap="round"/>
   <path d="M139 420h234" fill="none" stroke="url(#gold)" stroke-width="7" stroke-linecap="round" opacity=".78"/>
-  <path d="M168 168h204M270 168v66" fill="none" stroke="url(#gold)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M168 254v116M168 312l48-58M168 312l52 58" fill="none" stroke="url(#gold)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="270" cy="278" r="25" fill="none" stroke="url(#gold)" stroke-width="11"/>
-  <path d="M260 298h20l14 58h-48z" fill="url(#gold)"/>
-  <path d="M378 267c-45-25-58 18-58 48s13 73 58 48" fill="none" stroke="url(#gold)" stroke-width="12" stroke-linecap="round"/>
+  <path d="M154 168h204M256 168v66" fill="none" stroke="url(#gold)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M154 254v116M154 312l48-58M154 312l52 58" fill="none" stroke="url(#gold)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="256" cy="278" r="25" fill="none" stroke="url(#gold)" stroke-width="11"/>
+  <path d="M246 298h20l14 58h-48z" fill="url(#gold)"/>
+  <path d="M364 267c-45-25-58 18-58 48s13 73 58 48" fill="none" stroke="url(#gold)" stroke-width="12" stroke-linecap="round"/>
 </svg>
