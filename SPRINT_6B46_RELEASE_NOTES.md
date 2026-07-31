@@ -27,5 +27,4 @@
 
 ## Scope boundary
 
-- Lani’s Corner expansion, Pushin’ P/Lulu Mode, and calendar observance enrichment remain approved planning for Sprint 6C, as specified in the Sprint 6B scope.
-
+- Lani’s Corner expansion, Petal Mode/Lulu Mode, and calendar observance enrichment remain approved planning for Sprint 6C, as specified in the Sprint 6B scope.

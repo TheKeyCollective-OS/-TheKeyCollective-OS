@@ -16,9 +16,9 @@ Kiki now lives globally across The Key Collective OS as a persistent, page-aware
 - Automatic Lulu transformation inside Lani’s Corner.
 - Safe wandering movement across the lower screen instead of a fixed corner position.
 - Mobile-safe positioning and accessible status messaging.
-- A companion state structure ready for Lulu and Pushin’ P.
+- A companion state structure ready for Lulu and Petal Mode.
 
 ## Character rule
 
 - Kiki: glitter eyeshadow, nosy, goofy, sassy, energetic.
-- Lulu: soft pink blush, thoughtful, gentle, nurturing. Lulu’s visual transformation is reserved for the Compassion Mode phase.
+- Lulu: soft pink blush, thoughtful, gentle, nurturing. Lulu’s visual transformation is reserved for the Petal Mode phase.
