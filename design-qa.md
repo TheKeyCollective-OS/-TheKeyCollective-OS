@@ -2,19 +2,21 @@
 
 - Pearl: `C:\Users\keyct\.codex\generated_images\019fb102-8dc9-7942-bf20-4741c25f10c5\exec-764ea869-db04-4615-b518-2ce6ca7324fe.png`
 - Copper: `C:\Users\keyct\.codex\generated_images\019fb102-8dc9-7942-bf20-4741c25f10c5\exec-c618afeb-fb39-4223-ae03-35cd31f00e3c.png`
+- Silver: `C:\Users\keyct\.codex\generated_images\019fb102-8dc9-7942-bf20-4741c25f10c5\exec-54e39f1c-f8a6-4476-b217-a5e1e5eabff8.png`
 
 **Implementation Evidence**
 
 - Pearl screenshot: `pearl-couture-implementation.png`
 - Copper screenshot: `copper-chainmail-implementation.png`
 - Full-view comparisons: `pearl-comparison-final.png`, `copper-comparison-final.png`
+- Silver screenshot and comparison: `platinum-deco-implementation.png`, `platinum-deco-comparison.png`
 - Viewport: current Codex in-app browser desktop viewport; device scale factor 1.
 - State: Design + Data page, color collection expanded, each selected theme active.
 - Source textures are 1728 × 1152; implementation screenshots are 1397 × 772. Sources were proportionally reduced in the comparison boards without stretching.
 
 **Findings**
 
-- No actionable P0/P1/P2 differences. Both chosen textures remain recognizable at full-screen scale, crop cleanly behind the interface, and preserve the intended couture/statement-material character.
+- No actionable P0/P1/P2 differences. All three chosen textures remain recognizable at full-screen scale, crop cleanly behind the interface, and preserve the intended couture/statement-material character.
 - Typography: display and body hierarchy remains readable; no wrapping or truncation regressions observed.
 - Spacing and layout rhythm: theme gallery, navigation, cards, and companion retain their existing dimensions and alignment.
 - Colors and visual tokens: Pearl uses dark brown foregrounds on pale cards; Copper uses the same high-contrast pale-card treatment over the dark material background.
@@ -34,6 +36,7 @@
 - [x] Update gallery previews and theme descriptions.
 - [x] Preserve readable foreground and card contrast.
 - [x] Verify theme switching and browser console.
+- [x] Replace Liquid Silver with Platinum Deco Brocade and verify its selection state.
 
 **Follow-up Polish**
 
