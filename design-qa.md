@@ -50,3 +50,51 @@
 - None required for acceptance.
 
 final result: passed
+
+---
+
+## Soft Sculpture Couture companion QA (Sprint 6C)
+
+**Source visual truth**
+
+- Selected direction 03 board: `C:\Users\keyct\.codex\generated_images\019fb102-8dc9-7942-bf20-4741c25f10c5\exec-1f779411-4379-47da-93ce-d88fab9a09c1.png`
+- Source pixels: 1536 × 1024.
+
+**Rendered evidence**
+
+- Local URL: `http://127.0.0.1:8767/?review=6c3-soft-sculpture#dashboard`
+- Implementation screenshot: `soft-sculpture-companion-implementation.png` (872 × 685 px; CSS viewport 872 × 685; device scale factor 1).
+- Combined comparison: `soft-sculpture-companion-comparison.png` (1440 × 700 px). The source board and live dashboard are shown together without stretching; the source is a character-art direction board while the implementation is the in-product companion state.
+- State: Kiki on Executive Dashboard; surprise preview tested; Lulu auto-mode tested on Lani’s Corner.
+
+**Findings**
+
+- No actionable P0/P1/P2 differences. Kiki and Lulu now use standalone transparent soft-sculpture artwork that preserves the selected berry-plum palette, gold couture details, Kiki’s business-lady accessories, and Lulu’s blush mommy cardigan direction.
+- Typography: companion alt text and existing speech/settings hierarchy remain readable; no new wrapping or truncation observed.
+- Spacing and layout rhythm: companion remains inside the existing bottom-layer placement and does not displace dashboard controls.
+- Colors and visual tokens: the generated character colors harmonize with the existing teal/gold dashboard while remaining distinct from the background.
+- Image quality: both transparent PNGs are direct generated assets with clean chroma-key removal and no visible green halo at the tested scale.
+- Copy: updated alt text distinguishes Kiki’s structured handbag/business look from Lulu’s soft-sculpture mommy cardigan.
+
+**Primary interactions tested**
+
+- Open Kiki/Lulu options from the character.
+- Preview a surprise: confirms the new Kiki art path, `is-surprise-art` state, and a 30-second surprise move.
+- Navigate to Lani’s Corner: confirms automatic Lulu mode and the Lulu soft-sculpture asset path.
+- Reload dashboard: confirms Kiki soft-sculpture asset persists.
+
+**Console errors checked**
+
+- None (no warnings or errors returned by the browser console during the final dashboard capture).
+
+**Comparison history**
+
+- Earlier issue: the selected concept existed only as a board and the app still rendered the prior base/surprise assets.
+- Fix: added standalone `kiki-soft-sculpture.png` and `lulu-soft-sculpture.png`, routed base and surprise art to them, and bumped the app/service-worker cache version.
+- Post-fix evidence: `soft-sculpture-companion-comparison.png`, plus the live interaction checks above.
+
+**Follow-up Polish**
+
+- Optional future refinement: add additional accessory-specific surprise frames while preserving the same soft-sculpture proportions.
+
+final result: passed

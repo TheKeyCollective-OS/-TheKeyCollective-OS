@@ -4,7 +4,7 @@ import {pages} from './pages.js';
 import * as ctl from './controllers.js';
 import {enhance} from './sprint3.js';
 import {patchPages,enhanceSprint4} from './sprint4.js';
-import {patchPagesSprint5,enhanceSprint5} from './sprint5.js?v=16.55.25';
+import {patchPagesSprint5,enhanceSprint5} from './sprint5.js?v=16.55.26';
 import {patchPagesSprint6A,enhanceSprint6A} from './sprint6a.js';
 import {patchPagesSprint6B,enhanceSprint6B} from './sprint6b.js';
 import {enhanceSprint6B1} from './sprint6b1.js';
@@ -39,7 +39,7 @@ import {enhanceSprint6B46} from './sprint6b46.js?v=16.46.1';
 import {enhanceSprint6B47} from './sprint6b47.js?v=16.48.2';
 import {enhanceSprint6B48} from './sprint6b48.js?v=16.48.2';
 import {enhanceSprint6B49} from './sprint6b49.js?v=16.49.0';
-import {enhanceSprint6C1} from './sprint6c1.js?v=16.54.0';
+import {enhanceSprint6C1} from './sprint6c1.js?v=16.55.26';
 import {enhanceSprint6C3} from './sprint6c3.js?v=16.54.0';
 
 patchPages(pages);
