@@ -53,6 +53,69 @@ final result: passed
 
 ---
 
+## Sprint 6E companion motion & personality (planning only)
+
+The next companion-focused sprint is intentionally deferred while the Typography & Experience atelier is finalized. The approved direction for Sprint 6E is:
+
+- Replace floating/flying movement with grounded, visible walking locomotion and stable entry/exit paths.
+- Keep Kiki and Lulu at one consistent visual scale across every move, page, viewport, and responsive breakpoint; no shrinking or size jumps during navigation.
+- Use a consistent built-in asset family for each character, with transparent, production-ready images and matching proportions across idle, walk, reaction, and surprise states.
+- Preserve the personality distinction: Kiki is a curious, busy-body business lady who investigates the room; Lulu is a thoughtful, nurturing mommy-mode companion who checks in gently.
+- Keep manual character switching, page-aware Kiki/Lulu modes, autonomous behaviors, cooldowns, and meaningful surprise moves as first-class settings—not random emoji effects.
+- Test the companion layer on desktop web, Android-sized layouts, iPhone-sized layouts, reduced-motion mode, keyboard navigation, and route changes before release.
+
+No Kiki or Lulu behavior is changed in the current Typography & Experience build; this is the acceptance brief for the dedicated future sprint.
+
+final result: planned
+
+---
+
+## Post-atelier navigation order (follow-up polish)
+
+After Design + Data is signed off, reorder the opened menu with the user’s primary rhythm first:
+
+1. Executive Dashboard
+2. Agenda
+3. Morning Brief
+4. Sanctuary
+5. Lani’s Corner
+6. Financial Studio
+7. Wellness Studio
+8. Payments & FinTech Academy
+9. Remaining spaces in their existing order
+
+This is intentionally deferred until the atelier and surface rules are stable.
+
+final result: planned
+
+---
+
+## Collection guide atelier (Sprint 6C)
+
+**Source visual truth**
+
+- User reference: `C:\Users\keyct\AppData\Local\Temp\codex-clipboard-28bee1a4-d857-4729-838d-17e69b716bac.png`.
+- The existing Design + Data typography guide, gold rail, card language, and collection picker remain the source pattern.
+
+**Implementation**
+
+- Added a collection-specific luxury guide for all 12 color families.
+- Each guide includes a palette story, material direction, typography voice, motion language, card finish, atelier note, and an “Applied to the entire OS” handoff.
+- Added the same slim gold scrollbar treatment to the guide’s scrollable direction area.
+- Guide content follows the active collection when a palette is selected and after reload.
+
+**Verification**
+
+- Sapphire selection: `data-theme=sapphire`, guide `data-collection-guide=sapphire`.
+- Amethyst selection: `data-theme=amethyst`, guide `data-collection-guide=amethyst`.
+- Guide scroll: `overflow:auto`, 184px viewport with content taller than the viewport.
+- Asset and visual comparison: reference and live prototype captured together; existing sidebar/topbar/card hierarchy preserved.
+- JavaScript syntax checks passed in the project runtime.
+
+final result: passed
+
+---
+
 ## Option 1 companion art alignment (Sprint 6C)
 
 **Source visual truth**
@@ -160,3 +223,9 @@ final result: passed
 - Optional future refinement: add additional accessory-specific surprise frames while preserving the same soft-sculpture proportions.
 
 final result: passed
+### 6C.3.1 — Surface and typography correction
+
+- The selected collection texture remains the page canvas; cards, the sidebar, and topbar receive the saved texture/card treatment without replacing the canvas with a neutral wash.
+- Rose is labeled **Rose Tweed** everywhere in the live atelier.
+- Typography packs apply to all readable UI copy and controls, with display faces reserved for headings and feature typography.
+- The TKC keyhole mark (`icon-192.png`) is the in-app brand mark and the existing manifest/favicons remain aligned for installed web-app shortcuts.

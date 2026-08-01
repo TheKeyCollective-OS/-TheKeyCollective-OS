@@ -4,7 +4,7 @@ import {pages} from './pages.js';
 import * as ctl from './controllers.js';
 import {enhance} from './sprint3.js';
 import {patchPages,enhanceSprint4} from './sprint4.js';
-import {patchPagesSprint5,enhanceSprint5} from './sprint5.js?v=16.55.28';
+import {patchPagesSprint5,enhanceSprint5} from './sprint5.js?v=16.55.53';
 import {patchPagesSprint6A,enhanceSprint6A} from './sprint6a.js';
 import {patchPagesSprint6B,enhanceSprint6B} from './sprint6b.js';
 import {enhanceSprint6B1} from './sprint6b1.js';
@@ -38,9 +38,10 @@ import {enhanceSprint6B45} from './sprint6b45.js?v=16.45.1';
 import {enhanceSprint6B46} from './sprint6b46.js?v=16.46.1';
 import {enhanceSprint6B47} from './sprint6b47.js?v=16.48.2';
 import {enhanceSprint6B48} from './sprint6b48.js?v=16.48.2';
-import {enhanceSprint6B49} from './sprint6b49.js?v=16.49.0';
-import {enhanceSprint6C1} from './sprint6c1.js?v=16.55.28';
+import {enhanceSprint6B49} from './sprint6b49.js?v=16.55.53';
+import {enhanceSprint6C1} from './sprint6c1.js?v=16.55.53';
 import {enhanceSprint6C3} from './sprint6c3.js?v=16.54.0';
+import {enhanceSprint6D} from './sprint6d.js?v=16.57.6';
 
 patchPages(pages);
 patchPagesSprint5(pages);
@@ -66,11 +67,39 @@ const repairedRoutes=new Set(['dashboard','calendar','goals','intelligence','wel
 function applyDesign(){
   const state=store.get();
   document.documentElement.dataset.theme=state.theme||'champagne';
-  document.documentElement.dataset.cards=state.design?.cards||'glass';
-  document.documentElement.dataset.radius=state.design?.radius||'soft';
-  document.documentElement.dataset.texture=state.design?.texture||'clean';
-  document.documentElement.dataset.type=state.design?.pack||state.design?.type||'classic';
-  document.documentElement.dataset.motion=state.design?.motion||'standard';
+  const design=state.design||{};
+  /* Keep the legacy attributes for older modules, while exposing an explicit
+     Global Card Collection contract for the shared shell surfaces. */
+  document.documentElement.dataset.cards=design.cards||'glass';
+  document.documentElement.dataset.radius=design.radius||'soft';
+  document.documentElement.dataset.texture=design.texture||'clean';
+  document.documentElement.dataset.type=design.pack||design.type||'classic';
+  document.documentElement.dataset.motion=design.motion||'standard';
+  document.documentElement.dataset.globalCards=design.cards||'glass';
+  document.documentElement.dataset.globalRadius=design.radius||'soft';
+  document.documentElement.dataset.globalTexture=design.texture||'clean';
+  document.documentElement.dataset.globalType=design.pack||design.type||'classic';
+  document.documentElement.dataset.globalMotion=design.motion||'standard';
+  document.documentElement.dataset.globalTone=design.tone||'light';
+}
+
+/* Every route owns its page header, but the visual voice is global. Mark each
+   rendered header with the same contrast scope used by Design + Data so the
+   active collection can carry its type, highlight, shadow, and transitions
+   consistently across the entire OS. */
+function applyGlobalHeaderTreatment(){
+  const tone=store.get().design?.tone||'light';
+  document.querySelectorAll('#page .pagehead').forEach(head=>{
+    if(!head.dataset.contrastScope)head.dataset.contrastScope='global-header';
+    head.dataset.surfaceTone=tone;
+  });
+}
+/* Some route enhancers add or replace page content after the router event.
+   Keep the header contract attached to those late-rendered headers as well,
+   without touching the collection artwork or other page content. */
+const pageRoot=document.querySelector('#page');
+if(pageRoot&&'MutationObserver' in window){
+  new MutationObserver(()=>applyGlobalHeaderTreatment()).observe(pageRoot,{childList:true,subtree:true});
 }
 applyDesign();
 
@@ -171,6 +200,7 @@ router=createRouter({
     await enhanceSprint6B49(id,router);
     enhanceSprint6C1(id,router);
     enhanceSprint6C3(id,router);
+    enhanceSprint6D(id);
   }});
 
 const shell=document.querySelector('#appShell');
@@ -195,9 +225,11 @@ document.querySelector('.avatar').onkeydown=event=>{
 
 window.addEventListener('kc:state',()=>{
   applyDesign();
+  applyGlobalHeaderTreatment();
   document.querySelectorAll('[data-design-pack]').forEach(button=>button.classList.toggle('selected',button.dataset.designPack===store.get().design?.pack));
   window.dispatchEvent(new CustomEvent('kc:ui-refresh',{detail:{route:router.current()}}));
 });
+window.addEventListener('kc:route-rendered',applyGlobalHeaderTreatment);
 router.go(router.initial,false,{replace:true});
 if(sessionStorage.getItem('keyCollectiveOS.justRefreshed')){sessionStorage.removeItem('keyCollectiveOS.justRefreshed');setTimeout(()=>{const toast=document.querySelector('#toast');toast.textContent='Page refreshed with the newest available information.';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2600)},500)}
 
