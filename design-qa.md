@@ -229,3 +229,44 @@ final result: passed
 - Rose is labeled **Rose Tweed** everywhere in the live atelier.
 - Typography packs apply to all readable UI copy and controls, with display faces reserved for headings and feature typography.
 - The TKC keyhole mark (`icon-192.png`) is the in-app brand mark and the existing manifest/favicons remain aligned for installed web-app shortcuts.
+
+---
+
+## Lani’s Corner Atelier QA (Sprint 6D)
+
+**Source visual truth**
+
+- User-provided Lani’s Corner reference screenshot: `C:\Users\keyct\AppData\Local\Temp\codex-clipboard-60037ed2-f920-462c-84fd-54807f88cb69.png`.
+
+**Rendered evidence**
+
+- Local preview: `http://localhost:8780/index.html?review=lani-atelier&fresh=16.57.10#lani`
+- Final capture: `C:\Users\keyct\.codex\visualizations\2026\07\30\019fb102-8dc9-7942-bf20-4741c25f10c5\lani-atelier-final.png`
+- Typography-panel capture: `C:\Users\keyct\.codex\visualizations\2026\07\30\019fb102-8dc9-7942-bf20-4741c25f10c5\lani-typography-panel.png` (captured during review).
+
+**Findings and fixes**
+
+- [Fixed] Reworked the Lani typography panel around the reference layout: cream luxury surface, three large ABC typography cards, selected-state treatment, and a live preview panel.
+- [Fixed] Renamed the three kid-friendly voices to **Dreamy Storybook**, **Wonder Blocks Atelier**, and **Modern Playhouse**, with the requested tone descriptors.
+- [Fixed] Added the companion/portrait frame row with **Friendly Monster**, **Safari Explorer**, and **Dollhouse Chic** choices.
+- [Fixed] Kept the existing theme/experience persistence and photo/memory behavior intact while applying the new presentation layer.
+- [Fixed] Added responsive rules so the typography cards, preview, and frame selector stack cleanly on narrow screens.
+
+**Primary interactions tested**
+
+- Loaded the cache-busted local preview on `localhost` to bypass stale service-worker assets.
+- Selected **Wonder Blocks Atelier**; the card selected state and preview `data-lani-experience` updated immediately.
+- Selected **Safari Explorer**; the frame selected state and preview `data-lani-frame` updated immediately.
+- Confirmed all three typography options and all three frame options render in the DOM.
+
+**Verification**
+
+- `node --check sprint6d.js` — passed.
+- `node --check app.js` — passed.
+- `node --check controllers.js` — passed.
+- `node --check pages.js` — passed.
+- `node --check sw.js` — passed.
+- `git diff --check` — passed.
+- Browser console errors during the focused preview check — none observed.
+
+final result: passed

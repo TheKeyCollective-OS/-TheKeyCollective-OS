@@ -44,6 +44,82 @@ html[data-lani-theme] body.lani-independent-theme .topbar{background:var(--lani-
 html[data-lani-theme] body.lani-independent-theme .topbar .icon-button{background:var(--lani-topbar-button)!important;border-color:var(--lani-shell-line)!important;color:var(--lani-shell-ink)!important}
 html[data-lani-theme] body.lani-independent-theme .topbar #breadcrumb{color:var(--lani-shell-ink)!important}
 
+/* Lani Corner Atelier — screenshot-led cream cards, dimensional type samples,
+   and a compact live preview that keeps the selected vertical world visible. */
+html[data-lani-theme] body.lani-independent-theme .lani-page{
+  max-width:1400px!important;padding:18px 22px 84px!important;color:#3f3046!important;
+}
+html[data-lani-theme] body.lani-independent-theme .lani-head.lani-visual-head,
+html[data-lani-theme] body.lani-independent-theme .lani-head{
+  display:flex;align-items:center;gap:22px;min-height:132px;margin:0 0 14px!important;padding:22px 28px!important;
+  border:1px solid rgba(187,132,56,.58)!important;border-radius:26px!important;
+  background:linear-gradient(135deg,rgba(255,253,249,.97),rgba(255,246,238,.88))!important;
+  color:#402b48!important;box-shadow:0 18px 38px rgba(64,33,39,.18),inset 0 1px rgba(255,255,255,.95)!important;
+}
+html[data-lani-theme] body.lani-independent-theme .lani-head h1{
+  margin:0;color:#5a2d58!important;font:700 clamp(38px,5vw,70px)/.95 Georgia,"Times New Roman",serif!important;
+  letter-spacing:-.045em;text-shadow:0 2px 0 rgba(255,255,255,.9),0 8px 18px rgba(80,35,57,.18)!important;
+}
+html[data-lani-theme] body.lani-independent-theme .lani-head .eyebrow{color:#7e3f68!important;font-size:12px;letter-spacing:.16em;font-weight:900;text-transform:uppercase}
+html[data-lani-theme] body.lani-independent-theme .lani-head .sub{max-width:700px;margin:8px 0 0;color:#4d4a50!important;font-size:15px;line-height:1.35}
+html[data-lani-theme] body.lani-independent-theme .lani-head:before{content:"✦";display:grid;place-items:center;flex:0 0 54px;width:54px;height:66px;border:2px solid #c58b38;border-radius:18px;color:#c58b38;font-size:32px;background:linear-gradient(145deg,#fffdf4,#f9e7c9);box-shadow:0 6px 12px rgba(113,68,37,.18)}
+html[data-lani-theme] body.lani-independent-theme .lani-head-actions{margin-left:auto}
+html[data-lani-theme] body.lani-independent-theme .lani-head-actions .btn{background:rgba(255,255,255,.62)!important;color:#5a2d58!important;border-color:#cf9c55!important;box-shadow:0 6px 14px rgba(106,65,44,.13)}
+
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio{
+  margin:0 0 14px!important;padding:12px 16px!important;border-radius:20px!important;
+  background:rgba(255,249,242,.84)!important;color:#49344c!important;border:1px solid rgba(207,155,88,.55)!important;
+  box-shadow:0 12px 24px rgba(62,36,38,.12),inset 0 1px rgba(255,255,255,.95)!important;backdrop-filter:blur(10px) saturate(1.04)!important;
+}
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-studio-head{align-items:center!important}
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-intro h2{font-size:22px;color:#5a2d58!important}
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-intro p{color:#665b64!important}
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-options{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:9px}
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-option{grid-template-columns:72px minmax(0,1fr);padding:7px;border-color:#e2c89b;background:rgba(255,255,255,.58)!important;color:#4c3a4c!important}
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-option-copy strong{color:#5a2d58!important;font-size:13px}
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-option-copy small{color:#6f646b!important}
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-badge{color:#8b5a32;background:#f6e6ce}
+
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio{
+  margin:0 0 16px!important;padding:20px!important;border-radius:27px!important;background:linear-gradient(145deg,rgba(255,253,249,.97),rgba(255,247,239,.90))!important;
+  color:#3f3046!important;border:1px solid rgba(198,146,73,.64)!important;box-shadow:0 20px 42px rgba(62,35,39,.20),inset 0 1px rgba(255,255,255,.98)!important;backdrop-filter:blur(12px) saturate(1.04)!important;
+}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-head{align-items:flex-start!important;gap:20px;padding:2px 3px 14px;border-bottom:1px solid rgba(189,135,73,.42)}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-head>div:first-child{min-width:0}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-head .eyebrow{color:#75456d!important;font-size:12px;letter-spacing:.14em;font-weight:900;text-transform:uppercase}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-head h2{margin:4px 0 3px;color:#5a2d58!important;font:800 clamp(24px,3vw,34px)/1 Georgia,"Times New Roman",serif!important;letter-spacing:.015em}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-head p{color:#5d555d!important;font-size:14px;line-height:1.35}
+html[data-lani-theme] body.lani-independent-theme .lani-experience-picker{display:grid;gap:5px;min-width:190px;color:#735067;font-size:10px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+html[data-lani-theme] body.lani-independent-theme .lani-experience-picker select{height:40px;padding:0 13px;border:1px solid #d6ad73;border-radius:12px;background:#fffaf3;color:#4a3548;font-size:13px;letter-spacing:0;text-transform:none;box-shadow:inset 0 1px rgba(255,255,255,.9)}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-options{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:15px 0 0}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-option{position:relative;display:block;min-height:166px;padding:12px;border:1px solid #e7cca8;border-radius:17px;background:linear-gradient(150deg,rgba(255,255,255,.78),rgba(255,242,231,.72))!important;color:#4b3a4a!important;text-align:left;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-option:hover{transform:translateY(-3px);box-shadow:0 12px 22px rgba(74,43,45,.14)}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-option.selected{border:2px solid #d89432;box-shadow:0 0 0 3px rgba(216,148,50,.16),0 14px 24px rgba(74,43,45,.16)}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-option.selected:after{content:"✓";position:absolute;top:-11px;right:-10px;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#eaa344;color:white;font-weight:900;border:2px solid #fff7e7;box-shadow:0 4px 10px rgba(89,54,32,.22)}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-sample{display:flex;align-items:center;justify-content:center;min-height:88px;margin-bottom:10px;border:1px solid rgba(190,137,75,.35);border-radius:14px;background:linear-gradient(145deg,#f4d7cf,#e4c4e1 52%,#f5d28d);color:#fff7f1;font-size:58px;letter-spacing:.06em;text-shadow:1px 1px 0 #774067,2px 2px 0 #d18b4d,0 7px 14px rgba(67,38,55,.22);-webkit-text-stroke:1px rgba(114,59,77,.38)}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-sample.lani-experience-storybook{font-family:Georgia,serif;font-style:italic;background:linear-gradient(135deg,#cfb7d8,#f2d5c7)}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-sample.lani-experience-wonder{font-family:"Trebuchet MS",sans-serif;background:linear-gradient(135deg,#ffb55c,#f0796b 48%,#8150a3);border-radius:20px}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-sample.lani-experience-atelier{font-family:Arial,sans-serif;font-weight:800;background:linear-gradient(135deg,#79c5c3,#f4bf83 52%,#e87886);border-radius:11px}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-option strong{color:#4d354a!important;font:700 18px/1.12 Georgia,serif}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-option small{display:block;margin-top:5px;color:#625761!important;font-size:12px;line-height:1.3}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-option em{margin-top:9px;color:#a36c2c;font-size:10px;letter-spacing:.07em}
+
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview.lani-live-preview{flex:1 1 520px;min-height:0;border-radius:17px;background-position:center;background-size:cover;box-shadow:none;overflow:visible}
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview.lani-live-preview:before{display:none}
+html[data-lani-theme] body.lani-independent-theme .lani-live-preview-kicker{color:#75456d;font-size:11px;letter-spacing:.15em;font-weight:900}
+html[data-lani-theme] body.lani-independent-theme .lani-preview-stage{position:relative;display:grid;grid-template-columns:180px minmax(0,1fr) 90px;gap:18px;align-items:center;min-height:250px;margin-top:8px;padding:18px;border-radius:20px;background:linear-gradient(135deg,rgba(255,255,255,.72),rgba(255,246,241,.48));border:1px solid rgba(220,187,151,.58);overflow:hidden}
+html[data-lani-theme] body.lani-independent-theme .lani-preview-photo{width:170px;height:190px;border:4px solid #f4d4c0;border-radius:38% 42% 35% 46%;background:linear-gradient(160deg,rgba(255,248,234,.18),rgba(111,74,85,.46)),var(--lani-art-portrait) center/cover no-repeat;box-shadow:0 10px 20px rgba(69,39,42,.18),0 0 0 2px #cdb1df;display:grid;place-items:end center;padding-bottom:10px;overflow:hidden}
+html[data-lani-theme] body.lani-independent-theme .lani-preview-photo span{padding:4px 12px;border-radius:999px;background:rgba(255,253,247,.82);color:#5a2d58;font:700 15px Georgia,serif}
+html[data-lani-theme] body.lani-independent-theme .lani-preview-copy{min-width:0;color:#4a3b4b}.lani-preview-wordmark{font:700 clamp(48px,6vw,80px)/.85 Georgia,serif;color:#b44e66;text-shadow:1px 1px 0 #f7c25d,2px 2px 0 #8162a5;letter-spacing:.02em}.lani-preview-copy p{margin:10px 0;color:#4d4350;font-size:14px}.lani-preview-copy p span{color:#d76b84}.lani-preview-rule{height:1px;background:#d6ad73;margin:9px 0}.lani-preview-copy h3{margin:0;color:#60405b;font:700 20px Georgia,serif}.lani-preview-copy small{display:block;margin-top:5px;color:#625761;line-height:1.3}.lani-preview-memory{margin-top:11px;padding:7px 12px!important;background:#6f487c!important;border-color:#d3a260!important;color:#fffaf0!important}
+html[data-lani-theme] body.lani-independent-theme .lani-preview-companion{display:grid;place-items:center;width:76px;height:76px;border-radius:25px;background:linear-gradient(145deg,#f5ba76,#d86f8f 52%,#7861a4);color:#fff6dc;font-size:45px;box-shadow:0 10px 20px rgba(79,42,50,.18);transform:rotate(6deg)}
+html[data-lani-theme] body.lani-independent-theme .lani-frame-options{margin-top:14px;padding-top:12px;border-top:1px solid rgba(189,135,73,.42)}
+html[data-lani-theme] body.lani-independent-theme .lani-frame-label{color:#75456d;font-size:11px;letter-spacing:.14em;font-weight:900}
+html[data-lani-theme] body.lani-independent-theme .lani-frame-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:8px}
+html[data-lani-theme] body.lani-independent-theme .lani-frame-option{display:flex;align-items:center;gap:9px;padding:8px;border:1px solid #e7cca8;border-radius:14px;background:rgba(255,255,255,.58);color:#4b3a4a;text-align:left;transition:.25s ease}.lani-frame-option:hover{transform:translateY(-2px);box-shadow:0 8px 16px rgba(74,43,45,.12)}.lani-frame-option.selected{border-color:#d89432;box-shadow:0 0 0 2px rgba(216,148,50,.18)}.lani-frame-swatch{display:grid;place-items:center;flex:0 0 34px;height:34px;border-radius:11px;color:#fff;font-size:19px}.lani-frame-monsters{background:linear-gradient(145deg,#f18f75,#865a9b)}.lani-frame-safari{background:linear-gradient(145deg,#81a76e,#d0a267)}.lani-frame-dollhouse{background:linear-gradient(145deg,#c88ca0,#7d5a99)}.lani-frame-option strong{display:block;color:#4d354a;font:700 13px Georgia,serif}.lani-frame-option small{display:block;margin-top:2px;color:#6b5d67;font-size:10px}
+
+@media(max-width:980px){html[data-lani-theme] body.lani-independent-theme .lani-head{padding:18px!important}.lani-preview-stage{grid-template-columns:140px minmax(0,1fr)!important}.lani-preview-companion{display:none!important}}
+@media(max-width:680px){html[data-lani-theme] body.lani-independent-theme .lani-page{padding:10px 9px 58px!important}.lani-head{display:block!important}.lani-head:before{margin-bottom:12px}.lani-head-actions{margin-top:12px}.lani-experience-head{display:block!important}.lani-experience-picker{margin-top:12px}.lani-experience-options,.lani-frame-grid{grid-template-columns:1fr!important}.lani-preview-stage{grid-template-columns:1fr!important;text-align:center}.lani-preview-photo{margin:auto}.lani-preview-copy{display:grid;justify-items:center}}
+
 /* Let the world read as a composition instead of a cropped sliver. The art
    spans the viewport width, while the cards remain the readable foreground. */
 html[data-lani-theme] body.lani-independent-theme{

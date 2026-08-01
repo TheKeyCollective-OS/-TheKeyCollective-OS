@@ -7,14 +7,21 @@ const LANI_THEMES={
 };
 
 const LANI_EXPERIENCES={
-  storybook:{label:'Storybook Explorer',description:'Layered serif type, map-like rhythm, and a little chapter-book wonder.',badge:'Curious + warm',accent:'#b28b55'},
-  wonder:{label:'Wonder Blocks',description:'Friendly rounded type, playful spacing, and a tactile building-block rhythm.',badge:'Playful + bright',accent:'#c66f9a'},
-  atelier:{label:'Little Atelier',description:'Polished display type, ribbon-like dividers, and a curated dress-up finish.',badge:'Curated + sweet',accent:'#b88955'}
+  storybook:{label:'Dreamy Storybook',description:'Soft serif lettering, sweet spacing, and a gentle chapter-book rhythm.',badge:'Soft · Sweet · Gentle',accent:'#b28b55'},
+  wonder:{label:'Wonder Blocks Atelier',description:'Playful dimensional lettering with a warm, tactile atelier finish.',badge:'Playful · Luxurious · Warm',accent:'#d86f8f'},
+  atelier:{label:'Modern Playhouse',description:'Clean, bright type with confident shapes and a polished playroom pulse.',badge:'Clean · Bright · Bold',accent:'#5c9ea2'}
+};
+
+const LANI_FRAMES={
+  monsters:{label:'Friendly Monster',detail:'Playful · Cozy · Colorful'},
+  safari:{label:'Safari Explorer',detail:'Adventurous · Wild · Earthy'},
+  dollhouse:{label:'Dollhouse Chic',detail:'Stylish · Sweet · Sophisticated'}
 };
 
 let draftTheme=null;
 let draftExperience=null;
 let studioClosed=false;
+let draftFrame=null;
 
 function savedTheme(){return store.get().laniTheme||'safari'}
 function experienceMap(){return store.get().laniExperienceByTheme||{}}
@@ -127,7 +134,7 @@ function leaveTheme(){
   document.querySelector('.topbar')?.removeAttribute('style');
   delete document.documentElement.dataset.laniTheme;
   delete document.documentElement.dataset.laniExperience;
-  draftTheme=null;draftExperience=null;studioClosed=false;
+  draftTheme=null;draftExperience=null;draftFrame=null;studioClosed=false;
 }
 
 function setStudioVisibility(){
@@ -136,6 +143,58 @@ function setStudioVisibility(){
   const opener=document.querySelector('#openLaniAtmosphere');
   [studio,experiences].forEach(node=>{if(node)node.hidden=studioClosed});
   if(opener)opener.hidden=!studioClosed;
+}
+
+function enhanceLaniExperiencePanel(){
+  const studio=document.querySelector('#laniExperienceStudio');
+  if(!studio||studio.dataset.atelierEnhanced)return;
+  studio.dataset.atelierEnhanced='1';
+  const head=studio.querySelector('.lani-experience-head');
+  const eyebrow=head?.querySelector('.eyebrow');
+  const title=head?.querySelector('h2');
+  const intro=head?.querySelector('p');
+  if(eyebrow)eyebrow.textContent='Lani’s typography & experience';
+  if(title)title.textContent='LANI’S TYPOGRAPHY & EXPERIENCE';
+  if(intro)intro.textContent='Choose a complete visual experience for Lani’s Corner.';
+  if(head&&!head.querySelector('.lani-experience-picker')){
+    head.insertAdjacentHTML('beforeend','<label class="lani-experience-picker"><span>Current voice</span><select id="laniExperienceSelect" aria-label="Current typography and experience"><option value="storybook">Dreamy Storybook</option><option value="wonder">Wonder Blocks Atelier</option><option value="atelier">Modern Playhouse</option></select></label>');
+  }
+  const optionCopy={
+    storybook:['Dreamy Storybook','Soft · Sweet · Gentle'],
+    wonder:['Wonder Blocks Atelier','Playful · Luxurious · Warm'],
+    atelier:['Modern Playhouse','Clean · Bright · Bold']
+  };
+  studio.querySelectorAll('[data-lani-experience-choice]').forEach(button=>{
+    const id=button.dataset.laniExperienceChoice;
+    const sample=button.querySelector('.lani-experience-sample');
+    const strong=button.querySelector('strong');
+    const small=button.querySelector('small');
+    const badge=button.querySelector('em');
+    if(sample)sample.textContent='ABC';
+    if(strong)strong.textContent=optionCopy[id]?.[0]||strong.textContent;
+    if(small)small.textContent=optionCopy[id]?.[1]||small.textContent;
+    if(badge)badge.textContent=LANI_EXPERIENCES[id]?.badge||badge.textContent;
+  });
+  const preview=studio.querySelector('#laniExperiencePreview');
+  if(preview){
+    preview.classList.add('lani-live-preview');
+    preview.innerHTML='<div class="lani-live-preview-kicker">LIVE PREVIEW</div><div class="lani-preview-stage"><div class="lani-preview-photo" aria-label="Lani portrait preview"><span>Lani</span></div><div class="lani-preview-copy"><div class="lani-preview-wordmark">Lani</div><p>My mommy is my forever adventure. <span aria-hidden="true">♥</span></p><div class="lani-preview-rule"></div><h3>Today’s Little Memory</h3><small>We baked monster cookies, built the tallest tower, and laughed until the sun went to bed.</small><button class="btn lani-preview-memory" type="button">＋ Add a new memory</button></div><div class="lani-preview-companion" aria-hidden="true">✦</div></div><div class="lani-frame-options" role="group" aria-label="Companion and portrait frame"><div class="lani-frame-label">COMPANION &amp; PORTRAIT FRAME</div><div class="lani-frame-grid">'+Object.entries(LANI_FRAMES).map(([id,frame])=>`<button class="lani-frame-option" type="button" data-lani-frame-choice="${id}"><span class="lani-frame-swatch lani-frame-${id}">${id==='monsters'?'♥':id==='safari'?'✦':'✿'}</span><span><strong>${frame.label}</strong><small>${frame.detail}</small></span></button>`).join('')+'</div></div>';
+  }
+  const select=studio.querySelector('#laniExperienceSelect');
+  if(select){
+    select.value=draftExperience||savedExperience();
+    select.addEventListener('change',()=>{
+      draftExperience=select.value;
+      applyTheme(draftValues().theme,draftExperience);
+    });
+  }
+  studio.querySelectorAll('[data-lani-frame-choice]').forEach(button=>button.addEventListener('click',()=>{
+    draftFrame=button.dataset.laniFrameChoice;
+    studio.querySelectorAll('[data-lani-frame-choice]').forEach(item=>item.classList.toggle('selected',item===button));
+    if(preview)preview.dataset.laniFrame=draftFrame;
+  }));
+  const active=studio.querySelector(`[data-lani-frame-choice="${draftFrame||'monsters'}"]`)||studio.querySelector('[data-lani-frame-choice="monsters"]');
+  if(active){draftFrame=active.dataset.laniFrameChoice;active.classList.add('selected');if(preview)preview.dataset.laniFrame=draftFrame}
 }
 
 function mountThemeStudio(){
@@ -154,6 +213,8 @@ function mountThemeStudio(){
   page.querySelectorAll('[data-lani-experience-choice]').forEach(button=>button.onclick=()=>{
     draftExperience=button.dataset.laniExperienceChoice;
     applyTheme(draftValues().theme,draftExperience);
+    const select=document.querySelector('#laniExperienceSelect');
+    if(select)select.value=draftExperience;
   });
   document.querySelector('#saveLaniAtmosphere')?.addEventListener('click',()=>{
     const d=draftValues();
@@ -168,6 +229,7 @@ function mountThemeStudio(){
   });
   document.querySelector('#openLaniAtmosphere')?.addEventListener('click',()=>{studioClosed=false;draftTheme=savedTheme();draftExperience=savedExperience();setStudioVisibility();applyTheme(draftTheme,draftExperience)});
   setStudioVisibility();
+  enhanceLaniExperiencePanel();
 }
 
 export function enhanceSprint6D(id){
@@ -175,6 +237,7 @@ export function enhanceSprint6D(id){
   if(draftTheme===null)draftTheme=savedTheme();
   if(draftExperience===null)draftExperience=savedExperience(draftTheme);
   mountThemeStudio();
+  enhanceLaniExperiencePanel();
   mountLaniDisclosures();
   applyTheme(draftTheme,draftExperience);
   const badge=document.querySelector('#kcBuildStatus b');
