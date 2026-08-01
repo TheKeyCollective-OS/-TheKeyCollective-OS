@@ -3,7 +3,7 @@ import {store} from './store.js';
 const LANI_THEMES={
   safari:{label:'Safari Storybook',description:'A curious expedition of fossils, footprints, and friendly discoveries.',badge:'Explore together',art:'assets/lani/safari-storybook-expedition.png',portraitArt:'assets/lani/safari-storybook-expedition-vertical.png'},
   monsters:{label:'Friendly Monster Neighborhood',description:'A soft, colorful little community where every creature is a friend.',badge:'Everyone belongs',art:'assets/lani/friendly-monster-neighborhood.png',portraitArt:'assets/lani/friendly-monster-neighborhood-vertical.png'},
-  dollhouse:{label:'Dollhouse Dress-Up Atelier',description:'A luxe little beauty salon for dress-up, pretend play, and polished make-believe.',badge:'Dress-up atelier',art:'assets/lani/dollhouse-dressup-atelier.png',portraitArt:'assets/lani/dollhouse-dressup-atelier-vertical-brown-mannequin.png'}
+  dollhouse:{label:'Dollhouse Dress-Up Atelier',description:'A luxe little beauty salon for dress-up, pretend play, and polished make-believe.',badge:'Dress-up atelier',art:'assets/lani/dollhouse-dressup-atelier-vertical-brown-mannequin.png',portraitArt:'assets/lani/dollhouse-dressup-atelier-vertical-brown-mannequin.png'}
 };
 
 const LANI_EXPERIENCES={
