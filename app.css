@@ -44,6 +44,92 @@ html[data-lani-theme] body.lani-independent-theme .topbar{background:var(--lani-
 html[data-lani-theme] body.lani-independent-theme .topbar .icon-button{background:var(--lani-topbar-button)!important;border-color:var(--lani-shell-line)!important;color:var(--lani-shell-ink)!important}
 html[data-lani-theme] body.lani-independent-theme .topbar #breadcrumb{color:var(--lani-shell-ink)!important}
 
+/* Theme-owned preview character: the typography card previews a character from
+   the selected world, while Lulu remains the nurturing page companion. */
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-companion{
+  position:relative!important;display:grid!important;place-items:center!important;overflow:hidden!important;
+  width:92px!important;height:92px!important;border-radius:26px!important;
+  background:rgba(255,255,255,.18)!important;color:transparent!important;
+  box-shadow:0 10px 22px rgba(65,37,42,.20),0 0 0 2px rgba(203,153,105,.58)!important;
+  transform:none!important;
+}
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview #laniPreviewCompanion{
+  position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;
+  border-radius:inherit!important;background-repeat:no-repeat!important;background-color:transparent!important;
+  background-size:440% auto!important;box-shadow:none!important;color:transparent!important;
+  filter:drop-shadow(0 7px 8px rgba(65,37,42,.24));pointer-events:none!important;
+}
+html[data-lani-theme="safari"] body.lani-independent-theme #laniExperiencePreview #laniPreviewCompanion{background-size:440% auto!important}
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview #laniPreviewCompanion{background-size:470% auto!important}
+html[data-lani-theme="dollhouse"] body.lani-independent-theme #laniExperiencePreview #laniPreviewCompanion{background-size:450% auto!important}
+@media(max-width:980px){html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-companion{display:grid!important}}
+@media(max-width:680px){html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-companion{width:84px!important;height:84px!important}}
+
+/* Sprint 6D.3 — Lani atelier typography is a real page-wide voice. The
+   selected world stays untouched; only readable surfaces, menus, and type
+   receive the chosen playful treatment. */
+html[data-lani-theme] body.lani-independent-theme .lani-experience-studio{position:relative;padding-top:18px!important}
+html[data-lani-theme] body.lani-independent-theme .lani-experience-head{padding-right:168px}
+html[data-lani-theme] body.lani-independent-theme .lani-experience-actions{position:absolute;top:11px;right:13px;z-index:5;display:flex;align-items:center;gap:7px;justify-content:flex-end}
+html[data-lani-theme] body.lani-independent-theme .lani-experience-actions .lani-save-status{color:#f8e1ac;font-size:10px;font-weight:800;white-space:nowrap}
+html[data-lani-theme] body.lani-independent-theme #saveLaniExperience{padding:7px 11px}
+html[data-lani-theme] body.lani-independent-theme #saveLaniExperience:disabled{opacity:.45;cursor:default}
+html[data-lani-theme] body.lani-independent-theme #closeLaniExperience{width:31px;height:31px;border-radius:10px;background:rgba(255,255,255,.12)!important;color:#fffaf0!important;border-color:rgba(255,255,255,.34)!important}
+html[data-lani-theme] body.lani-independent-theme .lani-preview-companion{background:transparent!important;box-shadow:none!important;transform:none!important;overflow:visible!important}
+html[data-lani-theme] body.lani-independent-theme .lani-preview-companion img{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 10px 12px rgba(0,0,0,.24));transform-origin:bottom center}
+html[data-lani-theme] body.lani-independent-theme .lani-experience-preview.is-transitioning .lani-preview-companion img{animation:laniCompanionPop .7s cubic-bezier(.2,.85,.25,1.2) both}
+html[data-lani-theme] body.lani-independent-theme .lani-preview-wordmark{transition:font-family .4s ease,color .4s ease,filter .5s ease,background-position 1.1s ease}
+html[data-lani-theme] body.lani-independent-theme .lani-experience-option .lani-experience-sample{font-weight:800;letter-spacing:.015em;transition:transform .35s ease,filter .4s ease,background-position 1s ease}
+html[data-lani-theme] body.lani-independent-theme .lani-experience-option:hover .lani-experience-sample{transform:translateY(-2px) rotate(-1deg);filter:drop-shadow(0 5px 7px rgba(35,20,38,.18))}
+
+html[data-lani-experience="storybook"] body.lani-independent-theme :is(.lani-page,.lani-theme-studio,.lani-experience-studio,.sidebar,.topbar){--lani-display:Georgia,"Times New Roman",serif;--lani-body:"Trebuchet MS",Inter,sans-serif}
+html[data-lani-experience="wonder"] body.lani-independent-theme :is(.lani-page,.lani-theme-studio,.lani-experience-studio,.sidebar,.topbar){--lani-display:"Trebuchet MS",Inter,sans-serif;--lani-body:"Trebuchet MS",Inter,sans-serif}
+html[data-lani-experience="atelier"] body.lani-independent-theme :is(.lani-page,.lani-theme-studio,.lani-experience-studio,.sidebar,.topbar){--lani-display:"Avenir Next",Inter,Arial,sans-serif;--lani-body:"Avenir Next",Inter,Arial,sans-serif}
+html[data-lani-experience] body.lani-independent-theme :is(.lani-page,.lani-theme-studio,.lani-experience-studio,.sidebar,.topbar){font-family:var(--lani-body)!important}
+html[data-lani-experience] body.lani-independent-theme :is(.lani-page,.lani-theme-studio,.lani-experience-studio,.sidebar,.topbar) :is(h1,h2,h3,h4,.section-title,.lani-preview-wordmark,.lani-preview-copy h3){font-family:var(--lani-display)!important}
+html[data-lani-experience] body.lani-independent-theme .lani-page :is(p,small,label,button,input,textarea,select,.pill,.status,.muted){font-family:var(--lani-body)!important}
+
+html[data-lani-experience="storybook"] body.lani-independent-theme .lani-page :is(h1,h2,h3,.section-title h3),
+html[data-lani-experience="storybook"] body.lani-independent-theme #laniExperiencePreview .lani-preview-wordmark,
+html[data-lani-experience="storybook"] body.lani-independent-theme .lani-experience-sample.lani-experience-storybook{
+  background:linear-gradient(105deg,#7656a7 0%,#d96d88 27%,#e9a33d 47%,#5e9eb1 68%,#7656a7 100%)!important;background-size:240% 100%!important;background-clip:text!important;-webkit-background-clip:text!important;color:transparent!important;-webkit-text-fill-color:transparent!important;text-shadow:1px 2px 0 rgba(255,255,255,.48),0 6px 12px rgba(67,38,74,.18)!important;animation:laniTypeShine 8s ease-in-out infinite!important
+}
+html[data-lani-experience="storybook"] body.lani-independent-theme .lani-experience-sample.lani-experience-storybook{font:800 32px/1 Georgia,serif!important}
+
+html[data-lani-experience="wonder"] body.lani-independent-theme .lani-page :is(h1,h2,h3,.section-title h3),
+html[data-lani-experience="wonder"] body.lani-independent-theme #laniExperiencePreview .lani-preview-wordmark,
+html[data-lani-experience="wonder"] body.lani-independent-theme .lani-experience-sample.lani-experience-wonder{
+  color:#fff7f2!important;-webkit-text-fill-color:#fff7f2!important;text-shadow:2px 2px 0 #d86f8f,4px 4px 0 #7b5aa6,0 8px 16px rgba(61,31,68,.25)!important;letter-spacing:.01em
+}
+html[data-lani-experience="wonder"] body.lani-independent-theme .lani-experience-sample.lani-experience-wonder{font:900 31px/1 "Trebuchet MS",sans-serif!important;background:linear-gradient(145deg,#ffe9a7,#f58b8f 46%,#8d69b9)!important;color:#fff!important;-webkit-text-fill-color:#fff!important;text-shadow:2px 2px 0 #a84b7c,0 5px 8px rgba(74,36,73,.22)!important}
+
+html[data-lani-experience="atelier"] body.lani-independent-theme .lani-page :is(h1,h2,h3,.section-title h3),
+html[data-lani-experience="atelier"] body.lani-independent-theme #laniExperiencePreview .lani-preview-wordmark,
+html[data-lani-experience="atelier"] body.lani-independent-theme .lani-experience-sample.lani-experience-atelier{
+  color:#fff9ee!important;-webkit-text-fill-color:#fff9ee!important;text-shadow:0 2px 0 rgba(43,80,82,.55),0 7px 14px rgba(23,49,53,.28)!important;letter-spacing:.02em
+}
+html[data-lani-experience="atelier"] body.lani-independent-theme .lani-experience-sample.lani-experience-atelier{font:900 31px/1 "Avenir Next",Inter,sans-serif!important;background:linear-gradient(145deg,#5c9ea2,#d66f86 55%,#e7b76f)!important;color:#fff9ee!important;-webkit-text-fill-color:#fff9ee!important}
+
+html[data-lani-experience="storybook"] body.lani-independent-theme #laniExperiencePreview .lani-preview-wordmark{font-family:var(--lani-display)!important}
+html[data-lani-experience="wonder"] body.lani-independent-theme #laniExperiencePreview .lani-preview-wordmark{font-family:var(--lani-display)!important}
+html[data-lani-experience="atelier"] body.lani-independent-theme #laniExperiencePreview .lani-preview-wordmark{font-family:var(--lani-display)!important}
+@keyframes laniTypeShine{0%,100%{background-position:100% 0}50%{background-position:0 0}}
+@keyframes laniCompanionPop{0%{opacity:0;transform:translateY(18px) scale(.82) rotate(-4deg)}70%{opacity:1;transform:translateY(-4px) scale(1.04) rotate(2deg)}100%{opacity:1;transform:translateY(0) scale(1) rotate(0)}}
+@media(max-width:640px){
+  html[data-lani-theme] body.lani-independent-theme .lani-experience-head{padding-right:0}
+  html[data-lani-theme] body.lani-independent-theme .lani-experience-actions{position:relative;top:auto;right:auto;margin-bottom:10px;justify-content:flex-start}
+  html[data-lani-theme] body.lani-independent-theme .lani-experience-actions .lani-save-status{margin-right:auto}
+}
+
+/* Theme-owned preview character: the card shows a cropped detail from the
+   selected Lani world, never Lulu or Kiki. */
+html[data-lani-theme] body.lani-independent-theme .lani-preview-companion{background:transparent!important;box-shadow:none!important;overflow:visible!important}
+html[data-lani-theme] body.lani-independent-theme .lani-preview-character{display:block;width:100%;height:100%;border-radius:inherit;background-repeat:no-repeat;background-size:430% auto;background-color:transparent;filter:drop-shadow(0 10px 12px rgba(0,0,0,.24));transform-origin:bottom center}
+html[data-lani-theme="safari"] body.lani-independent-theme .lani-preview-character{background-size:440% auto}
+html[data-lani-theme="monsters"] body.lani-independent-theme .lani-preview-character{background-size:470% auto}
+html[data-lani-theme="dollhouse"] body.lani-independent-theme .lani-preview-character{background-size:450% auto}
+html[data-lani-theme] body.lani-independent-theme .lani-experience-preview.is-transitioning .lani-preview-character{animation:laniCompanionPop .7s cubic-bezier(.2,.85,.25,1.2) both}
+
 /* Lani atelier correction: the atmosphere owns the portrait frame and the
    companion preview. Typography stays as three polished, screenshot-like
    visual voice cards; there is no second frame picker to confuse the choice. */
@@ -352,6 +438,29 @@ html:is([data-theme="pearl"],[data-theme="blackberry"],[data-theme="ruby"],[data
 @media(max-width:640px){.pulse-hero,.pulse-connection{display:grid}.pulse-state{min-width:0}.pulse-summary{grid-template-columns:1fr}.pulse-actions{width:100%}.pulse-actions .btn{flex:1}}
 .brief-metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:14px}.growth-rings{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.growth-ring-card{text-align:center}.growth-ring{--p:0;width:126px;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;margin:0 auto 13px;background:conic-gradient(var(--gold) calc(var(--p)*1%),color-mix(in srgb,var(--line) 70%,transparent) 0);position:relative}.growth-ring:after{content:"";position:absolute;inset:12px;border-radius:50%;background:var(--paper)}.growth-ring span{position:relative;z-index:1;font:25px Georgia,serif}.timeline-row{display:grid;grid-template-columns:18px 1fr;gap:10px;padding:10px 0}.timeline-row small{display:block;color:var(--muted);margin:4px 0 8px}.timeline-dot{width:12px;height:12px;border-radius:50%;margin-top:4px;background:var(--gold);box-shadow:0 0 0 5px color-mix(in srgb,var(--gold2) 50%,transparent)}.heatmap{display:grid;grid-template-columns:repeat(14,1fr);gap:7px}.heatmap span{aspect-ratio:1;border-radius:5px;background:color-mix(in srgb,var(--line) 72%,transparent)}.heatmap span[data-level="1"]{background:color-mix(in srgb,var(--sage) 35%,var(--paper))}.heatmap span[data-level="2"]{background:color-mix(in srgb,var(--sage) 60%,var(--paper))}.heatmap span[data-level="3"],.heatmap span[data-level="4"]{background:var(--sage)}
 @media(max-width:900px){.brief-metric-grid,.growth-rings{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.brief-metric-grid,.growth-rings{grid-template-columns:1fr 1fr}.growth-ring{width:100px}.heatmap{grid-template-columns:repeat(7,1fr)}}
+
+/* Theme-owned preview character: the typography card previews a character from
+   the selected world, while Lulu remains the nurturing page companion. Keep
+   this crop visible on every device and prevent legacy emoji/gradient styling
+   from masking the artwork. */
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-companion{
+  position:relative!important;display:grid!important;place-items:center!important;overflow:hidden!important;
+  width:92px!important;height:92px!important;border-radius:26px!important;
+  background:rgba(255,255,255,.18)!important;color:transparent!important;
+  box-shadow:0 10px 22px rgba(65,37,42,.20),0 0 0 2px rgba(203,153,105,.58)!important;
+  transform:none!important;
+}
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview #laniPreviewCompanion{
+  position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;
+  border-radius:inherit!important;background-repeat:no-repeat!important;background-color:transparent!important;
+  background-size:440% auto!important;box-shadow:none!important;color:transparent!important;
+  filter:drop-shadow(0 7px 8px rgba(65,37,42,.24));pointer-events:none!important;
+}
+html[data-lani-theme="safari"] body.lani-independent-theme #laniExperiencePreview #laniPreviewCompanion{background-size:440% auto!important}
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview #laniPreviewCompanion{background-size:470% auto!important}
+html[data-lani-theme="dollhouse"] body.lani-independent-theme #laniExperiencePreview #laniPreviewCompanion{background-size:450% auto!important}
+@media(max-width:980px){html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-companion{display:grid!important}}
+@media(max-width:680px){html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-companion{width:84px!important;height:84px!important}}
 
 /* Executive Refinement Sprint 1 — Design System + Founder Profile */
 body{font-family:var(--font-body);color:var(--ink);background:var(--ivory)}h1,h2,h3,h4,.brand strong,.metric,.growth-ring span{font-family:var(--font-display)}
@@ -2646,9 +2755,9 @@ html[data-lani-theme] body.lani-independent-theme .lani-page:before{
   background-position:center top!important;background-size:cover!important;
 }
 html[data-lani-theme] body.lani-independent-theme .lani-page:after{display:none!important}
-html[data-lani-theme="safari"] body.lani-independent-theme .lani-page:before{background-image:url("assets/lani/safari-storybook-expedition.png")!important;background-color:#365b4b}
-html[data-lani-theme="monsters"] body.lani-independent-theme .lani-page:before{background-image:url("assets/lani/friendly-monster-neighborhood.png")!important;background-color:#6a3c68}
-html[data-lani-theme="dollhouse"] body.lani-independent-theme .lani-page:before{background-image:url("assets/lani/dollhouse-dressup-atelier.png")!important;background-color:#72465f}
+html[data-lani-theme="safari"] body.lani-independent-theme .lani-page:before{background-image:url("assets/lani/safari-storybook-expedition-vertical.png")!important;background-color:#365b4b}
+html[data-lani-theme="monsters"] body.lani-independent-theme .lani-page:before{background-image:url("assets/lani/friendly-monster-neighborhood-vertical.png")!important;background-color:#6a3c68}
+html[data-lani-theme="dollhouse"] body.lani-independent-theme .lani-page:before{background-image:url("assets/lani/dollhouse-dressup-atelier-vertical-brown-mannequin.png")!important;background-color:#72465f}
 html[data-lani-theme] body.lani-independent-theme .lani-page:after{content:"";display:block!important;position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(7,10,14,.08),transparent 30%,rgba(7,10,14,.13));}
 html[data-lani-theme] body.lani-independent-theme .lani-head{position:relative;z-index:2;margin-bottom:10px;padding:4px 3px 0;align-items:center}
 html[data-lani-theme] body.lani-independent-theme .lani-head .sub{max-width:680px}
@@ -2808,6 +2917,16 @@ html[data-lani-theme] body.lani-independent-theme{
     background-attachment:fixed!important;
     background-size:cover!important;
   }
+}
+
+/* Keep one anchored atmosphere behind the whole Lani surface. The page-level
+   artwork layer is disabled so it cannot scroll independently or create a
+   second stretched/cropped copy over the Global Card Collection. */
+html[data-lani-theme] body.lani-independent-theme .lani-page:before{
+  display:none!important;
+}
+html[data-lani-theme] body.lani-independent-theme .lani-page{
+  overflow:visible!important;
 }
 
 /* The key is a quiet, art-aligned discovery hotspot rather than a visible UI
