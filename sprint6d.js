@@ -64,7 +64,13 @@ function applyTheme(theme=draftValues().theme,experience=draftValues().experienc
     const save=document.querySelector('#saveLaniAtmosphere');
     if(save)save.disabled=!isDirty();
     const preview=document.querySelector('#laniExperiencePreview');
-    if(preview){preview.dataset.laniTheme=theme;preview.dataset.laniExperience=experience;preview.style.backgroundImage=`url("${LANI_THEMES[theme].art}")`}
+    if(preview){
+      preview.dataset.laniTheme=theme;
+      preview.dataset.laniExperience=experience;
+      preview.dataset.laniFrame=theme;
+      preview.dataset.laniCompanion=theme;
+      preview.style.backgroundImage=`url("${LANI_THEMES[theme].art}")`;
+    }
   }
 }
 
@@ -156,9 +162,7 @@ function enhanceLaniExperiencePanel(){
   if(eyebrow)eyebrow.textContent='Lani’s typography & experience';
   if(title)title.textContent='LANI’S TYPOGRAPHY & EXPERIENCE';
   if(intro)intro.textContent='Choose a complete visual experience for Lani’s Corner.';
-  if(head&&!head.querySelector('.lani-experience-picker')){
-    head.insertAdjacentHTML('beforeend','<label class="lani-experience-picker"><span>Current voice</span><select id="laniExperienceSelect" aria-label="Current typography and experience"><option value="storybook">Dreamy Storybook</option><option value="wonder">Wonder Blocks Atelier</option><option value="atelier">Modern Playhouse</option></select></label>');
-  }
+  head?.querySelector('.lani-experience-picker')?.remove();
   const optionCopy={
     storybook:['Dreamy Storybook','Soft · Sweet · Gentle'],
     wonder:['Wonder Blocks Atelier','Playful · Luxurious · Warm'],
@@ -169,11 +173,9 @@ function enhanceLaniExperiencePanel(){
     const sample=button.querySelector('.lani-experience-sample');
     const strong=button.querySelector('strong');
     const small=button.querySelector('small');
-    const badge=button.querySelector('em');
     if(sample)sample.textContent='ABC';
     if(strong)strong.textContent=optionCopy[id]?.[0]||strong.textContent;
     if(small)small.textContent=optionCopy[id]?.[1]||small.textContent;
-    if(badge)badge.textContent=LANI_EXPERIENCES[id]?.badge||badge.textContent;
   });
   const preview=studio.querySelector('#laniExperiencePreview');
   if(preview){
@@ -195,6 +197,21 @@ function enhanceLaniExperiencePanel(){
   }));
   const active=studio.querySelector(`[data-lani-frame-choice="${draftFrame||'monsters'}"]`)||studio.querySelector('[data-lani-frame-choice="monsters"]');
   if(active){draftFrame=active.dataset.laniFrameChoice;active.classList.add('selected');if(preview)preview.dataset.laniFrame=draftFrame}
+  // The portrait frame is intentionally atmospheric, not a separate choice.
+  // Keep the three typography cards as the only experience controls.
+  studio.querySelector('.lani-frame-options')?.remove();
+  studio.querySelector('.lani-experience-picker')?.remove();
+  if(preview){
+    const theme=preview.dataset.laniTheme||savedTheme();
+    preview.dataset.laniFrame=theme;
+    preview.dataset.laniCompanion=theme;
+    const companion=preview.querySelector('.lani-preview-companion');
+    if(companion){
+      companion.setAttribute('role','img');
+      companion.setAttribute('aria-label',`${LANI_THEMES[theme]?.label||'Lani'} companion`);
+      companion.innerHTML='<span aria-hidden="true"></span>';
+    }
+  }
 }
 
 function mountThemeStudio(){
