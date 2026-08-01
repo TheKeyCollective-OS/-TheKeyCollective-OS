@@ -2662,6 +2662,34 @@ html[data-lani-theme] body.lani-independent-theme .lani-page>.card{margin-bottom
   html[data-lani-theme] body.lani-independent-theme{background-attachment:scroll,scroll!important;background-position:center top,center top!important;background-size:100% 100%,100% 78vh!important}
 }
 
+/* Sprint 6D.2 — keep the curated composition intact. The artwork is sized by
+   its natural aspect ratio instead of being forced into a viewport rectangle;
+   the pearl fade is a separate layer so the lower edge dissolves gracefully. */
+html[data-lani-theme] body.lani-independent-theme{
+  background-image:
+    linear-gradient(180deg,transparent 0%,transparent 67%,var(--lani-pearl-fade) 86%,var(--lani-pearl-base) 100%),
+    var(--lani-art-portrait)!important;
+  background-repeat:no-repeat,no-repeat!important;
+  background-position:center top,center top!important;
+  background-size:100% 78vh,100% auto!important;
+  background-attachment:fixed,fixed!important;
+}
+@media(min-width:901px){
+  html[data-lani-theme] body.lani-independent-theme{
+    background-image:
+      linear-gradient(180deg,transparent 0%,transparent 67%,var(--lani-pearl-fade) 86%,var(--lani-pearl-base) 100%),
+      var(--lani-art-landscape)!important;
+    background-size:100% 78vh,100% auto!important;
+    background-attachment:fixed,fixed!important;
+  }
+}
+@media(max-width:780px){
+  html[data-lani-theme] body.lani-independent-theme{
+    background-attachment:scroll,scroll!important;
+    background-size:100% 78vh,100% auto!important;
+  }
+}
+
 /* The key is a quiet, art-aligned discovery hotspot rather than a visible UI
    control. It becomes discoverable on hover/focus without competing with the cards. */
 .lani-hidden-key{position:absolute;z-index:8;width:48px;height:58px;padding:0;border:0;border-radius:50%;background:transparent;color:transparent;opacity:.025;cursor:pointer;transition:opacity .25s ease,filter .25s ease}
