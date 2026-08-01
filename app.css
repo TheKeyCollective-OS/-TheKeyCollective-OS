@@ -2787,26 +2787,26 @@ html[data-lani-theme] body.lani-independent-theme .lani-page>.card{margin-bottom
 }
 
 /* Sprint 6D.2 — keep the curated composition intact. The selected artwork is
-   shown directly with no fade overlay; only the cards provide the readable
-   foreground treatment. */
+   shown directly with no fade overlay and fills the viewport behind the full
+   scrollable card collection. */
 html[data-lani-theme] body.lani-independent-theme{
   background-image:var(--lani-art-portrait)!important;
   background-repeat:no-repeat!important;
   background-position:center top!important;
-  background-size:100% auto!important;
+  background-size:cover!important;
   background-attachment:fixed!important;
 }
 @media(min-width:901px){
   html[data-lani-theme] body.lani-independent-theme{
     background-image:var(--lani-art-landscape)!important;
-    background-size:100% auto!important;
+    background-size:cover!important;
     background-attachment:fixed!important;
   }
 }
 @media(max-width:780px){
   html[data-lani-theme] body.lani-independent-theme{
-    background-attachment:scroll!important;
-    background-size:100% auto!important;
+    background-attachment:fixed!important;
+    background-size:cover!important;
   }
 }
 
