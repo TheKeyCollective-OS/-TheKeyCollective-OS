@@ -2346,7 +2346,10 @@ html[data-lani-theme="safari"] body.lani-independent-theme :is(
   #laniThemeStudio h2,
   #laniExperienceStudio h2,
   #laniExperiencePreview .lani-preview-wordmark,
-  #laniExperiencePreview .lani-preview-copy h3
+  #laniExperiencePreview .lani-preview-copy h3,
+  .lani-page article.card h2,
+  .lani-page article.card h3,
+  .lani-page article.card h4
 ) {
   font-family: "Baloo 2", "Arial Rounded MT Bold", "Trebuchet MS", sans-serif !important;
   font-weight: 800 !important;
@@ -3021,7 +3024,10 @@ html[data-lani-theme="monsters"][data-lani-theme][data-lani-theme] body.lani-ind
   #laniThemeStudio h2,
   #laniExperienceStudio h2,
   #laniExperiencePreview .lani-preview-wordmark,
-  #laniExperiencePreview .lani-preview-copy h3
+  #laniExperiencePreview .lani-preview-copy h3,
+  .lani-page article.card h2,
+  .lani-page article.card h3,
+  .lani-page article.card h4
 )::after {
   filter: saturate(1.25) brightness(1.1) drop-shadow(0 0 7px rgba(255,224,117,.72)) !important;
   animation: laniMonsterHeaderSparkle 4.8s ease-in-out infinite !important;
