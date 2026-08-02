@@ -132,6 +132,7 @@ html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independ
    treatment clears immediately when another page is opened. */
 html[data-lani-theme] body.lani-independent-theme header.topbar #breadcrumb[data-route="lani"] {
   position: relative !important;
+  z-index: 2 !important;
   display: inline-flex !important;
   align-items: center !important;
   min-height: 34px !important;
@@ -146,7 +147,17 @@ html[data-lani-theme] body.lani-independent-theme header.topbar #breadcrumb[data
   background: linear-gradient(135deg, #8e6222, #d5a83f 48%, #8a5b1d) !important;
   box-shadow: 0 7px 18px rgba(138, 91, 29, .28), inset 0 1px rgba(255,255,255,.48) !important;
   isolation: isolate !important;
-  overflow: visible !important;
+  overflow: hidden !important;
+}
+/* Keep the animated label treatment inside its own stacking context so the
+   sweep and sparkle can never wash over the neighboring Back/Home controls. */
+html[data-lani-theme] body.lani-independent-theme header.topbar {
+  isolation: isolate !important;
+}
+html[data-lani-theme] body.lani-independent-theme header.topbar :is(#backButton, #homeButton) {
+  position: relative !important;
+  z-index: 3 !important;
+  isolation: isolate !important;
 }
 html[data-lani-theme] body.lani-independent-theme header.topbar #breadcrumb[data-route="lani"]::before {
   content: "" !important;
@@ -163,7 +174,7 @@ html[data-lani-theme] body.lani-independent-theme header.topbar #breadcrumb[data
   content: "\2726 \00b7 \2727" !important;
   position: absolute !important;
   top: -7px !important;
-  right: -10px !important;
+  right: 7px !important;
   z-index: 1 !important;
   color: #fff5b0 !important;
   -webkit-text-fill-color: #fff5b0 !important;
