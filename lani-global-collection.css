@@ -2878,7 +2878,7 @@ html[data-lani-theme="monsters"] body.lani-independent-theme .lani-page .lani-he
   z-index: 1 !important;
   isolation: isolate !important;
   background-image: linear-gradient(100deg,#ffd21a 0%,#ff4f9a 22%,#8d4dff 44%,#16cbbb 65%,#ffc21a 82%,#ff4f9a 100%) !important;
-  background-size: 320% 100% !important;
+  background-size: 125% 100% !important;
   background-clip: text !important;
   -webkit-background-clip: text !important;
   color: transparent !important;
@@ -2947,7 +2947,7 @@ html[data-lani-theme="monsters"] body.lani-independent-theme .lani-page .lani-he
    control without changing any non-Lani heading. */
 html[data-lani-theme="monsters"][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme #page .pagehead.pagehead.lani-head.lani-head h1 {
   background-image: linear-gradient(100deg,#ffd21a 0%,#ff4f9a 22%,#8d4dff 44%,#16cbbb 65%,#ffc21a 82%,#ff4f9a 100%) !important;
-  background-size: 320% 100% !important;
+  background-size: 125% 100% !important;
   background-clip: text !important;
   -webkit-background-clip: text !important;
   background-color: transparent !important;
@@ -2957,6 +2957,30 @@ html[data-lani-theme="monsters"][data-lani-theme][data-lani-theme] body.lani-ind
   text-shadow: 0 2px 0 rgba(255,240,182,.88), 0 0 9px rgba(255,195,63,.28), 0 7px 16px rgba(76,41,79,.22) !important;
   filter: saturate(1.18) brightness(1.06) drop-shadow(0 0 8px rgba(255,208,112,.24)) !important;
   animation: laniMonsterRainbowText 16s ease-in-out infinite !important;
+}
+
+/* Dollhouse stays couture and rose-gold. The shared collection shimmer has
+   ID-strength selectors, so give this atmosphere its own final cascade guard
+   to prevent emerald/blue/purple glints or a heavy global shadow from crossing
+   into the dress atelier. */
+html[data-lani-theme="dollhouse"][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme #page :is(
+  #lani-heading-specificity-anchor,
+  .pagehead.pagehead.lani-head.lani-head h1
+) {
+  font-family: "DM Serif Display", Georgia, serif !important;
+  font-weight: 700 !important;
+  background-image: linear-gradient(98deg,#79384f 0%,#a94e6a 38%,#db8997 67%,#b97d2d 100%) !important;
+  background-size: 180% 100% !important;
+  background-position: 0% 50% !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  background-color: transparent !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-text-stroke: .35px rgba(102,49,63,.38) !important;
+  text-shadow: 0 1px 0 rgba(255,238,213,.86), 0 3px 0 rgba(116,59,70,.1), 0 7px 13px rgba(84,42,51,.14) !important;
+  filter: drop-shadow(0 1px 0 rgba(255,235,214,.8)) drop-shadow(0 6px 12px rgba(84,42,51,.16)) !important;
+  animation: none !important;
 }
 
 @media (max-width:700px) {

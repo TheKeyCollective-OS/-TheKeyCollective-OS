@@ -60,3 +60,4 @@ APP_SHELL.push('./lani-global-collection.css?v=16.58.46');
 APP_SHELL.push('./lani-global-collection.css?v=16.58.47');
 APP_SHELL.push('./lani-global-collection.css?v=16.58.48');
 APP_SHELL.push('./app.js?v=16.58.55','./router.js?v=16.58.55','./lani-global-collection.css?v=16.58.56');
+APP_SHELL.push('./lani-global-collection.css?v=16.58.57');
