@@ -42,6 +42,7 @@ import {enhanceSprint6B49} from './sprint6b49.js?v=16.55.53';
 import {enhanceSprint6C1} from './sprint6c1.js?v=16.58.37';
 import {enhanceSprint6C3} from './sprint6c3.js?v=16.54.0';
 import {enhanceSprint6D} from './sprint6d.js?v=16.58.43';
+import {enhanceSprint6E} from './sprint6e.js';
 import {installAutocorrect} from './autocorrect.js';
 
 patchPages(pages);
@@ -69,19 +70,19 @@ function applyDesign(){
   const state=store.get();
   document.documentElement.dataset.theme=state.theme||'champagne';
   const design=state.design||{};
-  /* Keep the legacy attributes for older modules, while exposing an explicit
-     Global Card Collection contract for the shared shell surfaces. */
-  document.documentElement.dataset.cards=design.cards||'glass';
-  document.documentElement.dataset.radius=design.radius||'soft';
-  document.documentElement.dataset.texture=design.texture||'clean';
+  /* The atmosphere remains independent from the shared card collection. */
+  const collections=['pearl','blackberry','ruby','rose','amethyst','sapphire','emerald','teal','copper','espresso','onyx','silver'];
+  const cardCollection=collections.includes(design.cardCollection)?design.cardCollection:'pearl';
+  const radius=['classic','square','circle'].includes(design.radius)?design.radius:'classic';
+  document.documentElement.dataset.radius=radius;
+  document.documentElement.dataset.texture='clean';
   document.documentElement.dataset.type=design.pack||design.type||'classic';
-  document.documentElement.dataset.motion=design.motion||'standard';
-  document.documentElement.dataset.globalCards=design.cards||'glass';
-  document.documentElement.dataset.globalRadius=design.radius||'soft';
-  document.documentElement.dataset.globalTexture=design.texture||'clean';
+  document.documentElement.dataset.globalRadius=radius;
+  document.documentElement.dataset.globalTexture='clean';
   document.documentElement.dataset.globalType=design.pack||design.type||'classic';
-  document.documentElement.dataset.globalMotion=design.motion||'standard';
+  document.documentElement.dataset.globalCollection=cardCollection;
   document.documentElement.dataset.globalTone=design.tone||'light';
+  ['cards','motion','globalCards','globalMotion'].forEach(attribute=>delete document.documentElement.dataset[attribute]);
 }
 
 /* Every route owns its page header, but the visual voice is global. Mark each
@@ -162,6 +163,7 @@ router=createRouter({
       else if(!controllerExcluded.has(id)&&ctl[id])await ctl[id](router);
       await enhanceSprint4(id,router);
       await enhanceSprint5(id,router);
+      enhanceSprint6E(id);
       await enhanceSprint6A(id,router);
       await enhanceSprint6B(id,router);
       await enhanceSprint6B1(id,router);

@@ -44,6 +44,32 @@ html[data-lani-theme] body.lani-independent-theme .topbar{background:var(--lani-
 html[data-lani-theme] body.lani-independent-theme .topbar .icon-button{background:var(--lani-topbar-button)!important;border-color:var(--lani-shell-line)!important;color:var(--lani-shell-ink)!important}
 html[data-lani-theme] body.lani-independent-theme .topbar #breadcrumb{color:var(--lani-shell-ink)!important}
 
+/* Sprint 6E: the 12 global card collections are independent of atmosphere. */
+html[data-global-collection="pearl"]{--global-card-image:url('assets/theme-pearl-champagne-couture.png')}
+html[data-global-collection="blackberry"]{--global-card-image:url('assets/theme-blackberry-deco.png')}
+html[data-global-collection="ruby"]{--global-card-image:url('assets/theme-garnet-jewel-mosaic.png')}
+html[data-global-collection="rose"]{--global-card-image:url('assets/theme-rose-couture-tweed.png')}
+html[data-global-collection="amethyst"]{--global-card-image:url('assets/theme-amethyst-cheetah.png')}
+html[data-global-collection="sapphire"]{--global-card-image:url('assets/theme-sapphire-stardust.png')}
+html[data-global-collection="emerald"]{--global-card-image:url('assets/theme-emerald-crocodile.png')}
+html[data-global-collection="teal"]{--global-card-image:url('assets/theme-teal-murano.png')}
+html[data-global-collection="copper"]{--global-card-image:url('assets/theme-copper-chainmail.png')}
+html[data-global-collection="espresso"]{--global-card-image:url('assets/theme-espresso-houndstooth.png')}
+html[data-global-collection="onyx"]{--global-card-image:url('assets/theme-onyx-bandana.png')}
+html[data-global-collection="silver"]{--global-card-image:url('assets/theme-platinum-deco-brocade.png')}
+html[data-global-collection] :is(.sidebar,.topbar,#page .card:not(.typography-experience-6c),#page .module,#page .studio-section,#page .theme-card,#page .collection-guide-6b49,.agenda-modal,.memory-detail-shell,.kiki-settings){background-image:linear-gradient(145deg,color-mix(in srgb,var(--global-surface) 78%,transparent),color-mix(in srgb,var(--global-surface-alt) 66%,transparent)),var(--global-card-image)!important;background-size:cover,cover!important;background-position:center,center!important;background-blend-mode:normal,soft-light!important}
+html[data-global-tone="dark"][data-global-collection] :is(.sidebar,.topbar,#page .card:not(.typography-experience-6c),#page .module,#page .studio-section,#page .theme-card,#page .collection-guide-6b49,.agenda-modal,.memory-detail-shell,.kiki-settings){background-image:linear-gradient(145deg,color-mix(in srgb,var(--global-surface) 82%,transparent),color-mix(in srgb,var(--global-surface-alt) 76%,transparent)),var(--global-card-image)!important;background-blend-mode:normal,soft-light!important}
+.card-collection-grid-6c{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:12px}
+.card-collection-choice-6c{display:grid;gap:6px;min-width:0;padding:8px;border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink);text-align:left;cursor:pointer;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.card-collection-choice-6c:hover{transform:translateY(-2px);border-color:var(--gold);box-shadow:var(--shadow)}
+.card-collection-choice-6c.selected{border-color:var(--gold);box-shadow:0 0 0 3px color-mix(in srgb,var(--gold2) 45%,transparent),var(--shadow)}
+.card-collection-choice-6c .theme-preview{height:66px;border-radius:9px;background-size:cover!important}
+.card-collection-choice-6c strong{font:700 12px/1.15 var(--font-display);overflow-wrap:anywhere}
+.card-collection-choice-6c small{font-size:10px;line-height:1.25;color:var(--muted);overflow-wrap:anywhere}
+.control-help-6c{margin:4px 0 0;color:var(--muted);font-size:12px;line-height:1.4}
+@media(max-width:920px){.card-collection-grid-6c{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){.card-collection-grid-6c{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.card-collection-choice-6c .theme-preview{height:54px}.card-collection-choice-6c{padding:7px}}
+
 /* Sprint 6D.4 — screenshot-faithful Lani atelier. The approved vertical world
    is always shown in full and remains fixed; typography changes only the
    readable Global Card Collection and preview surfaces. */
