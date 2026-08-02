@@ -44,6 +44,104 @@ html[data-lani-theme] body.lani-independent-theme .topbar{background:var(--lani-
 html[data-lani-theme] body.lani-independent-theme .topbar .icon-button{background:var(--lani-topbar-button)!important;border-color:var(--lani-shell-line)!important;color:var(--lani-shell-ink)!important}
 html[data-lani-theme] body.lani-independent-theme .topbar #breadcrumb{color:var(--lani-shell-ink)!important}
 
+/* Sprint 6D.4 — screenshot-faithful Lani atelier. The approved vertical world
+   is always shown in full and remains fixed; typography changes only the
+   readable Global Card Collection and preview surfaces. */
+html[data-lani-theme] body.lani-independent-theme{
+  background-image:var(--lani-art-portrait)!important;
+  background-repeat:no-repeat!important;
+  background-position:center top!important;
+  background-size:auto 100vh!important;
+  background-attachment:fixed!important;
+}
+html[data-lani-theme="safari"] body.lani-independent-theme{background-color:#304f3e!important}
+html[data-lani-theme="monsters"] body.lani-independent-theme{background-color:#9a6688!important}
+html[data-lani-theme="dollhouse"] body.lani-independent-theme{background-color:#6e433b!important}
+
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio{
+  grid-template-areas:"intro" "voices" "preview"!important;
+  gap:14px!important;
+  padding:20px!important;
+  background:linear-gradient(145deg,rgba(255,253,249,.97),rgba(255,246,238,.92))!important;
+  border:1px solid rgba(198,146,73,.68)!important;
+  box-shadow:0 20px 42px rgba(62,35,39,.2),inset 0 1px rgba(255,255,255,.98)!important;
+}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-head{display:contents!important}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-head>div:first-child{grid-area:intro!important;padding-right:190px}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-options{grid-area:voices!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:12px!important;margin:0!important}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio #laniExperiencePreview{grid-area:preview!important;width:100%!important;min-height:0!important;background-size:cover!important;background-position:center!important;border:1px solid rgba(203,155,98,.5)!important;padding:12px!important}
+
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-option{
+  display:grid!important;grid-template-columns:1fr!important;gap:8px!important;min-height:190px!important;padding:12px 13px 14px!important;
+  background:linear-gradient(150deg,rgba(255,255,255,.97),rgba(255,245,236,.94))!important;
+  border:1px solid #e2c095!important;border-radius:18px!important;color:#4d354a!important;text-align:left!important;
+}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-sample{
+  display:flex!important;align-items:center!important;justify-content:center!important;gap:.01em!important;min-height:108px!important;margin:0!important;
+  border:1px solid rgba(185,133,73,.32)!important;border-radius:16px!important;background:#fff9f2!important;
+  font-size:68px!important;line-height:1!important;letter-spacing:-.08em!important;text-shadow:none!important;-webkit-text-stroke:0!important;
+}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-sample span{display:inline-block;filter:drop-shadow(0 6px 5px rgba(67,37,55,.2));transform:translateZ(0)}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-storybook{font-family:Georgia,"Book Antiqua",serif!important;font-style:normal!important}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-storybook span:nth-child(1){color:#9a76ad;text-shadow:1px 1px 0 #f2d7ec,3px 3px 0 #6f527e}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-storybook span:nth-child(2){color:#c8878b;text-shadow:1px 1px 0 #f8dfcf,3px 3px 0 #94615f}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-storybook span:nth-child(3){color:#8377a7;text-shadow:1px 1px 0 #ded7ef,3px 3px 0 #5f567d}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-wonder{font-family:"Cooper Black","Arial Rounded MT Bold","Trebuchet MS",sans-serif!important;background:#fffaf4!important;border-radius:16px!important}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-wonder span:nth-child(1){color:#7358a2;text-shadow:1px 1px 0 #c4b2dc,3px 3px 0 #46326f}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-wonder span:nth-child(2){color:#ee8848;text-shadow:1px 1px 0 #ffd1a3,3px 3px 0 #ad4f2e}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-wonder span:nth-child(3){color:#e45f7c;text-shadow:1px 1px 0 #ffc1cb,3px 3px 0 #9c3458}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-atelier{font-family:"Arial Rounded MT Bold","Avenir Next",Arial,sans-serif!important;background:#fffaf4!important;border-radius:16px!important}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-atelier span{color:#4ba9a5;text-shadow:1px 1px 0 #b7ebe4,3px 3px 0 #247771}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-option strong{display:block!important;margin-top:2px!important;color:#4d354a!important;font:700 18px/1.15 Georgia,serif!important;text-align:center}
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-option small{display:block!important;color:#625761!important;font-size:12px!important;line-height:1.35!important;text-align:center}
+
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-stage{
+  display:grid!important;grid-template-columns:minmax(150px,190px) minmax(0,1fr) minmax(100px,150px)!important;gap:22px!important;align-items:center!important;
+  min-height:310px!important;margin-top:7px!important;padding:22px!important;border-radius:22px!important;
+  background:linear-gradient(135deg,rgba(255,255,255,.91),rgba(255,247,239,.82))!important;border:1px solid rgba(205,160,105,.5)!important;overflow:visible!important;
+}
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo{position:relative!important;width:180px!important;height:216px!important;margin:0!important;padding:0!important;background:#fff7ed!important;overflow:hidden!important;isolation:isolate}
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo img{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:52% 34%!important}
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo{border:6px solid #d69ac7!important;border-radius:46% 54% 44% 56% / 40% 46% 54% 60%!important;box-shadow:0 0 0 3px #f4d8ee,0 12px 24px rgba(77,42,69,.2)!important}
+html[data-lani-theme="safari"] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo{border:6px solid #c99d52!important;border-radius:58% 42% 54% 46% / 68% 62% 38% 32%!important;transform:rotate(-2deg);box-shadow:0 0 0 3px #f2dfb7,0 12px 24px rgba(67,53,32,.22)!important}
+html[data-lani-theme="dollhouse"] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo{border:7px double #bd7d9e!important;border-radius:50% 50% 22px 22px!important;box-shadow:0 0 0 3px #ead0dc,0 0 0 6px #c69b55,0 13px 25px rgba(78,42,55,.22)!important}
+
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-copy{min-width:0!important;color:#4a3b4b!important}
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-wordmark{display:inline-block;font-size:clamp(58px,7vw,92px)!important;line-height:.86!important;letter-spacing:-.04em!important}
+html[data-lani-experience="storybook"] body.lani-independent-theme #laniExperiencePreview .lani-preview-wordmark{font-family:Georgia,"Book Antiqua",serif!important;color:#8b69a4!important;-webkit-text-fill-color:#8b69a4!important;background:none!important;text-shadow:1px 1px 0 #f2d4e9,3px 3px 0 #c47f86,0 9px 18px rgba(70,41,76,.2)!important}
+html[data-lani-experience="wonder"] body.lani-independent-theme #laniExperiencePreview .lani-preview-wordmark{font-family:"Cooper Black","Arial Rounded MT Bold","Trebuchet MS",sans-serif!important;background:linear-gradient(90deg,#7656a7 0 23%,#e7824a 24% 46%,#e7627e 47% 69%,#4aa6a1 70% 100%)!important;background-clip:text!important;-webkit-background-clip:text!important;color:transparent!important;-webkit-text-fill-color:transparent!important;text-shadow:0 5px 0 rgba(90,50,91,.2),0 10px 18px rgba(67,39,67,.18)!important}
+html[data-lani-experience="atelier"] body.lani-independent-theme #laniExperiencePreview .lani-preview-wordmark{font-family:"Arial Rounded MT Bold","Avenir Next",Arial,sans-serif!important;color:#3e9996!important;-webkit-text-fill-color:#3e9996!important;background:none!important;text-shadow:1px 1px 0 #c5eee7,3px 3px 0 #d27c73,0 8px 16px rgba(34,91,89,.2)!important}
+
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-companion{position:relative!important;display:grid!important;place-items:end center!important;width:138px!important;height:220px!important;margin:0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:visible!important;transform:none!important}
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview #laniPreviewCompanion{position:static!important;inset:auto!important;display:block!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center bottom!important;background:none!important;border-radius:0!important;filter:drop-shadow(0 12px 12px rgba(75,39,47,.22))!important}
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-filmstrip{display:flex!important;gap:7px!important;align-items:center!important;overflow-x:auto!important;margin-top:10px!important;padding:7px 10px!important;border-radius:16px!important;background:rgba(255,251,246,.88)!important;border:1px solid rgba(200,156,103,.46)!important;scrollbar-color:#c58b38 transparent}
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-filmstrip img{flex:0 0 88px!important;width:88px!important;height:58px!important;object-fit:cover!important;border-radius:9px!important;border:1px solid rgba(160,103,77,.25)!important}
+
+html[data-lani-experience="storybook"] body.lani-independent-theme .lani-page :is(h1,h2,h3,.section-title h2,.section-title h3){font-family:Georgia,"Book Antiqua",serif!important;color:#62476f!important;-webkit-text-fill-color:#62476f!important;background:none!important;text-shadow:0 2px 0 rgba(255,255,255,.78),0 7px 14px rgba(79,48,79,.18)!important}
+html[data-lani-experience="wonder"] body.lani-independent-theme .lani-page :is(h1,h2,.section-title h2){font-family:"Cooper Black","Arial Rounded MT Bold","Trebuchet MS",sans-serif!important;background:linear-gradient(90deg,#7656a7,#e7824a 36%,#e7627e 62%,#4aa6a1)!important;background-clip:text!important;-webkit-background-clip:text!important;color:transparent!important;-webkit-text-fill-color:transparent!important;text-shadow:0 5px 0 rgba(83,49,80,.16),0 10px 20px rgba(69,39,64,.16)!important}
+html[data-lani-experience="wonder"] body.lani-independent-theme .lani-page :is(h3,.section-title h3){font-family:"Arial Rounded MT Bold","Trebuchet MS",sans-serif!important;color:#69446e!important;-webkit-text-fill-color:#69446e!important;background:none!important;text-shadow:0 2px 0 rgba(255,255,255,.76),0 6px 12px rgba(74,43,70,.14)!important}
+html[data-lani-experience="atelier"] body.lani-independent-theme .lani-page :is(h1,h2,.section-title h2){font-family:"Arial Rounded MT Bold","Avenir Next",Arial,sans-serif!important;color:#2d7777!important;-webkit-text-fill-color:#2d7777!important;background:none!important;text-shadow:1px 1px 0 #d8f3ec,3px 3px 0 rgba(200,117,108,.42),0 8px 16px rgba(43,91,88,.18)!important}
+html[data-lani-experience="atelier"] body.lani-independent-theme .lani-page :is(h3,.section-title h3){font-family:"Avenir Next",Arial,sans-serif!important;color:#3e6265!important;-webkit-text-fill-color:#3e6265!important;background:none!important;text-shadow:0 2px 0 rgba(255,255,255,.75)!important}
+
+@media(max-width:980px){
+  html[data-lani-theme] body.lani-independent-theme{background-size:auto 100svh!important}
+  html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-options{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-stage{grid-template-columns:150px minmax(0,1fr) 110px!important;gap:14px!important;padding:18px!important}
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo{width:145px!important;height:190px!important}
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-companion{display:grid!important;width:105px!important;height:180px!important}
+}
+@media(max-width:640px){
+  html[data-lani-theme] body.lani-independent-theme{background-size:auto 100svh!important;background-position:center top!important}
+  html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio{padding:14px!important}
+  html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-head>div:first-child{padding-right:0!important}
+  html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-options{grid-template-columns:1fr!important}
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-stage{grid-template-columns:112px minmax(0,1fr)!important;gap:12px!important;min-height:0!important;padding:14px!important;text-align:left!important}
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo{width:108px!important;height:144px!important}
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-companion{display:grid!important;grid-column:1 / -1!important;justify-self:end!important;width:92px!important;height:130px!important;margin-top:-52px!important}
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-wordmark{font-size:52px!important}
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-filmstrip img{flex-basis:70px!important;width:70px!important;height:48px!important}
+}
+
 /* Theme-owned preview character: the typography card previews a character from
    the selected world, while Lulu remains the nurturing page companion. */
 html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-companion{
@@ -341,14 +439,14 @@ html[data-companion-motion="reduced"] .kiki-companion *{animation:none!important
 @media(prefers-reduced-motion:reduce){.kiki-companion *{animation:none!important;transition:none!important}}
 @media(max-width:720px){.kiki-companion{width:106px;right:8px;bottom:max(8px,env(safe-area-inset-bottom))}.kiki-bubble{right:60%;bottom:78%;font-size:13px;width:min(230px,70vw)}.kiki-settings{bottom:125px}}
 
-/* Keep companion messages visible while Kiki and Lulu wander. */
-.kiki-bubble{position:fixed;left:16px;right:auto;bottom:190px;z-index:79;width:min(260px,calc(100vw - 32px));transition:left 4s cubic-bezier(.35,.05,.2,1)}
+/* Keep Lulu/Kiki messages anchored to their companion so movement never leaves a bubble behind. */
+.kiki-companion .kiki-bubble{position:absolute;right:68%;left:auto;bottom:74%;z-index:79;width:min(260px,65vw);transition:opacity .2s ease,transform .2s ease}
 .kiki-talk-button{width:100%;margin:2px 0 12px;padding:11px 14px;border:1px solid color-mix(in srgb,var(--gold) 55%,var(--line));border-radius:12px;background:color-mix(in srgb,var(--paper) 92%,var(--gold));color:var(--ink);font:700 13px/1.2 Inter,sans-serif;cursor:pointer}
 .kiki-talk-button:hover,.kiki-talk-button:focus-visible{filter:brightness(1.04);outline:2px solid color-mix(in srgb,var(--gold) 60%,transparent);outline-offset:2px}
 .kiki-mode-note{margin:0 0 12px;color:var(--muted);font:600 12px/1.45 Inter,sans-serif}
 .kiki-restore{position:fixed;right:18px;bottom:max(18px,env(safe-area-inset-bottom));z-index:78;padding:9px 13px;border:1px solid color-mix(in srgb,var(--gold) 55%,var(--line));border-radius:999px;background:color-mix(in srgb,var(--paper) 94%,transparent);color:var(--ink);box-shadow:0 10px 28px rgba(53,29,42,.14);font:700 12px/1 Inter,sans-serif;cursor:pointer}
 .kiki-restore[hidden]{display:none!important}
-@media(max-width:720px){.kiki-bubble{left:12px;right:auto;bottom:142px;width:min(230px,calc(100vw - 24px))}}
+@media(max-width:720px){.kiki-companion .kiki-bubble{right:60%;bottom:78%;width:min(230px,70vw)}}
 .kiki-settings:popover-open{inset:auto clamp(16px,3vw,42px) clamp(150px,22vh,235px) auto;margin:0}
 
 /* Sprint 6C.3 — Lani's Corner experience */
@@ -536,6 +634,57 @@ html[data-type] body{font-family:var(--font-body)}html[data-type] h1,html[data-t
 :root:not([data-theme="midnight"]):not([data-theme="obsidian"]):not([data-theme="sapphire"]){--adaptive-text:#28231f;--adaptive-muted:#665e57} :root:not([data-theme="midnight"]):not([data-theme="obsidian"]):not([data-theme="sapphire"]) body{color:var(--adaptive-text)} :root:not([data-theme="midnight"]):not([data-theme="obsidian"]):not([data-theme="sapphire"]) .muted,:root:not([data-theme="midnight"]):not([data-theme="obsidian"]):not([data-theme="sapphire"]) .sub{color:var(--adaptive-muted)}
 @media(max-width:800px){.hard-command{grid-template-columns:1fr}.hard-toolbar{align-items:flex-start;flex-direction:column}.hard-progress-summary{min-width:100%}.hard-board.grid-view{grid-template-columns:repeat(2,minmax(0,1fr))}.hard-board.list-view .hard-tile{grid-template-columns:42px 1fr}.hard-board.list-view .hard-tile-main{grid-template-columns:1fr 50px}.hard-board.list-view .hard-inline-progress,.hard-board.list-view input,.hard-board.list-view .hard-tile-actions{grid-column:1/-1}.priority-editor-grid{grid-template-columns:1fr}.priority-editor-grid .wide{grid-column:auto}}
 @media(max-width:470px){.hard-board.grid-view{grid-template-columns:1fr 1fr}.hard-board.grid-view .hard-tile{min-height:172px;padding:10px}.hard-tile-heading h3{font-size:15px}.hard-tile-actions{flex-direction:column}.priority-dialog-actions{flex-direction:column-reverse}.priority-dialog-actions .btn{width:100%}}
+
+/* Sprint 6D.4 final authority: atmosphere-owned portrait frame and companion.
+   This deliberately sits after legacy Lani layers so old crop-based previews
+   cannot override the approved cloud, footprint, and royal frames. */
+html[data-lani-theme] body.lani-independent-theme{
+  background-image:var(--lani-art-portrait)!important;
+  background-repeat:no-repeat!important;
+  background-position:center top!important;
+  background-size:auto 100vh!important;
+  background-attachment:fixed!important;
+}
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo{
+  position:relative!important;width:180px!important;height:216px!important;margin:0!important;padding:0!important;
+  overflow:hidden!important;background:#fff8ef!important;transform:none!important;
+}
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo img{
+  display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:52% 34%!important;
+}
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo{
+  border:6px solid #d69ac7!important;border-radius:46% 54% 44% 56% / 40% 46% 54% 60%!important;
+  box-shadow:0 0 0 3px #f4d8ee,0 12px 24px rgba(77,42,69,.2)!important;
+}
+html[data-lani-theme="safari"] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo{
+  border:6px solid #c99d52!important;border-radius:64% 44% 58% 38% / 70% 60% 44% 34%!important;
+  clip-path:polygon(35% 0,65% 0,73% 12%,83% 7%,94% 17%,90% 30%,100% 42%,91% 54%,95% 69%,80% 76%,74% 92%,59% 88%,48% 100%,36% 89%,20% 94%,15% 79%,2% 70%,8% 55%,0 42%,11% 31%,7% 17%,21% 9%)!important;
+  box-shadow:0 0 0 3px #f2dfb7,0 12px 24px rgba(67,53,32,.22)!important;
+}
+html[data-lani-theme="dollhouse"] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo{
+  border:7px double #bd7d9e!important;border-radius:50% 50% 22px 22px!important;
+  outline:3px solid #c69b55!important;outline-offset:3px!important;
+  box-shadow:0 13px 25px rgba(78,42,55,.22)!important;
+}
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-companion{
+  position:relative!important;display:grid!important;place-items:end center!important;width:138px!important;height:220px!important;
+  margin:0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;
+  overflow:visible!important;transform:none!important;
+}
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview #laniPreviewCompanion{
+  position:static!important;inset:auto!important;display:block!important;width:100%!important;height:100%!important;
+  object-fit:contain!important;object-position:center bottom!important;background:none!important;border-radius:0!important;
+  box-shadow:none!important;filter:drop-shadow(0 12px 12px rgba(75,39,47,.22))!important;pointer-events:none!important;
+}
+@media(max-width:980px){
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo{width:145px!important;height:190px!important}
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-companion{display:grid!important;width:105px!important;height:180px!important}
+}
+@media(max-width:640px){
+  html[data-lani-theme] body.lani-independent-theme{background-size:auto 100svh!important}
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo{width:108px!important;height:144px!important}
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-companion{display:grid!important;width:92px!important;height:130px!important}
+}
 /* Sprint 6B — Executive Intelligence + interaction repair */
 :root{--text-on-light:#211d1a;--muted-on-light:#625a53;--text-on-dark:#fffaf0;--muted-on-dark:#ded5c8}.card,input,textarea,select,button{color:var(--ink)}html[data-theme="noir"] .card,html[data-theme="sapphire"] .card,html[data-theme="emerald"] .card{--ink:var(--text-on-dark);--muted:var(--muted-on-dark)}.contrast-safe{color:var(--ink)!important}.lux-fireworks,.mini-fireworks{position:fixed;inset:0;z-index:999;pointer-events:none;overflow:hidden}.lux-fireworks i,.mini-fireworks i{position:absolute;left:var(--x);bottom:12%;width:7px;height:7px;border-radius:50%;background:radial-gradient(circle,#fff 0 25%,#d6aa3a 30% 70%,transparent 72%);animation:firework 1.6s var(--d) ease-out forwards}.mini-fireworks i{width:4px;height:4px;animation-duration:.7s}@keyframes firework{to{transform:translate(calc((var(--i) - 15)*3px),-70vh) scale(.1);opacity:0}}.lani-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:44px;height:44px;border-radius:50%;border:1px solid currentColor;background:rgba(20,18,18,.72);color:#fff;font-size:22px}.lani-arrow.prev{left:12px}.lani-arrow.next{right:12px}.cash-command{margin-top:18px}.cash-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.cash-grid label{display:grid;gap:6px}.cash-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.cash-summary>div{padding:14px;border-radius:16px;background:var(--paper2);display:grid;gap:4px}.cash-summary strong{font-size:22px}.reflection-dialog{border:0;background:transparent;width:min(720px,calc(100vw - 24px));color:var(--ink)}.reflection-dialog::backdrop{background:rgba(0,0,0,.55);backdrop-filter:blur(6px)}.reflection-close{float:right}.reflection-body{white-space:pre-wrap;font-size:1.08rem;line-height:1.7}.preview-room .btn{position:relative;overflow:hidden;transition:transform .15s ease}.preview-room .btn.is-pressed{transform:scale(.96)}.preview-room .btn.is-loading:after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);animation:shimmer .65s linear}.preview-room .btn.is-success{box-shadow:0 0 0 4px color-mix(in srgb,var(--gold2) 35%,transparent)}@keyframes shimmer{from{transform:translateX(-100%)}to{transform:translateX(100%)}}html[data-texture="linen"] body{background-image:linear-gradient(135deg,#dff4ff 0%,#eefbff 42%,#fff8e8 100%),repeating-linear-gradient(0deg,rgba(255,255,255,.22) 0 1px,transparent 1px 4px)}html[data-texture="paper"] body{background-image:repeating-linear-gradient(0deg,transparent 0 3px,rgba(82,62,35,.035) 3px 4px),linear-gradient(#fbf2df,#fffaf0)}.hard-board.grid-view{grid-template-columns:repeat(auto-fit,minmax(145px,1fr))}.hard-board.grid-view .hard-tile{min-height:145px}.hard-board.list-view .hard-tile{min-height:76px}.hard-tile-heading h3{font-size:15px}@media(max-width:600px){.cash-grid,.cash-summary{grid-template-columns:1fr}.hard-board.grid-view{grid-template-columns:repeat(2,minmax(0,1fr))}}
 

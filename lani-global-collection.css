@@ -1,0 +1,2682 @@
+/* Sprint 6C — approved Lani Global Card Collection.
+   This layer is intentionally last. It is active only while Lani's route owns
+   data-lani-theme, so the saved OS collection returns unchanged on exit. */
+
+/* High-specificity visual lock for the selected Lani collection. */
+html[data-lani-theme][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme .sidebar,
+html[data-lani-theme][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme .topbar {
+  background-image: linear-gradient(var(--lani-shell-veil),var(--lani-shell-veil)),var(--lani-card-surface-image) !important;
+  background-size: cover,cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  font-family: var(--lani-heading-font) !important;
+}
+
+/* Final contrast and cloud-fit authority for the current Lani build. */
+html[data-lani-theme] body.lani-independent-theme .lani-page :is(#littleMomentText,.lani-card-body p,.lani-idea p,.lani-page .status,#laniExperiencePreview .lani-preview-copy > small) {
+  color:#2b1b2f !important;
+  font-weight:700 !important;
+  text-shadow:0 1px 0 rgba(255,255,255,.82),0 1px 2px rgba(38,22,32,.18) !important;
+}
+html[data-lani-theme][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme .lani-page .btn#saveTinyWin {
+  color:#261b25 !important;
+  -webkit-text-fill-color:#261b25 !important;
+  text-shadow:none !important;
+}
+html[data-lani-theme][data-lani-theme][data-lani-theme="monsters"] body.lani-independent-theme.lani-independent-theme #laniExperiencePreview .lani-preview-photo {
+  overflow:hidden !important;
+  clip-path:inset(0 round 48% 50% 44% 46%) !important;
+}
+html[data-lani-theme][data-lani-theme][data-lani-theme="monsters"] body.lani-independent-theme.lani-independent-theme #laniExperiencePreview #laniGalleryHero {
+  inset:18% 17% 20% 17% !important;
+  width:66% !important;
+  height:62% !important;
+  object-position:50% 25% !important;
+}
+/* Keep the gallery copy deliberately centered beside Lani's portrait on every
+   approved atmosphere. This is scoped to Lani's route and does not alter the
+   rest of the OS collection. */
+html[data-lani-theme][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme #laniExperiencePreview .lani-preview-copy {
+  display:grid !important;
+  align-content:center !important;
+  justify-items:center !important;
+  align-items:center !important;
+  text-align:center !important;
+  max-width:100% !important;
+  margin-inline:auto !important;
+  padding-inline:8px !important;
+}
+html[data-lani-theme][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme #laniExperiencePreview .lani-preview-copy > :is(.lani-preview-wordmark,p,.lani-preview-rule,h3,small,.lani-preview-memory) {
+  justify-self:center !important;
+  text-align:center !important;
+}
+html[data-lani-theme][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme #laniExperiencePreview .lani-preview-copy > small {
+  color:#24152c !important;
+  -webkit-text-fill-color:#24152c !important;
+  font-weight:800 !important;
+  line-height:1.45 !important;
+  max-width:34ch !important;
+  text-shadow:0 1px 0 rgba(255,255,255,.78),0 2px 4px rgba(34,19,30,.22) !important;
+}
+html[data-lani-theme][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme .sidebar nav a,
+html[data-lani-theme][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme .sidebar .brand,
+html[data-lani-theme][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme .sidebar .brand small,
+html[data-lani-theme][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme .sidebar .brand strong,
+html[data-lani-theme][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme .topbar #breadcrumb { font-family:var(--lani-heading-font) !important; }
+html[data-lani-theme][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme .lani-page article.card.card[data-lani-card-variant="1"],
+html[data-lani-theme][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme .lani-page article.card.card[data-lani-card-variant="2"],
+html[data-lani-theme][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme .lani-page article.card.card[data-lani-card-variant="3"] {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+html[data-lani-theme][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme .lani-page article.card.card.is-collapsed { background-size: cover !important; }
+
+html[data-lani-theme] body.lani-independent-theme {
+  --lani-ink: #49333f;
+  --lani-muted: #675663;
+  --lani-surface: rgba(255, 249, 240, .94);
+  --lani-surface-strong: rgba(255, 252, 246, .98);
+  --lani-surface-soft: rgba(250, 235, 219, .92);
+  --lani-accent: #8a5074;
+  --lani-accent-2: #d88c73;
+  --lani-metal: #c79548;
+  --lani-metal-light: #f1d790;
+  --lani-edge: rgba(129, 82, 65, .55);
+  --lani-shadow: 0 18px 42px rgba(47, 27, 32, .22);
+  --lani-soft-shadow: 0 9px 24px rgba(47, 27, 32, .16);
+  --lani-card-radius: 34px 34px 26px 26px;
+  --lani-panel-radius: 44px 44px 30px 30px;
+  --lani-heading-font: Georgia, "Book Antiqua", serif;
+}
+
+/* Final cascade for the 16.58.22 global-collection pass. */
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .sidebar,
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .topbar {
+  background-image: linear-gradient(var(--lani-shell-veil),var(--lani-shell-veil)),var(--lani-card-surface-image) !important;
+  background-size: cover,cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  font-family: var(--lani-heading-font) !important;
+}
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .sidebar nav a,
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .sidebar .brand,
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .sidebar .brand small,
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .sidebar .brand strong,
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .topbar #breadcrumb { font-family:var(--lani-heading-font) !important; }
+html[data-lani-theme="safari"][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .sidebar nav a,
+html[data-lani-theme="safari"][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .topbar #breadcrumb { color:#173f3a !important; text-shadow:0 1px 0 rgba(255,245,210,.72) !important; }
+html[data-lani-theme="monsters"][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .sidebar nav a,
+html[data-lani-theme="monsters"][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .topbar #breadcrumb { color:#4f315c !important; text-shadow:0 1px 0 rgba(255,247,230,.8) !important; }
+html[data-lani-theme="dollhouse"][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .sidebar nav a,
+html[data-lani-theme="dollhouse"][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .topbar #breadcrumb { color:#603544 !important; text-shadow:0 1px 0 rgba(255,249,239,.82) !important; }
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option { grid-template-rows:154px minmax(0,1fr) !important; min-height:322px !important; padding:8px 8px 18px !important; }
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-art { min-height:148px !important; height:148px !important; z-index:1 !important; }
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option-copy { position:relative !important; z-index:4 !important; min-width:0 !important; padding:12px 86px 0 18px !important; overflow:hidden !important; }
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option-copy strong,
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option-copy small { display:block !important; max-width:100% !important; position:relative !important; z-index:5 !important; }
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option::after { z-index:3 !important; width:68px !important; height:88px !important; right:10px !important; bottom:8px !important; background-size:contain !important; background-position:bottom right !important; background-repeat:no-repeat !important; pointer-events:none !important; }
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme .lani-page article.card { min-height:188px !important; padding-right:126px !important; background-size:cover !important; background-position:center top !important; background-repeat:no-repeat !important; }
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme .lani-page article.card::after { width:112px !important; height:132px !important; right:12px !important; bottom:8px !important; background-size:contain !important; background-position:bottom right !important; background-repeat:no-repeat !important; }
+@media (max-width:700px) {
+  html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option { grid-template-rows:132px minmax(0,1fr) !important; min-height:292px !important; }
+  html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-art { min-height:126px !important; height:126px !important; }
+  html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option-copy { padding-right:72px !important; }
+  html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option::after { width:56px !important; height:74px !important; right:7px !important; bottom:6px !important; }
+  html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme .lani-page article.card { min-height:164px !important; padding-right:94px !important; }
+  html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme .lani-page article.card::after { width:84px !important; height:102px !important; right:8px !important; bottom:6px !important; }
+}
+
+/* Lani atmosphere chooser + gallery readability polish (16.58.42). */
+html[data-lani-theme][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  grid-template-rows: 154px minmax(0, 1fr) !important;
+  justify-items: center !important;
+  align-items: start !important;
+}
+html[data-lani-theme][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-art {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  justify-self: center !important;
+  align-self: start !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  background-position: center center !important;
+  background-size: cover !important;
+}
+html[data-lani-theme][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option-copy {
+  grid-column: 1 !important;
+  grid-row: 2 !important;
+  width: 100% !important;
+  text-align: center !important;
+  padding: 12px 82px 0 !important;
+}
+html[data-lani-theme][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme #laniExperiencePreview .lani-preview-copy {
+  text-align: center !important;
+  justify-items: center !important;
+  align-content: center !important;
+}
+html[data-lani-theme][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme #laniExperiencePreview .lani-preview-wordmark {
+  font-size: clamp(72px, 7.6vw, 108px) !important;
+  line-height: .82 !important;
+  margin-bottom: 0 !important;
+}
+html[data-lani-theme][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme #laniExperiencePreview .lani-preview-copy > p {
+  font-size: clamp(15px, 1.35vw, 20px) !important;
+  line-height: 1.28 !important;
+  margin: 2px 0 8px !important;
+  max-width: 42ch !important;
+}
+html[data-lani-theme][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme #laniExperiencePreview .lani-preview-copy > h3 {
+  font-size: clamp(22px, 2vw, 30px) !important;
+  line-height: 1.12 !important;
+  margin: 4px 0 2px !important;
+}
+html[data-lani-theme][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme #laniExperiencePreview .lani-preview-copy > small {
+  display: block !important;
+  width: min(100%, 52ch) !important;
+  max-width: 52ch !important;
+  font-size: clamp(15px, 1.45vw, 20px) !important;
+  line-height: 1.34 !important;
+  font-weight: 800 !important;
+  white-space: normal !important;
+}
+html[data-lani-theme][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme #laniExperiencePreview .lani-preview-rule {
+  margin: 4px auto !important;
+  width: min(100%, 260px) !important;
+}
+
+/* Final contrast and cloud-fit authority for the current Lani build. */
+html[data-lani-theme] body.lani-independent-theme .lani-page :is(#littleMomentText,.lani-card-body p,.lani-idea p,.lani-page .status,#laniExperiencePreview .lani-preview-copy > small) {
+  color:#2b1b2f !important;
+  font-weight:700 !important;
+  text-shadow:0 1px 0 rgba(255,255,255,.82),0 1px 2px rgba(38,22,32,.18) !important;
+}
+html[data-lani-theme] body.lani-independent-theme .lani-page #saveTinyWin {
+  color:#261b25 !important;
+  -webkit-text-fill-color:#261b25 !important;
+  text-shadow:none !important;
+}
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo {
+  overflow:hidden !important;
+  clip-path:inset(0 round 48% 50% 44% 46%) !important;
+}
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview #laniGalleryHero {
+  inset:18% 17% 20% 17% !important;
+  width:66% !important;
+  height:62% !important;
+  object-position:50% 25% !important;
+}
+
+/* Contrast polish for Lani's supporting copy. Keep these corrections scoped to
+   her page so the rest of the OS retains its own typography and surfaces. */
+html[data-lani-theme] body.lani-independent-theme .lani-page :is(
+  #littleMomentText,
+  .lani-card-body p,
+  .lani-idea p,
+  .lani-page .status,
+  #laniExperiencePreview .lani-preview-copy > small
+) {
+  color: #2b1b2f !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.82), 0 1px 2px rgba(38,22,32,.18) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page #saveTinyWin {
+  color: #261b25 !important;
+  -webkit-text-fill-color: #261b25 !important;
+  text-shadow: none !important;
+}
+
+/* The Friendly Monster portrait must stay fully inside the cloud frame. */
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo {
+  overflow: hidden !important;
+  clip-path: inset(0 round 48% 50% 44% 46%) !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview #laniGalleryHero {
+  inset: 18% 17% 20% 17% !important;
+  width: 66% !important;
+  height: 62% !important;
+  object-position: 50% 25% !important;
+}
+
+/* Each Lani card gets a composed crop rather than one image being stretched
+   across every card ratio. The approved atmosphere remains the page layer. */
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme .lani-page article.card[data-lani-card-variant="1"] {
+  background-position: 18% 50% !important;
+  background-size: cover !important;
+  background-image: linear-gradient(122deg,rgba(255,255,255,.24),transparent 46%),linear-gradient(var(--lani-surface-veil),var(--lani-surface-veil)),var(--lani-card-surface-image) !important;
+}
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme .lani-page article.card[data-lani-card-variant="2"] {
+  background-position: 50% 50% !important;
+  background-size: cover !important;
+  background-image: linear-gradient(156deg,transparent 38%,rgba(255,255,255,.18)),linear-gradient(var(--lani-surface-veil),var(--lani-surface-veil)),var(--lani-card-surface-image) !important;
+}
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme .lani-page article.card[data-lani-card-variant="3"] {
+  background-position: 82% 50% !important;
+  background-size: cover !important;
+  background-image: linear-gradient(28deg,rgba(255,255,255,.2),transparent 54%),linear-gradient(var(--lani-surface-veil),var(--lani-surface-veil)),var(--lani-card-surface-image) !important;
+}
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme .lani-page article.card.is-collapsed {
+  min-height: 78px !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme .lani-page article.card.is-collapsed::after {
+  width: 72px !important;
+  height: 78px !important;
+  right: 10px !important;
+  bottom: 2px !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme {
+  --lani-ink: #4f315c;
+  --lani-muted: #6d5369;
+  --lani-surface: rgba(255, 241, 221, .94);
+  --lani-surface-strong: rgba(255, 247, 230, .98);
+  --lani-surface-soft: rgba(239, 211, 207, .93);
+  --lani-accent: #76529a;
+  --lani-accent-2: #d66f7f;
+  --lani-metal: #c58d3d;
+  --lani-metal-light: #f3d37c;
+  --lani-edge: rgba(108, 64, 103, .65);
+  --lani-card-radius: 42px 28px 46px 24px;
+  --lani-card-ornament: url("assets/lani/card-ornament-monsters-v1.png");
+  --lani-panel-radius: 50px 34px 44px 30px;
+  --lani-heading-font: "Cooper Black", "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+}
+
+html[data-lani-theme="safari"] body.lani-independent-theme {
+  --lani-ink: #223f35;
+  --lani-muted: #526052;
+  --lani-surface: rgba(246, 226, 185, .94);
+  --lani-surface-strong: rgba(252, 239, 208, .98);
+  --lani-surface-soft: rgba(226, 202, 151, .92);
+  --lani-accent: #177b74;
+  --lani-accent-2: #c96c4e;
+  --lani-metal: #9f702e;
+  --lani-metal-light: #e6bd65;
+  --lani-edge: rgba(61, 91, 65, .7);
+  --lani-card-radius: 36px 36px 28px 28px;
+  --lani-card-ornament: url("assets/lani/card-ornament-safari-v1.png");
+  --lani-panel-radius: 46px 46px 30px 30px;
+  --lani-heading-font: "Arial Rounded MT Bold", "Avenir Next", "Trebuchet MS", sans-serif;
+}
+
+html[data-lani-theme="dollhouse"] body.lani-independent-theme {
+  --lani-ink: #603544;
+  --lani-muted: #785b62;
+  --lani-surface: rgba(255, 242, 229, .95);
+  --lani-surface-strong: rgba(255, 249, 239, .985);
+  --lani-surface-soft: rgba(237, 203, 193, .94);
+  --lani-accent: #a34d67;
+  --lani-accent-2: #cf8290;
+  --lani-metal: #b77b2e;
+  --lani-metal-light: #f1cf83;
+  --lani-edge: rgba(132, 75, 82, .62);
+  --lani-card-radius: 52px 52px 24px 24px;
+  --lani-card-ornament: url("assets/lani/card-ornament-dollhouse-v1.png");
+  --lani-panel-radius: 58px 58px 30px 30px;
+  --lani-heading-font: Georgia, "Book Antiqua", serif;
+}
+
+/* The shell belongs to Lani while this route is active. */
+html[data-lani-theme] body.lani-independent-theme .app-shell {
+  position: relative !important;
+  z-index: 1 !important;
+  gap: 18px !important;
+  padding: 18px !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .sidebar,
+html[data-lani-theme] body.lani-independent-theme .topbar {
+  color: var(--lani-ink) !important;
+  border: 1px solid var(--lani-metal) !important;
+  outline: 1px solid rgba(255, 245, 218, .72) !important;
+  outline-offset: -5px !important;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.34), transparent 30%),
+    var(--lani-surface-strong) !important;
+  box-shadow: var(--lani-shadow) !important;
+  backdrop-filter: blur(15px) saturate(1.05) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .sidebar {
+  border-radius: 38px 38px 28px 28px !important;
+  padding: 22px 18px !important;
+  overflow: visible !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme .sidebar {
+  border-radius: 74px 74px 28px 28px !important;
+  border-top-width: 5px !important;
+}
+
+html[data-lani-theme="safari"] body.lani-independent-theme .sidebar {
+  border-radius: 52px 52px 24px 24px !important;
+  background:
+    linear-gradient(155deg, rgba(255,255,255,.3), transparent 35%),
+    linear-gradient(90deg, rgba(72,106,76,.12), transparent 18%, transparent 82%, rgba(72,106,76,.12)),
+    var(--lani-surface-strong) !important;
+}
+
+html[data-lani-theme="dollhouse"] body.lani-independent-theme .sidebar {
+  border-radius: 70px 70px 24px 24px !important;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.4), transparent 35%),
+    repeating-linear-gradient(90deg, rgba(176,101,126,.055) 0 1px, transparent 1px 15px),
+    var(--lani-surface-strong) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .sidebar .brand {
+  border-bottom: 1px solid color-mix(in srgb, var(--lani-metal) 58%, transparent) !important;
+  padding-bottom: 16px !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .sidebar .brand img {
+  border: 2px solid var(--lani-metal-light) !important;
+  box-shadow: 0 6px 16px rgba(72, 45, 43, .18) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .sidebar blockquote {
+  color: var(--lani-ink) !important;
+  border-color: var(--lani-metal) !important;
+  background: color-mix(in srgb, var(--lani-surface-soft) 72%, transparent) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .sidebar nav a {
+  min-height: 44px !important;
+  margin: 4px 0 !important;
+  border: 1px solid transparent !important;
+  border-radius: 18px !important;
+  color: var(--lani-ink) !important;
+  transition: transform .25s ease, background .25s ease, box-shadow .25s ease !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .sidebar nav a:hover {
+  transform: translateX(3px) !important;
+  background: color-mix(in srgb, var(--lani-surface-soft) 78%, transparent) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .sidebar nav a.active,
+html[data-lani-theme] body.lani-independent-theme .sidebar nav a[aria-current="page"] {
+  color: #fffaf1 !important;
+  border-color: var(--lani-metal-light) !important;
+  background: linear-gradient(135deg, var(--lani-accent), color-mix(in srgb, var(--lani-accent) 70%, var(--lani-accent-2))) !important;
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--lani-accent) 30%, transparent), inset 0 1px rgba(255,255,255,.35) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .topbar {
+  min-height: 60px !important;
+  border-radius: 26px !important;
+  padding: 8px 12px !important;
+}
+
+html[data-lani-theme="safari"] body.lani-independent-theme .topbar { border-radius: 24px 38px 24px 38px !important; }
+html[data-lani-theme="dollhouse"] body.lani-independent-theme .topbar { border-radius: 30px !important; }
+
+html[data-lani-theme] body.lani-independent-theme .topbar .icon-button {
+  color: var(--lani-ink) !important;
+  border-color: var(--lani-metal) !important;
+  background: color-mix(in srgb, var(--lani-surface-soft) 84%, white) !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.55), 0 5px 12px rgba(62,39,43,.13) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .topbar #breadcrumb {
+  color: var(--lani-ink) !important;
+  font-family: var(--lani-heading-font) !important;
+  font-size: 18px !important;
+  font-weight: 800 !important;
+}
+
+/* Lani page rhythm: cards float independently over the approved atmosphere. */
+html[data-lani-theme] body.lani-independent-theme main { min-width: 0 !important; }
+html[data-lani-theme] body.lani-independent-theme #page { padding-bottom: 80px !important; }
+html[data-lani-theme] body.lani-independent-theme .lani-page {
+  display: grid !important;
+  gap: 20px !important;
+  max-width: 1420px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page > * { min-width: 0 !important; }
+
+html[data-lani-theme] body.lani-independent-theme .lani-head,
+html[data-lani-theme] body.lani-independent-theme .lani-theme-studio,
+html[data-lani-theme] body.lani-independent-theme .lani-experience-studio,
+html[data-lani-theme] body.lani-independent-theme .lani-page .card {
+  position: relative !important;
+  overflow: visible !important;
+  color: var(--lani-ink) !important;
+  border: 1px solid var(--lani-metal) !important;
+  outline: 1px solid rgba(255, 246, 219, .72) !important;
+  outline-offset: -6px !important;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.38), transparent 34%),
+    var(--lani-surface) !important;
+  box-shadow: var(--lani-shadow) !important;
+  backdrop-filter: blur(14px) saturate(1.04) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page .card {
+  border-radius: var(--lani-card-radius) !important;
+  padding: 26px !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-head {
+  min-height: 172px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  border-radius: var(--lani-panel-radius) !important;
+  padding: 28px 38px !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme .lani-head { border-radius: 72px 48px 70px 42px !important; }
+html[data-lani-theme="safari"] body.lani-independent-theme .lani-head { border-radius: 54px 54px 38px 38px !important; }
+html[data-lani-theme="dollhouse"] body.lani-independent-theme .lani-head { border-radius: 72px 72px 34px 34px !important; }
+
+html[data-lani-theme] body.lani-independent-theme .lani-head .eyebrow {
+  color: var(--lani-metal) !important;
+  letter-spacing: .24em !important;
+  font-weight: 900 !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-head h1 {
+  margin: 4px 0 8px !important;
+  font-family: var(--lani-heading-font) !important;
+  font-size: clamp(46px, 6vw, 88px) !important;
+  line-height: .95 !important;
+  letter-spacing: -.035em !important;
+  color: var(--lani-accent) !important;
+  -webkit-text-fill-color: var(--lani-accent) !important;
+  text-shadow: 0 2px var(--lani-metal-light), 0 5px rgba(77,43,49,.16) !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme .lani-head h1 {
+  background: linear-gradient(90deg,#75529c 0 27%,#d96e78 28% 54%,#e89250 55% 75%,#299b94 76%) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: 0 5px rgba(82,43,84,.2) !important;
+}
+
+html[data-lani-theme="safari"] body.lani-independent-theme .lani-head h1 {
+  background: linear-gradient(90deg,#177f77,#c76b4d 58%,#c4963f) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+html[data-lani-theme="dollhouse"] body.lani-independent-theme .lani-head h1 {
+  background: linear-gradient(90deg,#8d4664,#c46e83 48%,#9a5c84 72%,#c69240) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-head .sub {
+  max-width: 760px !important;
+  color: var(--lani-ink) !important;
+  font-size: 17px !important;
+}
+
+/* Atmosphere chooser: three miniature architectural worlds. */
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio {
+  border-radius: var(--lani-panel-radius) !important;
+  padding: 22px 24px 24px !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-studio-head {
+  align-items: center !important;
+  gap: 16px !important;
+  margin-bottom: 16px !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio h2 {
+  color: var(--lani-accent) !important;
+  -webkit-text-fill-color: var(--lani-accent) !important;
+  font-family: var(--lani-heading-font) !important;
+  font-size: clamp(27px, 3vw, 42px) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-options {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-option {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  grid-template-rows: 132px auto !important;
+  min-height: 300px !important;
+  padding: 8px 8px 18px !important;
+  overflow: hidden !important;
+  color: var(--lani-ink) !important;
+  border: 1px solid color-mix(in srgb, var(--lani-metal) 72%, transparent) !important;
+  border-radius: 46px 46px 24px 24px !important;
+  background: var(--lani-surface-strong) !important;
+  box-shadow: var(--lani-soft-shadow) !important;
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniThemeStudio .lani-theme-option:nth-child(1) { border-radius: 52px 34px 26px 38px !important; }
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniThemeStudio .lani-theme-option:nth-child(2) { border-radius: 34px 54px 38px 24px !important; }
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniThemeStudio .lani-theme-option:nth-child(3) { border-radius: 48px 34px 24px 42px !important; }
+html[data-lani-theme="safari"] body.lani-independent-theme #laniThemeStudio .lani-theme-option { border-radius: 48px 48px 28px 28px !important; }
+html[data-lani-theme="dollhouse"] body.lani-independent-theme #laniThemeStudio .lani-theme-option { border-radius: 64px 64px 22px 22px !important; }
+
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-option:hover { transform: translateY(-4px) !important; }
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-option.selected {
+  transform: translateY(-3px) !important;
+  border: 2px solid var(--lani-metal) !important;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--lani-metal-light) 35%, transparent), var(--lani-shadow) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-art {
+  min-height: 126px !important;
+  border: 1px solid var(--lani-metal) !important;
+  border-radius: 38px 38px 18px 18px !important;
+  background-position: center !important;
+  background-size: cover !important;
+  box-shadow: inset 0 0 0 4px rgba(255,248,230,.5) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-option-copy {
+  padding: 15px 12px 0 !important;
+  text-align: center !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-option-copy strong {
+  color: var(--lani-accent) !important;
+  -webkit-text-fill-color: var(--lani-accent) !important;
+  font-family: var(--lani-heading-font) !important;
+  font-size: clamp(18px, 2vw, 25px) !important;
+  line-height: 1.05 !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-option-copy small,
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio p { color: var(--lani-muted) !important; }
+
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-badge,
+html[data-lani-theme] body.lani-independent-theme .lani-card-toggle,
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .btn {
+  color: #fffaf0 !important;
+  border: 1px solid var(--lani-metal-light) !important;
+  background: linear-gradient(135deg, var(--lani-accent), color-mix(in srgb, var(--lani-accent) 72%, var(--lani-accent-2))) !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.35), 0 6px 15px color-mix(in srgb, var(--lani-accent) 28%, transparent) !important;
+}
+
+/* The former typography panel is now the immersive gallery card. */
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio {
+  border-radius: var(--lani-panel-radius) !important;
+  padding: 22px !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-head > div:first-child { padding-right: 72px !important; }
+
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio h2,
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview h3,
+html[data-lani-theme] body.lani-independent-theme .lani-page .card h2,
+html[data-lani-theme] body.lani-independent-theme .lani-page .card h3 {
+  font-family: var(--lani-heading-font) !important;
+  color: var(--lani-accent) !important;
+  -webkit-text-fill-color: var(--lani-accent) !important;
+  text-shadow: 0 1px var(--lani-metal-light), 0 4px rgba(75,43,49,.13) !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme :is(#laniExperienceStudio h2,#laniExperiencePreview h3,.lani-page .card h2,.lani-page .card h3) {
+  background: linear-gradient(90deg,#6e4c99,#d7697b 50%,#df8c4e 72%,#319f97) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+html[data-lani-theme="safari"] body.lani-independent-theme :is(#laniExperienceStudio h2,#laniExperiencePreview h3,.lani-page .card h2,.lani-page .card h3) {
+  background: linear-gradient(90deg,#176f6b,#2b8e83 47%,#c16b4e 72%,#b88936) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+html[data-lani-theme="dollhouse"] body.lani-independent-theme :is(#laniExperienceStudio h2,#laniExperiencePreview h3,.lani-page .card h2,.lani-page .card h3) {
+  background: linear-gradient(90deg,#8d4662,#c06d84 45%,#9b5b82 70%,#b87d2f) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview {
+  margin-top: 14px !important;
+  padding: 20px !important;
+  border: 1px solid color-mix(in srgb, var(--lani-metal) 75%, transparent) !important;
+  border-radius: calc(var(--lani-panel-radius) - 12px) !important;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.22), transparent 48%),
+    color-mix(in srgb, var(--lani-surface-strong) 93%, transparent) !important;
+  box-shadow: inset 0 0 0 4px rgba(255,248,231,.5), var(--lani-soft-shadow) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-stage {
+  display: grid !important;
+  grid-template-columns: minmax(190px, 245px) minmax(0, 1fr) minmax(120px, 180px) !important;
+  gap: 24px !important;
+  align-items: center !important;
+  min-height: 320px !important;
+  padding: 18px !important;
+  overflow: visible !important;
+  border-radius: 30px !important;
+  background: color-mix(in srgb, var(--lani-surface) 88%, transparent) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo {
+  width: 232px !important;
+  height: 272px !important;
+  justify-self: center !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-copy {
+  align-self: center !important;
+  color: var(--lani-ink) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-wordmark {
+  font-family: var(--lani-heading-font) !important;
+  color: var(--lani-accent) !important;
+  -webkit-text-fill-color: var(--lani-accent) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-copy :is(p,small) { color: var(--lani-ink) !important; }
+
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-memory {
+  color: #fffaf0 !important;
+  border-color: var(--lani-metal-light) !important;
+  background: linear-gradient(135deg, var(--lani-accent), color-mix(in srgb, var(--lani-accent) 70%, var(--lani-accent-2))) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-companion {
+  width: min(180px, 16vw) !important;
+  height: 270px !important;
+  align-self: end !important;
+  justify-self: center !important;
+  overflow: visible !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-companion img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 12px 12px rgba(57,34,40,.25)) !important;
+}
+
+/* Down-page content remains useful, compact and recognizably themed. */
+html[data-lani-theme] body.lani-independent-theme .lani-hero { display: none !important; }
+
+html[data-lani-theme] body.lani-independent-theme .lani-main-grid,
+html[data-lani-theme] body.lani-independent-theme .lani-secondary-grid,
+html[data-lani-theme] body.lani-independent-theme .lani-checklists {
+  gap: 18px !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page .card.is-collapsed {
+  min-height: 76px !important;
+  padding: 22px 130px 22px 26px !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page .card[data-lani-collapsible="true"] > :first-child {
+  margin: 0 !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-card-toggle {
+  top: 18px !important;
+  right: 20px !important;
+  min-width: 84px !important;
+  height: 38px !important;
+  border-radius: 18px !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-card-body {
+  padding-top: 18px !important;
+  border-top: 1px solid color-mix(in srgb, var(--lani-metal) 35%, transparent) !important;
+  margin-top: 18px !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme :is(input, textarea, select) {
+  color: var(--lani-ink) !important;
+  border-color: color-mix(in srgb, var(--lani-metal) 55%, transparent) !important;
+  background: rgba(255, 252, 247, .84) !important;
+}
+
+/* Tablet: same visual language, simplified architecture and two-column flow. */
+@media (min-width: 701px) and (max-width: 1180px) {
+  html[data-lani-theme] body.lani-independent-theme .app-shell { gap: 12px !important; padding: 12px !important; }
+  html[data-lani-theme] body.lani-independent-theme .sidebar { width: 236px !important; padding: 18px 12px !important; }
+  html[data-lani-theme] body.lani-independent-theme .sidebar nav a { min-height: 40px !important; font-size: 13px !important; }
+  html[data-lani-theme] body.lani-independent-theme .lani-head { min-height: 145px !important; padding: 24px 28px !important; }
+  html[data-lani-theme] body.lani-independent-theme .lani-head h1 { font-size: clamp(43px, 6vw, 66px) !important; }
+  html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-options { grid-template-columns: repeat(3,minmax(0,1fr)) !important; gap: 10px !important; }
+  html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-option { min-height: 278px !important; grid-template-rows: 112px auto !important; }
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-stage { grid-template-columns: 190px minmax(0,1fr) 120px !important; gap: 14px !important; }
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo { width: 186px !important; height: 220px !important; }
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-companion { width: 118px !important; height: 220px !important; }
+}
+
+/* Phone: art-directed background remains fixed; cards become touch-friendly
+   story panels and the theme menu is a horizontal selector. */
+@media (max-width: 700px) {
+  html[data-lani-theme] body.lani-independent-theme .app-shell { display: block !important; padding: 0 !important; }
+  html[data-lani-theme] body.lani-independent-theme main { padding: 10px !important; }
+  html[data-lani-theme] body.lani-independent-theme .topbar { position: sticky !important; top: 8px !important; z-index: 24 !important; min-height: 54px !important; margin-bottom: 12px !important; border-radius: 24px !important; }
+  html[data-lani-theme] body.lani-independent-theme .topbar #breadcrumb { font-size: 15px !important; max-width: 120px !important; overflow: hidden !important; text-overflow: ellipsis !important; white-space: nowrap !important; }
+  html[data-lani-theme] body.lani-independent-theme .sidebar { left: 0 !important; width: min(86vw, 310px) !important; border-radius: 0 44px 44px 0 !important; padding: 20px 16px !important; transform: translateX(-100%) !important; transition: transform .25s ease !important; }
+  html[data-lani-theme] body.lani-independent-theme .app-shell.menu-open .sidebar { left: 0 !important; transform: translateX(0) !important; }
+  html[data-lani-theme] body.lani-independent-theme .lani-page { gap: 14px !important; }
+  html[data-lani-theme] body.lani-independent-theme .lani-head { min-height: 170px !important; padding: 25px 20px !important; border-radius: 38px 38px 24px 24px !important; }
+  html[data-lani-theme] body.lani-independent-theme .lani-head h1 { font-size: clamp(42px, 14vw, 62px) !important; }
+  html[data-lani-theme] body.lani-independent-theme .lani-head .sub { font-size: 14px !important; }
+  html[data-lani-theme] body.lani-independent-theme #laniThemeStudio { padding: 18px 14px !important; border-radius: 34px !important; }
+  html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-studio-head { display: block !important; padding-right: 0 !important; }
+  html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-intro p { display: none !important; }
+  html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-studio-tools { position: static !important; display: flex !important; flex-wrap: wrap !important; margin-top: 12px !important; }
+  html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-options { display: flex !important; gap: 10px !important; overflow-x: auto !important; scroll-snap-type: x mandatory !important; padding: 4px 2px 12px !important; }
+  html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-option { flex: 0 0 82% !important; min-height: 286px !important; scroll-snap-align: center !important; }
+  html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio { padding: 15px !important; border-radius: 34px !important; }
+  html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-head > div:first-child { padding-right: 54px !important; }
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview { padding: 10px !important; border-radius: 28px !important; }
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-stage { grid-template-columns: minmax(0,1fr) !important; gap: 12px !important; padding: 14px !important; text-align: center !important; }
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo { width: min(240px,75vw) !important; height: min(280px,82vw) !important; }
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-wordmark { font-size: clamp(56px, 20vw, 78px) !important; }
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-companion { width: 130px !important; height: 210px !important; justify-self: end !important; margin-top: -36px !important; margin-bottom: -18px !important; }
+  html[data-lani-theme] body.lani-independent-theme .lani-main-grid,
+  html[data-lani-theme] body.lani-independent-theme .lani-secondary-grid,
+  html[data-lani-theme] body.lani-independent-theme .lani-checklists { grid-template-columns: minmax(0,1fr) !important; }
+  html[data-lani-theme] body.lani-independent-theme .lani-page .card { padding: 22px 18px !important; border-radius: 32px 32px 22px 22px !important; }
+  html[data-lani-theme] body.lani-independent-theme .lani-page .card.is-collapsed { min-height: 76px !important; padding: 22px 104px 20px 18px !important; }
+  html[data-lani-theme] body.lani-independent-theme .lani-card-toggle { right: 14px !important; min-width: 78px !important; }
+}
+
+/* Compact tablets keep the desktop navigation, but the Lani preview needs a
+   single-column story layout so it never pushes the page sideways. */
+@media (min-width: 701px) and (max-width: 900px) {
+  html[data-lani-theme] body.lani-independent-theme :is(
+    #laniExperienceStudio,
+    #laniExperiencePreview,
+    #laniExperiencePreview > div,
+    #laniExperiencePreview .lani-preview-stage,
+    #laniExperiencePreview .lani-gallery-vault,
+    #laniExperiencePreview .slideshow,
+    #laniExperiencePreview .slideshow-controls,
+    #laniExperiencePreview .lani-thumbs,
+    #laniExperiencePreview input,
+    #laniExperiencePreview textarea,
+    #laniExperiencePreview button,
+    #laniExperiencePreview label
+  ) {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-stage {
+    grid-template-columns: minmax(0,1fr) !important;
+    justify-items: center !important;
+    text-align: center !important;
+  }
+
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-companion {
+    justify-self: end !important;
+    margin-top: -54px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-lani-theme] body.lani-independent-theme * { scroll-behavior: auto !important; }
+  html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-option { transition: none !important; }
+}
+
+/* 16.58.3 — production fidelity pass based on the three approved card-system
+   references. The atmosphere art stays untouched; only Lani's shell, cards,
+   typography, portrait framing, and theme companions are affected. */
+html[data-lani-theme] body.lani-independent-theme {
+  --lani-body-font: "Nunito", "Avenir Next", "Segoe UI", sans-serif;
+  --lani-display-font: "DM Serif Display", Georgia, serif;
+  --lani-character: url("assets/lani/companion-dollhouse-doll-cutout-v2.png");
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme {
+  --lani-body-font: "Nunito", "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+  --lani-display-font: "Fredoka", "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+  --lani-heading-font: var(--lani-display-font);
+  --lani-character: url("assets/lani/companion-friendly-monster-cutout-v2.png");
+}
+
+html[data-lani-theme="safari"] body.lani-independent-theme {
+  --lani-body-font: "Nunito", "Avenir Next", "Trebuchet MS", sans-serif;
+  --lani-display-font: "Bree Serif", Georgia, serif;
+  --lani-heading-font: var(--lani-display-font);
+  --lani-character: url("assets/lani/companion-safari-dinosaur-cutout-v2.png");
+}
+
+html[data-lani-theme="dollhouse"] body.lani-independent-theme {
+  --lani-body-font: "Nunito", "Avenir Next", "Segoe UI", sans-serif;
+  --lani-display-font: "DM Serif Display", Georgia, serif;
+  --lani-heading-font: var(--lani-display-font);
+  --lani-character: url("assets/lani/companion-dollhouse-doll-cutout-v2.png");
+}
+
+html[data-lani-theme] body.lani-independent-theme :is(.sidebar,.topbar,.lani-page,.lani-page button,.lani-page input,.lani-page textarea,.lani-page select) {
+  font-family: var(--lani-body-font) !important;
+}
+
+/* The shell now reads like one crafted set instead of a generic white layer. */
+html[data-lani-theme] body.lani-independent-theme :is(.sidebar,.topbar,.lani-head,.lani-theme-studio,.lani-experience-studio,.lani-page .card) {
+  border-width: 2px !important;
+  box-shadow:
+    inset 0 0 0 4px rgba(255,252,240,.72),
+    inset 0 0 0 5px color-mix(in srgb, var(--lani-metal) 54%, transparent),
+    var(--lani-shadow) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .sidebar {
+  position: relative !important;
+  isolation: isolate !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .sidebar::after {
+  content: "" !important;
+  position: absolute !important;
+  z-index: 3 !important;
+  right: -22px !important;
+  bottom: 82px !important;
+  width: 112px !important;
+  height: 148px !important;
+  pointer-events: none !important;
+  background: var(--lani-character) center bottom / contain no-repeat !important;
+  filter: drop-shadow(0 12px 10px rgba(45,28,32,.24)) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .sidebar nav a {
+  font-weight: 800 !important;
+  letter-spacing: .025em !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme .sidebar nav a {
+  border-radius: 22px 16px 24px 17px !important;
+}
+
+html[data-lani-theme="safari"] body.lani-independent-theme .sidebar nav a {
+  border-radius: 18px 28px 18px 28px !important;
+}
+
+html[data-lani-theme="dollhouse"] body.lani-independent-theme .sidebar nav a {
+  font-family: var(--lani-display-font) !important;
+  border-radius: 8px 24px 8px 24px !important;
+}
+
+/* Theme-specific title plaques. */
+html[data-lani-theme] body.lani-independent-theme .lani-head {
+  width: min(100%, 1040px) !important;
+  margin-inline: auto !important;
+  min-height: 190px !important;
+  text-align: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-head > div:first-child {
+  width: min(100%, 860px) !important;
+  margin-inline: auto !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-head .eyebrow {
+  font-family: var(--lani-body-font) !important;
+  font-size: 13px !important;
+  letter-spacing: .28em !important;
+  text-transform: uppercase !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-head h1 {
+  font-family: var(--lani-display-font) !important;
+  font-weight: 700 !important;
+  letter-spacing: -.025em !important;
+  line-height: .96 !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme .lani-head h1 {
+  background: linear-gradient(100deg,#6f4798 0%,#8d5bb0 24%,#d66580 48%,#ee9a47 70%,#2a9d95 100%) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: 0 2px 0 rgba(255,237,181,.82), 0 5px 0 rgba(79,45,88,.12), 0 10px 22px rgba(82,45,87,.22) !important;
+}
+
+html[data-lani-theme="safari"] body.lani-independent-theme .lani-head h1 {
+  background: linear-gradient(96deg,#0b746c 0%,#28938a 36%,#c66345 64%,#c99a42 100%) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: 0 2px 0 rgba(250,221,151,.74), 0 6px 14px rgba(36,62,49,.24) !important;
+}
+
+html[data-lani-theme="dollhouse"] body.lani-independent-theme .lani-head h1 {
+  background: linear-gradient(96deg,#74334e 0%,#a84766 38%,#d48391 67%,#bd8436 100%) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: 0 1px 0 #fae7bd, 0 3px 0 rgba(110,54,68,.18), 0 9px 18px rgba(91,45,55,.2) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-head .sub {
+  margin-inline: auto !important;
+  font-family: var(--lani-body-font) !important;
+  font-size: clamp(15px,1.5vw,18px) !important;
+  font-weight: 700 !important;
+  line-height: 1.45 !important;
+}
+
+/* Atmosphere cards borrow the architectural silhouette and companions from
+   the approved references, while remaining real interactive buttons. */
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio {
+  padding: 25px 26px 28px !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-studio-head {
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-intro {
+  max-width: 760px !important;
+  margin-inline: auto !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio h2 {
+  font-family: var(--lani-display-font) !important;
+  font-weight: 700 !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-option {
+  isolation: isolate !important;
+  padding-bottom: 24px !important;
+  box-shadow:
+    inset 0 0 0 4px rgba(255,251,236,.7),
+    inset 0 0 0 5px color-mix(in srgb,var(--lani-metal) 52%,transparent),
+    0 13px 26px rgba(54,33,39,.16) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-option::after {
+  content: "" !important;
+  position: absolute !important;
+  z-index: 3 !important;
+  right: -8px !important;
+  bottom: -5px !important;
+  width: 86px !important;
+  height: 112px !important;
+  pointer-events: none !important;
+  background-position: center bottom !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  filter: drop-shadow(0 8px 7px rgba(49,29,35,.23)) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio [data-lani-theme-choice="safari"]::after { background-image: url("assets/lani/companion-safari-dinosaur-cutout-v2.png") !important; }
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio [data-lani-theme-choice="monsters"]::after { background-image: url("assets/lani/companion-friendly-monster-cutout-v2.png") !important; }
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio [data-lani-theme-choice="dollhouse"]::after { background-image: url("assets/lani/companion-dollhouse-doll-cutout-v2.png") !important; }
+
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-option-copy {
+  padding-inline: 18px 76px !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-option-copy strong {
+  font-family: var(--lani-display-font) !important;
+  font-weight: 700 !important;
+}
+
+/* Gallery: the approved PNG is the only visible frame. The photograph is
+   masked once to the corresponding opening and centered behind it. */
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio {
+  overflow: visible !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio h2 {
+  font-family: var(--lani-display-font) !important;
+  font-size: clamp(30px,3.4vw,48px) !important;
+  font-weight: 700 !important;
+  letter-spacing: .01em !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview {
+  overflow: visible !important;
+  background-image: none !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-stage {
+  grid-template-columns: minmax(278px,310px) minmax(310px,1fr) minmax(150px,190px) !important;
+  column-gap: 34px !important;
+  min-height: 350px !important;
+  padding: 22px 26px !important;
+  overflow: visible !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo {
+  width: 270px !important;
+  height: 307px !important;
+  overflow: visible !important;
+  justify-self: center !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview #laniGalleryHero {
+  position: absolute !important;
+  z-index: 1 !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  clip-path: none !important;
+  object-fit: cover !important;
+  object-position: 50% 28% !important;
+  -webkit-mask-repeat: no-repeat !important;
+  mask-repeat: no-repeat !important;
+  -webkit-mask-position: center !important;
+  mask-position: center !important;
+  -webkit-mask-size: 100% 100% !important;
+  mask-size: 100% 100% !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview #laniGalleryHero {
+  -webkit-mask-image: url("assets/lani/portrait-mask-cloud.png") !important;
+  mask-image: url("assets/lani/portrait-mask-cloud.png") !important;
+  object-position: 50% 24% !important;
+}
+
+html[data-lani-theme="safari"] body.lani-independent-theme #laniExperiencePreview #laniGalleryHero {
+  -webkit-mask-image: url("assets/lani/portrait-mask-footprint.png") !important;
+  mask-image: url("assets/lani/portrait-mask-footprint.png") !important;
+  object-position: 50% 22% !important;
+}
+
+html[data-lani-theme="dollhouse"] body.lani-independent-theme #laniExperiencePreview #laniGalleryHero {
+  -webkit-mask-image: url("assets/lani/portrait-mask-royal.png") !important;
+  mask-image: url("assets/lani/portrait-mask-royal.png") !important;
+  object-position: 50% 24% !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview #laniPortraitFrame {
+  position: absolute !important;
+  z-index: 3 !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  clip-path: none !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  background: transparent !important;
+  filter: drop-shadow(0 13px 12px rgba(72,42,48,.24)) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-copy {
+  min-width: 0 !important;
+  text-align: left !important;
+  padding: 0 !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-wordmark {
+  font-family: var(--lani-display-font) !important;
+  font-size: clamp(64px,7vw,102px) !important;
+  font-weight: 700 !important;
+  line-height: .92 !important;
+  letter-spacing: -.025em !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-wordmark {
+  background: linear-gradient(100deg,#754aa0,#d56b7f 48%,#f0a147 72%,#289a93) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+html[data-lani-theme="safari"] body.lani-independent-theme #laniExperiencePreview .lani-preview-wordmark {
+  color: #14796f !important;
+  -webkit-text-fill-color: #14796f !important;
+  text-shadow: 0 2px #e7c876, 0 6px 13px rgba(35,68,54,.2) !important;
+}
+
+html[data-lani-theme="dollhouse"] body.lani-independent-theme #laniExperiencePreview .lani-preview-wordmark {
+  color: #9b4866 !important;
+  -webkit-text-fill-color: #9b4866 !important;
+  text-shadow: 0 1px #f3cc88, 0 5px 13px rgba(97,45,58,.2) !important;
+}
+
+/* Every down-page card belongs to Lani's selected theme. Real companion
+   cutouts supply the character art; no emojis or placeholder illustrations. */
+html[data-lani-theme] body.lani-independent-theme .lani-page .card {
+  isolation: isolate !important;
+  padding: 28px 116px 28px 30px !important;
+  background:
+    linear-gradient(145deg,rgba(255,255,255,.36),transparent 34%),
+    color-mix(in srgb,var(--lani-surface-strong) 94%,transparent) !important;
+  box-shadow:
+    inset 0 0 0 4px rgba(255,251,237,.68),
+    inset 0 0 0 5px color-mix(in srgb,var(--lani-metal) 48%,transparent),
+    0 18px 40px rgba(48,29,35,.19) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page .card::after {
+  content: "" !important;
+  position: absolute !important;
+  z-index: 0 !important;
+  right: 12px !important;
+  bottom: 8px !important;
+  width: 86px !important;
+  height: 116px !important;
+  pointer-events: none !important;
+  background: var(--lani-character) center bottom / contain no-repeat !important;
+  filter: drop-shadow(0 9px 8px rgba(50,30,36,.22)) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page .card > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme .lani-page .card {
+  border-radius: 44px 28px 48px 24px !important;
+}
+
+html[data-lani-theme="safari"] body.lani-independent-theme .lani-page .card {
+  border-radius: 52px 52px 25px 25px !important;
+}
+
+html[data-lani-theme="dollhouse"] body.lani-independent-theme .lani-page .card {
+  border-radius: 64px 64px 22px 22px !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page .card :is(h1,h2,h3,h4),
+html[data-lani-theme] body.lani-independent-theme .lani-page .section-title :is(h1,h2,h3,h4) {
+  font-family: var(--lani-display-font) !important;
+  font-weight: 700 !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme .lani-page .card :is(h2,h3,h4) {
+  background: linear-gradient(100deg,#704a96,#d36a7e 55%,#e89649 76%,#2a958f) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: 0 1px rgba(255,237,187,.66), 0 4px 9px rgba(75,41,81,.13) !important;
+}
+
+html[data-lani-theme="safari"] body.lani-independent-theme .lani-page .card :is(h2,h3,h4) {
+  color: #176f68 !important;
+  -webkit-text-fill-color: #176f68 !important;
+  text-shadow: 0 1px #e5c16c, 0 4px 9px rgba(34,65,52,.15) !important;
+}
+
+html[data-lani-theme="dollhouse"] body.lani-independent-theme .lani-page .card :is(h2,h3,h4) {
+  color: #91435f !important;
+  -webkit-text-fill-color: #91435f !important;
+  text-shadow: 0 1px #f2d08c, 0 4px 9px rgba(84,43,52,.14) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-card-toggle {
+  z-index: 5 !important;
+  font-family: var(--lani-body-font) !important;
+  font-weight: 900 !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page .card.is-collapsed {
+  padding: 24px 190px 24px 30px !important;
+}
+
+@media (max-width: 1180px) {
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-stage {
+    grid-template-columns: minmax(220px,245px) minmax(250px,1fr) 120px !important;
+    column-gap: 18px !important;
+  }
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo {
+    width: 226px !important;
+    height: 257px !important;
+  }
+  html[data-lani-theme] body.lani-independent-theme .sidebar::after { width: 86px !important; right: -8px !important; }
+}
+
+@media (max-width: 700px) {
+  html[data-lani-theme] body.lani-independent-theme .sidebar {
+    position: fixed !important;
+    inset: 0 auto 0 0 !important;
+    height: 100dvh !important;
+  }
+  html[data-lani-theme] body.lani-independent-theme .sidebar::after { display: none !important; }
+  html[data-lani-theme] body.lani-independent-theme .lani-head {
+    min-height: 188px !important;
+    padding: 28px 20px !important;
+  }
+  html[data-lani-theme] body.lani-independent-theme .lani-head h1 { font-size: clamp(42px,13vw,62px) !important; }
+  html[data-lani-theme] body.lani-independent-theme #laniThemeStudio .lani-theme-option-copy { padding-inline: 16px 68px !important; }
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-stage {
+    grid-template-columns: minmax(0,1fr) !important;
+    row-gap: 18px !important;
+    overflow: visible !important;
+  }
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo {
+    width: min(260px,78vw) !important;
+    height: min(296px,89vw) !important;
+  }
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-copy { text-align: center !important; }
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-companion {
+    width: 120px !important;
+    height: 180px !important;
+  }
+  html[data-lani-theme] body.lani-independent-theme .lani-page .card,
+  html[data-lani-theme] body.lani-independent-theme .lani-page .card.is-collapsed {
+    padding: 22px 82px 22px 18px !important;
+  }
+  html[data-lani-theme] body.lani-independent-theme .lani-page .card::after {
+    width: 58px !important;
+    height: 82px !important;
+    opacity: .86 !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-lani-theme] body.lani-independent-theme .lani-head h1,
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-wordmark {
+    animation: none !important;
+  }
+}
+
+/* 16.58.4 — Lani heading system and true portrait cutouts.
+   The selected atmosphere stays fixed and unchanged. This layer only refines
+   Lani's own global card collection and disappears when her route closes. */
+html[data-lani-theme] body.lani-independent-theme {
+  --lani-heading-sparkle: url("assets/lani/heading-sparkle-v1.png");
+}
+
+/* The real portrait is clipped to the actual transparent opening before the
+   approved decorative frame is placed above it. These alpha masks work in
+   Safari/WebKit as well as Chromium-based Android and desktop browsers. */
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview #laniGalleryHero {
+  -webkit-mask-image: url("assets/lani/portrait-mask-cloud-alpha.png") !important;
+  mask-image: url("assets/lani/portrait-mask-cloud-alpha.png") !important;
+  object-position: 50% 22% !important;
+}
+
+html[data-lani-theme="safari"] body.lani-independent-theme #laniExperiencePreview #laniGalleryHero {
+  -webkit-mask-image: url("assets/lani/portrait-mask-footprint-alpha.png") !important;
+  mask-image: url("assets/lani/portrait-mask-footprint-alpha.png") !important;
+  object-position: 50% 20% !important;
+}
+
+html[data-lani-theme="dollhouse"] body.lani-independent-theme #laniExperiencePreview #laniGalleryHero {
+  -webkit-mask-image: url("assets/lani/portrait-mask-royal-alpha.png") !important;
+  mask-image: url("assets/lani/portrait-mask-royal-alpha.png") !important;
+  object-position: 50% 20% !important;
+}
+
+/* One typographic voice per atmosphere. Every primary card heading uses the
+   same face and finish as the large Lani wordmark beside that theme's
+   companion in the gallery. */
+html[data-lani-theme] body.lani-independent-theme :is(
+  .lani-head h1,
+  #laniThemeStudio h2,
+  #laniExperienceStudio h2,
+  #laniExperiencePreview .lani-preview-wordmark,
+  #laniExperiencePreview .lani-preview-copy h3,
+  .lani-page .card > h2,
+  .lani-page .card > h3,
+  .lani-page .card .lani-card-body > h2,
+  .lani-page .card .lani-card-body > h3
+) {
+  position: relative !important;
+  display: inline-block !important;
+  max-width: calc(100% - 30px) !important;
+  overflow: visible !important;
+  font-family: var(--lani-display-font) !important;
+  font-weight: 700 !important;
+  line-height: 1.04 !important;
+  letter-spacing: -.018em !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme :is(
+  #laniThemeStudio h2,
+  #laniExperienceStudio h2,
+  #laniExperiencePreview .lani-preview-copy h3,
+  .lani-page .card > h2,
+  .lani-page .card > h3,
+  .lani-page .card .lani-card-body > h2,
+  .lani-page .card .lani-card-body > h3
+)::after {
+  content: "" !important;
+  display: inline-block !important;
+  width: .68em !important;
+  height: .68em !important;
+  margin: 0 0 .24em .22em !important;
+  background: var(--lani-heading-sparkle) center / contain no-repeat !important;
+  filter: drop-shadow(0 3px 4px rgba(86,49,45,.24)) !important;
+  transform-origin: center !important;
+  animation: laniCardSparkle 11s ease-in-out infinite !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme :is(
+  .lani-head h1,
+  #laniThemeStudio h2,
+  #laniExperienceStudio h2,
+  #laniExperiencePreview .lani-preview-wordmark,
+  #laniExperiencePreview .lani-preview-copy h3,
+  .lani-page .card > h2,
+  .lani-page .card > h3,
+  .lani-page .card .lani-card-body > h2,
+  .lani-page .card .lani-card-body > h3
+) {
+  font-family: "Fredoka", "Arial Rounded MT Bold", "Trebuchet MS", sans-serif !important;
+  background-image: linear-gradient(104deg,#674293 0%,#8c55ad 22%,#d85f7d 48%,#f09b48 70%,#21958e 100%) !important;
+  background-size: 180% 100% !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-text-stroke: .45px rgba(92,48,91,.44) !important;
+  text-shadow: 0 2px 0 rgba(255,232,178,.92), 0 5px 0 rgba(89,45,91,.15), 0 10px 18px rgba(76,41,79,.22) !important;
+  animation: laniMonsterLetterGlow 14s ease-in-out infinite !important;
+}
+
+html[data-lani-theme="safari"] body.lani-independent-theme :is(
+  .lani-head h1,
+  #laniThemeStudio h2,
+  #laniExperienceStudio h2,
+  #laniExperiencePreview .lani-preview-wordmark,
+  #laniExperiencePreview .lani-preview-copy h3,
+  .lani-page .card > h2,
+  .lani-page .card > h3,
+  .lani-page .card .lani-card-body > h2,
+  .lani-page .card .lani-card-body > h3
+) {
+  font-family: "Bree Serif", Georgia, serif !important;
+  background-image: url("assets/lani/safari-heading-triangle-texture-v1.png") !important;
+  background-size: 92px 92px !important;
+  background-position: center !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: #0a746c !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-text-stroke: .55px rgba(17,83,74,.68) !important;
+  filter: drop-shadow(0 2px 0 #f0c65c) drop-shadow(0 5px 0 rgba(75,62,28,.16)) drop-shadow(0 9px 12px rgba(29,62,49,.24)) !important;
+}
+
+html[data-lani-theme="dollhouse"] body.lani-independent-theme :is(
+  .lani-head h1,
+  #laniThemeStudio h2,
+  #laniExperienceStudio h2,
+  #laniExperiencePreview .lani-preview-wordmark,
+  #laniExperiencePreview .lani-preview-copy h3,
+  .lani-page .card > h2,
+  .lani-page .card > h3,
+  .lani-page .card .lani-card-body > h2,
+  .lani-page .card .lani-card-body > h3
+) {
+  font-family: "DM Serif Display", Georgia, serif !important;
+  background-image: linear-gradient(98deg,#79384f 0%,#a94e6a 38%,#db8997 67%,#b97d2d 100%) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-text-stroke: .35px rgba(102,49,63,.38) !important;
+  text-shadow: 0 1px 0 #f8d798, 0 3px 0 rgba(116,59,70,.16), 0 8px 15px rgba(84,42,51,.2) !important;
+}
+
+/* Richer, screenshot-led card surfaces and inset frames replace the generic
+   white-card appearance without painting over the selected atmosphere. */
+html[data-lani-theme] body.lani-independent-theme .lani-page .card {
+  overflow: hidden !important;
+  border-width: 3px !important;
+  outline: 1px solid rgba(255,248,221,.9) !important;
+  outline-offset: -8px !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page .card::before {
+  content: "" !important;
+  position: absolute !important;
+  z-index: 0 !important;
+  inset: 10px !important;
+  pointer-events: none !important;
+  border: 1px solid color-mix(in srgb,var(--lani-metal) 68%,transparent) !important;
+  border-radius: inherit !important;
+  box-shadow: inset 0 0 0 3px rgba(255,249,230,.52) !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme .lani-page .card {
+  background: linear-gradient(145deg,rgba(255,248,222,.97),rgba(244,216,191,.96)) !important;
+  border-color: #875aa0 !important;
+  box-shadow: inset 0 0 0 5px #efd394, inset 0 0 0 7px rgba(118,74,137,.36), 0 18px 40px rgba(55,31,61,.22) !important;
+}
+
+html[data-lani-theme="safari"] body.lani-independent-theme .lani-page .card {
+  background: linear-gradient(145deg,rgba(248,230,187,.97),rgba(225,197,143,.96)) !important;
+  border-color: #267b70 !important;
+  box-shadow: inset 0 0 0 5px #e9c96e, inset 0 0 0 7px rgba(32,108,94,.31), 0 18px 40px rgba(31,55,43,.23) !important;
+}
+
+html[data-lani-theme="dollhouse"] body.lani-independent-theme .lani-page .card {
+  background: linear-gradient(145deg,rgba(255,244,230,.98),rgba(238,205,193,.97)) !important;
+  border-color: #b77b2e !important;
+  box-shadow: inset 0 0 0 5px #f2d28c, inset 0 0 0 7px rgba(168,76,99,.24), 0 18px 42px rgba(76,38,47,.23) !important;
+}
+
+/* Lulu remains available on the page, but no longer walks across the gallery
+   portrait, wordmark, or card controls during this design pass. */
+html[data-lani-theme] body.lani-independent-theme #kikiCompanion {
+  left: auto !important;
+  top: auto !important;
+  right: 18px !important;
+  bottom: 16px !important;
+  transform: none !important;
+}
+
+@keyframes laniCardSparkle {
+  0%,72%,100% { opacity:.72; transform:scale(.86) rotate(0deg); }
+  80% { opacity:1; transform:scale(1.14) rotate(14deg); }
+  88% { opacity:.84; transform:scale(.96) rotate(-7deg); }
+}
+
+@keyframes laniMonsterLetterGlow {
+  0%,70%,100% { background-position:0 50%; }
+  84% { background-position:100% 50%; }
+}
+
+@media (max-width:700px) {
+  html[data-lani-theme] body.lani-independent-theme :is(
+    #laniThemeStudio h2,
+    #laniExperienceStudio h2,
+    #laniExperiencePreview .lani-preview-copy h3,
+    .lani-page .card > h2,
+    .lani-page .card > h3,
+    .lani-page .card .lani-card-body > h2,
+    .lani-page .card .lani-card-body > h3
+  )::after { width:.56em !important; height:.56em !important; }
+}
+
+/* 16.58.22 — keep the approved atmosphere locked while the global collection
+   borrows the selected theme's type, surface, and proportion language. */
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .sidebar,
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .topbar {
+  background-image:
+    linear-gradient(var(--lani-shell-veil),var(--lani-shell-veil)),
+    var(--lani-card-surface-image) !important;
+  background-size: cover, cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  font-family: var(--lani-heading-font) !important;
+}
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #sidebar {
+  background-image: linear-gradient(rgba(255,242,230,.26),rgba(255,242,230,.26)),var(--lani-card-surface-image) !important;
+  background-size: cover,cover !important;
+  background-repeat: no-repeat !important;
+  font-family: var(--lani-heading-font) !important;
+}
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme .topbar.topbar {
+  background-image: linear-gradient(rgba(255,242,230,.26),rgba(255,242,230,.26)),var(--lani-card-surface-image) !important;
+  background-size: cover,cover !important;
+  background-repeat: no-repeat !important;
+  font-family: var(--lani-heading-font) !important;
+}
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme header.topbar[data-surface-tone] {
+  background: var(--lani-topbar,rgba(255,249,239,.96)) !important;
+  font-family: var(--lani-heading-font) !important;
+}
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme header.topbar[data-surface-tone] #breadcrumb,
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme header.topbar[data-surface-tone] .icon-button { font-family:var(--lani-heading-font) !important; }
+html[data-lani-theme="safari"][data-lani-theme] body.lani-independent-theme.lani-independent-theme header.topbar[data-surface-tone] { background:#2d4d43 !important; color:#fff6df !important; }
+html[data-lani-theme="monsters"][data-lani-theme] body.lani-independent-theme.lani-independent-theme header.topbar[data-surface-tone] { background:#703867 !important; color:#fff7fb !important; }
+html[data-lani-theme="dollhouse"][data-lani-theme] body.lani-independent-theme.lani-independent-theme header.topbar[data-surface-tone] { background:#6b364b !important; color:#fff4f5 !important; }
+html[data-lani-theme="safari"][data-lani-theme] body.lani-independent-theme.lani-independent-theme header.topbar[data-surface-tone] { background-color:#2d4d43 !important; border-color:#e6bd65 !important; box-shadow:0 12px 26px rgba(23,63,58,.28) !important; }
+html[data-lani-theme="monsters"][data-lani-theme] body.lani-independent-theme.lani-independent-theme header.topbar[data-surface-tone] { background-color:#703867 !important; border-color:#f3d37c !important; box-shadow:0 12px 26px rgba(79,49,92,.28) !important; }
+html[data-lani-theme="dollhouse"][data-lani-theme] body.lani-independent-theme.lani-independent-theme header.topbar[data-surface-tone] { background-color:#6b364b !important; border-color:#f1cf83 !important; box-shadow:0 12px 26px rgba(96,53,68,.28) !important; }
+header.topbar[data-lani-shell-theme="safari"] { background:#2d4d43 !important; border-color:#e6bd65 !important; color:#fff6df !important; }
+header.topbar[data-lani-shell-theme="monsters"] { background:#703867 !important; border-color:#f3d37c !important; color:#fff7fb !important; }
+header.topbar[data-lani-shell-theme="dollhouse"] { background:#6b364b !important; border-color:#f1cf83 !important; color:#fff4f5 !important; }
+
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .sidebar nav,
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .sidebar nav a,
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .sidebar .brand,
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .sidebar .brand small,
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .sidebar .brand strong,
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .topbar #breadcrumb {
+  font-family: var(--lani-heading-font) !important;
+}
+
+html[data-lani-theme="safari"][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .sidebar nav a,
+html[data-lani-theme="safari"][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .topbar #breadcrumb {
+  color: #173f3a !important;
+  text-shadow: 0 1px 0 rgba(255,245,210,.72) !important;
+}
+html[data-lani-theme="monsters"][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .sidebar nav a,
+html[data-lani-theme="monsters"][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .topbar #breadcrumb {
+  color: #4f315c !important;
+  text-shadow: 0 1px 0 rgba(255,247,230,.8) !important;
+}
+html[data-lani-theme="dollhouse"][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .sidebar nav a,
+html[data-lani-theme="dollhouse"][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .topbar #breadcrumb {
+  color: #603544 !important;
+  text-shadow: 0 1px 0 rgba(255,249,239,.82) !important;
+}
+
+/* Chooser artwork gets its own upper lane; companions stay in a reserved,
+   non-overlapping corner so titles and descriptions remain readable. */
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option {
+  grid-template-rows: 154px minmax(0,1fr) !important;
+  min-height: 322px !important;
+  padding: 8px 8px 18px !important;
+}
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-art {
+  min-height: 148px !important;
+  height: 148px !important;
+  z-index: 1 !important;
+}
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option-copy {
+  position: relative !important;
+  z-index: 4 !important;
+  min-width: 0 !important;
+  padding: 12px 86px 0 18px !important;
+  overflow: hidden !important;
+}
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option-copy strong,
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option-copy small {
+  position: relative !important;
+  z-index: 5 !important;
+  display: block !important;
+  max-width: 100% !important;
+}
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option::after {
+  z-index: 3 !important;
+  width: 68px !important;
+  height: 88px !important;
+  right: 10px !important;
+  bottom: 8px !important;
+  background-size: contain !important;
+  background-position: bottom right !important;
+  background-repeat: no-repeat !important;
+  pointer-events: none !important;
+}
+
+/* Preserve texture detail without stretching it to each card's exact ratio. */
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme .lani-page article.card {
+  min-height: 188px !important;
+  padding-right: 126px !important;
+  background-size: cover !important;
+  background-position: center top !important;
+  background-repeat: no-repeat !important;
+}
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme .lani-page article.card::after {
+  width: 112px !important;
+  height: 132px !important;
+  right: 12px !important;
+  bottom: 8px !important;
+  background-size: contain !important;
+  background-position: bottom right !important;
+  background-repeat: no-repeat !important;
+}
+
+@media (max-width:700px) {
+  html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option {
+    grid-template-rows: 132px minmax(0,1fr) !important;
+    min-height: 292px !important;
+  }
+  html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-art {
+    min-height: 126px !important;
+    height: 126px !important;
+  }
+  html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option-copy {
+    padding-right: 72px !important;
+  }
+  html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option::after {
+    width: 56px !important;
+    height: 74px !important;
+    right: 7px !important;
+    bottom: 6px !important;
+  }
+  html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme .lani-page article.card {
+    min-height: 164px !important;
+    padding-right: 94px !important;
+  }
+  html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme .lani-page article.card::after {
+    width: 84px !important;
+    height: 102px !important;
+    right: 8px !important;
+    bottom: 6px !important;
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  html[data-lani-theme] body.lani-independent-theme :is(
+    .lani-head h1,
+    #laniThemeStudio h2,
+    #laniExperienceStudio h2,
+    #laniExperiencePreview .lani-preview-wordmark,
+    #laniExperiencePreview .lani-preview-copy h3,
+    .lani-page .card > h2,
+    .lani-page .card > h3,
+    .lani-page .card .lani-card-body > h2,
+    .lani-page .card .lani-card-body > h3
+  ) { animation:none !important; }
+  html[data-lani-theme] body.lani-independent-theme :is(
+    #laniThemeStudio h2,
+    #laniExperienceStudio h2,
+    #laniExperiencePreview .lani-preview-copy h3,
+    .lani-page .card > h2,
+    .lani-page .card > h3,
+    .lani-page .card .lani-card-body > h2,
+    .lani-page .card .lani-card-body > h3
+  )::after { animation:none !important; }
+}
+
+/* 16.58.5 — carry the approved visual voice through every Lani card.
+   The original page markup nests some headings one level deeper than the
+   atelier preview, so these selectors intentionally include every card
+   heading and section-title heading on Lani's route only. */
+html[data-lani-theme] body.lani-independent-theme .lani-page article.card :is(h2,h3,h4),
+html[data-lani-theme] body.lani-independent-theme .lani-page article.card .section-title :is(h2,h3,h4) {
+  position: relative !important;
+  display: inline-block !important;
+  max-width: min(100%,calc(100% - 94px)) !important;
+  overflow: visible !important;
+  font-family: var(--lani-display-font) !important;
+  font-weight: 700 !important;
+  line-height: 1.08 !important;
+  letter-spacing: -.018em !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme .lani-page article.card :is(h2,h3,h4),
+html[data-lani-theme="monsters"] body.lani-independent-theme .lani-page article.card .section-title :is(h2,h3,h4) {
+  font-family: "Fredoka", "Arial Rounded MT Bold", "Trebuchet MS", sans-serif !important;
+  background-image: linear-gradient(104deg,#674293 0%,#8c55ad 22%,#d85f7d 48%,#f09b48 70%,#21958e 100%) !important;
+  background-size: 180% 100% !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-text-stroke: .45px rgba(92,48,91,.44) !important;
+  text-shadow: 0 2px 0 rgba(255,232,178,.92),0 5px 0 rgba(89,45,91,.15),0 10px 18px rgba(76,41,79,.22) !important;
+}
+
+html[data-lani-theme="safari"] body.lani-independent-theme .lani-page article.card :is(h2,h3,h4),
+html[data-lani-theme="safari"] body.lani-independent-theme .lani-page article.card .section-title :is(h2,h3,h4) {
+  font-family: "Bree Serif",Georgia,serif !important;
+  background-image: url("assets/lani/safari-heading-triangle-texture-v1.png") !important;
+  background-size: 92px 92px !important;
+  background-position: center !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: #0a746c !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-text-stroke: .55px rgba(17,83,74,.68) !important;
+  filter: drop-shadow(0 2px 0 #f0c65c) drop-shadow(0 5px 0 rgba(75,62,28,.16)) drop-shadow(0 9px 12px rgba(29,62,49,.24)) !important;
+}
+
+html[data-lani-theme="dollhouse"] body.lani-independent-theme .lani-page article.card :is(h2,h3,h4),
+html[data-lani-theme="dollhouse"] body.lani-independent-theme .lani-page article.card .section-title :is(h2,h3,h4) {
+  font-family: "DM Serif Display",Georgia,serif !important;
+  background-image: linear-gradient(98deg,#79384f 0%,#a94e6a 38%,#db8997 67%,#b97d2d 100%) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-text-stroke: .35px rgba(102,49,63,.38) !important;
+  text-shadow: 0 1px 0 #f8d798,0 3px 0 rgba(116,59,70,.16),0 8px 15px rgba(84,42,51,.2) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page article.card::after {
+  display: none !important;
+  opacity: .96 !important;
+  width: 132px !important;
+  height: 154px !important;
+  right: 4px !important;
+  bottom: -8px !important;
+  background: var(--lani-card-ornament) right bottom / contain no-repeat !important;
+  filter: drop-shadow(0 10px 10px rgba(55,32,36,.2)) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page :is(
+  .lani-welcome-card,
+  .lani-discovery-grid > article.card:first-child,
+  .lani-connection-grid > article.card:last-child,
+  .lani-secondary-grid > article.card:first-child,
+  .lani-checklists > article.card:last-child
+)::after {
+  display: block !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page .lani-card-heading {
+  display: grid !important;
+  width: 100% !important;
+  gap: 8px !important;
+  align-content: start !important;
+  padding-right: 0 !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page .lani-card-heading :is(h2,h3,h4) {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  hyphens: none !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page article.card:nth-child(even)::after {
+  transform: scale(.92) rotate(-3deg) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page article.card:nth-child(3n)::after {
+  transform: scale(.88) rotate(4deg) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page .lani-card-toggle {
+  top: 18px !important;
+  bottom: auto !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page article.card .eyebrow {
+  color: color-mix(in srgb,var(--lani-accent) 78%,#2e2130) !important;
+  letter-spacing: .17em !important;
+  font-weight: 900 !important;
+}
+
+@media (max-width:700px) {
+  html[data-lani-theme] body.lani-independent-theme .lani-page article.card :is(h2,h3,h4),
+  html[data-lani-theme] body.lani-independent-theme .lani-page article.card .section-title :is(h2,h3,h4) {
+    max-width: calc(100% - 56px) !important;
+    font-size: clamp(22px,7.2vw,32px) !important;
+  }
+  html[data-lani-theme] body.lani-independent-theme .lani-page article.card::after {
+    width: 76px !important;
+    height: 94px !important;
+    right: 2px !important;
+    bottom: -4px !important;
+  }
+}
+
+/* Final tablet containment (kept last in the cascade). */
+@media (min-width:701px) and (max-width:900px) {
+  html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-stage {
+    position: relative !important;
+    grid-template-columns: minmax(0,206px) minmax(0,1fr) !important;
+    column-gap: 12px !important;
+  }
+  html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo {
+    width: 206px !important;
+    height: 236px !important;
+  }
+  html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-copy {
+    width: auto !important;
+    min-width: 0 !important;
+    padding: 8px 58px 8px 0 !important;
+    text-align: center !important;
+  }
+  html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-companion {
+    position: absolute !important;
+    right: 2px !important;
+    bottom: 8px !important;
+    width: 58px !important;
+    height: 92px !important;
+    margin: 0 !important;
+  }
+}
+
+/* Tablet: keep the complete cloud and copy inside the narrower content pane.
+   The companion becomes a small corner accent instead of creating a third
+   grid column that can push the page sideways. */
+@media (min-width:701px) and (max-width:900px) {
+  html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-stage {
+    position: relative !important;
+    grid-template-columns: minmax(220px,250px) minmax(0,1fr) !important;
+    column-gap: 14px !important;
+  }
+  html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo {
+    width: 238px !important;
+    height: 268px !important;
+  }
+  html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-copy {
+    min-width: 0 !important;
+    padding-right: 72px !important;
+    text-align: center !important;
+  }
+  html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-companion {
+    position: absolute !important;
+    right: 4px !important;
+    bottom: 8px !important;
+    width: 74px !important;
+    height: 108px !important;
+    margin: 0 !important;
+  }
+}
+
+/* 16.58.12 — selected Global Card Collection artwork, applied as the card
+   architecture rather than a pale overlay. The fixed atmosphere remains
+   untouched behind these surfaces. */
+html[data-lani-theme="monsters"] body.lani-independent-theme {
+  --lani-surface-veil: rgba(255,247,226,.18);
+  --lani-shell-veil: rgba(255,247,226,.34);
+  --lani-card-outline: #7b4c92;
+  --lani-card-inset: #edc979;
+}
+
+html[data-lani-theme="safari"] body.lani-independent-theme {
+  --lani-surface-veil: rgba(250,229,177,.12);
+  --lani-shell-veil: rgba(250,229,177,.28);
+  --lani-card-outline: #176f66;
+  --lani-card-inset: #e6bd58;
+}
+
+html[data-lani-theme="dollhouse"] body.lani-independent-theme {
+  --lani-surface-veil: rgba(255,242,230,.14);
+  --lani-shell-veil: rgba(255,242,230,.26);
+  --lani-card-outline: #a4556c;
+  --lani-card-inset: #d6a850;
+}
+
+html[data-lani-theme] body.lani-independent-theme :is(
+  .sidebar,
+  .topbar,
+  .lani-head,
+  #laniThemeStudio,
+  #laniExperienceStudio,
+  #laniExperiencePreview
+) {
+  background-image:
+    linear-gradient(var(--lani-shell-veil),var(--lani-shell-veil)),
+    var(--lani-card-surface-image) !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page article.card {
+  min-height: 178px !important;
+  border: 3px solid var(--lani-card-outline) !important;
+  outline: 0 !important;
+  background-color: var(--lani-surface-strong) !important;
+  background-image:
+    linear-gradient(var(--lani-surface-veil),var(--lani-surface-veil)),
+    var(--lani-card-surface-image) !important;
+  background-size: 100% 100% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  box-shadow:
+    inset 0 0 0 4px rgba(255,250,232,.72),
+    inset 0 0 0 7px color-mix(in srgb,var(--lani-card-inset) 72%,transparent),
+    0 16px 34px rgba(53,30,39,.25) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page article.card::before {
+  inset: 12px !important;
+  border: 1.5px solid color-mix(in srgb,var(--lani-card-outline) 64%,var(--lani-card-inset)) !important;
+  box-shadow:
+    inset 0 0 0 2px rgba(255,250,235,.68),
+    0 0 0 1px color-mix(in srgb,var(--lani-card-inset) 45%,transparent) !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme .lani-page article.card {
+  border-radius: 42px 26px 46px 30px !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme .lani-page article.card:nth-of-type(even) {
+  border-radius: 30px 48px 28px 44px !important;
+}
+
+html[data-lani-theme="safari"] body.lani-independent-theme .lani-page article.card {
+  border-radius: 46px 46px 24px 24px !important;
+}
+
+html[data-lani-theme="dollhouse"] body.lani-independent-theme .lani-page article.card {
+  border-radius: 58px 58px 26px 26px !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page article.card > *,
+html[data-lani-theme] body.lani-independent-theme .lani-page article.card .lani-card-body > * {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page article.card .lani-card-heading {
+  padding: 8px 6px 4px 4px !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page article.card :is(h2,h3,h4) {
+  max-width: min(100%,calc(100% - 12px)) !important;
+  font-size: clamp(24px,2.25vw,36px) !important;
+}
+
+html[data-lani-theme="safari"] body.lani-independent-theme .lani-page article.card :is(h2,h3,h4) {
+  font-size: clamp(26px,2.4vw,38px) !important;
+  line-height: .98 !important;
+  background-size: 54px 54px !important;
+  filter:
+    drop-shadow(0 2px 0 #f6d875)
+    drop-shadow(0 4px 0 rgba(26,70,61,.28))
+    drop-shadow(0 9px 12px rgba(20,52,43,.24)) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page article.card::after {
+  z-index: 3 !important;
+  width: 150px !important;
+  height: 174px !important;
+  right: 7px !important;
+  bottom: -5px !important;
+  outline: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+html[data-lani-theme="dollhouse"] body.lani-independent-theme .lani-page article.card::after {
+  filter: drop-shadow(0 10px 10px rgba(93,49,58,.18)) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page article.card .lani-card-toggle {
+  z-index: 5 !important;
+  min-width: 96px !important;
+  border: 1px solid var(--lani-card-inset) !important;
+  color: white !important;
+  background: linear-gradient(135deg,var(--lani-accent),color-mix(in srgb,var(--lani-accent) 66%,var(--lani-accent-2))) !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.42),0 7px 15px color-mix(in srgb,var(--lani-accent) 30%,transparent) !important;
+}
+
+html[data-lani-theme="safari"] body.lani-independent-theme .lani-page article.card .lani-card-toggle {
+  background: linear-gradient(135deg,#0c6c63,#258a78) !important;
+}
+
+html[data-lani-theme="dollhouse"] body.lani-independent-theme .lani-page article.card .lani-card-toggle {
+  background: linear-gradient(135deg,#8e3f58,#bd6c80) !important;
+}
+
+/* A purpose-built complete cloud asset replaces the old source whose right
+   edge was already cropped before layout. Lani's real photo sits behind it. */
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo {
+  width: 360px !important;
+  height: 390px !important;
+  padding: 0 !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview #laniPortraitFrame {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 4 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview #laniGalleryHero {
+  position: absolute !important;
+  z-index: 2 !important;
+  inset: 19% 18% 18% 18% !important;
+  width: 64% !important;
+  height: 63% !important;
+  object-fit: cover !important;
+  object-position: 50% 28% !important;
+  border: 0 !important;
+  border-radius: 48% 50% 44% 46% !important;
+  box-shadow: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-stage {
+  grid-template-columns: minmax(350px,380px) minmax(300px,1fr) minmax(150px,185px) !important;
+  column-gap: 34px !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-copy {
+  text-align: center !important;
+  padding-inline: 12px !important;
+}
+
+@media (max-width:1180px) and (min-width:701px) {
+  html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-stage {
+    grid-template-columns: minmax(0,206px) minmax(0,1fr) !important;
+    column-gap: 12px !important;
+  }
+  html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo {
+    width: 206px !important;
+    height: 236px !important;
+  }
+}
+
+@media (max-width:700px) {
+  html[data-lani-theme] body.lani-independent-theme .lani-page article.card {
+    min-height: 154px !important;
+    padding-right: 98px !important;
+    background-size: cover !important;
+  }
+  html[data-lani-theme] body.lani-independent-theme .lani-page article.card::after {
+    width: 92px !important;
+    height: 110px !important;
+    right: 3px !important;
+  }
+  html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-stage {
+    grid-template-columns: minmax(0,1fr) !important;
+  }
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo {
+    width: min(330px,88vw) !important;
+    height: min(358px,96vw) !important;
+  }
+}
+
+/* Final cascade for the 16.58.22 global-collection pass. */
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .sidebar,
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .topbar {
+  background-image: linear-gradient(var(--lani-shell-veil),var(--lani-shell-veil)),var(--lani-card-surface-image) !important;
+  background-size: cover,cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  font-family: var(--lani-heading-font) !important;
+}
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .sidebar nav a,
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .sidebar .brand,
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .sidebar .brand small,
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .sidebar .brand strong,
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .topbar #breadcrumb { font-family:var(--lani-heading-font) !important; }
+html[data-lani-theme="safari"][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .sidebar nav a,
+html[data-lani-theme="safari"][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .topbar #breadcrumb { color:#173f3a !important; text-shadow:0 1px 0 rgba(255,245,210,.72) !important; }
+html[data-lani-theme="monsters"][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .sidebar nav a,
+html[data-lani-theme="monsters"][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .topbar #breadcrumb { color:#4f315c !important; text-shadow:0 1px 0 rgba(255,247,230,.8) !important; }
+html[data-lani-theme="dollhouse"][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .sidebar nav a,
+html[data-lani-theme="dollhouse"][data-lani-theme] body.lani-independent-theme.lani-independent-theme #page .topbar #breadcrumb { color:#603544 !important; text-shadow:0 1px 0 rgba(255,249,239,.82) !important; }
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option { grid-template-rows:154px minmax(0,1fr) !important; min-height:322px !important; padding:8px 8px 18px !important; }
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-art { min-height:148px !important; height:148px !important; z-index:1 !important; }
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option-copy { position:relative !important; z-index:4 !important; min-width:0 !important; padding:12px 86px 0 18px !important; overflow:hidden !important; }
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option-copy strong,
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option-copy small { display:block !important; max-width:100% !important; position:relative !important; z-index:5 !important; }
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option::after { z-index:3 !important; width:68px !important; height:88px !important; right:10px !important; bottom:8px !important; background-size:contain !important; background-position:bottom right !important; background-repeat:no-repeat !important; pointer-events:none !important; }
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme .lani-page article.card { min-height:188px !important; padding-right:126px !important; background-size:cover !important; background-position:center top !important; background-repeat:no-repeat !important; }
+html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme .lani-page article.card::after { width:112px !important; height:132px !important; right:12px !important; bottom:8px !important; background-size:contain !important; background-position:bottom right !important; background-repeat:no-repeat !important; }
+@media (max-width:700px) {
+  html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option { grid-template-rows:132px minmax(0,1fr) !important; min-height:292px !important; }
+  html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-art { min-height:126px !important; height:126px !important; }
+  html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option-copy { padding-right:72px !important; }
+  html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option::after { width:56px !important; height:74px !important; right:7px !important; bottom:6px !important; }
+  html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme .lani-page article.card { min-height:164px !important; padding-right:94px !important; }
+  html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme .lani-page article.card::after { width:84px !important; height:102px !important; right:8px !important; bottom:6px !important; }
+}
+
+/* Final tablet containment (must remain the last responsive override). */
+@media (min-width:701px) and (max-width:900px) {
+  html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-stage {
+    position: relative !important;
+    grid-template-columns: minmax(0,206px) minmax(0,1fr) !important;
+    column-gap: 12px !important;
+  }
+  html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo {
+    width: 206px !important;
+    height: 236px !important;
+  }
+  html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-copy {
+    width: auto !important;
+    min-width: 0 !important;
+    padding: 8px 58px 8px 0 !important;
+    text-align: center !important;
+  }
+  html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-companion {
+    position: absolute !important;
+    right: 2px !important;
+    bottom: 8px !important;
+    width: 58px !important;
+    height: 92px !important;
+    margin: 0 !important;
+  }
+}
+
+/* The global Design + Data rules use an ID-strength :is() selector. Mirror
+   that strength here so Lani's independent collection reliably wins only on
+   her route. The anchor never has to exist; :is() still contributes its ID
+   specificity while matching the real class branches. */
+html[data-lani-theme] body.lani-independent-theme :is(
+  #lani-global-specificity-anchor,
+  .sidebar,.topbar,.lani-head,#laniThemeStudio,#laniExperienceStudio,#laniExperiencePreview
+) {
+  background-image:
+    linear-gradient(var(--lani-shell-veil,rgba(255,247,226,.28)),var(--lani-shell-veil,rgba(255,247,226,.28))),
+    var(--lani-card-surface-image) !important;
+  border-color: var(--lani-card-outline) !important;
+  background-size: cover,cover !important;
+  background-repeat: no-repeat !important;
+  font-family: var(--lani-heading-font) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page :is(
+  #lani-global-specificity-anchor,
+  article.card
+) {
+  border: 3px solid var(--lani-card-outline) !important;
+  outline: 0 !important;
+  background-color: var(--lani-surface-strong) !important;
+  background-image:
+    linear-gradient(var(--lani-surface-veil),var(--lani-surface-veil)),
+    var(--lani-card-surface-image) !important;
+  background-size: cover !important;
+  background-position: center top !important;
+  background-repeat: no-repeat !important;
+  box-shadow:
+    inset 0 0 0 4px rgba(255,250,232,.72),
+    inset 0 0 0 7px color-mix(in srgb,var(--lani-card-inset) 72%,transparent),
+    0 16px 34px rgba(53,30,39,.25) !important;
+}
+
+/* Theme typography also needs ID-strength specificity because the saved OS
+   visual voice owns an ID-based global heading rule. These overrides remain
+   scoped to Lani's route and disappear immediately on exit. */
+html[data-lani-theme="safari"] body.lani-independent-theme :is(
+  #lani-heading-specificity-anchor,
+  .lani-head h1,
+  #laniThemeStudio h2,
+  #laniExperienceStudio h2,
+  #laniExperiencePreview .lani-preview-wordmark,
+  #laniExperiencePreview .lani-preview-copy h3,
+  .lani-page article.card h2,
+  .lani-page article.card h3,
+  .lani-page article.card h4
+) {
+  font-family: "Baloo 2", "Arial Rounded MT Bold", "Trebuchet MS", sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: .005em !important;
+  background-image: url("assets/lani/safari-heading-triangle-texture-v1.png") !important;
+  background-size: 54px 54px !important;
+  background-position: center !important;
+  animation: none !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: #096f6a !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-text-stroke: .8px rgba(7,80,73,.82) !important;
+  text-shadow: none !important;
+  filter:
+    drop-shadow(0 2px 0 #f5d16d)
+    drop-shadow(0 4px 0 rgba(27,75,64,.28))
+    drop-shadow(0 10px 14px rgba(24,61,49,.22)) !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme :is(
+  #lani-heading-specificity-anchor,
+  .lani-head h1,
+  #laniThemeStudio h2,
+  #laniExperienceStudio h2,
+  #laniExperiencePreview .lani-preview-wordmark,
+  #laniExperiencePreview .lani-preview-copy h3,
+  .lani-page article.card h2,
+  .lani-page article.card h3,
+  .lani-page article.card h4
+) {
+  font-family: "Fredoka", "Arial Rounded MT Bold", "Trebuchet MS", sans-serif !important;
+  font-weight: 700 !important;
+  background-image: linear-gradient(104deg,#674293 0%,#8c55ad 22%,#d85f7d 48%,#f09b48 70%,#21958e 100%) !important;
+  background-size: 180% 100% !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-text-stroke: .45px rgba(92,48,91,.5) !important;
+  text-shadow: none !important;
+  filter: drop-shadow(0 2px 0 #f5d98d) drop-shadow(0 6px 8px rgba(76,41,79,.24)) !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview #laniGalleryHero {
+  inset: 15% 13% 15% 13% !important;
+  width: 74% !important;
+  height: 70% !important;
+}
+
+@media (min-width:701px) and (max-width:900px) {
+  html[data-lani-theme] body.lani-independent-theme :is(
+    #laniExperienceStudio,
+    #laniExperiencePreview,
+    #laniExperiencePreview > div,
+    #laniExperiencePreview .lani-preview-stage,
+    #laniExperiencePreview .lani-gallery-vault,
+    #laniExperiencePreview .slideshow,
+    #laniExperiencePreview .slideshow-controls,
+    #laniExperiencePreview .lani-thumbs,
+    #laniExperiencePreview input,
+    #laniExperiencePreview textarea,
+    #laniExperiencePreview button,
+    #laniExperiencePreview label
+  ) {
+    min-width: 0 !important;
+    width: auto !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-stage {
+    grid-template-columns: minmax(0,1fr) !important;
+    justify-items: center !important;
+    text-align: center !important;
+  }
+
+  html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-companion {
+    justify-self: end !important;
+    margin-top: -54px !important;
+  }
+}
+
+/* 16.58.11 — screenshot-faithful Global Card Collection pass.
+   Atmosphere art remains the fixed page background. These assets only skin
+   Lani's cards and shell, and they rotate distinct ornaments per card. */
+html[data-lani-theme="monsters"] body.lani-independent-theme {
+  --lani-card-surface-image: url("assets/lani/card-surface-monsters-v2.png");
+  --lani-card-ornament-1: url("assets/lani/card-ornament-monsters-v1.png");
+  --lani-card-ornament-2: url("assets/lani/card-ornament-monsters-v2.png");
+  --lani-card-ornament-3: url("assets/lani/card-ornament-monsters-v3.png");
+}
+
+html[data-lani-theme="safari"] body.lani-independent-theme {
+  --lani-body-font: "Nunito", "Avenir Next", "Trebuchet MS", sans-serif;
+  --lani-display-font: "Baloo 2", "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+  --lani-heading-font: var(--lani-display-font);
+  --lani-card-surface-image: url("assets/lani/card-surface-safari-v2.png");
+  --lani-card-ornament-1: url("assets/lani/card-ornament-safari-v1.png");
+  --lani-card-ornament-2: url("assets/lani/card-ornament-safari-v2.png");
+  --lani-card-ornament-3: url("assets/lani/card-ornament-safari-v3.png");
+}
+
+html[data-lani-theme="dollhouse"] body.lani-independent-theme {
+  --lani-card-surface-image: url("assets/lani/card-surface-dollhouse-v2.png");
+  --lani-card-ornament-1: url("assets/lani/card-ornament-dollhouse-v2b.png");
+  --lani-card-ornament-2: url("assets/lani/card-ornament-dollhouse-v3.png");
+  --lani-card-ornament-3: url("assets/lani/companion-dollhouse-doll-cutout-v2.png");
+}
+
+html[data-lani-theme] body.lani-independent-theme :is(
+  .sidebar,
+  .topbar,
+  .lani-head,
+  #laniThemeStudio,
+  #laniExperienceStudio,
+  #laniExperiencePreview,
+  .lani-page article.card
+) {
+  background-color: var(--lani-surface-strong) !important;
+  background-image:
+    linear-gradient(rgba(255,252,244,.78),rgba(255,252,244,.78)),
+    var(--lani-card-surface-image) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme :is(.sidebar,.topbar,.lani-head,#laniThemeStudio,#laniExperienceStudio,#laniExperiencePreview,.lani-page article.card) {
+  background-image: linear-gradient(rgba(255,246,224,.72),rgba(255,246,224,.72)),var(--lani-card-surface-image) !important;
+}
+
+html[data-lani-theme="safari"] body.lani-independent-theme :is(.sidebar,.topbar,.lani-head,#laniThemeStudio,#laniExperienceStudio,#laniExperiencePreview,.lani-page article.card) {
+  background-image: linear-gradient(rgba(249,232,190,.74),rgba(249,232,190,.74)),var(--lani-card-surface-image) !important;
+  border-color: #2b7d72 !important;
+}
+
+html[data-lani-theme="dollhouse"] body.lani-independent-theme :is(.sidebar,.topbar,.lani-head,#laniThemeStudio,#laniExperienceStudio,#laniExperiencePreview,.lani-page article.card) {
+  background-image: linear-gradient(rgba(255,244,235,.75),rgba(255,244,235,.75)),var(--lani-card-surface-image) !important;
+}
+
+/* The cloud needs its own generous column. It is deliberately wider than
+   the other portrait frames so the right lobe never sits beneath the copy. */
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-stage {
+  grid-template-columns: minmax(330px,360px) minmax(300px,1fr) minmax(150px,185px) !important;
+  column-gap: 42px !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo {
+  width: 330px !important;
+  height: 375px !important;
+  margin-inline: auto !important;
+  overflow: visible !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-copy {
+  text-align: center !important;
+  justify-self: stretch !important;
+  align-self: center !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview #laniPortraitFrame,
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview #laniGalleryHero {
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+/* Safari is intentionally playful and rounded — blue embossed leather with
+   tiny gold triangles — so it cannot be mistaken for Dollhouse's editorial
+   rose-gold serif. */
+html[data-lani-theme="safari"] body.lani-independent-theme :is(
+  .lani-head h1,
+  #laniThemeStudio h2,
+  #laniExperienceStudio h2,
+  #laniExperiencePreview .lani-preview-wordmark,
+  #laniExperiencePreview .lani-preview-copy h3,
+  .lani-page article.card :is(h2,h3,h4),
+  .lani-page article.card .section-title :is(h2,h3,h4)
+) {
+  font-family: "Baloo 2", "Arial Rounded MT Bold", "Trebuchet MS", sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: .005em !important;
+  background-image: url("assets/lani/safari-heading-triangle-texture-v1.png") !important;
+  background-size: 70px 70px !important;
+  background-position: center !important;
+  animation: none !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: #096f6a !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-text-stroke: .9px rgba(7,80,73,.8) !important;
+  filter: drop-shadow(0 2px 0 #f4cf65) drop-shadow(0 5px 0 rgba(80,59,19,.2)) drop-shadow(0 10px 14px rgba(25,60,48,.22)) !important;
+}
+
+/* Every card receives artwork, but the artwork rotates instead of repeating
+   the same trio all the way down the page. */
+html[data-lani-theme] body.lani-independent-theme .lani-page article.card::after {
+  display: block !important;
+  width: 142px !important;
+  height: 166px !important;
+  right: 2px !important;
+  bottom: -10px !important;
+  background: var(--lani-card-ornament-1) right bottom / contain no-repeat !important;
+  outline: 0 !important;
+  border: 0 !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page article.card[data-lani-card-variant="2"]::after {
+  background-image: var(--lani-card-ornament-2) !important;
+  transform: scale(.92) rotate(-2deg) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page article.card[data-lani-card-variant="3"]::after {
+  background-image: var(--lani-card-ornament-3) !important;
+  transform: scale(.9) rotate(2deg) !important;
+}
+
+/* The OS page-title treatment is intentionally ID-specific. Keep Lani's
+   Safari title equally specific so its leather-and-triangle lettering cannot
+   be replaced by the saved OS shimmer. */
+html[data-lani-theme="safari"][data-theme][data-theme] body.lani-independent-theme.lani-independent-theme #page .pagehead.pagehead.lani-head[data-contrast-scope] h1 {
+  font-family: "Baloo 2", "Arial Rounded MT Bold", "Trebuchet MS", sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: .005em !important;
+  background: url("assets/lani/safari-heading-triangle-texture-v1.png") center / 54px 54px !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: #096f6a !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-text-stroke: .8px rgba(7,80,73,.82) !important;
+  animation: none !important;
+  text-shadow: none !important;
+  filter: drop-shadow(0 2px 0 #f5d16d) drop-shadow(0 4px 0 rgba(27,75,64,.28)) drop-shadow(0 10px 14px rgba(24,61,49,.22)) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page article.card {
+  padding-right: 154px !important;
+}
+
+@media (max-width:1180px) and (min-width:701px) {
+  html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-stage {
+    grid-template-columns: minmax(250px,275px) minmax(240px,1fr) 120px !important;
+    column-gap: 22px !important;
+  }
+  html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo {
+    width: 262px !important;
+    height: 298px !important;
+  }
+}
+
+@media (max-width:700px) {
+  html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-stage {
+    grid-template-columns: minmax(0,1fr) !important;
+    column-gap: 0 !important;
+  }
+  html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo {
+    width: min(290px,86vw) !important;
+    height: min(330px,98vw) !important;
+  }
+  html[data-lani-theme] body.lani-independent-theme .lani-page article.card,
+  html[data-lani-theme] body.lani-independent-theme .lani-page article.card.is-collapsed {
+    padding-right: 90px !important;
+  }
+  html[data-lani-theme] body.lani-independent-theme .lani-page article.card::after {
+    width: 82px !important;
+    height: 100px !important;
+  }
+}
+
+/* 16.58.12 final cascade: these rules intentionally follow every earlier
+   compatibility layer so the approved illustrated surfaces stay visible. */
+html[data-lani-theme] body.lani-independent-theme :is(
+  .sidebar,.topbar,.lani-head,#laniThemeStudio,#laniExperienceStudio,#laniExperiencePreview
+) {
+  background-image:
+    linear-gradient(var(--lani-shell-veil,rgba(255,247,226,.28)),var(--lani-shell-veil,rgba(255,247,226,.28))),
+    var(--lani-card-surface-image) !important;
+  background-size: cover,cover !important;
+  background-repeat: no-repeat !important;
+  font-family: var(--lani-heading-font) !important;
+}
+html[data-lani-theme] body.lani-independent-theme .sidebar nav a,
+html[data-lani-theme] body.lani-independent-theme .sidebar .brand,
+html[data-lani-theme] body.lani-independent-theme .sidebar .brand small,
+html[data-lani-theme] body.lani-independent-theme .sidebar .brand strong,
+html[data-lani-theme] body.lani-independent-theme .topbar #breadcrumb {
+  font-family: var(--lani-heading-font) !important;
+}
+
+/* Luxury menu voices: each Lani atmosphere gets a distinct type treatment,
+   with a restrained shimmer when a destination is highlighted. */
+html[data-lani-theme="safari"] body.lani-independent-theme .sidebar nav :is(.nav-button,a) {
+  font-family: "DM Serif Display", Georgia, serif !important;
+  letter-spacing: .015em !important;
+  color: #173f3a !important;
+  text-shadow: 0 1px 0 rgba(255,246,218,.72) !important;
+}
+html[data-lani-theme="safari"] body.lani-independent-theme .sidebar nav :is(.nav-button,a):is(:hover,.active,[aria-current="page"]) {
+  color: #fff6df !important;
+  text-shadow: 0 2px 8px rgba(16,55,49,.34), 0 0 12px rgba(230,189,101,.32) !important;
+  letter-spacing: .03em !important;
+}
+html[data-lani-theme="monsters"] body.lani-independent-theme .sidebar nav :is(.nav-button,a) {
+  font-family: Fredoka, "Arial Rounded MT Bold", sans-serif !important;
+  letter-spacing: .025em !important;
+  color: #4f315c !important;
+  text-shadow: 0 1px 0 rgba(255,247,230,.82) !important;
+}
+html[data-lani-theme="monsters"] body.lani-independent-theme .sidebar nav :is(.nav-button,a):is(:hover,.active,[aria-current="page"]) {
+  color: #fff7fb !important;
+  text-shadow: 0 2px 8px rgba(79,49,92,.34), 0 0 14px rgba(243,211,124,.34) !important;
+  letter-spacing: .04em !important;
+}
+html[data-lani-theme="dollhouse"] body.lani-independent-theme .sidebar nav :is(.nav-button,a) {
+  font-family: "DM Serif Display", Georgia, serif !important;
+  font-style: italic !important;
+  letter-spacing: .01em !important;
+  color: #603544 !important;
+  text-shadow: 0 1px 0 rgba(255,249,239,.86) !important;
+}
+html[data-lani-theme="dollhouse"] body.lani-independent-theme .sidebar nav :is(.nav-button,a):is(:hover,.active,[aria-current="page"]) {
+  color: #fff4f5 !important;
+  text-shadow: 0 2px 8px rgba(96,53,68,.38), 0 0 14px rgba(241,207,131,.38) !important;
+  letter-spacing: .025em !important;
+}
+
+/* Keep Lani's two easily-lost copy lines legible over every illustrated card.
+   The treatment is intentionally scoped to Lani's page and changes with her
+   selected atmosphere rather than altering the rest of the OS. */
+html[data-lani-theme] body.lani-independent-theme #laniExperienceStudio .lani-experience-head > div:first-child > p {
+  display: inline-block !important;
+  max-width: 48ch !important;
+  margin: 8px 0 0 !important;
+  padding: 7px 12px !important;
+  border-radius: 14px !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.78), 0 2px 8px rgba(36,22,31,.18) !important;
+}
+html[data-lani-theme] body.lani-independent-theme #laniExperiencePreview .lani-preview-copy > small {
+  display: block !important;
+  max-width: 38ch !important;
+  color: var(--lani-ink) !important;
+  font-weight: 700 !important;
+  line-height: 1.45 !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.78), 0 2px 8px rgba(36,22,31,.16) !important;
+}
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperienceStudio .lani-experience-head > div:first-child > p {
+  color: #351d45 !important;
+  background: linear-gradient(135deg, rgba(255,247,230,.92), rgba(247,220,222,.78)) !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.9), 0 5px 14px rgba(79,49,92,.16) !important;
+}
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-copy > small {
+  color: #321d40 !important;
+}
+html[data-lani-theme="safari"] body.lani-independent-theme #laniExperienceStudio .lani-experience-head > div:first-child > p {
+  color: #173f3a !important;
+  background: linear-gradient(135deg, rgba(252,239,208,.94), rgba(229,210,165,.8)) !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.9), 0 5px 14px rgba(23,63,58,.16) !important;
+}
+html[data-lani-theme="safari"] body.lani-independent-theme #laniExperiencePreview .lani-preview-copy > small {
+  color: #173f3a !important;
+}
+html[data-lani-theme="dollhouse"] body.lani-independent-theme #laniExperienceStudio .lani-experience-head > div:first-child > p {
+  color: #512638 !important;
+  background: linear-gradient(135deg, rgba(255,249,239,.95), rgba(246,222,218,.84)) !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.92), 0 5px 14px rgba(96,53,68,.16) !important;
+}
+html[data-lani-theme="dollhouse"] body.lani-independent-theme #laniExperiencePreview .lani-preview-copy > small {
+  color: #512638 !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page article.card {
+  min-height: 188px !important;
+  padding-right: 126px !important;
+  border: 3px solid var(--lani-card-outline) !important;
+  outline: 0 !important;
+  background-image:
+    linear-gradient(var(--lani-surface-veil),var(--lani-surface-veil)),
+    var(--lani-card-surface-image) !important;
+  background-size: cover !important;
+  background-position: center top !important;
+  background-repeat: no-repeat !important;
+  box-shadow:
+    inset 0 0 0 4px rgba(255,250,232,.72),
+    inset 0 0 0 7px color-mix(in srgb,var(--lani-card-inset) 72%,transparent),
+    0 16px 34px rgba(53,30,39,.25) !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page article.card::after {
+  width: 112px !important;
+  height: 132px !important;
+  right: 12px !important;
+  bottom: 8px !important;
+  background-size: contain !important;
+  background-position: bottom right !important;
+  background-repeat: no-repeat !important;
+}
+
+html[data-lani-theme] body.lani-independent-theme .lani-page article.card[data-lani-card-variant="1"] {
+  background-position: 18% 50% !important;
+  background-size: cover !important;
+  background-image: linear-gradient(122deg,rgba(255,255,255,.24),transparent 46%),linear-gradient(var(--lani-surface-veil),var(--lani-surface-veil)),var(--lani-card-surface-image) !important;
+}
+html[data-lani-theme] body.lani-independent-theme .lani-page article.card[data-lani-card-variant="2"] {
+  background-position: 50% 50% !important;
+  background-size: cover !important;
+  background-image: linear-gradient(156deg,transparent 38%,rgba(255,255,255,.18)),linear-gradient(var(--lani-surface-veil),var(--lani-surface-veil)),var(--lani-card-surface-image) !important;
+}
+html[data-lani-theme] body.lani-independent-theme .lani-page article.card[data-lani-card-variant="3"] {
+  background-position: 82% 50% !important;
+  background-size: cover !important;
+  background-image: linear-gradient(28deg,rgba(255,255,255,.2),transparent 54%),linear-gradient(var(--lani-surface-veil),var(--lani-surface-veil)),var(--lani-card-surface-image) !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-stage {
+  grid-template-columns: minmax(350px,380px) minmax(300px,1fr) minmax(150px,185px) !important;
+  column-gap: 34px !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo {
+  width: 360px !important;
+  height: 390px !important;
+  padding: 0 !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview #laniPortraitFrame {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 4 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview #laniGalleryHero {
+  position: absolute !important;
+  z-index: 2 !important;
+  inset: 19% 18% 18% 18% !important;
+  width: 64% !important;
+  height: 63% !important;
+  object-fit: cover !important;
+  object-position: 50% 28% !important;
+  border: 0 !important;
+  border-radius: 48% 50% 44% 46% !important;
+  box-shadow: none !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+}
+
+@media (max-width:1180px) and (min-width:701px) {
+  html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-stage {
+    grid-template-columns: minmax(0,206px) minmax(0,1fr) !important;
+    column-gap: 12px !important;
+  }
+  html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo {
+    width: 206px !important;
+    height: 236px !important;
+  }
+}
+
+@media (max-width:700px) {
+  html[data-lani-theme] body.lani-independent-theme .lani-page article.card {
+    min-height: 154px !important;
+    padding-right: 98px !important;
+    background-size: cover !important;
+  }
+  html[data-lani-theme] body.lani-independent-theme .lani-page article.card::after {
+    width: 92px !important;
+    height: 110px !important;
+  }
+  html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-stage {
+    grid-template-columns: minmax(0,1fr) !important;
+  }
+  html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePreview .lani-preview-photo {
+    width: min(330px,88vw) !important;
+    height: min(358px,96vw) !important;
+  }
+}
+
+@media (max-width:700px) {
+  html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option { grid-template-rows:132px minmax(0,1fr) !important; min-height:292px !important; }
+  html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-art { min-height:126px !important; height:126px !important; }
+  html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option-copy { padding-right:72px !important; }
+  html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option::after { width:56px !important; height:74px !important; right:7px !important; bottom:6px !important; }
+  html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme .lani-page article.card { min-height:164px !important; padding-right:94px !important; }
+  html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme .lani-page article.card::after { width:84px !important; height:102px !important; right:8px !important; bottom:6px !important; }
+}
