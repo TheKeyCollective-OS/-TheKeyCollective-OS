@@ -1,4 +1,4 @@
-const CACHE='key-collective-lani-sidebar-16.58.46';
+const CACHE='key-collective-lani-gold-nav-16.58.47';
 const APP_SHELL=['./','./index.html','./tokens.css?v=16.21','./app.css?v=16.49.0','./app.js?v=16.49.0','./config.js','./router.js','./store.js','./weather.js','./controllers.js','./pages.js','./news.js','./sprint3.js','./sprint4.js','./sprint5.js','./sprint6a.js','./sprint6b.js','./sprint6b1.js','./sprint6b1final.js','./sprint6b2.js','./sprint6b3.js','./sprint6b4.js','./sprint6b5.js','./sprint6b6.js','./sprint6b7.js','./sprint6b8.js?v=16.43.7','./sprint6b9.js','./sprint6b10.js','./sprint6b11.js','./sprint6b12.js','./sprint6b13.js','./sprint6b13r2.js','./sprint6b14.js','./sprint6b15.js','./sprint6b16.js','./sprint6b17.js','./sprint6b18.js?v=16.43.7','./sprint6b19.js','./sprint6b22.js?v=16.43.7','./sprint6b23.js','./sprint6b24.js','./sprint6b25.js','./sprint6b26.js?v=16.43.7','./sprint6b43.js?v=16.44.7','./sprint6b44.js?v=16.44.9','./sprint6b45.js?v=16.45.1','./sprint6b46.js?v=16.46.1','./sprint6b47.js?v=16.48.2','./sprint6b48.js?v=16.48.2','./sprint6b49.js?v=16.49.0','./google-calendar.js','./memo-db.js','./photo-db.js','./logo.png','./profile.jpg','./manifest.webmanifest','./icon-192.png','./icon-512.png','./apple-touch-icon.png'];
 APP_SHELL.push('./app.css?v=16.53.4','./app.js?v=16.53.4','./sprint6c1.js?v=16.52.4','./sprint6c3.js?v=16.53.4','./assets/companion/kiki.png','./assets/companion/lulu.png','./assets/companion/kiki-busybody.png','./assets/companion/kiki-dance.png','./assets/companion/lulu-mommy.png','./assets/companion/lulu-flowers.png');
 APP_SHELL.push('./app.css?v=16.54.5','./app.js?v=16.54.5','./manifest.webmanifest?v=16.54.5','./assets/key-collective-crest.svg','./favicon-48.png','./icon-maskable-512.png');
@@ -57,3 +57,4 @@ APP_SHELL.push('./app.js?v=16.58.43','./sprint6b44.js?v=16.58.43','./sprint6d.js
 APP_SHELL.push('./app.css?v=16.58.44','./app.js?v=16.58.44','./sprint6b44.js?v=16.58.44','./evolution-db.js');
 APP_SHELL.push('./app.js?v=16.58.45','./autocorrect.js');
 APP_SHELL.push('./lani-global-collection.css?v=16.58.46');
+APP_SHELL.push('./lani-global-collection.css?v=16.58.47');

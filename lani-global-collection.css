@@ -934,6 +934,61 @@ html[data-lani-theme="dollhouse"] body.lani-independent-theme .sidebar nav a {
   border-radius: 8px 24px 8px 24px !important;
 }
 
+/* Lani’s Corner gets one shared gold signature across all three approved
+   worlds. The route/theme scope keeps this effect off every other page. */
+html[data-lani-theme] body.lani-independent-theme .sidebar .nav-button[data-route="lani"] {
+  position: relative !important;
+  overflow: hidden !important;
+  color: #fff9dc !important;
+  border: 1px solid rgba(255, 226, 126, .9) !important;
+  background: linear-gradient(135deg, #8e6222, #d5a83f 48%, #8a5b1d) !important;
+  box-shadow: 0 8px 20px rgba(138, 91, 29, .28), inset 0 1px rgba(255,255,255,.48) !important;
+  text-shadow: 0 1px 2px rgba(67, 40, 12, .55) !important;
+  isolation: isolate !important;
+}
+html[data-lani-theme] body.lani-independent-theme .sidebar .nav-button[data-route="lani"]::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: -1 !important;
+  background: linear-gradient(112deg, transparent 18%, rgba(255,255,255,.68) 43%, rgba(255,239,167,.9) 50%, transparent 64%) !important;
+  transform: translateX(-125%) !important;
+  animation: lani-nav-gold-sweep 5.8s ease-in-out infinite !important;
+  pointer-events: none !important;
+}
+html[data-lani-theme] body.lani-independent-theme .sidebar .nav-button[data-route="lani"]::after {
+  content: "✦ ･ ✧" !important;
+  position: absolute !important;
+  top: 5px !important;
+  right: 11px !important;
+  z-index: 1 !important;
+  color: #fff5b0 !important;
+  font-size: 11px !important;
+  letter-spacing: 5px !important;
+  opacity: .86 !important;
+  animation: lani-nav-sparkle 2.8s ease-in-out infinite !important;
+  pointer-events: none !important;
+}
+html[data-lani-theme] body.lani-independent-theme .sidebar .nav-button[data-route="lani"]:hover,
+html[data-lani-theme] body.lani-independent-theme .sidebar .nav-button[data-route="lani"].active {
+  color: #fffbe8 !important;
+  box-shadow: 0 10px 24px rgba(138, 91, 29, .38), 0 0 0 2px rgba(255, 224, 117, .24), inset 0 1px rgba(255,255,255,.55) !important;
+}
+@keyframes lani-nav-gold-sweep {
+  0%, 35% { transform: translateX(-125%); }
+  68%, 100% { transform: translateX(125%); }
+}
+@keyframes lani-nav-sparkle {
+  0%, 100% { opacity: .55; transform: scale(.92); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html[data-lani-theme] body.lani-independent-theme .sidebar .nav-button[data-route="lani"]::before,
+  html[data-lani-theme] body.lani-independent-theme .sidebar .nav-button[data-route="lani"]::after {
+    animation: none !important;
+  }
+}
+
 @media (max-width: 780px) {
   html[data-lani-theme] body.lani-independent-theme .sidebar {
     height: 100vh !important;
