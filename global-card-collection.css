@@ -1,0 +1,18 @@
+/* Final layer for the independently selectable global card collections.
+   This file is loaded after the legacy surface styles so every selection is
+   visible across shared cards, the sidebar, and the top bar. */
+html[data-global-collection="pearl"]{--global-card-image:url('assets/theme-pearl-champagne-couture.png')}
+html[data-global-collection="blackberry"]{--global-card-image:url('assets/theme-blackberry-deco.png')}
+html[data-global-collection="ruby"]{--global-card-image:url('assets/theme-garnet-jewel-mosaic.png')}
+html[data-global-collection="rose"]{--global-card-image:url('assets/theme-rose-couture-tweed.png')}
+html[data-global-collection="amethyst"]{--global-card-image:url('assets/theme-amethyst-cheetah.png')}
+html[data-global-collection="sapphire"]{--global-card-image:url('assets/theme-sapphire-stardust.png')}
+html[data-global-collection="emerald"]{--global-card-image:url('assets/theme-emerald-crocodile.png')}
+html[data-global-collection="teal"]{--global-card-image:url('assets/theme-teal-murano.png')}
+html[data-global-collection="copper"]{--global-card-image:url('assets/theme-copper-chainmail.png')}
+html[data-global-collection="espresso"]{--global-card-image:url('assets/theme-espresso-houndstooth.png')}
+html[data-global-collection="onyx"]{--global-card-image:url('assets/theme-onyx-bandana.png')}
+html[data-global-collection="silver"]{--global-card-image:url('assets/theme-platinum-deco-brocade.png')}
+
+html[data-global-collection] :is(.sidebar,.topbar,#page .card:not(.typography-experience-6c),#page .module,#page .studio-section,#page .theme-card,#page .collection-guide-6b49,.agenda-modal,.memory-detail-shell,.kiki-settings){background-image:linear-gradient(rgba(255,250,244,.62),rgba(243,230,215,.72)),var(--global-card-image)!important;background-size:cover,cover!important;background-position:center,center!important;background-blend-mode:normal,soft-light!important}
+html[data-global-tone="dark"][data-global-collection] :is(.sidebar,.topbar,#page .card:not(.typography-experience-6c),#page .module,#page .studio-section,#page .theme-card,#page .collection-guide-6b49,.agenda-modal,.memory-detail-shell,.kiki-settings){background-image:linear-gradient(rgba(36,25,31,.78),rgba(52,36,45,.82)),var(--global-card-image)!important;background-blend-mode:normal,soft-light!important}
