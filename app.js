@@ -42,6 +42,7 @@ import {enhanceSprint6B49} from './sprint6b49.js?v=16.55.53';
 import {enhanceSprint6C1} from './sprint6c1.js?v=16.58.37';
 import {enhanceSprint6C3} from './sprint6c3.js?v=16.54.0';
 import {enhanceSprint6D} from './sprint6d.js?v=16.58.43';
+import {installAutocorrect} from './autocorrect.js';
 
 patchPages(pages);
 patchPagesSprint5(pages);
@@ -102,17 +103,18 @@ if(pageRoot&&'MutationObserver' in window){
   new MutationObserver(()=>applyGlobalHeaderTreatment()).observe(pageRoot,{childList:true,subtree:true});
 }
 applyDesign();
+installAutocorrect();
 
 const routes=[
   ['dashboard','⌂','Executive Dashboard'],
-  ['intelligence','✧','Morning Brief'],
   ['calendar','▦','Agenda'],
+  ['intelligence','✧','Morning Brief'],
   ['lani','♡','Lani’s Corner'],
-  ['career','◇','Payments Academy'],
-  ['business','◈','Executive Intelligence'],
+  ['sanctuary','⌂','Sanctuary'],
   ['money','$','Financial Studio'],
   ['wellness','✦','Wellness Studio'],
-  ['sanctuary','⌂','Sanctuary'],
+  ['business','◈','Executive Intelligence'],
+  ['career','◇','Payments Academy'],
   ['journal','❧','Reflection Garden'],
   ['goals','◎','25 Hard'],
   ['progress','↗','Growth Studio'],
