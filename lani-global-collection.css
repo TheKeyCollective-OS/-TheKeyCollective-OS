@@ -127,7 +127,71 @@ html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independ
   html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme .lani-page article.card::after { width:84px !important; height:102px !important; right:8px !important; bottom:6px !important; }
 }
 
-/* Final cascade guard: the shared shell collection can set nav text fill later
+/* The topbar breadcrumb carries the same Lani-only gold signature as the
+   sidebar destination. The route attribute is set by the router so this
+   treatment clears immediately when another page is opened. */
+html[data-lani-theme] body.lani-independent-theme header.topbar #breadcrumb[data-route="lani"] {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 34px !important;
+  padding: 6px 14px 6px 12px !important;
+  border: 1px solid rgba(255, 226, 126, .88) !important;
+  border-radius: 999px !important;
+  color: #fff3a8 !important;
+  -webkit-text-fill-color: #fff3a8 !important;
+  font-weight: 900 !important;
+  letter-spacing: .01em !important;
+  text-shadow: 0 1px 2px rgba(72, 42, 11, .72), 0 0 10px rgba(255, 226, 116, .74) !important;
+  background: linear-gradient(135deg, #8e6222, #d5a83f 48%, #8a5b1d) !important;
+  box-shadow: 0 7px 18px rgba(138, 91, 29, .28), inset 0 1px rgba(255,255,255,.48) !important;
+  isolation: isolate !important;
+  overflow: visible !important;
+}
+html[data-lani-theme] body.lani-independent-theme header.topbar #breadcrumb[data-route="lani"]::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: -1 !important;
+  border-radius: inherit !important;
+  background: linear-gradient(112deg, transparent 18%, rgba(255,255,255,.68) 43%, rgba(255,239,167,.9) 50%, transparent 64%) !important;
+  transform: translateX(-125%) !important;
+  animation: lani-nav-gold-sweep 5.8s ease-in-out infinite !important;
+  pointer-events: none !important;
+}
+html[data-lani-theme] body.lani-independent-theme header.topbar #breadcrumb[data-route="lani"]::after {
+  content: "\2726 \00b7 \2727" !important;
+  position: absolute !important;
+  top: -7px !important;
+  right: -10px !important;
+  z-index: 1 !important;
+  color: #fff5b0 !important;
+  -webkit-text-fill-color: #fff5b0 !important;
+  font-size: 11px !important;
+  letter-spacing: 4px !important;
+  opacity: .9 !important;
+  text-shadow: 0 0 8px rgba(255, 226, 116, .9) !important;
+  animation: lani-nav-sparkle 2.8s ease-in-out infinite !important;
+  pointer-events: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  html[data-lani-theme] body.lani-independent-theme header.topbar #breadcrumb[data-route="lani"]::before,
+  html[data-lani-theme] body.lani-independent-theme header.topbar #breadcrumb[data-route="lani"]::after {
+    animation: none !important;
+  }
+}
+
+/* Final cascade guard: keep the Lani topbar breadcrumb gold even when later
+   shared-shell rules set route text colors. */
+html[data-lani-theme][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme #appShell header.topbar #breadcrumb[data-route="lani"] {
+  color: #fff3a8 !important;
+  -webkit-text-fill-color: #fff3a8 !important;
+  text-shadow: 0 1px 2px rgba(72,42,11,.72), 0 0 10px rgba(255,226,116,.74) !important;
+  background: linear-gradient(135deg,#8e6222,#d5a83f 48%,#8a5b1d) !important;
+  border-color: rgba(255,226,126,.88) !important;
+}
+
+/* The shared shell collection can set nav text fill later
    in this stylesheet, so the Lani item gets an explicit gold text treatment at
    the end of the cascade for Safari, Monsters, and Dollhouse alike. */
 html[data-lani-theme] body.lani-independent-theme #nav .nav-button[data-route="lani"],
