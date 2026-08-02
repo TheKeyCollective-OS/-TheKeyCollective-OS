@@ -74,10 +74,12 @@ function applyDesign(){
   const collections=['pearl','blackberry','ruby','rose','amethyst','sapphire','emerald','teal','copper','espresso','onyx','silver'];
   const cardCollection=collections.includes(design.cardCollection)?design.cardCollection:'pearl';
   const radius=['classic','square','circle'].includes(design.radius)?design.radius:'classic';
+  const border=['none','gold','double','pearl'].includes(design.border)?design.border:'none';
   document.documentElement.dataset.radius=radius;
   document.documentElement.dataset.texture='clean';
   document.documentElement.dataset.type=design.pack||design.type||'classic';
   document.documentElement.dataset.globalRadius=radius;
+  document.documentElement.dataset.globalBorder=border;
   document.documentElement.dataset.globalTexture='clean';
   document.documentElement.dataset.globalType=design.pack||design.type||'classic';
   document.documentElement.dataset.globalCollection=cardCollection;
