@@ -127,6 +127,17 @@ html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independ
   html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme .lani-page article.card::after { width:84px !important; height:102px !important; right:8px !important; bottom:6px !important; }
 }
 
+/* Final cascade guard: the shared shell collection can set nav text fill later
+   in this stylesheet, so the Lani item gets an explicit gold text treatment at
+   the end of the cascade for Safari, Monsters, and Dollhouse alike. */
+html[data-lani-theme] body.lani-independent-theme #nav .nav-button[data-route="lani"],
+html[data-lani-theme] body.lani-independent-theme #nav .nav-button[data-route="lani"].active,
+html[data-lani-theme] body.lani-independent-theme #nav .nav-button[data-route="lani"]:hover {
+  color: #fff3a8 !important;
+  -webkit-text-fill-color: #fff3a8 !important;
+  text-shadow: 0 1px 2px rgba(72, 42, 11, .72), 0 0 10px rgba(255, 226, 116, .74) !important;
+}
+
 /* Lani atmosphere chooser + gallery readability polish (16.58.42). */
 html[data-lani-theme][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option {
   display: grid !important;
@@ -940,6 +951,8 @@ html[data-lani-theme] body.lani-independent-theme .sidebar .nav-button[data-rout
   position: relative !important;
   overflow: hidden !important;
   color: #fff9dc !important;
+  -webkit-text-fill-color: #fff9dc !important;
+  font-weight: 900 !important;
   border: 1px solid rgba(255, 226, 126, .9) !important;
   background: linear-gradient(135deg, #8e6222, #d5a83f 48%, #8a5b1d) !important;
   box-shadow: 0 8px 20px rgba(138, 91, 29, .28), inset 0 1px rgba(255,255,255,.48) !important;
