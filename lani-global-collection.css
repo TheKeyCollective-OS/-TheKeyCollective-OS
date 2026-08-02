@@ -2944,7 +2944,7 @@ html[data-lani-theme="monsters"] body.lani-independent-theme .lani-page .lani-he
 /* Final cascade guard: the shared adult theme collection uses an ID-strength
    heading rule, so repeat the Lani scope here to keep Monster rainbow type in
    control without changing any non-Lani heading. */
-html[data-lani-theme][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme #page > .pagehead.pagehead.lani-head.lani-head h1 {
+html[data-lani-theme][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme #page .pagehead.pagehead.lani-head.lani-head h1 {
   background-image: linear-gradient(100deg,#ffdc73 0%,#ff8caf 22%,#b98cff 44%,#6fd9d0 65%,#ffd56a 82%,#ff8caf 100%) !important;
   background-size: 320% 100% !important;
   background-clip: text !important;
