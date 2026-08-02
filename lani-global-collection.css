@@ -3039,6 +3039,70 @@ html[data-lani-theme="monsters"][data-lani-theme][data-lani-theme] body.lani-ind
   86% { opacity:.68; transform:scale(.96) rotate(-7deg); }
 }
 
+/* Safari keeps one consistent leather-and-triangle voice across the title,
+   atelier headings, gallery wordmark, and the gallery cards. */
+html[data-lani-theme="safari"][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme #page :is(
+  #lani-heading-specificity-anchor,
+  .pagehead.pagehead.lani-head.lani-head h1,
+  #laniThemeStudio h2,
+  #laniExperienceStudio h2,
+  #laniExperiencePreview .lani-preview-wordmark,
+  #laniExperiencePreview .lani-preview-copy h3,
+  .lani-page article.card h2,
+  .lani-page article.card h3,
+  .lani-page article.card h4,
+  .lani-page article.card .section-title h2,
+  .lani-page article.card .section-title h3,
+  .lani-page article.card .section-title h4
+) {
+  font-family: "Baloo 2", "Arial Rounded MT Bold", "Trebuchet MS", sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: .005em !important;
+  background-image: url("assets/lani/safari-heading-triangle-texture-v1.png") !important;
+  background-size: 54px 54px !important;
+  background-position: center !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  background-color: transparent !important;
+  color: #096f6a !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-text-stroke: .8px rgba(7,80,73,.82) !important;
+  text-shadow: none !important;
+  animation: none !important;
+  filter: drop-shadow(0 2px 0 #f5d16d) drop-shadow(0 4px 0 rgba(27,75,64,.28)) drop-shadow(0 10px 14px rgba(24,61,49,.22)) !important;
+}
+
+/* The Safari dinosaur stays fully inside the themed side panel and gently
+   sways while the menu is visible. Extra bottom room keeps navigation clear. */
+html[data-lani-theme="safari"][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme .sidebar {
+  padding-bottom: 194px !important;
+}
+html[data-lani-theme="safari"][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme .sidebar::after {
+  right: 12px !important;
+  bottom: 16px !important;
+  width: 122px !important;
+  height: 184px !important;
+  background-position: center bottom !important;
+  background-size: contain !important;
+  animation: laniSafariSidebarCompanionSway 5.6s ease-in-out infinite !important;
+}
+@keyframes laniSafariSidebarCompanionSway {
+  0%,100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-7px) rotate(1.4deg); }
+}
+@media (max-width:700px) {
+  html[data-lani-theme="safari"][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme .sidebar {
+    padding-bottom: 158px !important;
+  }
+  html[data-lani-theme="safari"][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme .sidebar::after {
+    display: block !important;
+    right: 10px !important;
+    bottom: 14px !important;
+    width: 96px !important;
+    height: 142px !important;
+  }
+}
+
 @media (max-width:700px) {
   html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option { grid-template-rows:132px minmax(0,1fr) !important; min-height:292px !important; }
   html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-art { min-height:126px !important; height:126px !important; }
