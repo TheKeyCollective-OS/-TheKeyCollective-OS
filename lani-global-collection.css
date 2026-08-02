@@ -906,6 +906,16 @@ html[data-lani-theme] body.lani-independent-theme .sidebar::after {
   filter: drop-shadow(0 12px 10px rgba(45,28,32,.24)) !important;
 }
 
+/* Keep the full themed navigation inside the visible shell. The expanded
+   Lani menu is taller than shorter desktop viewports, so it must scroll within
+   the themed panel instead of spilling below its background. */
+html[data-lani-theme] body.lani-independent-theme .sidebar {
+  height: calc(100vh - 36px) !important;
+  max-height: calc(100vh - 36px) !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
 html[data-lani-theme] body.lani-independent-theme .sidebar nav a {
   font-weight: 800 !important;
   letter-spacing: .025em !important;
@@ -922,6 +932,13 @@ html[data-lani-theme="safari"] body.lani-independent-theme .sidebar nav a {
 html[data-lani-theme="dollhouse"] body.lani-independent-theme .sidebar nav a {
   font-family: var(--lani-display-font) !important;
   border-radius: 8px 24px 8px 24px !important;
+}
+
+@media (max-width: 780px) {
+  html[data-lani-theme] body.lani-independent-theme .sidebar {
+    height: 100vh !important;
+    max-height: 100vh !important;
+  }
 }
 
 /* Theme-specific title plaques. */
