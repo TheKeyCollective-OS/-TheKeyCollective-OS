@@ -3103,6 +3103,60 @@ html[data-lani-theme="safari"][data-lani-theme][data-lani-theme] body.lani-indep
   }
 }
 
+/* Monster and Dollhouse companions use the same centered, full-view menu
+   framing as Safari, with their own gentle idle motion. */
+html[data-lani-theme="monsters"][data-lani-theme][data-lani-theme],
+html[data-lani-theme="dollhouse"][data-lani-theme][data-lani-theme] {
+  --lani-sidebar-companion-width: 122px;
+  --lani-sidebar-companion-height: 184px;
+}
+html[data-lani-theme="monsters"][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme .sidebar,
+html[data-lani-theme="dollhouse"][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme .sidebar {
+  padding-bottom: 194px !important;
+}
+html[data-lani-theme="monsters"][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme .sidebar::after,
+html[data-lani-theme="dollhouse"][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme .sidebar::after {
+  left: 50% !important;
+  right: auto !important;
+  margin-left: calc(var(--lani-sidebar-companion-width) / -2) !important;
+  bottom: 16px !important;
+  width: var(--lani-sidebar-companion-width) !important;
+  height: var(--lani-sidebar-companion-height) !important;
+  background-position: center bottom !important;
+  background-size: contain !important;
+  animation: laniSidebarCompanionSway 5.8s ease-in-out infinite !important;
+}
+html[data-lani-theme="dollhouse"][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme .sidebar::after {
+  animation-name: laniDollhouseSidebarCompanionSway !important;
+}
+@keyframes laniSidebarCompanionSway {
+  0%,100% { transform: translateY(0) rotate(-1.5deg); }
+  50% { transform: translateY(-9px) rotate(1.8deg); }
+}
+@keyframes laniDollhouseSidebarCompanionSway {
+  0%,100% { transform: translateY(0) rotate(1deg); }
+  50% { transform: translateY(-7px) rotate(-1.3deg); }
+}
+@media (max-width:700px) {
+  html[data-lani-theme="monsters"][data-lani-theme][data-lani-theme],
+  html[data-lani-theme="dollhouse"][data-lani-theme][data-lani-theme] {
+    --lani-sidebar-companion-width: 96px;
+    --lani-sidebar-companion-height: 142px;
+  }
+  html[data-lani-theme="monsters"][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme .sidebar,
+  html[data-lani-theme="dollhouse"][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme .sidebar {
+    padding-bottom: 158px !important;
+  }
+  html[data-lani-theme="monsters"][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme .sidebar::after,
+  html[data-lani-theme="dollhouse"][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme .sidebar::after {
+    display: block !important;
+    left: 50% !important;
+    right: auto !important;
+    margin-left: calc(var(--lani-sidebar-companion-width) / -2) !important;
+    bottom: 14px !important;
+  }
+}
+
 @media (max-width:700px) {
   html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option { grid-template-rows:132px minmax(0,1fr) !important; min-height:292px !important; }
   html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-art { min-height:126px !important; height:126px !important; }
