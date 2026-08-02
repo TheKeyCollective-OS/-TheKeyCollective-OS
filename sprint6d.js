@@ -218,6 +218,13 @@ function mountLaniDisclosures(){
 
 function leaveTheme(){
   document.body.classList.remove('lani-independent-theme');
+  const topbar=document.querySelector('.topbar');
+  const sidebar=document.querySelector('.sidebar');
+  topbar?.removeAttribute('data-lani-shell-theme');
+  sidebar?.removeAttribute('data-lani-shell-theme');
+  topbar?.style.removeProperty('background');
+  topbar?.style.removeProperty('color');
+  topbar?.style.removeProperty('border-color');
   delete document.documentElement.dataset.laniTheme;
   delete document.documentElement.dataset.laniExperience;
   document.documentElement.style.removeProperty('--lani-art-portrait');
@@ -385,6 +392,9 @@ function mountThemeStudio(){
 
 export function enhanceSprint6D(id){
   if(id!=='lani'){leaveTheme();return}
+  // A slow Lani render may finish after navigation. Never allow that stale
+  // enhancement to apply Lani's theme to the page that replaced it.
+  if(!document.querySelector('.lani-page')){leaveTheme();return}
   ensureAtmosphereTypographyPairing();
   if(draftTheme===null)draftTheme=savedTheme();
   if(draftExperience===null)draftExperience=savedExperience(draftTheme);

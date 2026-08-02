@@ -127,6 +127,8 @@ let router;
 router=createRouter({
   routes,
   onRender:async id=>{
+    // Clean up Lani-only shell styling before any route-specific early return.
+    if(id!=='lani')enhanceSprint6D(id);
     if(id==='calendar'){
       await enhanceSprint6B14(id,router);
       await enhanceSprint6B16(id,router);
@@ -200,7 +202,7 @@ router=createRouter({
     await enhanceSprint6B49(id,router);
     enhanceSprint6C1(id,router);
     enhanceSprint6C3(id,router);
-    enhanceSprint6D(id);
+    if(id==='lani')enhanceSprint6D(id);
   }});
 
 const shell=document.querySelector('#appShell');
