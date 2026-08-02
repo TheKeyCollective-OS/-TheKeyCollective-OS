@@ -2346,10 +2346,7 @@ html[data-lani-theme="safari"] body.lani-independent-theme :is(
   #laniThemeStudio h2,
   #laniExperienceStudio h2,
   #laniExperiencePreview .lani-preview-wordmark,
-  #laniExperiencePreview .lani-preview-copy h3,
-  .lani-page article.card h2,
-  .lani-page article.card h3,
-  .lani-page article.card h4
+  #laniExperiencePreview .lani-preview-copy h3
 ) {
   font-family: "Baloo 2", "Arial Rounded MT Bold", "Trebuchet MS", sans-serif !important;
   font-weight: 800 !important;
@@ -2988,6 +2985,52 @@ html[data-lani-theme="dollhouse"][data-lani-theme][data-lani-theme] body.lani-in
   text-shadow: 0 1px 0 rgba(255,238,213,.86), 0 3px 0 rgba(116,59,70,.1), 0 7px 13px rgba(84,42,51,.14) !important;
   filter: drop-shadow(0 1px 0 rgba(255,235,214,.8)) drop-shadow(0 6px 12px rgba(84,42,51,.16)) !important;
   animation: none !important;
+}
+
+/* Friendly Monster Neighborhood keeps one shared rainbow voice across every
+   Lani section heading. The moving color field and sparkle accents stay inside
+   the Monster atmosphere so Safari and Dollhouse retain their own type. */
+html[data-lani-theme="monsters"][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme #page :is(
+  #lani-heading-specificity-anchor,
+  .pagehead.pagehead.lani-head.lani-head h1,
+  #laniThemeStudio h2,
+  #laniExperienceStudio h2,
+  #laniExperiencePreview .lani-preview-wordmark,
+  #laniExperiencePreview .lani-preview-copy h3,
+  .lani-page article.card h2,
+  .lani-page article.card h3,
+  .lani-page article.card h4
+) {
+  font-family: "Fredoka", "Arial Rounded MT Bold", "Trebuchet MS", sans-serif !important;
+  font-weight: 700 !important;
+  background-image: linear-gradient(100deg,#ffd21a 0%,#ff4f9a 22%,#8d4dff 44%,#16cbbb 65%,#ffc21a 82%,#ff4f9a 100%) !important;
+  background-size: 125% 100% !important;
+  background-position: 0% 50% !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  background-color: transparent !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-text-stroke: .5px rgba(92,48,91,.46) !important;
+  text-shadow: 0 0 8px rgba(255,195,63,.24), 0 7px 16px rgba(76,41,79,.2) !important;
+  filter: saturate(1.18) brightness(1.06) drop-shadow(0 0 8px rgba(255,208,112,.2)) !important;
+  animation: laniMonsterRainbowText 16s ease-in-out infinite !important;
+}
+
+html[data-lani-theme="monsters"][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme #page :is(
+  #laniThemeStudio h2,
+  #laniExperienceStudio h2,
+  #laniExperiencePreview .lani-preview-wordmark,
+  #laniExperiencePreview .lani-preview-copy h3
+)::after {
+  filter: saturate(1.25) brightness(1.1) drop-shadow(0 0 7px rgba(255,224,117,.72)) !important;
+  animation: laniMonsterHeaderSparkle 4.8s ease-in-out infinite !important;
+}
+
+@keyframes laniMonsterHeaderSparkle {
+  0%,66%,100% { opacity:.58; transform:scale(.88) rotate(0deg); }
+  76% { opacity:1; transform:scale(1.16) rotate(12deg); }
+  86% { opacity:.68; transform:scale(.96) rotate(-7deg); }
 }
 
 @media (max-width:700px) {
