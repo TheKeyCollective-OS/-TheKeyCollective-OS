@@ -2884,7 +2884,7 @@ html[data-lani-theme="monsters"] body.lani-independent-theme .lani-page .lani-he
   color: transparent !important;
   -webkit-text-fill-color: transparent !important;
   -webkit-text-stroke: .55px rgba(92,48,91,.48) !important;
-  text-shadow: 0 2px 0 rgba(255,240,182,.88), 0 0 9px rgba(255,195,63,.28), 0 7px 16px rgba(76,41,79,.22) !important;
+  text-shadow: 0 0 8px rgba(255,195,63,.24), 0 7px 16px rgba(76,41,79,.22) !important;
   filter: saturate(1.18) brightness(1.06) drop-shadow(0 0 8px rgba(255,208,112,.24)) !important;
   animation: laniMonsterRainbowText 16s ease-in-out infinite !important;
 }
@@ -2954,7 +2954,7 @@ html[data-lani-theme="monsters"][data-lani-theme][data-lani-theme] body.lani-ind
   color: transparent !important;
   -webkit-text-fill-color: transparent !important;
   -webkit-text-stroke: .55px rgba(92,48,91,.48) !important;
-  text-shadow: 0 2px 0 rgba(255,240,182,.88), 0 0 9px rgba(255,195,63,.28), 0 7px 16px rgba(76,41,79,.22) !important;
+  text-shadow: 0 0 8px rgba(255,195,63,.24), 0 7px 16px rgba(76,41,79,.22) !important;
   filter: saturate(1.18) brightness(1.06) drop-shadow(0 0 8px rgba(255,208,112,.24)) !important;
   animation: laniMonsterRainbowText 16s ease-in-out infinite !important;
 }
@@ -2965,7 +2965,14 @@ html[data-lani-theme="monsters"][data-lani-theme][data-lani-theme] body.lani-ind
    into the dress atelier. */
 html[data-lani-theme="dollhouse"][data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme.lani-independent-theme #page :is(
   #lani-heading-specificity-anchor,
-  .pagehead.pagehead.lani-head.lani-head h1
+  .pagehead.pagehead.lani-head.lani-head h1,
+  #laniThemeStudio h2,
+  #laniExperienceStudio h2,
+  #laniExperiencePreview .lani-preview-wordmark,
+  #laniExperiencePreview .lani-preview-copy h3,
+  .lani-page article.card h2,
+  .lani-page article.card h3,
+  .lani-page article.card h4
 ) {
   font-family: "DM Serif Display", Georgia, serif !important;
   font-weight: 700 !important;
