@@ -2870,6 +2870,77 @@ html[data-lani-theme="monsters"] body.lani-independent-theme #laniExperiencePrev
   }
 }
 
+/* Friendly Monster Neighborhood: a calm, custom rainbow treatment for the
+   main Lani title. The halo, moving color field, and tiny star accents stay
+   scoped to this atmosphere only. */
+html[data-lani-theme="monsters"] body.lani-independent-theme .lani-page .lani-head h1 {
+  position: relative !important;
+  z-index: 1 !important;
+  isolation: isolate !important;
+  background-image: linear-gradient(100deg,#ffdc73 0%,#ff8caf 22%,#b98cff 44%,#6fd9d0 65%,#ffd56a 82%,#ff8caf 100%) !important;
+  background-size: 320% 100% !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: 0 2px 0 rgba(255,240,182,.78), 0 7px 16px rgba(76,41,79,.22) !important;
+  filter: drop-shadow(0 0 7px rgba(255,208,112,.18)) !important;
+  animation: laniMonsterRainbowText 16s ease-in-out infinite !important;
+}
+html[data-lani-theme="monsters"] body.lani-independent-theme .lani-page .lani-head h1::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: -.22em -.28em -.16em !important;
+  z-index: -1 !important;
+  border-radius: 48% / 42% !important;
+  background: linear-gradient(100deg,rgba(255,220,115,.78),rgba(255,130,170,.72),rgba(184,140,255,.7),rgba(111,217,208,.72),rgba(255,213,106,.78)) !important;
+  background-size: 280% 100% !important;
+  filter: blur(12px) saturate(1.12) !important;
+  opacity: .24 !important;
+  animation: laniMonsterRainbowHalo 14s ease-in-out infinite !important;
+  pointer-events: none !important;
+}
+html[data-lani-theme="monsters"] body.lani-independent-theme .lani-page .lani-head h1::after {
+  content: "\2726  \00b7  \2727" !important;
+  position: absolute !important;
+  top: -.24em !important;
+  right: -.05em !important;
+  z-index: 2 !important;
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  color: #fff3b2 !important;
+  -webkit-text-fill-color: #fff3b2 !important;
+  font-family: Georgia, serif !important;
+  font-size: .28em !important;
+  letter-spacing: .16em !important;
+  line-height: 1 !important;
+  text-shadow: 0 0 8px rgba(255,225,118,.86), 0 2px 4px rgba(87,43,88,.3) !important;
+  animation: laniMonsterTitleSparkle 4.6s ease-in-out infinite !important;
+  pointer-events: none !important;
+}
+@keyframes laniMonsterRainbowText {
+  0%,100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@keyframes laniMonsterRainbowHalo {
+  0%,100% { background-position: 0% 50%; opacity: .18; transform: scale(.985); }
+  50% { background-position: 100% 50%; opacity: .3; transform: scale(1.012); }
+}
+@keyframes laniMonsterTitleSparkle {
+  0%,68%,100% { opacity: .46; transform: scale(.86) rotate(0deg); }
+  78% { opacity: 1; transform: scale(1.08) rotate(8deg); }
+  86% { opacity: .62; transform: scale(.94) rotate(-5deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html[data-lani-theme="monsters"] body.lani-independent-theme .lani-page .lani-head h1,
+  html[data-lani-theme="monsters"] body.lani-independent-theme .lani-page .lani-head h1::before,
+  html[data-lani-theme="monsters"] body.lani-independent-theme .lani-page .lani-head h1::after {
+    animation: none !important;
+  }
+}
+
 @media (max-width:700px) {
   html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-option { grid-template-rows:132px minmax(0,1fr) !important; min-height:292px !important; }
   html[data-lani-theme][data-lani-theme] body.lani-independent-theme.lani-independent-theme #laniThemeStudio .lani-theme-art { min-height:126px !important; height:126px !important; }
