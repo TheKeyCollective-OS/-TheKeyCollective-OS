@@ -57,8 +57,8 @@ html[data-global-collection="copper"]{--global-card-image:url('assets/theme-copp
 html[data-global-collection="espresso"]{--global-card-image:url('assets/theme-espresso-houndstooth.png')}
 html[data-global-collection="onyx"]{--global-card-image:url('assets/theme-onyx-bandana.png')}
 html[data-global-collection="silver"]{--global-card-image:url('assets/theme-platinum-deco-brocade.png')}
-html[data-global-collection] :is(.sidebar,.topbar,#page .card:not(.typography-experience-6c),#page .module,#page .studio-section,#page .theme-card,#page .collection-guide-6b49,.agenda-modal,.memory-detail-shell,.kiki-settings){background-image:linear-gradient(145deg,color-mix(in srgb,var(--global-surface) 78%,transparent),color-mix(in srgb,var(--global-surface-alt) 66%,transparent)),var(--global-card-image)!important;background-size:cover,cover!important;background-position:center,center!important;background-blend-mode:normal,soft-light!important}
-html[data-global-tone="dark"][data-global-collection] :is(.sidebar,.topbar,#page .card:not(.typography-experience-6c),#page .module,#page .studio-section,#page .theme-card,#page .collection-guide-6b49,.agenda-modal,.memory-detail-shell,.kiki-settings){background-image:linear-gradient(145deg,color-mix(in srgb,var(--global-surface) 82%,transparent),color-mix(in srgb,var(--global-surface-alt) 76%,transparent)),var(--global-card-image)!important;background-blend-mode:normal,soft-light!important}
+html[data-global-collection] :is(.sidebar,.topbar,#page .card:not(.typography-experience-6c),#page .module,#page .studio-section,#page .theme-card,#page .collection-guide-6b49,.agenda-modal,.memory-detail-shell,.kiki-settings){background-image:linear-gradient(rgba(255,250,244,.62),rgba(243,230,215,.72)),var(--global-card-image)!important;background-size:cover,cover!important;background-position:center,center!important;background-blend-mode:normal,soft-light!important}
+html[data-global-tone="dark"][data-global-collection] :is(.sidebar,.topbar,#page .card:not(.typography-experience-6c),#page .module,#page .studio-section,#page .theme-card,#page .collection-guide-6b49,.agenda-modal,.memory-detail-shell,.kiki-settings){background-image:linear-gradient(rgba(36,25,31,.78),rgba(52,36,45,.82)),var(--global-card-image)!important;background-blend-mode:normal,soft-light!important}
 .card-collection-grid-6c{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:12px}
 .card-collection-choice-6c{display:grid;gap:6px;min-width:0;padding:8px;border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink);text-align:left;cursor:pointer;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
 .card-collection-choice-6c:hover{transform:translateY(-2px);border-color:var(--gold);box-shadow:var(--shadow)}
@@ -80,6 +80,10 @@ html[data-lani-theme] body.lani-independent-theme{
   background-size:auto 100vh!important;
   background-attachment:fixed!important;
 }
+
+/* Final cascade guard: selected global artwork must win over legacy surface resets. */
+html[data-global-collection] :is(.sidebar,.topbar,#page .card:not(.typography-experience-6c),#page .module,#page .studio-section,#page .theme-card,#page .collection-guide-6b49,.agenda-modal,.memory-detail-shell,.kiki-settings){background-image:linear-gradient(rgba(255,250,244,.62),rgba(243,230,215,.72)),var(--global-card-image)!important;background-size:cover,cover!important;background-position:center,center!important;background-blend-mode:normal,soft-light!important}
+html[data-global-tone="dark"][data-global-collection] :is(.sidebar,.topbar,#page .card:not(.typography-experience-6c),#page .module,#page .studio-section,#page .theme-card,#page .collection-guide-6b49,.agenda-modal,.memory-detail-shell,.kiki-settings){background-image:linear-gradient(rgba(36,25,31,.78),rgba(52,36,45,.82)),var(--global-card-image)!important;background-blend-mode:normal,soft-light!important}
 html[data-lani-theme="safari"] body.lani-independent-theme{background-color:#304f3e!important}
 html[data-lani-theme="monsters"] body.lani-independent-theme{background-color:#9a6688!important}
 html[data-lani-theme="dollhouse"] body.lani-independent-theme{background-color:#6e433b!important}
