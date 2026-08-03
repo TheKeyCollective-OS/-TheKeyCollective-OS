@@ -25,6 +25,7 @@ export function createRouter({routes,onRender}){
     const route=routes.find(r=>r.id===id)||routes[0];
     document.querySelectorAll('.nav-button').forEach(b=>b.classList.toggle('active',b.dataset.route===route.id));
     crumb.textContent=route.label;
+    crumb.dataset.route=route.id;
     if(push&&stack.at(-1)!==route.id)stack.push(route.id);
     persistStack();
     if(options.remember!==false)remember(route.id,options.replace===true);

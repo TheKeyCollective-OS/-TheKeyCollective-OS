@@ -4,7 +4,7 @@ import {pages} from './pages.js';
 import * as ctl from './controllers.js';
 import {enhance} from './sprint3.js';
 import {patchPages,enhanceSprint4} from './sprint4.js';
-import {patchPagesSprint5,enhanceSprint5} from './sprint5.js';
+import {patchPagesSprint5,enhanceSprint5} from './sprint5.js?v=16.55.53';
 import {patchPagesSprint6A,enhanceSprint6A} from './sprint6a.js';
 import {patchPagesSprint6B,enhanceSprint6B} from './sprint6b.js';
 import {enhanceSprint6B1} from './sprint6b1.js';
@@ -33,12 +33,17 @@ import {patchPagesSprint6B24,enhanceSprint6B24} from './sprint6b24.js';
 import {patchPagesSprint6B25,enhanceSprint6B25} from './sprint6b25.js';
 import {patchPagesSprint6B26,enhanceSprint6B26} from './sprint6b26.js?v=16.43.7';
 import {enhanceSprint6B43} from './sprint6b43.js?v=16.44.7';
-import {enhanceSprint6B44} from './sprint6b44.js?v=16.44.9';
+import {enhanceSprint6B44} from './sprint6b44.js?v=16.58.44';
 import {enhanceSprint6B45} from './sprint6b45.js?v=16.45.1';
 import {enhanceSprint6B46} from './sprint6b46.js?v=16.46.1';
 import {enhanceSprint6B47} from './sprint6b47.js?v=16.48.2';
 import {enhanceSprint6B48} from './sprint6b48.js?v=16.48.2';
-import {enhanceSprint6B49} from './sprint6b49.js?v=16.49.0';
+import {enhanceSprint6B49} from './sprint6b49.js?v=16.55.53';
+import {enhanceSprint6C1} from './sprint6c1.js?v=16.58.37';
+import {enhanceSprint6C3} from './sprint6c3.js?v=16.54.0';
+import {enhanceSprint6D} from './sprint6d.js?v=16.58.43';
+import {enhanceSprint6E} from './sprint6e.js';
+import {installAutocorrect} from './autocorrect.js';
 
 patchPages(pages);
 patchPagesSprint5(pages);
@@ -64,24 +69,55 @@ const repairedRoutes=new Set(['dashboard','calendar','goals','intelligence','wel
 function applyDesign(){
   const state=store.get();
   document.documentElement.dataset.theme=state.theme||'champagne';
-  document.documentElement.dataset.cards=state.design?.cards||'glass';
-  document.documentElement.dataset.radius=state.design?.radius||'soft';
-  document.documentElement.dataset.texture=state.design?.texture||'clean';
-  document.documentElement.dataset.type=state.design?.pack||state.design?.type||'classic';
-  document.documentElement.dataset.motion=state.design?.motion||'standard';
+  const design=state.design||{};
+  /* The atmosphere remains independent from the shared card collection. */
+  const collections=['pearl','blackberry','ruby','rose','amethyst','sapphire','emerald','teal','copper','espresso','onyx','silver'];
+  const cardCollection=collections.includes(design.cardCollection)?design.cardCollection:'pearl';
+  const radius=['classic','square','circle'].includes(design.radius)?design.radius:'classic';
+  const border=['none','gold','double','pearl'].includes(design.border)?design.border:'none';
+  document.documentElement.dataset.radius=radius;
+  document.documentElement.dataset.texture='clean';
+  document.documentElement.dataset.type=design.pack||design.type||'classic';
+  document.documentElement.dataset.globalRadius=radius;
+  document.documentElement.dataset.globalBorder=border;
+  document.documentElement.dataset.globalTexture='clean';
+  document.documentElement.dataset.globalType=design.pack||design.type||'classic';
+  document.documentElement.dataset.globalCollection=cardCollection;
+  document.documentElement.dataset.globalTone=design.tone||'light';
+  ['cards','motion','globalCards','globalMotion'].forEach(attribute=>delete document.documentElement.dataset[attribute]);
+}
+
+/* Every route owns its page header, but the visual voice is global. Mark each
+   rendered header with the same contrast scope used by Design + Data so the
+   active collection can carry its type, highlight, shadow, and transitions
+   consistently across the entire OS. */
+function applyGlobalHeaderTreatment(){
+  const tone=store.get().design?.tone||'light';
+  document.querySelectorAll('#page .pagehead').forEach(head=>{
+    if(!head.dataset.contrastScope)head.dataset.contrastScope='global-header';
+    head.dataset.surfaceTone=tone;
+  });
+}
+/* Some route enhancers add or replace page content after the router event.
+   Keep the header contract attached to those late-rendered headers as well,
+   without touching the collection artwork or other page content. */
+const pageRoot=document.querySelector('#page');
+if(pageRoot&&'MutationObserver' in window){
+  new MutationObserver(()=>applyGlobalHeaderTreatment()).observe(pageRoot,{childList:true,subtree:true});
 }
 applyDesign();
+installAutocorrect();
 
 const routes=[
   ['dashboard','⌂','Executive Dashboard'],
-  ['intelligence','✧','Morning Brief'],
   ['calendar','▦','Agenda'],
+  ['intelligence','✧','Morning Brief'],
   ['lani','♡','Lani’s Corner'],
-  ['career','◇','Payments Academy'],
-  ['business','◈','Executive Intelligence'],
+  ['sanctuary','⌂','Sanctuary'],
   ['money','$','Financial Studio'],
   ['wellness','✦','Wellness Studio'],
-  ['sanctuary','⌂','Sanctuary'],
+  ['business','◈','Executive Intelligence'],
+  ['career','◇','Payments Academy'],
   ['journal','❧','Reflection Garden'],
   ['goals','◎','25 Hard'],
   ['progress','↗','Growth Studio'],
@@ -96,6 +132,8 @@ let router;
 router=createRouter({
   routes,
   onRender:async id=>{
+    // Clean up Lani-only shell styling before any route-specific early return.
+    if(id!=='lani')enhanceSprint6D(id);
     if(id==='calendar'){
       await enhanceSprint6B14(id,router);
       await enhanceSprint6B16(id,router);
@@ -105,6 +143,7 @@ router=createRouter({
       await enhanceSprint6B47(id,router);
       await enhanceSprint6B48(id,router);
       await enhanceSprint6B49(id,router);
+      enhanceSprint6C1(id,router);
       return;
     }
     if(id==='money'){
@@ -118,6 +157,7 @@ router=createRouter({
       await enhanceSprint6B47(id,router);
       await enhanceSprint6B48(id,router);
       await enhanceSprint6B49(id,router);
+      enhanceSprint6C1(id,router);
       return;
     }
     if(!repairedRoutes.has(id)){
@@ -125,6 +165,7 @@ router=createRouter({
       else if(!controllerExcluded.has(id)&&ctl[id])await ctl[id](router);
       await enhanceSprint4(id,router);
       await enhanceSprint5(id,router);
+      enhanceSprint6E(id);
       await enhanceSprint6A(id,router);
       await enhanceSprint6B(id,router);
       await enhanceSprint6B1(id,router);
@@ -165,6 +206,9 @@ router=createRouter({
     await enhanceSprint6B47(id,router);
     await enhanceSprint6B48(id,router);
     await enhanceSprint6B49(id,router);
+    enhanceSprint6C1(id,router);
+    enhanceSprint6C3(id,router);
+    if(id==='lani')enhanceSprint6D(id);
   }});
 
 const shell=document.querySelector('#appShell');
@@ -189,8 +233,11 @@ document.querySelector('.avatar').onkeydown=event=>{
 
 window.addEventListener('kc:state',()=>{
   applyDesign();
+  applyGlobalHeaderTreatment();
+  document.querySelectorAll('[data-design-pack]').forEach(button=>button.classList.toggle('selected',button.dataset.designPack===store.get().design?.pack));
   window.dispatchEvent(new CustomEvent('kc:ui-refresh',{detail:{route:router.current()}}));
 });
+window.addEventListener('kc:route-rendered',applyGlobalHeaderTreatment);
 router.go(router.initial,false,{replace:true});
 if(sessionStorage.getItem('keyCollectiveOS.justRefreshed')){sessionStorage.removeItem('keyCollectiveOS.justRefreshed');setTimeout(()=>{const toast=document.querySelector('#toast');toast.textContent='Page refreshed with the newest available information.';toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2600)},500)}
 
